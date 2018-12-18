@@ -10,6 +10,7 @@ class Admin extends CI_Controller {
 		if ($akt_user_id != NULL) {
 			redirect('/dashboard');
 		}
+		$this->load->model('admin_model');
 
 
 	}
@@ -27,9 +28,39 @@ class Admin extends CI_Controller {
 
 	public function register()
 	{
-
-		$this->load->view('admin/register');
+		$data = array();
+		$data['title'] = " Akt-shop Register";
+		$this->load->view('admin/register',$data);
 	}
+
+	public function save_register_user()
+	{
+		$this->form_validation->set_rules('username', 'User Name', 'required|max_length[255]');
+		$this->form_validation->set_rules('email', 'Email Address', 'required|max_length[255]|is_unique[akt_users.email]');
+		$this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
+		$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|min_length[6]|matches[password]');
+
+		if ($this->form_validation->run()) {
+			$this->admin_model->register_new_admin();
+			// $data = array();
+			// $data['success_message'] = 'User Registration Sucessfully';
+			// $data['admin_maincontent'] = $this->load->view('admin/register', $data,True);
+			// $this->load->view('admin/pages/dashboard');
+			redirect('/dashboard');
+		}else{
+
+			$data = array();
+			$data['title'] = " Akt-shop Register";
+			$this->load->view('admin/register',$data);
+		}
+	}
+
+	
+
+
+
+
+
 
 
 	public function admin_login_check()

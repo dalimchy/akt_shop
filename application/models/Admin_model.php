@@ -15,4 +15,20 @@ class Admin_model extends CI_Model {
 		return $result;
 	}
 
+
+	public function register_new_admin()
+	{
+		$data['username'] = $this->input->post('username', True);
+		$data['email'] = $this->input->post('email', True);
+		// $password = $this->input->post('user_password', True);
+		// $encrypted_password = password_hash($password, PASSWORD_DEFAULT);
+		// $data['user_password'] = $encrypted_password;
+		$data['password'] = md5($this->input->post('password', True));	
+		$data['image'] = 'user.jpg';
+		$data['phone_number'] = '';
+		$data['role'] = 1;
+
+		$this->db->insert('akt_users', $data);
+	}
+
 }

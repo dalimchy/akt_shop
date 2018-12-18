@@ -22,27 +22,49 @@
                                 <!-- Sign up -->
                                 <div class="col-sm-offset-3 col-md-6">
                                     <div class="login_card card">
+
+
+
+                                            <p style="color: red">
+                                                <?php
+                                            if(isset($success_message)){
+                                                    echo $success_message;
+                                            }
+
+                                                ?>
+
+
+                                                <?php echo validation_errors(); ?>
+                                              <p style="color: red;font-size: 10px"> <?php echo form_error('email'); ?></p>
+                                            </p>
+
+
+
                                         <h3 class="card-header h4">Sign up</h3>
                                         <div class="card-block">
-                                            <form class="form-horizontal" action="index.html" method="post">
+                                            <form class="form-horizontal" action="<?php echo base_url()?>save-register-user" method="post">
                                                 <div class="form-group">
                                                     <div class="col-sm-6">
                                                         <label class="sr-only" for="frontend_signup_username">Username</label>
-                                                        <input class="form-control" type="text" id="frontend_signup_username" placeholder="Username" />
+                                                        <input class="form-control" type="text" id="frontend_signup_username" placeholder="Username" value="<?php echo set_value('username'); ?>" name="username" />
                                                     </div>
                                                     <div class="col-sm-6">
+
                                                         <label class="sr-only" for="frontend_signup_email">Email</label>
-                                                        <input class="form-control" type="email" id="frontend_signup_email" placeholder="Email" />
+
+                                                        <input class="form-control" type="email" id="frontend_signup_email" placeholder="Email" value="<?php echo set_value('email'); ?>" name="email" />
+                                                       <!--   <p style="color: red;font-size: 10px"> <?php echo form_error('email'); ?></p> -->
+
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-sm-6">
                                                         <label class="sr-only" for="frontend_signup_password">Password</label>
-                                                        <input class="form-control" type="password" id="frontend_signup_password" placeholder="Password" />
+                                                        <input class="form-control" type="password" id="frontend_signup_password" placeholder="Password" name="password" />
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <label class="sr-only" for="frontend_signup_confirm_password">Confirm Password</label>
-                                                        <input class="form-control" type="password" id="frontend_signup_confirm_password" placeholder="Confirm password" />
+                                                        <input class="form-control" type="password" id="frontend_signup_confirm_password" placeholder="Confirm password" name="confirm_password" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">

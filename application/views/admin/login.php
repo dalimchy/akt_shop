@@ -22,7 +22,7 @@
                                 <div class="col-sm-offset-3 col-md-6">
                                     <div class="login_card card">
                                         <h3 class="card-header h4">Login</h3>
-                                            <h3 style="color: red">
+                                            <p style="color: red;text-align: center;">
                                                 <?php
                                                     $message = $this->session->userdata('message');
                                                     if ($message) 
@@ -32,7 +32,7 @@
                                                     }
                                                 ?>
 
-                                            </h3>
+                                            </p>
                                         <div class="card-block">
                                             <form action="<?php echo base_url()?>login-check" method="post">
                                                 <div class="form-group">

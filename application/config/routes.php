@@ -56,6 +56,7 @@ $route['register'] = 'admin/register';
 $route['dashboard'] = 'supper_admin/index';
 $route['login-check'] = 'admin/admin_login_check';
 $route['logout'] = 'supper_admin/logout';
+$route['save-register-user'] = 'admin/save_register_user';
 
 
 

@@ -11,6 +11,7 @@ class Supper_admin extends CI_Controller {
 		if ($akt_user_id == NULL ) {
 			redirect('login');
 		}
+		$this->load->model('admin_model');
 	}
 
 	public function index()
@@ -20,6 +21,8 @@ class Supper_admin extends CI_Controller {
 		$data['admin_main_content'] = $this->load->view('admin/pages/dashboard','',true);
 		$this->load->view('admin/admin_master',$data );
 	}
+
+
 
 
 
