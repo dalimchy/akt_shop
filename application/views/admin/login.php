@@ -2,7 +2,6 @@
     $this->load->view('admin/head');
 ?>
 
-    <body class="app-ui">
     <body class="app-ui login-background">
         <div class="app-layout-canvas">
             <div class="app-layout-container">

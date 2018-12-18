@@ -6,7 +6,6 @@
         <div class="app-layout-canvas">
             <div class="app-layout-container">
 
-
                 <!-- End header -->
 
                 <main class="app-layout-content">
