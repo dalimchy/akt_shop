@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
         <!-- Document title -->
-        <title>Frontend - Login | AppUI</title>
+        <title><?php echo $title; ?></title>
 
         <meta name="description" content="AppUI - Frontend Template & UI Framework" />
         <meta name="robots" content="noindex, nofollow" />
@@ -51,15 +51,26 @@
                                 <div class="col-md-6">
                                     <div class="card">
                                         <h3 class="card-header h4">Login</h3>
+                                            <h3 style="color: red">
+                                                <?php
+                                                    $message = $this->session->userdata('message');
+                                                    if ($message) 
+                                                    {
+                                                        echo $message;
+                                                        $this->session->unset_userdata('message');
+                                                    }
+                                                ?>
+
+                                            </h3>
                                         <div class="card-block">
-                                            <form action="index.html" method="post">
+                                            <form action="<?php echo base_url()?>login-check" method="post">
                                                 <div class="form-group">
                                                     <label class="sr-only" for="frontend_login_email">Email</label>
-                                                    <input type="email" class="form-control" id="frontend_login_email" placeholder="Email" />
+                                                    <input type="email" class="form-control" id="frontend_login_email" placeholder="Email" name="email" />
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="sr-only" for="frontend_login_password">Password</label>
-                                                    <input type="password" class="form-control" id="frontend_login_password" placeholder="Password" />
+                                                    <input type="password" class="form-control" id="frontend_login_password" placeholder="Password" name="password" />
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="frontend_login_remember" class="css-input switch switch-sm switch-app">
