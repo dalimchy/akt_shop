@@ -1,3 +1,11 @@
+
+              </div>
+                <!-- .container-fluid -->
+                <!-- End Page Content -->
+
+            </main>
+
+
             </div>
             <!-- .app-layout-container -->
         </div>
@@ -63,6 +71,13 @@
 
         <!-- Page JS Code -->
         <script src="<?php echo base_url()?>assets/admin/js/pages/index.js"></script>
+
+
+        <script src="<?php echo base_url()?>assets/admin/js/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="<?php echo base_url()?>assets/admin/js/pages/base_tables_datatables.js"></script>
+           
+
+
         <script>
             $(function()
             {
@@ -70,6 +85,8 @@
                 App.initHelpers('slick');
             });
         </script>
+
+
 
     </body>
 

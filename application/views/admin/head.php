@@ -26,6 +26,11 @@
         <link rel="stylesheet" href="<?php echo base_url()?>assets/admin/js/plugins/slick/slick.min.css" />
         <link rel="stylesheet" href="<?php echo base_url()?>assets/admin/js/plugins/slick/slick-theme.min.css" />
 
+        
+         <!-- Page JS Plugins CSS -->
+        <!-- <link rel="stylesheet" href="assets/js/plugins/datatables/jquery.dataTables.min.css" /> -->
+          <link rel="stylesheet" href="<?php echo base_url()?>assets/admin/js/plugins/datatables/jquery.dataTables.min.css" />
+
         <!-- AppUI CSS stylesheets -->
         <link rel="stylesheet" id="css-font-awesome" href="<?php echo base_url()?>assets/admin/css/font-awesome.css" />
         <link rel="stylesheet" id="css-ionicons" href="<?php echo base_url()?>assets/admin/css/ionicons.css" />
@@ -33,5 +38,6 @@
         <link rel="stylesheet" id="css-app" href="<?php echo base_url()?>assets/admin/css/app.css" />
         <link rel="stylesheet" id="css-app-custom" href="<?php echo base_url()?>assets/admin/css/app-custom.css" />
         <link rel="stylesheet" id="css-app-custom" href="<?php echo base_url()?>assets/admin/css/style.css" />
+
         <!-- End Stylesheets -->
     </head>

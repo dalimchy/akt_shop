@@ -34,11 +34,11 @@
                                     <ul class="nav nav-subnav">
 
                                         <li>
-                                            <a href="base_ui_buttons.html">Add Category</a>
+                                            <a href="<?php echo base_url('/add-categorie')?>">Add Category</a>
                                         </li>
 
                                         <li>
-                                            <a href="base_ui_buttons.html">Manage Category</a>
+                                            <a href="<?php echo base_url('/manage-categories')?>">Manage Category</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -107,10 +107,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-                                <span class="navbar-page-title">
-					
-					Dashboard
-				</span>
+                                <span class="navbar-page-title"><?php echo $title ?></span>
                             </div>
 
                             <div class="collapse navbar-collapse" id="header-navbar-collapse">
@@ -125,27 +122,6 @@
                                         </div>
                                     </div>
                                 </form>
-
-                                <ul id="main-menu" class="nav navbar-nav navbar-left">
-                                    <li class="dropdown">
-                                        <a href="#" data-toggle="dropdown">English <span class="caret"></span></a>
-
-                                        <ul class="dropdown-menu">
-                                            <li><a href="javascript:void(0)">French</a></li>
-                                            <li><a href="javascript:void(0)">German</a></li>
-                                            <li><a href="javascript:void(0)">Italian</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" data-toggle="dropdown">Pages <span class="caret"></span></a>
-
-                                        <ul class="dropdown-menu">
-                                            <li><a href="javascript:void(0)">Analytics</a></li>
-                                            <li><a href="javascript:void(0)">Visits</a></li>
-                                            <li><a href="javascript:void(0)">Changelog</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
                                 <!-- .navbar-left -->
 
                                 <ul class="nav navbar-nav navbar-right navbar-toolbar hidden-sm hidden-xs">
@@ -201,3 +177,7 @@
                     <!-- .navbar-default -->
                 </header>
                 <!-- End header -->
+                <main class="app-layout-content">
+
+    <!-- Page Content -->
+    <div class="container-fluid p-y-md">
