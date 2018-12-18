@@ -17,8 +17,6 @@
                         <nav class="drawer-main">
                             <ul class="nav nav-drawer">
 
-                                <li class="nav-item nav-drawer-header">Apps</li>
-
                                 <li class="nav-item active">
                                     <a href="<?php echo base_url('/dashboard')?>"><i class="ion-ios-speedometer-outline"></i> Dashboard</a>
                                 </li>
@@ -26,11 +24,9 @@
                                 <li class="nav-item">
                                     <a href="#"><i class="ion-ios-monitor-outline"></i> Frontend</a>
                                 </li>
-
-                                <li class="nav-item nav-drawer-header">Components</li>
-
+                                
                                 <li class="nav-item nav-item-has-subnav">
-                                    <a href="javascript:void(0)"><i class="ion-ios-calculator-outline"></i> Category</a>
+                                    <a href="javascript:void(0)"><i class="ion-ios-pricetags"></i> Category</a>
                                     <ul class="nav nav-subnav">
 
                                         <li>
@@ -46,7 +42,7 @@
 
 
                                  <li class="nav-item nav-item-has-subnav">
-                                    <a href="javascript:void(0)"><i class="ion-ios-calculator-outline"></i> Manufacture</a>
+                                    <a href="javascript:void(0)"><i class="ion-clipboard"></i> Manufacture</a>
                                     <ul class="nav nav-subnav">
 
                                         <li>
@@ -60,8 +56,8 @@
                                 </li>
 
 
-                                 <li class="nav-item nav-item-has-subnav">
-                                    <a href="javascript:void(0)"><i class="ion-ios-calculator-outline"></i> Product</a>
+                                <li class="nav-item nav-item-has-subnav">
+                                    <a href="javascript:void(0)"><i class="ion-cube"></i> Product</a>
                                     <ul class="nav nav-subnav">
 
                                         <li>
@@ -70,6 +66,33 @@
 
                                         <li>
                                             <a href="base_ui_buttons.html">Manage Product</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+
+                                <li class="nav-item nav-item-has-subnav">
+                                    <a href="javascript:void(0)"><i class="ion-archive"></i>Orders</a>
+                                    <ul class="nav nav-subnav">
+
+                                        <li>
+                                            <a href="#">Orders list</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">Order statuses</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">Accounting</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">Payment transactions</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">Messages</a>
                                         </li>
                                     </ul>
                                 </li>
