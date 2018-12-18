@@ -17,6 +17,12 @@ public function register()
 	$this->load->view('admin/register');
 }
 
+public function dashboard()
+{
+
+	$this->load->view('admin/dashboard');
+}
+
 
 
 
