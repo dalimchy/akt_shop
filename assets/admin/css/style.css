@@ -1,0 +1,8 @@
+.login_card{
+	margin-top: 100px;
+}
+.login-background{
+	background-image: url('../img/bg/bg.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}

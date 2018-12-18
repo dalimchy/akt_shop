@@ -32,5 +32,6 @@
         <link rel="stylesheet" id="css-bootstrap" href="<?php echo base_url()?>assets/admin/css/bootstrap.css" />
         <link rel="stylesheet" id="css-app" href="<?php echo base_url()?>assets/admin/css/app.css" />
         <link rel="stylesheet" id="css-app-custom" href="<?php echo base_url()?>assets/admin/css/app-custom.css" />
+        <link rel="stylesheet" id="css-app-custom" href="<?php echo base_url()?>assets/admin/css/style.css" />
         <!-- End Stylesheets -->
     </head>
