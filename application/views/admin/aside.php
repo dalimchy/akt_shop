@@ -16,8 +16,7 @@
                         <!-- Drawer navigation -->
                         <nav class="drawer-main">
                             <ul class="nav nav-drawer">
-
-                                <li class="nav-item active">
+                                <li class="nav-item <?php if($title == 'Dashboard'){?>active<?php }?> ">
                                     <a href="<?php echo base_url('/dashboard')?>"><i class="ion-ios-speedometer-outline"></i> Dashboard</a>
                                 </li>
 
@@ -25,7 +24,7 @@
                                     <a href="#"><i class="ion-ios-monitor-outline"></i> Frontend</a>
                                 </li>
 
-                                <li class="nav-item nav-item-has-subnav">
+                                <li class="nav-item nav-item-has-subnav <?php if($title == 'Add Categorie' || $title == 'Manage Categories' ){?>active open<?php }?>">
                                     <a href="javascript:void(0)"><i class="ion-ios-pricetags"></i> Category</a>
                                     <ul class="nav nav-subnav">
 

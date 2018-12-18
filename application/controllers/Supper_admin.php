@@ -17,7 +17,7 @@ class Supper_admin extends CI_Controller {
 	public function index()
 	{
 		$data = array();
-		$data['title'] = " Akt-shop Dashboard";
+		$data['title'] = "Dashboard";
 		$data['admin_main_content'] = $this->load->view('admin/pages/dashboard','',true);
 		$this->load->view('admin/admin_master',$data );
 	}
