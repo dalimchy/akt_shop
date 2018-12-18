@@ -17,7 +17,7 @@ class Supper_admin extends CI_Controller {
 	public function index()
 	{
 		$data = array();
-		$data['title'] = " Akt-shop Dashboard";
+		$data['title'] = "Dashboard";
 		$data['admin_main_content'] = $this->load->view('admin/pages/dashboard','',true);
 		$this->load->view('admin/admin_master',$data );
 	}
@@ -52,13 +52,17 @@ class Supper_admin extends CI_Controller {
 	}
 
 
-	public function save_categorie()
+	public function save_category()
 	{
-		$data=array();
-		$data['category_name']			= $this->input->post('category_name',true);
-		$data['category_description']	= $this->input->post('category_description',true);
-		$data['publication_status']		= $this->input->post('publication_status',true);
-		$this->db->insert('tbl_category',$data);
+
+
+		$this->admin_model->save_category();
+		$sdata = array();
+		$sdata['message'] = "Save Category Information Sucessfully!";
+		$this->session->set_userdata($sdata);
+		redirect('add-category');
+
+		
 	}
 
 
