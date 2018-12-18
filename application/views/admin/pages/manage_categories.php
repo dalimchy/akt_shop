@@ -9,7 +9,7 @@
                                 <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
                                     <thead>
                                         <tr>
-                                            <th class="text-center"></th>
+                                            <th class="text-center">Id</th>
                                             <th>Category Name</th>
                                             <th class="hidden-xs">Category Description</th>
                                             <th class="hidden-xs w-20">Status</th>
@@ -17,11 +17,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php 
+                                            $i = 0;
+                                            foreach ($all_category_info as  $v_category) {
+                                            
+                                            $i++;
+                                        ?>
                                         <tr>
-                                            <td class="text-center">1</td>
-                                            <td class="font-500">Denise Watson</td>
-                                            <td class="hidden-xs">client1@example.com</td>
-                                            <td class="hidden-xs">Accountant</td>
+                                            <td class="text-center"><?php echo $i; ?></td>
+                                            <td class="font-500"><?php echo $v_category->category_name; ?></td>
+                                            <td class="hidden-xs"><?php echo $v_category->category_description; ?></td>
+                                            <td class="hidden-xs">
+                                                <?php 
+                                                if ($v_category->publication_status==1) {  ?>
+                                                     <span class="label label-success">Active</span>
+                                                <?php  } else{?>
+                                                    <span class="label label-danger">Inactive</span>
+                                                <?php  } ?>
+                                           
+                                                
+
+                                            </td>
                                             <td class="text-center">
                                                 <div class="btn-group">
                                                     <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Edit Client"><i class="ion-edit"></i></button>
@@ -31,19 +47,8 @@
                                         </tr>
                                  
                                      
+                                       <?php } ?>
                                        
-                                        <tr>
-                                            <td class="text-center">40</td>
-                                            <td class="font-500">Heather Estrada</td>
-                                            <td class="hidden-xs">client40@example.com</td>
-                                            <td class="hidden-xs">Designer</td>
-                                            <td class="text-center">
-                                                <div class="btn-group">
-                                                    <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Edit Client"><i class="ion-edit"></i></button>
-                                                    <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remove Client"><i class="ion-close"></i></button>
-                                                </div>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

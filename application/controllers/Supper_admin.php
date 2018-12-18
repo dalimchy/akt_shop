@@ -73,7 +73,8 @@ class Supper_admin extends CI_Controller {
 	{
 		$data = array();
 		$data['title'] = "Manage Categories";
-		$data['admin_main_content'] = $this->load->view('admin/pages/manage_categories','',true);
+		$data['all_category_info'] = $this->admin_model->all_category_info();
+		$data['admin_main_content'] = $this->load->view('admin/pages/manage_categories',$data,true);
 		$this->load->view('admin/admin_master',$data );
 	}
 

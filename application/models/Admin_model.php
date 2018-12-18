@@ -38,4 +38,13 @@ class Admin_model extends CI_Model {
 		$this->db->insert('tbl_category',$data);
 	}
 
+	public function all_category_info()
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_category');
+		$query_result = $this->db->get();
+		$category_info = $query_result->result();
+		return $category_info;
+	}
+
 }
