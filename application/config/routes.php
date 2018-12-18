@@ -58,6 +58,7 @@ $route['login-check'] = 'admin/admin_login_check';
 $route['logout'] = 'supper_admin/logout';
 $route['save-register-user'] = 'admin/save_register_user';
 $route['add-category'] = 'supper_admin/add_category';
+$route['save-category'] = 'supper_admin/save_category';
 $route['manage-categories'] = 'supper_admin/manage_categories';
 
 

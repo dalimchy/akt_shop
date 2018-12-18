@@ -2,6 +2,17 @@
                             <div class="col-lg-6">
                                 <!-- Bootstrap Forms Validation -->
                                 <h2 class="section-title">Add Category</h2>
+                                     <p style="color: green;">
+                                        <?php
+                                            $message = $this->session->userdata('message');
+                                            if ($message) {
+                                                echo $message;
+                                                 $this->session->unset_userdata('message');
+                                            }
+                                    
+                                        ?>
+                                        
+                                    </p>
                                 <div class="card">
                                     <div class="card-header">
                                         <!-- <h4>Validation</h4> -->
@@ -18,7 +29,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label" for="val-username">Username <span class="text-orange">*</span></label>
                                                 <div class="col-md-7">
-                                                    <input class="form-control" type="text" id="val-username" name="val-username" placeholder="Choose a nice username..." name="category_name" required />
+                                                    <input class="form-control" type="text" id="val-username"  placeholder="Choose a nice username..." name="category_name" required />
                                                 </div>
                                             </div>
 
@@ -27,7 +38,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label" for="val-suggestions">Category Description <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
-                                                    <textarea class="form-control" id="val-suggestions" name="val-suggestions" rows="8" placeholder="Share your ideas with us.." name="category_description" required="1"></textarea>
+                                                    <textarea class="form-control" id="val-suggestions"  rows="8" placeholder="Share your ideas with us.." name="category_description" required="1"></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group">
