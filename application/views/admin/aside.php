@@ -104,8 +104,7 @@
                         <!-- End drawer navigation -->
 
                         <div class="drawer-footer">
-                            <p class="copyright">AppUI Template &copy;</p>
-                            <a href="https://shapebootstrap.net/item/1525731-appui-admin-frontend-template/?ref=rustheme" target="_blank" rel="nofollow">Purchase a license</a>
+                            <p class="copyright">Copyright &copy; <a href="<?php echo base_url() ?>"> AKT-Shop</a></p>
                         </div>
                     </div>
                     <!-- End drawer scroll area -->
