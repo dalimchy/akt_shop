@@ -1,6 +1,6 @@
-<?php 
-    $this->load->view('admin/head');
-    $this->load->view('admin/aside');
+<?php
+$this->load->view('admin/head');
+$this->load->view('admin/aside');
 ?>
 <main class="app-layout-content">
 
@@ -328,6 +328,6 @@
     <!-- End Page Content -->
 
 </main>
-<?php 
-    $this->load->view('admin/foot');
+<?php
+$this->load->view('admin/foot');
 ?>
