@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
         <!-- Document title -->
-        <title>Dashboard | AppUI</title>
+        <title><?php echo $title; ?></title>
 
         <meta name="description" content="AppUI - Admin Dashboard Template & UI Framework" />
         <meta name="author" content="rustheme" />
