@@ -35,12 +35,14 @@
                                                     <span class="label label-danger">Inactive</span>
                                                 <?php  } ?>
                                            
-                                                
-
                                             </td>
                                             <td class="text-center">
                                                 <div class="btn-group">
-                                                    <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Edit Client"><i class="ion-edit"></i></button>
+                                                    <?php if($v_category->publication_status==1){?>
+                                                    <a href="<?php echo base_url()?>unpublish-category/$v_category->category_id" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Edit Client"><i class="ion-edit"></i></a>
+                                                    <?php }?>
+
+                                                    <a class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Edit Client"><i class="ion-edit"></i></a>
                                                     <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remove Client"><i class="ion-close"></i></button>
                                                 </div>
                                             </td>

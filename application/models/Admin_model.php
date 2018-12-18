@@ -47,4 +47,14 @@ class Admin_model extends CI_Model {
 		return $category_info;
 	}
 
+
+	public function unpublish_category($category_id)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_category');
+		$query_result = $this->db->get();
+		$category_info = $query_result->result();
+		return $category_info;
+	}
+
 }
