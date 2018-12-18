@@ -24,13 +24,13 @@
                                 <li class="nav-item">
                                     <a href="#"><i class="ion-ios-monitor-outline"></i> Frontend</a>
                                 </li>
-                                
+
                                 <li class="nav-item nav-item-has-subnav">
                                     <a href="javascript:void(0)"><i class="ion-ios-pricetags"></i> Category</a>
                                     <ul class="nav nav-subnav">
 
                                         <li>
-                                            <a href="<?php echo base_url('/add-categorie')?>">Add Category</a>
+                                            <a href="<?php echo base_url('/add-category')?>">Add Category</a>
                                         </li>
 
                                         <li>
