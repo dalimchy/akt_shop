@@ -35,11 +35,11 @@ class Supper_admin extends CI_Controller {
 		$this->session->set_userdata($sdata);
 		redirect('/login');
 	}
-	public function add_categorie()
+	public function add_category()
 	{
 		$data = array();
-		$data['title'] = "Add Categorie";
-		$data['admin_main_content'] = $this->load->view('admin/pages/add_categorie','',true);
+		$data['title'] = "Add Category";
+		$data['admin_main_content'] = $this->load->view('admin/pages/add_category','',true);
 		$this->load->view('admin/admin_master',$data );
 	}
 	public function manage_categories()
