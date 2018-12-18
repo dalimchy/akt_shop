@@ -18,31 +18,26 @@
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label" for="val-username">Username <span class="text-orange">*</span></label>
                                                 <div class="col-md-7">
-                                                    <input class="form-control" type="text" id="val-username" name="val-username" placeholder="Choose a nice username..." />
+                                                    <input class="form-control" type="text" id="val-username" name="val-username" placeholder="Choose a nice username..." name="category_name" />
                                                 </div>
                                             </div>
 
 
                                             
                                             <div class="form-group">
-                                                <label class="col-md-4 control-label" for="val-suggestions">Suggestions <span class="text-orange">*</span></label>
+                                                <label class="col-md-4 control-label" for="val-suggestions">Category Description <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
-                                                    <textarea class="form-control" id="val-suggestions" name="val-suggestions" rows="8" placeholder="Share your ideas with us.."></textarea>
+                                                    <textarea class="form-control" id="val-suggestions" name="val-suggestions" rows="8" placeholder="Share your ideas with us.." name="category_description"></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label" for="val-skill">Best Skill <span class="text-orange">*</span></label>
                                                 <div class="col-md-7">
-                                                    <select class="form-control" id="val-skill" name="val-skill">
+                                                    <select class="form-control" id="val-skill" name="publication_status">
                     									<option value="">Please select</option>
                     									<option value="html">HTML</option>
                     									<option value="css">CSS</option>
-                    									<option value="javascript">Javascript</option>
-                    									<option value="ruby">Ruby</option>
-                    									<option value="php">PHP</option>
-                    									<option value="asp">ASP.NET</option>
-                    									<option value="python">Python</option>
-                    									<option value="mysql">MySQL</option>
+                    									
                     								</select>
                                                 </div>
                                             </div>

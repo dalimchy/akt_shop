@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2018 at 05:45 PM
+-- Generation Time: Dec 18, 2018 at 07:27 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.1.20
 
@@ -51,6 +51,19 @@ INSERT INTO `akt_users` (`id`, `username`, `email`, `password`, `image`, `phone_
 (6, 'pohel', 'pohel@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'user.jpg', 0, '1'),
 (7, 'demo', 'demo@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'user.jpg', 0, '1');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_category`
+--
+
+CREATE TABLE `tbl_category` (
+  `category_id` int(11) NOT NULL,
+  `category_name` varchar(100) NOT NULL,
+  `category_description` text NOT NULL,
+  `publication_status` tinyint(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Indexes for dumped tables
 --
@@ -62,6 +75,12 @@ ALTER TABLE `akt_users`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_category`
+--
+ALTER TABLE `tbl_category`
+  ADD PRIMARY KEY (`category_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -70,6 +89,12 @@ ALTER TABLE `akt_users`
 --
 ALTER TABLE `akt_users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `tbl_category`
+--
+ALTER TABLE `tbl_category`
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
