@@ -1,20 +1,4 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-class Admin extends CI_Controller {
-
-	public function __construct()
-	{
-		parent::__construct();
-		$akt_user_id = $this->session->userdata('id');
-		if ($akt_user_id != NULL) {
-			redirect('/dashboard');
-		}
-		$this->load->model('admin_model');
-
-
-	}
-
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
@@ -28,8 +12,15 @@ class Admin extends CI_Controller
         if ($akt_user_id != null) {
             redirect('/dashboard');
         }
+        $this->load->model('admin_model');
 
     }
+
+
+
+
+
+    
 	public function register()
 	{
 		$data = array();
@@ -46,10 +37,6 @@ class Admin extends CI_Controller
 
 		if ($this->form_validation->run()) {
 			$this->admin_model->register_new_admin();
-			// $data = array();
-			// $data['success_message'] = 'User Registration Sucessfully';
-			// $data['admin_maincontent'] = $this->load->view('admin/register', $data,True);
-			// $this->load->view('admin/pages/dashboard');
 			redirect('/dashboard');
 		}else{
 
@@ -72,11 +59,7 @@ class Admin extends CI_Controller
         $this->load->view('admin/login', $data);
     }
 
-    public function register()
-    {
-
-        $this->load->view('admin/register');
-    }
+  
 
     public function admin_login_check()
     {
@@ -101,10 +84,6 @@ class Admin extends CI_Controller
 
     }
 
-    public function dashboard()
-    {
 
-        $this->load->view('admin/dashboard');
-    }
 
 }
