@@ -70,11 +70,12 @@
         <script src="<?php echo base_url()?>assets/admin/js/plugins/flot/jquery.flot.resize.min.js"></script>
 
         <!-- Page JS Code -->
-        <script src="<?php echo base_url()?>assets/admin/js/pages/index.js"></script>
+        <!-- <script src="assets/admin/js/pages/index.js"></script> -->
 
-
-        <script src="<?php echo base_url()?>assets/admin/js/plugins/datatables/jquery.dataTables.min.js"></script>
-        <script src="<?php echo base_url()?>assets/admin/js/pages/base_tables_datatables.js"></script>
+        <?php if($title == "Manage Categories"){ ?>
+            <script src="<?php echo base_url()?>assets/admin/js/plugins/datatables/jquery.dataTables.min.js"></script>
+            <script src="<?php echo base_url()?>assets/admin/js/pages/base_tables_datatables.js"></script>
+        <?php }?>
            
 
 
