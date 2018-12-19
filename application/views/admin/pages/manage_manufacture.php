@@ -53,7 +53,7 @@
 
                                                     <a href="<?php echo base_url()?>edit-manufacture/<?php echo $v_manufacture->manufacture_id; ?>" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Edit Client"><i class="ion-edit"></i></a>
 
-                                                    <a href="" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remove Client"><i class="ion-close"></i></a>
+                                                    <a href="<?php echo base_url()?>delete-manufacture/<?php echo $v_manufacture->manufacture_id; ?>" onclick="return confirm('Are you sure to delete this!');" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remove Client"><i class="ion-close"></i></a>
                                                 </div>
                                             </td>
                                         </tr>

@@ -23,27 +23,26 @@
                                     <div class="card-block">
                                         <!-- jQuery Validation (.js-validation-bootstrap class is initialized in js/pages/base_forms_validation.js) -->
                                         <!-- For more examples please check https://github.com/jzaefferer/jquery-validation -->
-                                        <form class="js-validation-bootstrap form-horizontal" name="edit_manufacture" action="<?php echo base_url();?>update-manufacture" method="post">
+                                        <form class="js-validation-bootstrap form-horizontal" action="<?php echo base_url();?>save-category" method="post">
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label" for="val-username">Manufacture Name <span class="text-orange">*</span></label>
+                                                <label class="col-md-3 control-label" for="val-username">Category Name <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
-                                                    <input class="form-control" type="text" id="val-username"  placeholder="Enter category name" name="manufacture_name" value="<?php echo $select_manufacture_by_id->manufacture_name; ?>" required />
-                                                    <input class="form-control" type="hidden" id="val-username"  name="manufacture_id" value="<?php echo $select_manufacture_by_id->manufacture_id; ?>" required />
+                                                    <input class="form-control" type="text" id="val-username"  placeholder="Enter category name" name="category_name" required />
                                                 </div>
                                             </div>
 
 
                                             
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label" for="val-suggestions">Manufacture Description <span class="text-orange">*</span></label>
+                                                <label class="col-md-3 control-label" for="val-suggestions">Category Description <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
-                                                    <textarea class="form-control" id="val-suggestions"  rows="8" placeholder="Enter category description..." name="manufacture_description" required="1"><?php echo $select_manufacture_by_id->manufacture_description; ?></textarea>
+                                                    <textarea class="form-control" id="val-suggestions"  rows="8" placeholder="Enter category description..." name="category_description" required="1"></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label" for="val-skill">Publication Status <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
-                                                    <select class="form-control" id="val-skill" name="publication_status" value="<?php echo $select_manufacture_by_id->publication_status; ?>"  required="1">
+                                                    <select class="form-control" id="val-skill" name="publication_status" required="1">
                     									<option value="">Please select</option>
                     									<option value="1">Published </option>
                                                         <option value="0">Unpublished </option>
@@ -70,7 +69,3 @@
                    
 
                         </div>
-     <script>
-        
-        document.forms['edit_manufacture'].elements['publication_status'].value=<?php echo $select_manufacture_by_id->publication_status ?> 
-    </script>

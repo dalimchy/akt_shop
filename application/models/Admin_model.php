@@ -134,4 +134,32 @@ class Admin_model extends CI_Model {
 		$this->db->update('tbl_manufacture');
 	}
 
+
+	public function select_manufacture_by_id($manufacture_id)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_manufacture');
+		$this->db->where('manufacture_id',$manufacture_id);
+		$query_result = $this->db->get();
+		$result = $query_result->row();
+		return $result;
+	}
+
+	public function update_manufacture()
+	{
+		$data = array();
+		$manufacture_id		= $this->input->post('manufacture_id',true);
+		$data['manufacture_name']			= $this->input->post('manufacture_name',true);
+		$data['manufacture_description']	= $this->input->post('manufacture_description',true);
+		$data['publication_status']		= $this->input->post('publication_status',true);
+		$this->db->where('manufacture_id',$manufacture_id);
+		$this->db->update('tbl_manufacture',$data);
+	}
+
+	public function delete_manufacture($manufacture_id)
+	{
+		$this->db->where('manufacture_id',$manufacture_id);
+		$this->db->delete('tbl_manufacture');
+	}
+
 }

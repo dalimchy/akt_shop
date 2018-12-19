@@ -60,11 +60,11 @@
                                     <ul class="nav nav-subnav">
 
                                         <li>
-                                            <a href="base_ui_buttons.html">Add Product</a>
+                                            <a href="<?php echo base_url('/add-product')?>">Add Product</a>
                                         </li>
 
                                         <li>
-                                            <a href="base_ui_buttons.html">Manage Product</a>
+                                            <a href="<?php echo base_url('/manage-manufacture')?>">Manage Product</a>
                                         </li>
                                     </ul>
                                 </li>

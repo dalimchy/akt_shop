@@ -73,6 +73,12 @@ $route['manage-manufacture'] = 'supper_admin/manage_manufacture';
 $route['unpublish-manufacture/(.+)'] = 'supper_admin/unpublish_manufacture/$1';
 $route['publish-manufacture/(.+)'] = 'supper_admin/publish_manufacture/$1';
 $route['edit-manufacture/(.+)'] = 'supper_admin/edit_manufacture/$1';
+$route['update-manufacture'] = 'supper_admin/update_manufacture';
+$route['delete-manufacture/(.+)'] = 'supper_admin/delete_manufacture/$1';
+
+
+$route['add-product'] = 'supper_admin/add_product';
+$route['manage-manufacture'] = 'supper_admin/manage_manufacture';
 
 
 

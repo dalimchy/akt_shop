@@ -170,10 +170,40 @@ class Supper_admin extends CI_Controller {
 	{
 		$data = array();
 		$data['title'] = "Edit Manufacture";
-		// $data['category_info'] = $this->admin_model->select_manufacture_by_id($manufacture_id);
+		$data['select_manufacture_by_id'] = $this->admin_model->select_manufacture_by_id($manufacture_id);
 		$data['admin_main_content'] = $this->load->view('admin/pages/edit_manufacture',$data,true);
 		$this->load->view('admin/admin_master',$data);
 	}
+
+	public function update_manufacture()
+	{
+		$this->admin_model->update_manufacture();
+		redirect('manage-manufacture');
+	}
+
+	public function delete_manufacture($manufacture_id)
+	{
+		$this->admin_model->delete_manufacture($manufacture_id);
+		redirect('manage-manufacture');
+	}
+
+
+				/***********************************/
+				/*  *****  		Product  *****     */
+				/***********************************/
+
+
+
+	public function add_product()
+		{
+			$data = array();
+			$data['title'] = "Add Product";
+			$data['admin_main_content'] = $this->load->view('admin/pages/add_product','',true);
+			$this->load->view('admin/admin_master',$data );
+		}
+
+
+
 
 
 
