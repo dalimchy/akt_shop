@@ -21,7 +21,7 @@
                                 <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
                                     <thead>
                                         <tr>
-                                            <th class="text-center">Product Id</th>
+                                            <th class="text-center">Id</th>
                                             <th>Product Name</th>
                                             <th class="hidden-xs">Product Price</th>
                                             <th class="hidden-xs">Product Quantity</th>
