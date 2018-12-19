@@ -83,7 +83,13 @@ class Supper_admin extends CI_Controller {
 	public function unpublish_category($category_id)
 	{
 		$this->admin_model->unpublish_category($category_id);
-		redirect('/manage-category');
+		redirect('manage-categories');
+	}
+
+	public function publish_category($category_id)
+	{
+		$this->admin_model->publish_category($category_id);
+		redirect('manage-categories');
 	}
 
 

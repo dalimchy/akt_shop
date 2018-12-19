@@ -50,11 +50,17 @@ class Admin_model extends CI_Model {
 
 	public function unpublish_category($category_id)
 	{
-		$this->db->select('*');
-		$this->db->from('tbl_category');
-		$query_result = $this->db->get();
-		$category_info = $query_result->result();
-		return $category_info;
+		$this->db->set('publication_status',0);
+		$this->db->where('category_id',$category_id);
+		$this->db->update('tbl_category');
+	}
+
+
+	public function publish_category($category_id)
+	{
+		$this->db->set('publication_status',1);
+		$this->db->where('category_id',$category_id);
+		$this->db->update('tbl_category');
 	}
 
 }
