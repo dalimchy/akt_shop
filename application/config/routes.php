@@ -78,6 +78,9 @@ $route['delete-manufacture/(.+)'] = 'supper_admin/delete_manufacture/$1';
 
 
 $route['add-product'] = 'supper_admin/add_product';
+$route['save-product'] = 'supper_admin/save_product';
+
+
 $route['manage-manufacture'] = 'supper_admin/manage_manufacture';
 
 

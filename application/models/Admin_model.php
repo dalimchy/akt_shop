@@ -76,6 +76,16 @@ class Admin_model extends CI_Model {
 		return $result;
 	}
 
+	public function select_all_publish_category_info()
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_category');
+		$this->db->where('publication_status',1);
+		$query_result = $this->db->get();
+		$result = $query_result->result();
+		return $result;
+	}
+
 	public function update_category_info()
 	{
 		$data = array();
@@ -119,6 +129,19 @@ class Admin_model extends CI_Model {
 	}
 
 
+	public function select_all_publish_manufacture_info()
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_manufacture');
+		$this->db->where('publication_status',1);
+		$query_result = $this->db->get();
+		$result = $query_result->result();
+		return $result;
+	}
+
+
+
+
 
 	public function unpublish_manufacture($manufacture_id)
 	{
@@ -160,6 +183,65 @@ class Admin_model extends CI_Model {
 	{
 		$this->db->where('manufacture_id',$manufacture_id);
 		$this->db->delete('tbl_manufacture');
+	}
+
+	public function save_product_info()
+	{
+		$data=array();
+		$data['product_name']				= $this->input->post('product_name',true);
+		$data['category_id']				= $this->input->post('category_id',true);
+		$data['manufacture_id']				= $this->input->post('manufacture_id',true);
+		$data['product_short_description']	= $this->input->post('product_short_description',true);
+		$data['product_long_description']	= $this->input->post('product_long_description',true);
+		$data['product_price']				= $this->input->post('product_price',true);
+		$data['product_new_price']			= $this->input->post('product_new_price',true);
+		$data['product_quantity']			= $this->input->post('product_quantity',true);
+		// $data['product_image']			= $this->input->post('product_image',true);
+
+
+
+				$sdata = array();
+				$error = "";
+
+                $config['upload_path']          = 'upload/';
+                $config['allowed_types']        = 'jpg|png';
+                $config['max_size']             = 100000;
+                $config['max_width']            = 10024;
+                $config['max_height']           = 7680;
+
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload('product_image'))
+                {
+                        $error =  $this->upload->display_errors();
+
+                        // $this->load->view('upload_form', $error);
+                }
+                else
+                {
+                        $sdata =  $this->upload->data();
+                        $data['product_image'] = $config['upload_path'].$sdata['file_name'];
+
+                        // $this->load->view('upload_success', $data);
+                }
+      
+
+
+
+
+
+		$is_featured			= $this->input->post('is_featured',true);
+
+		if ($is_featured== "on") 
+		{
+			$data['is_featured'] = 1;
+		}
+		else
+		{
+			$data['is_featured'] = 0;
+		}
+		$data['publication_status']			= $this->input->post('publication_status',true);
+		$this->db->insert('tbl_product',$data);
 	}
 
 }

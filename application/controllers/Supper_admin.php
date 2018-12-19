@@ -195,12 +195,24 @@ class Supper_admin extends CI_Controller {
 
 
 	public function add_product()
-		{
-			$data = array();
-			$data['title'] = "Add Product";
-			$data['admin_main_content'] = $this->load->view('admin/pages/add_product','',true);
-			$this->load->view('admin/admin_master',$data );
-		}
+	{
+		$data = array();
+		$data['title'] = "Add Product";
+		$data['publish_category_info'] = $this->admin_model->select_all_publish_category_info();
+		$data['publish_manufacture_info'] = $this->admin_model->select_all_publish_manufacture_info();
+		$data['admin_main_content'] = $this->load->view('admin/pages/add_product',$data,true);
+		$this->load->view('admin/admin_master',$data );
+	}
+
+
+	public function save_product()
+	{
+	$this->admin_model->save_product_info();
+	$sdata = array();
+	$sdata['message'] = "Save Product Information Sucessfully!";
+	$this->session->set_userdata($sdata);
+	redirect('add-product');
+	}
 
 
 

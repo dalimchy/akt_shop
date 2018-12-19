@@ -23,22 +23,91 @@
                                     <div class="card-block">
                                         <!-- jQuery Validation (.js-validation-bootstrap class is initialized in js/pages/base_forms_validation.js) -->
                                         <!-- For more examples please check https://github.com/jzaefferer/jquery-validation -->
-                                        <form class="js-validation-bootstrap form-horizontal" action="<?php echo base_url();?>save-category" method="post">
+                                        <form class="js-validation-bootstrap form-horizontal" action="<?php echo base_url();?>save-product" enctype="multipart/form-data"  method="post">
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label" for="val-username">Category Name <span class="text-orange">*</span></label>
+                                                <label class="col-md-3 control-label" for="val-username">Product Name <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
-                                                    <input class="form-control" type="text" id="val-username"  placeholder="Enter category name" name="category_name" required />
+                                                    <input class="form-control" type="text" id="val-username"  placeholder="Enter category name" name="product_name" required />
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="val-skill">Category Name <span class="text-orange">*</span></label>
+                                                <div class="col-md-8">
+                                                    <select class="form-control" id="val-skill" name="category_id" required="1">
+                                                        <option value="">Please select</option>
+                                                        <?php foreach ($publish_category_info as  $v_category) { ?>
+                                                        <option value="<?php echo $v_category->category_id?>"><?php echo $v_category->category_name?> </option>
+                                                        <?php } ?>
+                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="val-skill">Manufacture Name <span class="text-orange">*</span></label>
+                                                <div class="col-md-8">
+                                                    <select class="form-control" id="val-skill" name="manufacture_id" required="1">
+                                                        <option value="">Please select</option>
+                                                        <?php foreach ($publish_manufacture_info as  $v_manufacture) { ?>
+                                                        <option value="<?php echo $v_manufacture->manufacture_id?>"><?php echo $v_manufacture->manufacture_name?> </option>
+                                                        <?php } ?>
+                                                        
+                                                    </select>
                                                 </div>
                                             </div>
 
 
                                             
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label" for="val-suggestions">Category Description <span class="text-orange">*</span></label>
+                                                <label class="col-md-3 control-label" for="val-suggestions">Product Short Description  <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
-                                                    <textarea class="form-control" id="val-suggestions"  rows="8" placeholder="Enter category description..." name="category_description" required="1"></textarea>
+                                                    <textarea class="form-control" id="val-suggestions"  rows="8" placeholder="Enter category description..." name="product_short_description" required="1"></textarea>
                                                 </div>
                                             </div>
+
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="val-suggestions">Product Long Description  <span class="text-orange">*</span></label>
+                                                <div class="col-md-8">
+                                                    <textarea class="form-control" id="val-suggestions"  rows="8" placeholder="Enter category description..." name="product_long_description" required="1"></textarea>
+                                                </div>
+                                            </div>
+
+
+                                             <div class="form-group">
+                                                <label class="col-md-3 control-label" for="val-username">Product Price <span class="text-orange">*</span></label>
+                                                <div class="col-md-8">
+                                                    <input class="form-control" type="number" id="val-username"  placeholder="Enter product price " name="product_price" min="1" required />
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="val-username">Product New Price <span class="text-orange">*</span></label>
+                                                <div class="col-md-8">
+                                                    <input class="form-control" type="number" id="val-username"  placeholder="Enter product New price " name="product_new_price" min="1" required />
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="val-username">Product Quantity <span class="text-orange">*</span></label>
+                                                <div class="col-md-8">
+                                                    <input class="form-control" type="number" id="val-username"  placeholder="Enter product Quantity " name="product_quantity" min="1" required />
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="example-file-input">Product Image </label>
+                                                <div class="col-md-8">
+                                                    <input class="form-control" type="file" id="example-file-input" name="product_image" required="1">
+                                                </div>
+                                            </div>
+
+
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label" for="val-skill">Publication Status <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
@@ -50,6 +119,20 @@
                     								</select>
                                                 </div>
                                             </div>
+
+
+                                             <div class="form-group">
+                                                <label class="col-md-3 control-label css-input css-checkbox css-checkbox-lg css-checkbox-primary">Is featured  </label>
+                                                <div class="col-md-8">
+                                                    <input class="form-control" type="checkbox"   name="is_featured"   />
+                                                </div>
+                                            </div>
+
+
+                                        
+
+
+                                      
                                          
                                            
                                             <div class="form-group m-b-0">
