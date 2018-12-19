@@ -21,7 +21,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#"><i class="ion-ios-monitor-outline"></i> Frontend</a>
+                                    <a href="/akt_shop" target="_blank"><i class="ion-ios-monitor-outline"></i> Frontend</a>
                                 </li>
 
                                 <li class="nav-item nav-item-has-subnav <?php if($title == 'Add Categorie' || $title == 'Manage Categories' ){?>active open<?php }?>">
