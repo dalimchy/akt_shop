@@ -67,6 +67,15 @@ $route['update-category'] = 'supper_admin/update_category';
 $route['delete-category/(.+)'] = 'supper_admin/delete_category/$1';
 
 
+$route['add-manufacture'] = 'supper_admin/add_manufacture';
+$route['save-manufacture'] = 'supper_admin/save_manufacture';
+$route['manage-manufacture'] = 'supper_admin/manage_manufacture';
+$route['unpublish-manufacture/(.+)'] = 'supper_admin/unpublish_manufacture/$1';
+$route['publish-manufacture/(.+)'] = 'supper_admin/publish_manufacture/$1';
+$route['edit-manufacture/(.+)'] = 'supper_admin/edit_manufacture/$1';
+
+
+
 
 
 

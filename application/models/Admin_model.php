@@ -27,7 +27,9 @@ class Admin_model extends CI_Model {
 
 		$this->db->insert('akt_users', $data);
 	}
-
+				/***********************************/
+				/*     *****  Category  *****      */
+				/***********************************/
 
 	public function save_category()
 	{
@@ -92,11 +94,44 @@ class Admin_model extends CI_Model {
 	}
 
 
+				/***********************************/
+				/*  *****  Manufacturer  *****     */
+				/***********************************/
+
+
+	public function	save_manufacture()
+	{
+	$data=array();
+	$data['manufacture_name']			= $this->input->post('manufacture_name',true);
+	$data['manufacture_description']	= $this->input->post('manufacture_description',true);
+	$data['publication_status']		= $this->input->post('publication_status',true);
+	$this->db->insert('tbl_manufacture',$data);
+
+	}
+
+	public function all_manufacture_info()
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_manufacture');
+		$query_result = $this->db->get();
+		$manufacture_info = $query_result->result();
+		return $manufacture_info;
+	}
 
 
 
+	public function unpublish_manufacture($manufacture_id)
+	{
+		$this->db->set('publication_status',0);
+		$this->db->where('manufacture_id',$manufacture_id);
+		$this->db->update('tbl_manufacture');
+	}
 
-
-
+	public function publish_manufacture($manufacture_id)
+	{
+		$this->db->set('publication_status',1);
+		$this->db->where('manufacture_id',$manufacture_id);
+		$this->db->update('tbl_manufacture');
+	}
 
 }

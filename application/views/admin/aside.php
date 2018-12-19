@@ -45,11 +45,11 @@
                                     <ul class="nav nav-subnav">
 
                                         <li>
-                                            <a href="base_ui_buttons.html">Add Manufacture</a>
+                                            <a href="<?php echo base_url('/add-manufacture')?>">Add Manufacture</a>
                                         </li>
 
                                         <li>
-                                            <a href="base_ui_buttons.html">Manage Manufacture</a>
+                                            <a href="<?php echo base_url('/manage-manufacture')?>">Manage Manufacture</a>
                                         </li>
                                     </ul>
                                 </li>
