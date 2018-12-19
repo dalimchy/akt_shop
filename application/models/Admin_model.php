@@ -44,6 +44,7 @@ class Admin_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('tbl_category');
+		$this->db->order_by("category_id", "desc");
 		$query_result = $this->db->get();
 		$category_info = $query_result->result();
 		return $category_info;
@@ -123,6 +124,7 @@ class Admin_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('tbl_manufacture');
+		$this->db->order_by("manufacture_id", "desc");
 		$query_result = $this->db->get();
 		$manufacture_info = $query_result->result();
 		return $manufacture_info;
@@ -242,6 +244,38 @@ class Admin_model extends CI_Model {
 		}
 		$data['publication_status']			= $this->input->post('publication_status',true);
 		$this->db->insert('tbl_product',$data);
+	}
+
+
+	public function all_product_info()
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_product');
+		$this->db->order_by("product_id", "desc");
+		$query_result = $this->db->get();
+		$product_info = $query_result->result();
+		return $product_info;
+	}
+
+	public function unpublish_product($product_id)
+	{
+		$this->db->set('publication_status',0);
+		$this->db->where('product_id',$product_id);
+		$this->db->update('tbl_product');
+	}
+
+	public function publish_product($product_id)
+	{
+		$this->db->set('publication_status',1);
+		$this->db->where('product_id',$product_id);
+		$this->db->update('tbl_product');
+	}
+
+
+	public function delete_product($product_id)
+	{
+		$this->db->where('product_id',$product_id);
+		$this->db->delete('tbl_product');
 	}
 
 }

@@ -214,6 +214,43 @@ class Supper_admin extends CI_Controller {
 	redirect('add-product');
 	}
 
+	public function manage_product()
+	{
+		$data = array();
+		$data['title'] = "Manage Product";
+		$data['all_product_info'] = $this->admin_model->all_product_info();
+		$data['admin_main_content'] = $this->load->view('admin/pages/manage_product',$data,true);
+		$this->load->view('admin/admin_master',$data );
+	}
+
+	public function unpublish_product($product_id)
+	{
+		$this->admin_model->unpublish_product($product_id);
+		$sdata = array();
+		$sdata['message'] = "Save unpublish Product Sucessfully!";
+		$this->session->set_userdata($sdata);
+		redirect('manage-product');
+	}
+
+	public function publish_product($product_id)
+	{
+		
+		$this->admin_model->publish_product($product_id);
+		$sdata = array();
+		$sdata['message'] = "Save publish Product Sucessfully!";
+		$this->session->set_userdata($sdata);
+		redirect('manage-product');
+	}
+
+	public function delete_product($product_id)
+	{
+		$sdata = array();
+		$sdata['message'] = "Delete  Product Sucessfully!";
+		$this->session->set_userdata($sdata);
+		$this->admin_model->delete_product($product_id);
+		redirect('manage-product');
+	}
+
 
 
 

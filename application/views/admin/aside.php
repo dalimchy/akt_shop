@@ -64,7 +64,7 @@
                                         </li>
 
                                         <li>
-                                            <a href="<?php echo base_url('/manage-manufacture')?>">Manage Product</a>
+                                            <a href="<?php echo base_url('/manage-product')?>">Manage Product</a>
                                         </li>
                                     </ul>
                                 </li>
