@@ -55,22 +55,14 @@
                                                 <?php  } ?>
 
 
-                                            <!--      <?php if($v_category->publication_status==1){?>
-                                                  <a class="btn btn-danger" href="<?php echo base_url()?>unpublish-category/<?php echo $v_category->category_id; ?>">
-                                                    <i class="ion-arrow-down-c"></i>  
-                                                </a>
-                                                    <?php }else{?>
-                                                <a class="btn btn-success" href="<?php  echo base_url()?>publish-category/<?php echo $v_category->category_id; ?>">
-                                                    <i class="ion-arrow-up-c"></i>  
-                                                </a> -->
-                                                    <?php }?>
+                                      
                                            
                                             </td>
                                             <td class="text-center">
                                                 <div class="btn-group">
                                                    
 
-                                                    <a href="" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Edit Client"><i class="ion-edit"></i></a>
+                                                    <a href="<?php echo base_url()?>edit-product/<?php echo $v_product->product_id; ?>" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Edit Client"><i class="ion-edit"></i></a>
                                                     <a href="<?php echo base_url()?>delete-product/<?php echo $v_product->product_id; ?>" onclick="return confirm('Are you sure to delete this!');" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remove Client"><i class="ion-close"></i></a>
                                                 </div>
                                             </td>

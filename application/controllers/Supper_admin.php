@@ -46,7 +46,7 @@ class Supper_admin extends CI_Controller {
 	public function add_category()
 	{
 		$data = array();
-		$data['title'] = "Add Categorie";
+		$data['title'] = "Add Category";
 		$data['admin_main_content'] = $this->load->view('admin/pages/add_category','',true);
 		$this->load->view('admin/admin_master',$data );
 	}
@@ -234,7 +234,7 @@ class Supper_admin extends CI_Controller {
 
 	public function publish_product($product_id)
 	{
-		
+
 		$this->admin_model->publish_product($product_id);
 		$sdata = array();
 		$sdata['message'] = "Save publish Product Sucessfully!";
@@ -249,6 +249,69 @@ class Supper_admin extends CI_Controller {
 		$this->session->set_userdata($sdata);
 		$this->admin_model->delete_product($product_id);
 		redirect('manage-product');
+	}
+
+	public function edit_product($product_id)
+	{
+		$data = array();
+		$data['title'] = "Edit Product";
+		$data['publish_category_info'] = $this->admin_model->select_all_publish_category_info();
+		$data['publish_manufacture_info'] = $this->admin_model->select_all_publish_manufacture_info();
+		$data['product_info'] = $this->admin_model->product_info_by_id($product_id);
+		$data['admin_main_content'] = $this->load->view('admin/pages/edit_product',$data,true);
+		$this->load->view('admin/admin_master',$data);
+	}
+
+	// public function update_product()
+	// {
+
+	// }
+
+
+
+	private function upload_product_img(){
+		$config['upload_path'] = './upload/';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg';
+		$config['max_size'] = 1000;
+		$config['max_width'] = 1024;
+		$config['max_height'] = 768;
+
+		$this->load->library('upload', $config);
+
+		if ($this->upload->do_upload('product_image')) {
+			$data = $this->upload->data();
+			$image_path = "upload/$data[file_name]";
+			return $image_path;
+		}else{
+			$error = $this->upload->display_errors();
+			print_r($error);
+		}
+	}
+
+
+	public function update_product()
+	{
+		if ($_FILES['product_image']['name'] == '' || $_FILES['product_image']['size'] == '0') {
+
+  			$product_image = $this->input->post('product_old_image', True);
+  			$this->admin_model->update_product($product_image);
+  			$sdata = array();
+  			$sdata['message'] = "Update product Information Sucessfully";
+  			$this->session->set_userdata($sdata);
+  			$product_id = $this->input->post('product_id', True);
+  			redirect('manage-product');
+  		}else
+  		{
+
+  			$product_image = $this->upload_product_img();
+  			$this->admin_model->update_product($product_image);
+  			unlink( $this->input->post('product_old_image', True));
+  			$sdata = array();
+  			$sdata['message'] = "Update product Information Sucessfully";
+  			$this->session->set_userdata($sdata);
+  			$product_id = $this->input->post('product_id', True);
+  			redirect('manage-product');
+  		}
 	}
 
 

@@ -24,7 +24,7 @@
                                     <a href="<?php echo base_url()?>"><i class="ion-ios-monitor"></i> Frontend</a>
                                 </li>
 
-                                <li class="nav-item nav-item-has-subnav <?php if($title == 'Add Categorie' || $title == 'Manage Categories' ){?>active open<?php }?>">
+                                <li class="nav-item nav-item-has-subnav <?php if($title == 'Add Category' || $title == 'Manage Categories' ){?>active open<?php }?>">
                                     <a href="javascript:void(0)"><i class="ion-ios-pricetags"></i> Category</a>
                                     <ul class="nav nav-subnav">
 
@@ -40,7 +40,7 @@
 
 
 
-                                 <li class="nav-item nav-item-has-subnav">
+                                 <li class="nav-item nav-item-has-subnav <?php if($title == 'Add Manufacture' || $title == 'Manage Manufacture' ){?>active open<?php }?>">
                                     <a href="javascript:void(0)"><i class="ion-clipboard"></i> Manufacture</a>
                                     <ul class="nav nav-subnav">
 
@@ -55,7 +55,7 @@
                                 </li>
 
 
-                                <li class="nav-item nav-item-has-subnav">
+                                <li class="nav-item nav-item-has-subnav <?php if($title == 'Add Product' || $title == 'Manage Product' ){?>active open<?php }?>">
                                     <a href="javascript:void(0)"><i class="ion-cube"></i> Product</a>
                                     <ul class="nav nav-subnav">
 

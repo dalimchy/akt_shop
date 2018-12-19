@@ -207,9 +207,9 @@ class Admin_model extends CI_Model {
 
                 $config['upload_path']          = 'upload/';
                 $config['allowed_types']        = 'jpg|png';
-                $config['max_size']             = 100000;
-                $config['max_width']            = 10024;
-                $config['max_height']           = 7680;
+                $config['max_size']             = 1000;
+                $config['max_width']            = 1024;
+                $config['max_height']           = 768;
 
                 $this->load->library('upload', $config);
 
@@ -277,5 +277,48 @@ class Admin_model extends CI_Model {
 		$this->db->where('product_id',$product_id);
 		$this->db->delete('tbl_product');
 	}
+
+	public function product_info_by_id($product_id){
+		// $result =  $this->db->select('*')
+		// 	 			->from('tbl_product')
+		// 				->where('product_id', $product_id)
+		// 				->get()->row();
+		// 	  return $result;
+		$this->db->select('*');
+		$this->db->from('tbl_product');
+		$this->db->where('product_id',$product_id);
+		$query_result = $this->db->get();
+		$result = $query_result->row();
+		return $result;
+	}
+
+
+	public function update_product($product_image)
+	{
+		$data= array();
+		$data['product_name'] = $this->input->post('product_name', True);
+		$product_id = $this->input->post('product_id', True);
+		$data['category_id'] = $this->input->post('category_id', True);
+		$data['manufacture_id'] = $this->input->post('manufacture_id', True);
+		$data['product_short_description'] = $this->input->post('product_short_description', True);
+		$data['product_long_description'] = $this->input->post('product_long_description', True);
+		$data['product_price'] = $this->input->post('product_price', True);
+		$data['product_new_price'] = $this->input->post('product_new_price', True);
+		$data['product_quantity'] = $this->input->post('product_quantity', True);
+		$data['publication_status'] = $this->input->post('publication_status', True);
+		$data['product_image'] = $product_image;
+		$is_featured = $this->input->post('is_featured', TRUE);
+		if ($is_featured == NULL) {
+			$data['is_featured'] = 0;
+		}
+		elseif($is_featured == 'on'){
+			$data['is_featured'] = 1;
+		}
+
+		$this->db->where('product_id', $product_id);
+		$this->db->update('tbl_product', $data);
+	}
+
+		
 
 }

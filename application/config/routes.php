@@ -82,9 +82,11 @@ $route['save-product'] = 'supper_admin/save_product';
 $route['unpublish-product/(.+)'] = 'supper_admin/unpublish_product/$1';
 $route['publish-product/(.+)'] = 'supper_admin/publish_product/$1';
 $route['delete-product/(.+)'] = 'supper_admin/delete_product/$1';
+$route['edit-product/(.+)'] = 'supper_admin/edit_product/$1';
 
 
 $route['manage-product'] = 'supper_admin/manage_product';
+$route['update-product'] = 'supper_admin/update_product';
 
 
 

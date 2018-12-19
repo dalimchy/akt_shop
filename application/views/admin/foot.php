@@ -72,7 +72,7 @@
         <!-- Page JS Code -->
         <!-- <script src="assets/admin/js/pages/index.js"></script> -->
 
-        <?php if($title == "Manage Categories"){ ?>
+        <?php if($title == "Manage Categories" || $title == "Manage Manufacture" || $title == "Manage Product"){ ?>
             <script src="<?php echo base_url()?>assets/admin/js/plugins/datatables/jquery.dataTables.min.js"></script>
             <script src="<?php echo base_url()?>assets/admin/js/pages/base_tables_datatables.js"></script>
         <?php }?>

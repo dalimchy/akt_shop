@@ -9,7 +9,7 @@
                                 <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
                                     <thead>
                                         <tr>
-                                            <th class="text-center">Id</th>
+                                            <th >Id</th>
                                             <th>Manufacture Name</th>
                                             <th class="hidden-xs">Manufacture Description</th>
                                             <th class="hidden-xs w-20">Status</th>
