@@ -1,9 +1,9 @@
  
                         <!-- Dynamic Table Full -->
                         <div class="card">
-                            <div class="card-header">
+                            <!-- <div class="card-header">
                                 <h4>Dynamic Table - Full</h4>
-                            </div>
+                            </div> -->
                             <div class="card-block">
                                 <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/pages/base_tables_datatables.js -->
                                 <table class="table table-bordered table-striped table-vcenter js-dataTable-full">

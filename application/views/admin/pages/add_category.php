@@ -1,18 +1,16 @@
  <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-8">
                                 <!-- Bootstrap Forms Validation -->
-                                <h2 class="section-title">Add Category</h2>
-                                     <p style="color: green;">
+                                <!-- <h2 class="section-title">Add Category</h2> -->
                                         <?php
                                             $message = $this->session->userdata('message');
-                                            if ($message) {
-                                                echo $message;
-                                                 $this->session->unset_userdata('message');
-                                            }
-                                    
-                                        ?>
-                                        
-                                    </p>
+                                            if ($message) { ?>
+												
+												<div class='alert alert-success alert-dismissable'>
+													<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+													<p><strong>Well done! </strong><?php echo $message; $this->session->unset_userdata('message'); ?></p>
+												</div>
+                                           <?php } ?>
                                 <div class="card">
                                     <div class="card-header">
                                         <!-- <h4>Validation</h4> -->
@@ -27,23 +25,23 @@
                                         <!-- For more examples please check https://github.com/jzaefferer/jquery-validation -->
                                         <form class="js-validation-bootstrap form-horizontal" action="<?php echo base_url();?>save-category" method="post">
                                             <div class="form-group">
-                                                <label class="col-md-4 control-label" for="val-username">Username <span class="text-orange">*</span></label>
-                                                <div class="col-md-7">
-                                                    <input class="form-control" type="text" id="val-username"  placeholder="Choose a nice username..." name="category_name" required />
+                                                <label class="col-md-3 control-label" for="val-username">Category Name <span class="text-orange">*</span></label>
+                                                <div class="col-md-8">
+                                                    <input class="form-control" type="text" id="val-username"  placeholder="Enter category name" name="category_name" required />
                                                 </div>
                                             </div>
 
 
                                             
                                             <div class="form-group">
-                                                <label class="col-md-4 control-label" for="val-suggestions">Category Description <span class="text-orange">*</span></label>
+                                                <label class="col-md-3 control-label" for="val-suggestions">Category Description <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
-                                                    <textarea class="form-control" id="val-suggestions"  rows="8" placeholder="Share your ideas with us.." name="category_description" required="1"></textarea>
+                                                    <textarea class="form-control" id="val-suggestions"  rows="8" placeholder="Enter category description..." name="category_description" required="1"></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-md-4 control-label" for="val-skill">Publication Status <span class="text-orange">*</span></label>
-                                                <div class="col-md-7">
+                                                <label class="col-md-3 control-label" for="val-skill">Publication Status <span class="text-orange">*</span></label>
+                                                <div class="col-md-8">
                                                     <select class="form-control" id="val-skill" name="publication_status" required="1">
                     									<option value="">Please select</option>
                     									<option value="1">Published </option>
