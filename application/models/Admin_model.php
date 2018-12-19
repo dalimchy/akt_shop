@@ -63,4 +63,34 @@ class Admin_model extends CI_Model {
 		$this->db->update('tbl_category');
 	}
 
+
+	public function select_category_by_id($category_id)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_category');
+		$this->db->where('category_id',$category_id);
+		$query_result = $this->db->get();
+		$result = $query_result->row();
+		return $result;
+	}
+
+	public function update_category_info()
+	{
+		$data = array();
+		$category_id		= $this->input->post('category_id',true);
+		$data['category_name']			= $this->input->post('category_name',true);
+		$data['category_description']	= $this->input->post('category_description',true);
+		$data['publication_status']		= $this->input->post('publication_status',true);
+		$this->db->where('category_id',$category_id);
+		$this->db->update('tbl_category',$data);
+	}
+
+
+
+
+
+
+
+	
+
 }
