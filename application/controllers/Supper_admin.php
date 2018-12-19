@@ -93,6 +93,15 @@ class Supper_admin extends CI_Controller {
 	}
 
 
+	public function edit_category($category_id)
+	{
+		$data = array();
+		$data['category_info'] = $this->supper_admin_model->select_category_by_id($category_id);
+		$data['admin_main_content'] = $this->load->view('admin/pages/edit_category',$data,true);
+		$this->load->view('admin/admin_master',$data);
+	}
+
+
 
 
 
