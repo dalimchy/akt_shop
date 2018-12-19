@@ -10,18 +10,18 @@
                     <div class="app-layout-drawer-scroll">
                         <!-- Drawer logo -->
                         <div id="logo" class="drawer-header">
-                            <a href="<?php echo base_url()?>dashboard"><img class="img-responsive" src="<?php echo base_url()?>assets/admin/img/logo/logo-backend.png" title="AppUI" alt="AppUI" /></a>
+                            <a href="<?php echo base_url()?>"><img class="img-responsive" src="<?php echo base_url()?>assets/admin/img/logo/akt_logo.png" title="AppUI" alt="AppUI" /></a>
                         </div>
 
                         <!-- Drawer navigation -->
                         <nav class="drawer-main">
                             <ul class="nav nav-drawer">
                                 <li class="nav-item <?php if($title == 'Dashboard'){?>active<?php }?> ">
-                                    <a href="<?php echo base_url('/dashboard')?>"><i class="ion-ios-speedometer-outline"></i> Dashboard</a>
+                                    <a href="<?php echo base_url('/dashboard')?>"><i class="ion-ios-speedometer"></i> Dashboard</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#"><i class="ion-ios-monitor-outline"></i> Frontend</a>
+                                    <a href="<?php echo base_url()?>"><i class="ion-ios-monitor"></i> Frontend</a>
                                 </li>
 
                                 <li class="nav-item nav-item-has-subnav <?php if($title == 'Add Categorie' || $title == 'Manage Categories' ){?>active open<?php }?>">
