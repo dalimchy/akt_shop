@@ -52,7 +52,7 @@
                                                    
 
                                                     <a href="<?php  echo base_url()?>edit-category/<?php echo $v_category->category_id; ?>" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Edit Client"><i class="ion-edit"></i></a>
-                                                    <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remove Client"><i class="ion-close"></i></button>
+                                                    <a href="<?php  echo base_url()?>delete-category/<?php echo $v_category->category_id; ?>" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remove Client"><i class="ion-close"></i></a>
                                                 </div>
                                             </td>
                                         </tr>

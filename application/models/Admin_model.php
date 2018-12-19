@@ -85,12 +85,18 @@ class Admin_model extends CI_Model {
 		$this->db->update('tbl_category',$data);
 	}
 
+	public function delete_category($category_id)
+	{
+		$this->db->where('category_id',$category_id);
+		$this->db->delete('tbl_category');
+	}
 
 
 
 
 
 
-	
+
+
 
 }

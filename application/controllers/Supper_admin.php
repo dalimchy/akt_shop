@@ -104,13 +104,16 @@ class Supper_admin extends CI_Controller {
 
 	public function update_category()
 	{
-		// $data = array();
-		// $data['title'] = "Update Categories";
-		// $data['category_info'] = $this->admin_model->update_category($category_id);
-		// $data['admin_main_content'] = $this->load->view('admin/pages/edit_category',$data,true);
-		// $this->load->view('admin/admin_master',$data);
+	
 
 		$this->admin_model->update_category_info();
+		redirect('manage-categories');
+	}
+
+
+	public function delete_category($category_id)
+	{
+		$this->admin_model->delete_category($category_id);
 		redirect('manage-categories');
 	}
 
