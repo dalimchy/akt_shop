@@ -105,7 +105,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label" for="example-file-input">Product Image </label>
                                                 <div class="col-md-8">
-                                                    <input class="form-control" type="file" id="example-file-input" name="product_image" required="1">
+                                                    <input class="form-control" type="file" id="example-file-input" name="product_image" >
                                                     <input  name="product_old_image"  value="<?php echo $product_info->product_image; ?>" type="hidden">
 
                                                     <img src="<?php echo base_url().$product_info->product_image; ?>" width="100" height="100" alt="">

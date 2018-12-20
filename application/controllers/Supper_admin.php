@@ -147,10 +147,7 @@ class Supper_admin extends CI_Controller {
   			$category_id = $this->input->post('category_id', True);
   			redirect('manage-categories');
   		}
-	
 
-		$this->admin_model->update_category_info();
-		redirect('manage-categories');
 	}
 
 
@@ -165,19 +162,44 @@ class Supper_admin extends CI_Controller {
 				/*  *****  Manufacturer  *****     */
 				/***********************************/
 
-
+	
 
 	public function add_manufacture()
 		{
 			$data = array();
 			$data['title'] = "Add Manufacture";
-			$data['admin_main_content'] = $this->load->view('admin/pages/add_manufacture','',true);
+			$data['publish_category_info'] = $this->admin_model->select_all_publish_category_info();
+			$data['admin_main_content'] = $this->load->view('admin/pages/add_manufacture',$data,true);
 			$this->load->view('admin/admin_master',$data );
+		}
+
+
+	private function save_manufacture_img()
+	{
+			$config['upload_path'] = './upload/';
+			$config['allowed_types'] = 'gif|jpg|png|jpeg';
+			$config['max_size'] = 1000;
+			$config['max_width'] = 1024;
+			$config['max_height'] = 768;
+
+			$this->load->library('upload', $config);
+
+			if ($this->upload->do_upload('manufacture_image')) {
+				$data = $this->upload->data();
+				$image_path = "upload/$data[file_name]";
+				return $image_path;
+			}else{
+				$error = $this->upload->display_errors();
+				print_r($error);
+			}
 		}
 
 	public function save_manufacture()
 		{
-		$this->admin_model->save_manufacture();
+
+		$manufacture_image = $this->save_manufacture_img();
+  		// $this->admin_model->update_product($product_image);
+		$this->admin_model->save_manufacture($manufacture_image);
 		$sdata = array();
 		$sdata['message'] = "Save Manufacture Information Sucessfully!";
 		$this->session->set_userdata($sdata);
@@ -213,6 +235,7 @@ class Supper_admin extends CI_Controller {
 	{
 		$data = array();
 		$data['title'] = "Edit Manufacture";
+		$data['publish_category_info'] = $this->admin_model->select_all_publish_category_info();
 		$data['select_manufacture_by_id'] = $this->admin_model->select_manufacture_by_id($manufacture_id);
 		$data['admin_main_content'] = $this->load->view('admin/pages/edit_manufacture',$data,true);
 		$this->load->view('admin/admin_master',$data);
@@ -220,8 +243,30 @@ class Supper_admin extends CI_Controller {
 
 	public function update_manufacture()
 	{
-		$this->admin_model->update_manufacture();
-		redirect('manage-manufacture');
+
+		if ($_FILES['manufacture_image']['name'] == '' || $_FILES['manufacture_image']['size'] == '0') {
+
+  			$manufacture_image = $this->input->post('manufacture_old_image', True);
+  			$this->admin_model->update_manufacture_info($manufacture_image);
+  			$sdata = array();
+  			$sdata['message'] = "Update Manufacture Information Sucessfully";
+  			$this->session->set_userdata($sdata);
+  			$manufacture_id = $this->input->post('manufacture_id', True);
+  			redirect('manage-manufacture');
+  		}else
+  		{
+
+  			$manufacture_image = $this->save_manufacture_img();
+  			$this->admin_model->update_manufacture_info($manufacture_image);
+  			unlink( $this->input->post('manufacture_old_image', True));
+  			$sdata = array();
+  			$sdata['message'] = "Update Manufacture Information Sucessfully";
+  			$this->session->set_userdata($sdata);
+  			$manufacture_id = $this->input->post('manufacture_id', True);
+  			redirect('manage-manufacture');
+  		}
+
+
 	}
 
 	public function delete_manufacture($manufacture_id)

@@ -37,7 +37,7 @@
                                              <div class="form-group">
                                                 <label class="col-md-3 control-label" for="example-file-input">Category Image </label>
                                                 <div class="col-md-8">
-                                                    <input class="form-control" type="file" id="example-file-input" name="category_image" required="1">
+                                                    <input class="form-control" type="file" id="example-file-input" name="category_image" >
 
                                                      <input  name="category_old_image"  value="<?php echo $category_info->category_image; ?>" type="hidden">
 

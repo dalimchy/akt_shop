@@ -11,6 +11,7 @@
                                         <tr>
                                             <th >Id</th>
                                             <th>Manufacture Name</th>
+                                            <th>Image </th>
                                             <th class="hidden-xs">Manufacture Description</th>
                                             <th class="hidden-xs w-20">Status</th>
                                             <th class="text-center" style="width: 10%;">Actions</th>
@@ -26,6 +27,7 @@
                                         <tr>
                                             <td class="text-center"><?php echo $i; ?></td>
                                             <td class="font-500"><?php echo $v_manufacture->manufacture_name; ?></td>
+                                            <td class="font-500"><img style="height: 70px;width: 70px" src="<?php echo base_url().$v_manufacture->manufacture_image; ?>" alt="" ></td>
                                             <td class="hidden-xs"><?php echo $v_manufacture->manufacture_description; ?></td>
                                             <td class="hidden-xs">
                                                 <?php 
