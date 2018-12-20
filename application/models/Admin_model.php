@@ -31,12 +31,24 @@ class Admin_model extends CI_Model {
 				/*     *****  Category  *****      */
 				/***********************************/
 
-	public function save_category()
+	public function save_category($category_image)
 	{
+		// $data=array();
+	
+		// $this->db->insert('tbl_category',$data);
+
+
+
 		$data=array();
+	
 		$data['category_name']			= $this->input->post('category_name',true);
+		$data['category_image']			= $category_image;
 		$data['category_description']	= $this->input->post('category_description',true);
-		$data['publication_status']		= $this->input->post('publication_status',true);
+		
+		$data['publication_status']			= $this->input->post('publication_status',true);
+
+		// var_dump($data);
+		// die();
 		$this->db->insert('tbl_category',$data);
 	}
 
@@ -87,15 +99,27 @@ class Admin_model extends CI_Model {
 		return $result;
 	}
 
-	public function update_category_info()
+	public function update_category_info($category_image)
 	{
-		$data = array();
-		$category_id		= $this->input->post('category_id',true);
+		// $data = array();
+		// $category_id		= $this->input->post('category_id',true);
+		// $data['category_name']			= $this->input->post('category_name',true);
+		// $data['category_description']	= $this->input->post('category_description',true);
+		// $data['publication_status']		= $this->input->post('publication_status',true);
+		// $this->db->where('category_id',$category_id);
+		// $this->db->update('tbl_category',$data);
+
+		$data= array();
 		$data['category_name']			= $this->input->post('category_name',true);
+		$category_id = $this->input->post('category_id', True);
 		$data['category_description']	= $this->input->post('category_description',true);
-		$data['publication_status']		= $this->input->post('publication_status',true);
+		$data['publication_status'] = $this->input->post('publication_status', True);
+		$data['category_image'] = $category_image;
+	
+
 		$this->db->where('category_id',$category_id);
 		$this->db->update('tbl_category',$data);
+	
 	}
 
 	public function delete_category($category_id)

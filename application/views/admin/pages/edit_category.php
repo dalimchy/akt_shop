@@ -23,12 +23,25 @@
                                     <div class="card-block">
                                         <!-- jQuery Validation (.js-validation-bootstrap class is initialized in js/pages/base_forms_validation.js) -->
                                         <!-- For more examples please check https://github.com/jzaefferer/jquery-validation -->
-                                        <form class="js-validation-bootstrap form-horizontal" action="<?php echo base_url();?>update-category" method="post" name="edit_category">
+                                        <form class="js-validation-bootstrap form-horizontal" action="<?php echo base_url();?>update-category" method="post" enctype="multipart/form-data" name="edit_category">
+
+
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label" for="val-username">Category Name <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
                                                     <input class="form-control" type="text" id="val-username"  placeholder="Enter category name" name="category_name" value="<?php echo $category_info->category_name; ?>" required />
                                                         <input type="hidden" class="span6 typeahead" id="typeahead" value="<?php echo $category_info->category_id; ?>"  name="category_id" >
+                                                </div>
+                                            </div>
+
+                                             <div class="form-group">
+                                                <label class="col-md-3 control-label" for="example-file-input">Category Image </label>
+                                                <div class="col-md-8">
+                                                    <input class="form-control" type="file" id="example-file-input" name="category_image" required="1">
+
+                                                     <input  name="category_old_image"  value="<?php echo $category_info->category_image; ?>" type="hidden">
+
+                                                    <img src="<?php echo base_url().$category_info->category_image; ?>" width="100" height="100" alt="">
                                                 </div>
                                             </div>
 

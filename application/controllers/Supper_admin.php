@@ -52,11 +52,32 @@ class Supper_admin extends CI_Controller {
 	}
 
 
+	private function save_category_img(){
+		$config['upload_path'] = './upload/';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg';
+		$config['max_size'] = 1000;
+		$config['max_width'] = 1024;
+		$config['max_height'] = 768;
+
+		$this->load->library('upload', $config);
+
+		if ($this->upload->do_upload('category_image')) {
+			$data = $this->upload->data();
+			$image_path = "upload/$data[file_name]";
+			return $image_path;
+		}else{
+			$error = $this->upload->display_errors();
+			print_r($error);
+		}
+	}
+
+
 	public function save_category()
 	{
 
-
-		$this->admin_model->save_category();
+		$category_image = $this->save_category_img();
+  		// $this->admin_model->update_product($product_image);
+		$this->admin_model->save_category($category_image);
 		$sdata = array();
 		$sdata['message'] = "Save Category Information Sucessfully!";
 		$this->session->set_userdata($sdata);
@@ -104,6 +125,28 @@ class Supper_admin extends CI_Controller {
 
 	public function update_category()
 	{
+
+		if ($_FILES['category_image']['name'] == '' || $_FILES['category_image']['size'] == '0') {
+
+  			$category_image = $this->input->post('category_old_image', True);
+  			$this->admin_model->update_category_info($category_image);
+  			$sdata = array();
+  			$sdata['message'] = "Update category Information Sucessfully";
+  			$this->session->set_userdata($sdata);
+  			$category_id = $this->input->post('category_id', True);
+  			redirect('manage-categories');
+  		}else
+  		{
+
+  			$category_image = $this->save_category_img();
+  			$this->admin_model->update_category_info($category_image);
+  			unlink( $this->input->post('category_old_image', True));
+  			$sdata = array();
+  			$sdata['message'] = "Update category Information Sucessfully";
+  			$this->session->set_userdata($sdata);
+  			$category_id = $this->input->post('category_id', True);
+  			redirect('manage-categories');
+  		}
 	
 
 		$this->admin_model->update_category_info();
