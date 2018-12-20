@@ -18,12 +18,12 @@ class Admin_model extends CI_Model {
 
 	public function register_new_admin()
 	{
-		$data['username'] = $this->input->post('username', True);
-		$data['email'] = $this->input->post('email', True);
-		$data['password'] = md5($this->input->post('password', True));	
-		$data['image'] = 'user.jpg';
-		$data['phone_number'] = '';
-		$data['role'] = 1;
+		$data['username'] 		= $this->input->post('username', True);
+		$data['email'] 			= $this->input->post('email', True);
+		$data['password'] 		= md5($this->input->post('password', True));	
+		$data['image'] 			= 'user.jpg';
+		$data['phone_number'] 	= '';
+		$data['role']			= 1;
 
 		$this->db->insert('akt_users', $data);
 	}
@@ -37,7 +37,7 @@ class Admin_model extends CI_Model {
 		$data['category_name']			= $this->input->post('category_name',true);
 		$data['category_image']			= $category_image;
 		$data['category_description']	= $this->input->post('category_description',true);	
-		$data['publication_status']			= $this->input->post('publication_status',true);
+		$data['publication_status']		= $this->input->post('publication_status',true);
 		$this->db->insert('tbl_category',$data);
 	}
 
@@ -46,8 +46,8 @@ class Admin_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('tbl_category');
 		$this->db->order_by("category_id", "desc");
-		$query_result = $this->db->get();
-		$category_info = $query_result->result();
+		$query_result 	= $this->db->get();
+		$category_info 	= $query_result->result();
 		return $category_info;
 	}
 
@@ -73,8 +73,8 @@ class Admin_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('tbl_category');
 		$this->db->where('category_id',$category_id);
-		$query_result = $this->db->get();
-		$result = $query_result->row();
+		$query_result 	= $this->db->get();
+		$result 		= $query_result->row();
 		return $result;
 	}
 
@@ -83,8 +83,8 @@ class Admin_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('tbl_category');
 		$this->db->where('publication_status',1);
-		$query_result = $this->db->get();
-		$result = $query_result->result();
+		$query_result	= $this->db->get();
+		$result 		= $query_result->result();
 		return $result;
 	}
 
@@ -93,10 +93,10 @@ class Admin_model extends CI_Model {
 
 		$data= array();
 		$data['category_name']			= $this->input->post('category_name',true);
-		$category_id = $this->input->post('category_id', True);
+		$category_id 					= $this->input->post('category_id', True);
 		$data['category_description']	= $this->input->post('category_description',true);
-		$data['publication_status'] = $this->input->post('publication_status', True);
-		$data['category_image'] = $category_image;
+		$data['publication_status'] 	= $this->input->post('publication_status', True);
+		$data['category_image'] 		= $category_image;
 	
 
 		$this->db->where('category_id',$category_id);
@@ -123,7 +123,7 @@ class Admin_model extends CI_Model {
 		$data['manufacture_name']			= $this->input->post('manufacture_name',true);
 		$data['manufacture_image']			= $manufacture_image;
 		$data['manufacture_description']	= $this->input->post('manufacture_description',true);
-		$data['publication_status']		= $this->input->post('publication_status',true);
+		$data['publication_status']			= $this->input->post('publication_status',true);
 		$this->db->insert('tbl_manufacture',$data);
 
 	}
@@ -133,8 +133,8 @@ class Admin_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('tbl_manufacture');
 		$this->db->order_by("manufacture_id", "desc");
-		$query_result = $this->db->get();
-		$manufacture_info = $query_result->result();
+		$query_result 		= $this->db->get();
+		$manufacture_info 	= $query_result->result();
 		return $manufacture_info;
 	}
 
@@ -144,8 +144,8 @@ class Admin_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('tbl_manufacture');
 		$this->db->where('publication_status',1);
-		$query_result = $this->db->get();
-		$result = $query_result->result();
+		$query_result 	= $this->db->get();
+		$result 		= $query_result->result();
 		return $result;
 	}
 
@@ -173,41 +173,21 @@ class Admin_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('tbl_manufacture');
 		$this->db->where('manufacture_id',$manufacture_id);
-		$query_result = $this->db->get();
-		$result = $query_result->row();
+		$query_result 	= $this->db->get();
+		$result 		= $query_result->row();
 		return $result;
 	}
 
 	public function update_manufacture_info($manufacture_image)
 	{
-		// $data= array();
-		// $data['category_name']			= $this->input->post('category_name',true);
-		// $category_id = $this->input->post('category_id', True);
-		// $data['category_description']	= $this->input->post('category_description',true);
-		// $data['publication_status'] = $this->input->post('publication_status', True);
-		// $data['category_image'] = $category_image;
-	
-
-		// $this->db->where('category_id',$category_id);
-		// $this->db->update('tbl_category',$data);
-
-
-
-
-
-
-
-
-
+		
 		$data = array();
-		$manufacture_id		= $this->input->post('manufacture_id',true);
-		$data['category_id']			= $this->input->post('category_id',true);
+		$manufacture_id						= $this->input->post('manufacture_id',true);
+		$data['category_id']				= $this->input->post('category_id',true);
 		$data['manufacture_name']			= $this->input->post('manufacture_name',true);
-		$data['manufacture_image'] = $manufacture_image;
+		$data['manufacture_image'] 			= $manufacture_image;
 		$data['manufacture_description']	= $this->input->post('manufacture_description',true);
-		$data['publication_status']		= $this->input->post('publication_status',true);
-		// var_dump($data);
-		// die();
+		$data['publication_status']			= $this->input->post('publication_status',true);
 		$this->db->where('manufacture_id',$manufacture_id);
 		$this->db->update('tbl_manufacture',$data);
 	}
@@ -257,11 +237,6 @@ class Admin_model extends CI_Model {
 
                         // $this->load->view('upload_success', $data);
                 }
-      
-
-
-
-
 
 		$is_featured			= $this->input->post('is_featured',true);
 
@@ -310,35 +285,30 @@ class Admin_model extends CI_Model {
 	}
 
 	public function product_info_by_id($product_id){
-		// $result =  $this->db->select('*')
-		// 	 			->from('tbl_product')
-		// 				->where('product_id', $product_id)
-		// 				->get()->row();
-		// 	  return $result;
 		$this->db->select('*');
 		$this->db->from('tbl_product');
 		$this->db->where('product_id',$product_id);
-		$query_result = $this->db->get();
-		$result = $query_result->row();
+		$query_result 	= $this->db->get();
+		$result 		= $query_result->row();
 		return $result;
 	}
 
 
 	public function update_product($product_image)
 	{
-		$data= array();
-		$data['product_name'] = $this->input->post('product_name', True);
-		$product_id = $this->input->post('product_id', True);
-		$data['category_id'] = $this->input->post('category_id', True);
-		$data['manufacture_id'] = $this->input->post('manufacture_id', True);
-		$data['product_short_description'] = $this->input->post('product_short_description', True);
-		$data['product_long_description'] = $this->input->post('product_long_description', True);
-		$data['product_price'] = $this->input->post('product_price', True);
-		$data['product_new_price'] = $this->input->post('product_new_price', True);
-		$data['product_quantity'] = $this->input->post('product_quantity', True);
-		$data['publication_status'] = $this->input->post('publication_status', True);
-		$data['product_image'] = $product_image;
-		$is_featured = $this->input->post('is_featured', TRUE);
+		$data = array();
+		$data['product_name']		 		= $this->input->post('product_name', True);
+		$product_id 						= $this->input->post('product_id', True);
+		$data['category_id'] 				= $this->input->post('category_id', True);
+		$data['manufacture_id']				= $this->input->post('manufacture_id', True);
+		$data['product_short_description'] 	= $this->input->post('product_short_description', True);
+		$data['product_long_description'] 	= $this->input->post('product_long_description', True);
+		$data['product_price'] 				= $this->input->post('product_price', True);
+		$data['product_new_price'] 			= $this->input->post('product_new_price', True);
+		$data['product_quantity'] 			= $this->input->post('product_quantity', True);
+		$data['publication_status'] 		= $this->input->post('publication_status', True);
+		$data['product_image'] 				= $product_image;
+		$is_featured 						= $this->input->post('is_featured', TRUE);
 		if ($is_featured == NULL) {
 			$data['is_featured'] = 0;
 		}
