@@ -16,8 +16,8 @@
         <meta name="robots" content="noindex, nofollow" />
 
         <!-- Favicons -->
-        <link rel="apple-touch-icon" href="<?php echo base_url()?>assets/admin/img/favicons/apple-touch-icon.png" />
-        <link rel="icon" href="<?php echo base_url()?>assets/admin/img/favicons/favicon.ico" />
+        <!-- <link rel="apple-touch-icon" href="<?php echo base_url()?>assets/admin/img/favicons/apple-touch-icon.png" /> -->
+        <link rel="icon" href="<?php echo base_url()?>assets/admin/img/favicons/akt_icon.ico" />
 
         <!-- Google fonts -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,900%7CRoboto+Slab:300,400%7CRoboto+Mono:400" />
