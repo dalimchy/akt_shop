@@ -5,7 +5,7 @@
                 <a class="card" href="javascript:void(0)">
                     <div class="card-block clearfix">
                         <div class="pull-right">
-                            <p class="h6 text-muted m-t-0 m-b-xs">Revenue</p>
+                            <p class="h6 text-muted m-t-0 m-b-xs">All Product</p>
                             <p class="h3 text-blue m-t-sm m-b-0">$120.9k</p>
                         </div>
                         <div class="pull-left m-r">
@@ -20,7 +20,7 @@
                 <a class="card bg-green bg-inverse" href="javascript:void(0)">
                     <div class="card-block clearfix">
                         <div class="pull-right">
-                            <p class="h6 text-muted m-t-0 m-b-xs">Total visitors</p>
+                            <p class="h6 text-muted m-t-0 m-b-xs">All Category</p>
                             <p class="h3 m-t-sm m-b-0">920 000</p>
                         </div>
                         <div class="pull-left m-r">
@@ -35,7 +35,7 @@
                 <a class="card bg-blue bg-inverse" href="javascript:void(0)">
                     <div class="card-block clearfix">
                         <div class="pull-right">
-                            <p class="h6 text-muted m-t-0 m-b-xs">Revenue</p>
+                            <p class="h6 text-muted m-t-0 m-b-xs">All Manufacture</p>
                             <p class="h3 m-t-sm m-b-0">$340.5k</p>
                         </div>
                         <div class="pull-left m-r">

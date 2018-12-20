@@ -223,6 +223,12 @@ class Admin_model extends CI_Model {
 		$this->db->delete('tbl_manufacture');
 	}
 
+	public function delete_manufacturebyCate($category_id)
+	{
+		$this->db->where('category_id',$category_id);
+		$this->db->delete('tbl_manufacture');
+	}
+
 	public function save_product_info()
 	{
 		$data=array();
@@ -306,6 +312,17 @@ class Admin_model extends CI_Model {
 	public function delete_product($product_id)
 	{
 		$this->db->where('product_id',$product_id);
+		$this->db->delete('tbl_product');
+	}
+
+	public function delete_productbyCate($category_id)
+	{
+		$this->db->where('category_id',$category_id);
+		$this->db->delete('tbl_product');
+	}
+	public function delete_productbyManu($manufacture_id)
+	{
+		$this->db->where('manufacture_id',$manufacture_id);
 		$this->db->delete('tbl_product');
 	}
 

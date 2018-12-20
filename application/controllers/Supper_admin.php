@@ -154,6 +154,8 @@ class Supper_admin extends CI_Controller {
 	public function delete_category($category_id)
 	{
 		$this->admin_model->delete_category($category_id);
+		$this->admin_model->delete_manufacturebyCate($category_id);
+		$this->admin_model->delete_productbyCate($category_id);
 		redirect('manage-categories');
 	}
 
@@ -272,6 +274,7 @@ class Supper_admin extends CI_Controller {
 	public function delete_manufacture($manufacture_id)
 	{
 		$this->admin_model->delete_manufacture($manufacture_id);
+		$this->admin_model->delete_productbyManu($manufacture_id);
 		redirect('manage-manufacture');
 	}
 
