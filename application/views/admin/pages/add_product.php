@@ -54,6 +54,19 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="">Product For <span class="text-orange">*</span></label>
+                        <div class="col-md-8">
+                            <select class="form-control" id="" name="product_for" required="1">
+                                <option>Please select</option>
+                                <option value="1">Man</option>
+                                <option value="2">Woman</option>
+                                <option value="3">Boys</option>
+                                <option value="4">Girls</option>
+                                <option value="5">Kids</option>
+                            </select>
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="">Product Short Description  <span class="text-orange">*</span></label>

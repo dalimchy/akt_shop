@@ -211,6 +211,7 @@ class Admin_model extends CI_Model {
 		$data['product_name']				= $this->input->post('product_name',true);
 		$data['category_id']				= $this->input->post('category_id',true);
 		$data['manufacture_id']				= $this->input->post('manufacture_id',true);
+		$data['product_for']				= $this->input->post('product_for',true);
 		$data['product_short_description']	= $this->input->post('product_short_description',true);
 		$data['product_long_description']	= $this->input->post('product_long_description',true);
 		$data['product_price']				= $this->input->post('product_price',true);
