@@ -6,9 +6,9 @@
           <nav class="yamm megamenu-horizontal">
             <ul class="nav">
             <?php 
-              foreach($all_category_info as $v_cate){ ?>
+              foreach($all_category_info as $v_cate){ if($v_cate->publication_status == 1){?>
                 <li class="dropdown menu-item"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-shopping-bag" aria-hidden="true"></i><?php echo $v_cate->category_name; ?></a></li>
-            <?php } ?>
+            <?php } } ?>
               <!-- /.menu-item -->
               
             </ul>

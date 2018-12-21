@@ -104,9 +104,9 @@
               <li><a data-transition-type="backSlide" href="#laptop" data-toggle="tab">Electronics</a></li>
               <li><a data-transition-type="backSlide" href="#apple" data-toggle="tab">Shoes</a></li> -->
               <?php 
-              foreach($all_category_info as $v_cate){ ?>
+              foreach($all_category_info as $v_cate){ if($v_cate->publication_status == 1){?>
                   <li><a data-transition-type="backSlide" href="#newCarousel<?php echo $v_cate->category_id; ?>" data-toggle="tab"><?php echo $v_cate->category_name; ?></a></li>
-              <?php } ?>
+              <?php } }?>
             </ul>
             <!-- /.nav-tabs --> 
           </div>
@@ -115,7 +115,7 @@
               <div class="product-slider">
                 <div class="owl-carousel home-owl-carousel custom-carousel owl-theme" data-item="4">
 
-                <?php foreach($all_product_info as $v_product){?>
+                <?php foreach($all_product_info as $v_product){ if($v_product->publication_status == 1){ ?>
                   <div class="item item-carousel">
                     <div class="products">
                       <div class="product">
@@ -161,7 +161,7 @@
                     </div>
                     <!-- /.products --> 
                   </div>
-                <?php } ?>
+                <?php } }?>
                   <!-- /.item -->
                   
                 </div>
@@ -172,12 +172,12 @@
             <!-- /.tab-pane -->
 
             <?php 
-              foreach($all_category_info as $v_cate){ ?>
+              foreach($all_category_info as $v_cate){ if($v_cate->publication_status == 1){?>
                   <div class="tab-pane" id="newCarousel<?php echo $v_cate->category_id; ?>">
                     <div class="product-slider">
                       <div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
 
-                      <?php foreach($all_product_info as $v_product){ if($v_product->category_id == $v_cate->category_id){?>
+                      <?php foreach($all_product_info as $v_product){ if($v_product->category_id == $v_cate->category_id && $v_product->publication_status == 1 ){?>
                         
                         <div class="item item-carousel">
                           <div class="products">
@@ -233,7 +233,7 @@
                     </div>
                     <!-- /.product-slider --> 
                   </div>
-              <?php } ?>
+              <?php } } ?>
             <!-- /.tab-pane --> 
             
           </div>
@@ -268,7 +268,7 @@
         <section class="section featured-product wow fadeInUp">
           <h3 class="section-title">Featured products</h3>
           <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
-          <?php foreach($all_product_info as $v_product){ if($v_product->is_featured == 1){?>
+          <?php foreach($all_product_info as $v_product){ if($v_product->is_featured == 1 && $v_product->publication_status == 1 ){?>
             <div class="item item-carousel">
               <div class="products">
                 <div class="product">
