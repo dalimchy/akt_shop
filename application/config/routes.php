@@ -99,5 +99,6 @@ $route['update-product'] = 'supper_admin/update_product';
 
 // $route['admin'] = 'admin/index';
 $route['default_controller'] = 'frontend';
+$route['product-view'] = 'frontend/product_details';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

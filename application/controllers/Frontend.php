@@ -19,4 +19,14 @@ class Frontend extends CI_Controller {
         $data['frondend_main_content'] = $this->load->view('frontend/pages/home',$data,true);
 		$this->load->view('frontend/index', $data);
 	}
+
+	public function product_details()
+	{
+		$data = array();
+        $data['title'] = "product view";
+        $data['all_category_info'] = $this->admin_model->all_category_info();
+        $data['all_product_info'] = $this->admin_model->all_product_info();
+        $data['frondend_main_content'] = $this->load->view('frontend/pages/product_details',$data,true);
+		$this->load->view('frontend/index', $data);
+	}
 }

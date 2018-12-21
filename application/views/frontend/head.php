@@ -156,7 +156,75 @@
                 <li class="active dropdown yamm-fw"> <a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a> </li>
                 <?php 
                   foreach($all_category_info as $v_cate){ ?>
-                    <li class="dropdown yamm-fw"> <a href="#" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown"><?php echo $v_cate->category_name; ?></a> </li>
+                    <li class="dropdown yamm-fw"> <a href="#" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown"><?php echo $v_cate->category_name; ?></a> 
+                        <ul class="dropdown-menu container">
+                        <li>
+                          <div class="yamm-content ">
+                            <div class="row">
+                              <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
+                                <h2 class="title">Men</h2>
+                                <ul class="links">
+                                  <li><a href="#">Dresses</a></li>
+                                  <li><a href="#">Shoes </a></li>
+                                  <li><a href="#">Jackets</a></li>
+                                  <li><a href="#">Sunglasses</a></li>
+                                  <li><a href="#">Sport Wear</a></li>
+                                  <li><a href="#">Blazers</a></li>
+                                  <li><a href="#">Shirts</a></li>
+                                </ul>
+                              </div>
+                              <!-- /.col -->
+                              
+                              <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
+                                <h2 class="title">Women</h2>
+                                <ul class="links">
+                                  <li><a href="#">Handbags</a></li>
+                                  <li><a href="#">Jwellery</a></li>
+                                  <li><a href="#">Swimwear </a></li>
+                                  <li><a href="#">Tops</a></li>
+                                  <li><a href="#">Flats</a></li>
+                                  <li><a href="#">Shoes</a></li>
+                                  <li><a href="#">Winter Wear</a></li>
+                                </ul>
+                              </div>
+                              <!-- /.col -->
+                              
+                              <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
+                                <h2 class="title">Boys</h2>
+                                <ul class="links">
+                                  <li><a href="#">Toys & Games</a></li>
+                                  <li><a href="#">Jeans</a></li>
+                                  <li><a href="#">Shirts</a></li>
+                                  <li><a href="#">Shoes</a></li>
+                                  <li><a href="#">School Bags</a></li>
+                                  <li><a href="#">Lunch Box</a></li>
+                                  <li><a href="#">Footwear</a></li>
+                                </ul>
+                              </div>
+                              <!-- /.col -->
+                              
+                              <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
+                                <h2 class="title">Girls</h2>
+                                <ul class="links">
+                                  <li><a href="#">Sandals </a></li>
+                                  <li><a href="#">Shorts</a></li>
+                                  <li><a href="#">Dresses</a></li>
+                                  <li><a href="#">Jwellery</a></li>
+                                  <li><a href="#">Bags</a></li>
+                                  <li><a href="#">Night Dress</a></li>
+                                  <li><a href="#">Swim Wear</a></li>
+                                </ul>
+                              </div>
+                              <!-- /.col -->
+                              
+                              <div class="col-xs-12 col-sm-6 col-md-4 col-menu banner-image"> <img class="img-responsive" src="<?php echo base_url()?>assets/frontend/images/banners/top-menu-banner.jpg" alt=""> </div>
+                              <!-- /.yamm-content --> 
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                    
                 <?php } ?>
               </ul>
               <!-- /.navbar-nav -->
