@@ -6,10 +6,6 @@ class Frontend extends CI_Controller {
     public function __construct()
 	{
 		parent::__construct();
-		$akt_user_id = $this->session->userdata('id');
-		if ($akt_user_id == NULL ) {
-			redirect('login');
-		}
 		$this->load->model('admin_model');
     }
 
