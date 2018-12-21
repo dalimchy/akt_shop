@@ -338,6 +338,15 @@ class Admin_model extends CI_Model {
 		$this->db->update('tbl_product', $data);
 	}
 
+	public function product_details($product_id){
+		$this->db->select('*');
+		$this->db->from('tbl_product');
+		$this->db->where('product_id',$product_id);
+		$query_result 	= $this->db->get();
+		$result 		= $query_result->row();
+		return $result;
+	}
+
 		
 
 }
