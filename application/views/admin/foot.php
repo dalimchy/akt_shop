@@ -29,13 +29,13 @@
                         <div class="card-block">
                             <div class="row text-center">
                                 <div class="col-xs-6">
-                                    <a class="card card-block m-b-0 bg-app-secondary bg-inverse" href="index.html">
+                                    <a class="card card-block m-b-0 bg-app-secondary bg-inverse" href="/akt_shop/dashboard">
                                         <i class="ion-speedometer fa-4x"></i>
                                         <p>Admin</p>
                                     </a>
                                 </div>
                                 <div class="col-xs-6">
-                                    <a class="card card-block m-b-0 bg-app-tertiary bg-inverse" href="frontend_home.html">
+                                    <a class="card card-block m-b-0 bg-app-tertiary bg-inverse" href="/akt_shop">
                                         <i class="ion-laptop fa-4x"></i>
                                         <p>Frontend</p>
                                     </a>

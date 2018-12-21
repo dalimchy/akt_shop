@@ -56,16 +56,16 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="val-suggestions">Product Short Description  <span class="text-orange">*</span></label>
+                        <label class="col-md-3 control-label" for="">Product Short Description  <span class="text-orange">*</span></label>
                         <div class="col-md-8">
-                            <textarea class="form-control" id="val-suggestions"  rows="8" placeholder="Enter category description..." name="product_short_description" required="1"></textarea>
+                            <textarea class="form-control" id=""  rows="4" placeholder="Enter category description..." name="product_short_description" required="1"></textarea>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="val-suggestions">Product Long Description  <span class="text-orange">*</span></label>
+                        <label class="col-md-3 control-label" for="">Product Long Description  <span class="text-orange">*</span></label>
                         <div class="col-md-8">
-                            <textarea class="form-control" id="val-suggestions"  rows="8" placeholder="Enter category description..." name="product_long_description" required="1"></textarea>
+                            <textarea class="form-control" id=""  rows="7" placeholder="Enter category description..." name="product_long_description" required="1"></textarea>
                         </div>
                     </div>
 
