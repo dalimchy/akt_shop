@@ -18,6 +18,8 @@ class Frontend extends CI_Controller {
 	{
 		$data = array();
         $data['title'] = "index";
+        $data['all_category_info'] = $this->admin_model->all_category_info();
+        $data['frondend_main_content'] = $this->load->view('frontend/pages/home',$data,true);
 		$this->load->view('frontend/index', $data);
 	}
 }
