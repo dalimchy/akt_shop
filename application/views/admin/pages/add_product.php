@@ -93,42 +93,56 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="">Product Images </label>
                         <div class="col-md-8">
-                            <div class="row mb-3">
-                                <div class="">
-                                    <label class="col-md-12 btn btn-success" for="featureImg">
-                                    Feature Image
-                                    <i class="fa fa-cloud-upload"></i>
-                                    </label>
-                                    <input style="display:none" class="form-control" type="file" id="featureImg" name="product_image" required="1">
+                            <div class="row" style="margin-bottom:8px">
+                                <div class="col-md-12">
+                                    <div class="">
+                                        <label class="col-md-12 btn btn-info" for="featureImg">
+                                        Feature Image
+                                        <i class="fa fa-cloud-upload"></i>
+                                        </label>
+                                        <input style="display:none" class="form-control" type="file" id="featureImg" name="product_image" required="1">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="mt-3">
-                                <label class="col-md-6 btn btn-success" for="Image2">
-                                Image 2
-                                <i class="fa fa-cloud-upload"></i>
-                                </label>
-                                <input style="display:none" class="form-control" type="file" id="Image2" name="product_image" required="1">
+                            <div class="row" style="margin-bottom:8px">
+                                <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="col-md-12 btn btn-info" for="Image2">
+                                        Image 2
+                                        <i class="fa fa-cloud-upload"></i>
+                                        </label>
+                                        <input style="display:none" class="form-control" type="file" id="Image2" name="product_image" required="1">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="col-md-12 btn btn-info" for="Image3">
+                                        Image 3
+                                        <i class="fa fa-cloud-upload"></i>
+                                        </label>
+                                        <input style="display:none" class="form-control" type="file" id="Image3" name="product_image" required="1">
+                                    </div>
+                                </div>
+                                </div>
                             </div>
-                            <div class="mt-3">
-                                <label class="col-md-6 btn btn-success" for="Image3">
-                                Image 3
-                                <i class="fa fa-cloud-upload"></i>
-                                </label>
-                                <input style="display:none" class="form-control" type="file" id="Image3" name="product_image" required="1">
-                            </div>
-                            <div class="mt-3">
-                                <label class="col-md-6 btn btn-success" for="Image4">
-                                Image 4
-                                <i class="fa fa-cloud-upload"></i>
-                                </label>
-                                <input style="display:none" class="form-control" type="file" id="Image4" name="product_image" required="1">
-                            </div>
-                            <div class="mt-3">
-                                <label class="col-md-6 btn btn-success" for="Image5">
-                                Image 5
-                                <i class="fa fa-cloud-upload"></i>
-                                </label>
-                                <input style="display:none" class="form-control" type="file" id="Image5" name="product_image" required="1">
+                            <div class="row" style="">
+                                <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="col-md-12 btn btn-info" for="Image4">
+                                        Image 4
+                                        <i class="fa fa-cloud-upload"></i>
+                                        </label>
+                                        <input style="display:none" class="form-control" type="file" id="Image4" name="product_image" required="1">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="col-md-12 btn btn-info" for="Image5">
+                                        Image 5
+                                        <i class="fa fa-cloud-upload"></i>
+                                        </label>
+                                        <input style="display:none" class="form-control" type="file" id="Image5" name="product_image" required="1">
+                                    </div>
+                                </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -146,15 +160,18 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-3 control-label css-input css-checkbox css-checkbox-lg css-checkbox-primary">Is featured  </label>
-                        <div class="col-md-8">
-                            <input class="form-control" type="checkbox"   name="is_featured"   />
+                        <div class="col-md-offset-3 col-xs-6">
+                            <p>
+                                <label class="css-input switch switch-info">
+                                    <input type="checkbox" checked="" name="is_featured"><span></span> Is featured
+                                </label>
+                            </p>
                         </div>
                     </div>
 
                     <div class="form-group m-b-0">
-                        <div class="col-md-8 col-md-offset-4">
-                            <button class="btn btn-app" type="submit">Submit</button>
+                        <div class="col-md-8 col-md-offset-3">
+                            <button class="col-md-12 btn btn-success" type="submit">Add Product</button>
                         </div>
                     </div>
                 </form>
