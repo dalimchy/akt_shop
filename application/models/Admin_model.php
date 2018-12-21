@@ -106,32 +106,8 @@ class Admin_model extends CI_Model {
 
 	public function delete_category($category_id)
 	{
-
-
-
-
-
-
-
-		// $this->db->from("tbl_product");
-		// $this->db->get_where('tbl_product', array('category_id' => $category_id));
-
-		//  $this->db->select('product_name');
-		//  $this->db->from('tbl_product');
-		//  $this->db->join('tbl_category','tbl_category.category_id=tbl_product.category_id');
-		//  // $this->db->join('tbl_manufacture','tbl_manufacture.category_id=tbl_product.category_id');
-		//  // $this->db->join('tbl_customer','tbl_customer.customer_id=tbl_order.customer_id')
-		//  // $this->db->join('tbl_shipping','tbl_shipping.shipping_id=tbl_order.shipping_id')
-		//  // $this->db->join('tbl_order_details','tbl_order_details.order_id=tbl_order.order_id')
-		//  // $this->db->where('category_id',$category_id);
-		//  $query_result = $this->db->get();
-		//  $data =  $query_result->result();
-		 // var_dump( $data);
-		 // die();
-
 		$this->db->where('category_id',$category_id);
 		$this->db->delete('tbl_category');
-
 
 	}
 
