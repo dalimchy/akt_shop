@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 21, 2018 at 03:24 PM
+-- Generation Time: Dec 21, 2018 at 04:19 PM
 -- Server version: 10.1.37-MariaDB
--- PHP Version: 7.2.12
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -116,6 +116,7 @@ CREATE TABLE `tbl_product` (
   `product_id` int(11) NOT NULL,
   `product_name` varchar(100) NOT NULL,
   `category_id` int(5) NOT NULL,
+  `product_for` int(10) NOT NULL DEFAULT '0',
   `manufacture_id` int(5) NOT NULL,
   `product_short_description` text NOT NULL,
   `product_long_description` text NOT NULL,
@@ -127,6 +128,7 @@ CREATE TABLE `tbl_product` (
   `product_img3` varchar(255) DEFAULT NULL,
   `product_img4` varchar(255) DEFAULT NULL,
   `product_img5` varchar(255) DEFAULT NULL,
+  `product_tags` varchar(255) DEFAULT NULL,
   `is_featured` tinyint(1) NOT NULL,
   `publication_status` tinyint(1) NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
@@ -137,13 +139,13 @@ CREATE TABLE `tbl_product` (
 -- Dumping data for table `tbl_product`
 --
 
-INSERT INTO `tbl_product` (`product_id`, `product_name`, `category_id`, `manufacture_id`, `product_short_description`, `product_long_description`, `product_price`, `product_new_price`, `product_quantity`, `product_image`, `product_img2`, `product_img3`, `product_img4`, `product_img5`, `is_featured`, `publication_status`, `created_at`, `updated_at`) VALUES
-(1, 'Phillies Casual Long Sleeve Hoodie - Black', 5, 1, 'Phillies Casual Long Sleeve Hoodie - Black', 'Phillies Casual Long Sleeve Hoodie - Black', 600.00, 550.00, 10, 'upload/202-500x500.png', NULL, NULL, NULL, NULL, 1, 1, '2018-12-21 13:41:55', NULL),
-(3, 'Black Phillies Hoodie Jacket For Men', 5, 3, 'Black Phillies Hoodie Jacket For Men', 'Black Phillies Hoodie Jacket For Men', 1500.00, 1500.00, 4, 'upload/bl1.jpg', NULL, NULL, NULL, NULL, 0, 1, '2018-12-21 13:41:55', NULL),
-(4, 'test product2', 5, 3, 'asdf', 'asd', 230.00, 100.00, 6, 'upload/PI83.jpg', NULL, NULL, NULL, NULL, 1, 1, '2018-12-21 13:41:55', NULL),
-(5, 'test product3', 6, 2, 'asd', 'asdf', 500.00, 199.00, 5, 'upload/pic12.jpg', NULL, NULL, NULL, NULL, 1, 1, '2018-12-21 13:41:55', NULL),
-(6, 'test product4', 6, 1, 'asd', 'asdf', 900.00, 100.00, 5, 'upload/pi1321.jpg', NULL, NULL, NULL, NULL, 1, 1, '2018-12-21 13:41:55', NULL),
-(7, 'test product5', 6, 3, 'asd', 'asdf', 900.00, 300.00, 0, 'upload/pic13.jpg', NULL, NULL, NULL, NULL, 1, 1, '2018-12-21 13:41:55', NULL);
+INSERT INTO `tbl_product` (`product_id`, `product_name`, `category_id`, `product_for`, `manufacture_id`, `product_short_description`, `product_long_description`, `product_price`, `product_new_price`, `product_quantity`, `product_image`, `product_img2`, `product_img3`, `product_img4`, `product_img5`, `product_tags`, `is_featured`, `publication_status`, `created_at`, `updated_at`) VALUES
+(1, 'Phillies Casual Long Sleeve Hoodie - Black', 5, 0, 1, 'Phillies Casual Long Sleeve Hoodie - Black', 'Phillies Casual Long Sleeve Hoodie - Black', 600.00, 550.00, 10, 'upload/202-500x500.png', NULL, NULL, NULL, NULL, NULL, 1, 1, '2018-12-21 13:41:55', NULL),
+(3, 'Black Phillies Hoodie Jacket For Men', 5, 0, 3, 'Black Phillies Hoodie Jacket For Men', 'Black Phillies Hoodie Jacket For Men', 1500.00, 1500.00, 4, 'upload/bl1.jpg', NULL, NULL, NULL, NULL, NULL, 0, 1, '2018-12-21 13:41:55', NULL),
+(4, 'test product2', 5, 0, 3, 'asdf', 'asd', 230.00, 100.00, 6, 'upload/PI83.jpg', NULL, NULL, NULL, NULL, NULL, 1, 1, '2018-12-21 13:41:55', NULL),
+(5, 'test product3', 6, 0, 2, 'asd', 'asdf', 500.00, 199.00, 5, 'upload/pic12.jpg', NULL, NULL, NULL, NULL, NULL, 1, 1, '2018-12-21 13:41:55', NULL),
+(6, 'test product4', 6, 0, 1, 'asd', 'asdf', 900.00, 100.00, 5, 'upload/pi1321.jpg', NULL, NULL, NULL, NULL, NULL, 1, 1, '2018-12-21 13:41:55', NULL),
+(7, 'test product5', 6, 0, 3, 'asd', 'asdf', 900.00, 300.00, 0, 'upload/pic13.jpg', NULL, NULL, NULL, NULL, NULL, 1, 1, '2018-12-21 13:41:55', NULL);
 
 --
 -- Indexes for dumped tables

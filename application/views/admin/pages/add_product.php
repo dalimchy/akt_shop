@@ -91,9 +91,45 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="example-file-input">Product Image </label>
+                        <label class="col-md-3 control-label" for="">Product Images </label>
                         <div class="col-md-8">
-                            <input class="form-control" type="file" id="example-file-input" name="product_image" multiple="multiple" required="1">
+                            <div class="row mb-3">
+                                <div class="">
+                                    <label class="col-md-12 btn btn-success" for="featureImg">
+                                    Feature Image
+                                    <i class="fa fa-cloud-upload"></i>
+                                    </label>
+                                    <input style="display:none" class="form-control" type="file" id="featureImg" name="product_image" required="1">
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <label class="col-md-6 btn btn-success" for="Image2">
+                                Image 2
+                                <i class="fa fa-cloud-upload"></i>
+                                </label>
+                                <input style="display:none" class="form-control" type="file" id="Image2" name="product_image" required="1">
+                            </div>
+                            <div class="mt-3">
+                                <label class="col-md-6 btn btn-success" for="Image3">
+                                Image 3
+                                <i class="fa fa-cloud-upload"></i>
+                                </label>
+                                <input style="display:none" class="form-control" type="file" id="Image3" name="product_image" required="1">
+                            </div>
+                            <div class="mt-3">
+                                <label class="col-md-6 btn btn-success" for="Image4">
+                                Image 4
+                                <i class="fa fa-cloud-upload"></i>
+                                </label>
+                                <input style="display:none" class="form-control" type="file" id="Image4" name="product_image" required="1">
+                            </div>
+                            <div class="mt-3">
+                                <label class="col-md-6 btn btn-success" for="Image5">
+                                Image 5
+                                <i class="fa fa-cloud-upload"></i>
+                                </label>
+                                <input style="display:none" class="form-control" type="file" id="Image5" name="product_image" required="1">
+                            </div>
                         </div>
                     </div>
 
