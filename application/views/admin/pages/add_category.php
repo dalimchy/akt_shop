@@ -27,32 +27,32 @@
 
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label" for="val-username">Category Name <span class="text-orange">*</span></label>
+                                                <label class="col-md-3 control-label" for="">Category Name <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
-                                                    <input class="form-control" type="text" id="val-username"  placeholder="Enter category name" name="category_name" required />
+                                                    <input class="form-control" type="text" id=""  placeholder="Enter category name" name="category_name" required />
                                                 </div>
                                             </div>
 
 
                                              <div class="form-group">
-                                                <label class="col-md-3 control-label" for="example-file-input">Category Image </label>
+                                                <label class="col-md-3 control-label" for="">Category Image </label>
                                                 <div class="col-md-8">
-                                                    <input class="form-control" type="file" id="example-file-input" name="category_image" required="1">
+                                                    <input class="form-control" type="file" id="" name="category_image" required="1">
                                                 </div>
                                             </div>
 
 
                                             
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label" for="val-suggestions">Category Description <span class="text-orange">*</span></label>
+                                                <label class="col-md-3 control-label" for="">Category Description <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
-                                                    <textarea class="form-control" id="val-suggestions"  rows="8" placeholder="Enter category description..." name="category_description" required="1"></textarea>
+                                                    <textarea class="form-control" id=""  rows="8" placeholder="Enter category description..." name="category_description" required="1"></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label" for="val-skill">Publication Status <span class="text-orange">*</span></label>
+                                                <label class="col-md-3 control-label" for="">Publication Status <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
-                                                    <select class="form-control" id="val-skill" name="publication_status" required="1">
+                                                    <select class="form-control" id="" name="publication_status" required="1">
                     									<option value="">Please select</option>
                     									<option value="1">Published </option>
                                                         <option value="0">Unpublished </option>

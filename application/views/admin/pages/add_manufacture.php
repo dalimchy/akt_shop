@@ -26,9 +26,9 @@
                                         <form class="js-validation-bootstrap form-horizontal" action="<?php echo base_url();?>save-manufacture" enctype="multipart/form-data" method="post">
 
                                              <div class="form-group">
-                                                <label class="col-md-3 control-label" for="val-skill">Category Name <span class="text-orange">*</span></label>
+                                                <label class="col-md-3 control-label" for="">Category Name <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
-                                                    <select class="form-control" id="val-skill" name="category_id" required="1">
+                                                    <select class="form-control" id="" name="category_id" required="1">
                                                         <option value="">Please select</option>
                                                         <?php foreach ($publish_category_info as  $v_category) { ?>
                                                         <option value="<?php echo $v_category->category_id?>"><?php echo $v_category->category_name?> </option>
@@ -40,32 +40,32 @@
 
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label" for="val-username">Manufacture Name <span class="text-orange">*</span></label>
+                                                <label class="col-md-3 control-label" for="">Manufacture Name <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
-                                                    <input class="form-control" type="text" id="val-username"  placeholder="Enter category name" name="manufacture_name" required />
+                                                    <input class="form-control" type="text" id=""  placeholder="Enter category name" name="manufacture_name" required />
                                                 </div>
                                             </div>
 
 
                                              <div class="form-group">
-                                                <label class="col-md-3 control-label" for="example-file-input">Manufacture Image </label>
+                                                <label class="col-md-3 control-label" for="">Manufacture Image </label>
                                                 <div class="col-md-8">
-                                                    <input class="form-control" type="file" id="example-file-input" name="manufacture_image" required="1">
+                                                    <input class="form-control" type="file" id="" name="manufacture_image" required="1">
                                                 </div>
                                             </div>
 
 
                                             
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label" for="val-suggestions">Manufacture Description <span class="text-orange">*</span></label>
+                                                <label class="col-md-3 control-label" for="">Manufacture Description <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
-                                                    <textarea class="form-control" id="val-suggestions"  rows="8" placeholder="Enter category description..." name="manufacture_description" required="1"></textarea>
+                                                    <textarea class="form-control" id=""  rows="8" placeholder="Enter category description..." name="manufacture_description" required="1"></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label" for="val-skill">Publication Status <span class="text-orange">*</span></label>
+                                                <label class="col-md-3 control-label" for="">Publication Status <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
-                                                    <select class="form-control" id="val-skill" name="publication_status" required="1">
+                                                    <select class="form-control" id="" name="publication_status" required="1">
                     									<option value="">Please select</option>
                     									<option value="1">Published </option>
                                                         <option value="0">Unpublished </option>
