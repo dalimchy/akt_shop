@@ -183,7 +183,7 @@
                           <div class="products">
                             <div class="product">
                               <div class="product-image">
-                                <div class="image"> <a href="detail.html"><img  src="<?php echo base_url()?><?php echo $v_product->product_image ?>" alt="" style="height:189px"></a> </div>
+                                <div class="image"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><img  src="<?php echo base_url()?><?php echo $v_product->product_image ?>" alt="" style="height:189px"></a> </div>
                                 <!-- /.image -->
                                 <?php 
                                   if($v_product->product_quantity < 1){?>
@@ -273,7 +273,7 @@
               <div class="products">
                 <div class="product">
                   <div class="product-image">
-                    <div class="image"> <a href="detail.html"><img  src="<?php echo base_url()?><?php echo $v_product->product_image ?>" alt="" style="height:189px"></a> </div>
+                    <div class="image"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><img  src="<?php echo base_url()?><?php echo $v_product->product_image ?>" alt="" style="height:189px"></a> </div>
                     <!-- /.image -->
                     <?php 
                       if($v_product->product_quantity < 1){?>
@@ -360,7 +360,7 @@
               <div class="products">
                 <div class="product">
                   <div class="product-image">
-                    <div class="image"> <a href="detail.html"><img  src="<?php echo base_url()?><?php echo $v_product->product_image ?>" alt="" style="height:189px"></a> </div>
+                    <div class="image"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><img  src="<?php echo base_url()?><?php echo $v_product->product_image ?>" alt="" style="height:189px"></a> </div>
                     <!-- /.image -->
                     <?php 
                       if($v_product->product_quantity < 1){?>
