@@ -44,4 +44,15 @@ class Frontend extends CI_Controller {
         $data['frondend_main_content'] = $this->load->view('frontend/pages/manufacture_view',$data,true);
 		$this->load->view('frontend/index', $data);
 	}
+	public function category_view($category_id)
+	{
+		$data = array();
+        $data['title'] = "category_view";
+        $data['category_view_id'] = $category_id;
+        $data['all_category_info'] = $this->admin_model->all_category_info();
+		$data['all_product_info'] = $this->admin_model->all_product_info();
+		$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
+        $data['frondend_main_content'] = $this->load->view('frontend/pages/category_view',$data,true);
+		$this->load->view('frontend/index', $data);
+	}
 }

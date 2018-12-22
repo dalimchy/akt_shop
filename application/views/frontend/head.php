@@ -77,9 +77,9 @@
                   <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="category.html">Categories <b class="caret"></b></a>
                     <ul class="dropdown-menu" role="menu" >
                     <?php 
-                        foreach($all_category_info as $v_cate){ ?>
-                          <li role="presentation"><a role="menuitem" tabindex="<?php echo $v_cate->category_id; ?>" value="<?php echo $v_cate->category_id; ?>" href=""></a><?php echo $v_cate->category_name; ?></li>
-                      <?php } ?>
+                        foreach($all_category_info as $v_cate){ if($v_cate->publication_status == 1){?>
+                          <li role="presentation"><a role="menuitem" tabindex="<?php echo $v_cate->category_id; ?>" value="<?php echo $v_cate->category_id; ?>" href="#"></a><?php echo $v_cate->category_name; ?></li>
+                      <?php } }?>
                     </ul>
                   </li>
                 </ul>
@@ -155,7 +155,7 @@
               <ul class="nav navbar-nav">
                 <li class="active dropdown yamm-fw"><a href="<?php echo base_url()?>"> <i class="glyphicon glyphicon-home"></i>  Home</a> </li>
                 <?php 
-                  foreach($all_category_info as $v_cate){ ?>
+                  foreach($all_category_info as $v_cate){if($v_cate->publication_status == 1){ ?>
                     <li class="dropdown yamm-fw"> <a href="#" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown"><?php echo $v_cate->category_name; ?></a> 
                         <ul class="dropdown-menu container">
                         <li>
@@ -218,7 +218,7 @@
                       </ul>
                     </li>
                     
-                <?php } ?>
+                <?php } } ?>
               </ul>
               <!-- /.navbar-nav -->
               <div class="clearfix"></div>

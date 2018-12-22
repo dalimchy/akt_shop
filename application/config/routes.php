@@ -101,5 +101,6 @@ $route['update-product'] = 'supper_admin/update_product';
 $route['default_controller'] = 'frontend';
 $route['product-view/(.+)'] = 'frontend/product_details/$1';
 $route['manufacture-view/(.+)'] = 'frontend/manufacture_view/$1';
+$route['category-view/(.+)'] = 'frontend/category_view/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
