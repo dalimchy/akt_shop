@@ -122,6 +122,7 @@ class Admin_model extends CI_Model {
 		$data=array();
 		$data['category_id']				= $this->input->post('category_id',true);
 		$data['manufacture_name']			= $this->input->post('manufacture_name',true);
+		$data['manufacture_for']			= $this->input->post('manufacture_for',true);
 		$data['manufacture_image']			= $manufacture_image;
 		$data['manufacture_description']	= $this->input->post('manufacture_description',true);
 		$data['publication_status']			= $this->input->post('publication_status',true);
@@ -232,7 +233,7 @@ class Admin_model extends CI_Model {
 
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('product_image') && ! $this->upload->do_upload('product_image2'))
+                if ( ! $this->upload->do_upload('product_image'))
                 {
                         $error =  $this->upload->display_errors();
 
@@ -242,7 +243,6 @@ class Admin_model extends CI_Model {
                 {
                         $sdata =  $this->upload->data();
                         $data['product_image'] = $config['upload_path'].$sdata['file_name'];
-                        $data['product_image2'] = $config['upload_path'].$sdata['file_name'];
 
                         // $this->load->view('upload_success', $data);
                 }

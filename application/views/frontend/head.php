@@ -164,13 +164,9 @@
                               <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
                                 <h2 class="title">Men</h2>
                                 <ul class="links">
-                                  <li><a href="#">Dresses</a></li>
-                                  <li><a href="#">Shoes </a></li>
-                                  <li><a href="#">Jackets</a></li>
-                                  <li><a href="#">Sunglasses</a></li>
-                                  <li><a href="#">Sport Wear</a></li>
-                                  <li><a href="#">Blazers</a></li>
-                                  <li><a href="#">Shirts</a></li>
+                                <?php foreach($all_manufacture_info as $v_manu){if($v_manu->publication_status == 1 && $v_cate->category_id == $v_manu->category_id && $v_manu->manufacture_for == 1){ ?> 
+                                    <li><a href="#"><?php echo $v_manu->manufacture_name ?></a></li>
+                                <?php } } ?>
                                 </ul>
                               </div>
                               <!-- /.col -->
@@ -178,13 +174,9 @@
                               <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
                                 <h2 class="title">Women</h2>
                                 <ul class="links">
-                                  <li><a href="#">Handbags</a></li>
-                                  <li><a href="#">Jwellery</a></li>
-                                  <li><a href="#">Swimwear </a></li>
-                                  <li><a href="#">Tops</a></li>
-                                  <li><a href="#">Flats</a></li>
-                                  <li><a href="#">Shoes</a></li>
-                                  <li><a href="#">Winter Wear</a></li>
+                                <?php foreach($all_manufacture_info as $v_manu){if($v_manu->publication_status == 1 && $v_cate->category_id == $v_manu->category_id && $v_manu->manufacture_for == 2){ ?> 
+                                    <li><a href="#"><?php echo $v_manu->manufacture_name ?></a></li>
+                                <?php } } ?>
                                 </ul>
                               </div>
                               <!-- /.col -->
@@ -192,13 +184,9 @@
                               <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
                                 <h2 class="title">Boys</h2>
                                 <ul class="links">
-                                  <li><a href="#">Toys & Games</a></li>
-                                  <li><a href="#">Jeans</a></li>
-                                  <li><a href="#">Shirts</a></li>
-                                  <li><a href="#">Shoes</a></li>
-                                  <li><a href="#">School Bags</a></li>
-                                  <li><a href="#">Lunch Box</a></li>
-                                  <li><a href="#">Footwear</a></li>
+                                <?php foreach($all_manufacture_info as $v_manu){if($v_manu->publication_status == 1 && $v_cate->category_id == $v_manu->category_id && $v_manu->manufacture_for == 3){ ?> 
+                                    <li><a href="#"><?php echo $v_manu->manufacture_name ?></a></li>
+                                <?php } } ?>
                                 </ul>
                               </div>
                               <!-- /.col -->
@@ -206,18 +194,23 @@
                               <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
                                 <h2 class="title">Girls</h2>
                                 <ul class="links">
-                                  <li><a href="#">Sandals </a></li>
-                                  <li><a href="#">Shorts</a></li>
-                                  <li><a href="#">Dresses</a></li>
-                                  <li><a href="#">Jwellery</a></li>
-                                  <li><a href="#">Bags</a></li>
-                                  <li><a href="#">Night Dress</a></li>
-                                  <li><a href="#">Swim Wear</a></li>
+                                <?php foreach($all_manufacture_info as $v_manu){if($v_manu->publication_status == 1 && $v_cate->category_id == $v_manu->category_id && $v_manu->manufacture_for == 4){ ?> 
+                                    <li><a href="#"><?php echo $v_manu->manufacture_name ?></a></li>
+                                <?php } } ?>
+                                </ul>
+                              </div>
+                              <!-- /.col -->
+                              <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
+                                <h2 class="title">Kids</h2>
+                                <ul class="links">
+                                <?php foreach($all_manufacture_info as $v_manu){if($v_manu->publication_status == 1 && $v_cate->category_id == $v_manu->category_id && $v_manu->manufacture_for == 5){ ?> 
+                                    <li><a href="#"><?php echo $v_manu->manufacture_name ?></a></li>
+                                <?php } } ?>
                                 </ul>
                               </div>
                               <!-- /.col -->
                               
-                              <div class="col-xs-12 col-sm-6 col-md-4 col-menu banner-image"> <img class="img-responsive" src="<?php echo base_url()?>assets/frontend/images/banners/top-menu-banner.jpg" alt=""> </div>
+                              <div class="col-xs-12 col-sm-6 col-md-2 col-menu banner-image"> <img class="img-responsive" src="<?php echo base_url()?>assets/frontend/images/banners/top-menu-banner.jpg" alt=""> </div>
                               <!-- /.yamm-content --> 
                             </div>
                           </div>

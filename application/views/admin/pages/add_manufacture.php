@@ -63,6 +63,19 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
+                                                <label class="col-md-3 control-label" for="">Manufacture For <span class="text-orange">*</span></label>
+                                                <div class="col-md-8">
+                                                    <select class="form-control" id="" name="manufacture_for" required="1">
+                                                        <option>Please select</option>
+                                                        <option value="1">Men</option>
+                                                        <option value="2">Women</option>
+                                                        <option value="3">Boys</option>
+                                                        <option value="4">Girls</option>
+                                                        <option value="5">Kids</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
                                                 <label class="col-md-3 control-label" for="">Publication Status <span class="text-orange">*</span></label>
                                                 <div class="col-md-8">
                                                     <select class="form-control" id="" name="publication_status" required="1">
