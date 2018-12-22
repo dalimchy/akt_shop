@@ -1,5 +1,5 @@
 <div class="breadcrumb">
-	<div class="container">
+	<!-- <div class="container">
 		<div class="breadcrumb-inner">
 			<ul class="list-inline list-unstyled">
                 <li style="float:left"><a href="<?php echo base_url() ?>">Home</a></li>
@@ -8,8 +8,9 @@
             </ul>
             <ul class="list-inline list-unstyled" style="display:inline-flex; padding:0px"><li class='active'>/&nbsp; <?php echo $product_details->product_name ?></li></ul>
             
-		</div><!-- /.breadcrumb-inner -->
-	</div><!-- /.container -->
+		</div>
+	</div> -->
+	<!-- /.container -->
 </div><!-- /.breadcrumb -->
 <div class="body-content outer-top-xs">
 	<div class='container'>
