@@ -353,33 +353,6 @@ class Supper_admin extends CI_Controller {
 		$this->load->view('admin/admin_master',$data);
 	}
 
-	// public function update_product()
-	// {
-
-	// }
-
-
-
-	private function upload_product_img(){
-		$config['upload_path'] = './upload/';
-		$config['allowed_types'] = 'gif|jpg|png|jpeg';
-		$config['max_size'] = 1000;
-		$config['max_width'] = 1024;
-		$config['max_height'] = 768;
-
-		$this->load->library('upload', $config);
-
-		if ($this->upload->do_upload('product_image')) {
-			$data = $this->upload->data();
-			$image_path = "upload/$data[file_name]";
-			return $image_path;
-		}else{
-			$error = $this->upload->display_errors();
-			print_r($error);
-		}
-	}
-
-
 	public function update_product()
 	{
 		if ($_FILES['product_image']['name'] == '' || $_FILES['product_image']['size'] == '0') {

@@ -222,30 +222,51 @@ class Admin_model extends CI_Model {
 
 
 
-				$sdata = array();
-				$error = "";
+			$img1 = array();
+			$img2 = array();
+			$img3 = array();
+			$img4 = array();
+			$img5 = array();
+			$error = "";
 
-                $config['upload_path']          = 'upload/';
-                $config['allowed_types']        = 'gif|jpg|png|jpeg';
-                $config['max_size']             = 1000;
-                $config['max_width']            = 1024;
-                $config['max_height']           = 768;
+			$config['upload_path']          = 'upload/';
+			$config['allowed_types']        = 'gif|jpg|png|jpeg';
+			$config['max_size']             = 1000;
+			$config['max_width']            = 1024;
+			$config['max_height']           = 768;
 
-                $this->load->library('upload', $config);
+			$this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('product_image'))
-                {
-                        $error =  $this->upload->display_errors();
-
-                        // $this->load->view('upload_form', $error);
-                }
-                else
-                {
-                        $sdata =  $this->upload->data();
-                        $data['product_image'] = $config['upload_path'].$sdata['file_name'];
-
-                        // $this->load->view('upload_success', $data);
-                }
+			if ( ! $this->upload->do_upload('product_image')) {
+					$error =  $this->upload->display_errors();
+			}else {
+					$img1 =  $this->upload->data();
+					$data['product_image'] = $config['upload_path'].$img1['file_name'];
+			}
+			if ( ! $this->upload->do_upload('product_image2')) {
+					$error =  $this->upload->display_errors();
+			}else {
+					$img2 =  $this->upload->data();
+					$data['product_img2'] = $config['upload_path'].$img2['file_name'];
+			}
+			if ( ! $this->upload->do_upload('product_image3')) {
+					$error =  $this->upload->display_errors();
+			}else {
+					$img3 =  $this->upload->data();
+					$data['product_img3'] = $config['upload_path'].$img3['file_name'];
+			}
+			if ( ! $this->upload->do_upload('product_image4')) {
+					$error =  $this->upload->display_errors();
+			}else {
+					$img4 =  $this->upload->data();
+					$data['product_img4'] = $config['upload_path'].$img4['file_name'];
+			}
+			if ( ! $this->upload->do_upload('product_image5')) {
+					$error =  $this->upload->display_errors();
+			}else {
+					$img5 =  $this->upload->data();
+					$data['product_img5'] = $config['upload_path'].$img5['file_name'];
+			}
 
 		$is_featured			= $this->input->post('is_featured',true);
 
