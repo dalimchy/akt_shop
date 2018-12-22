@@ -369,7 +369,7 @@ class Supper_admin extends CI_Controller {
 
 		$this->load->library('upload', $config);
 
-		if ($this->upload->do_upload('product_image')) {
+		if ($this->upload->do_upload('product_image') && $this->upload->do_upload('product_image2')) {
 			$data = $this->upload->data();
 			$image_path = "upload/$data[file_name]";
 			return $image_path;
