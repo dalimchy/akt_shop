@@ -15,7 +15,7 @@
                           <h2 class="title">Men</h2>
                           <ul class="links list-unstyled">
                                 <?php foreach($all_manufacture_info as $v_manu){if($v_manu->publication_status == 1 && $v_cate->category_id == $v_manu->category_id && $v_manu->manufacture_for == 1){ ?> 
-                                    <li><a href="#"><?php echo $v_manu->manufacture_name ?></a></li>
+                                    <li><a href="<?php echo base_url()?>manufacture-view/<?php echo $v_manu->manufacture_id ?>"><?php echo $v_manu->manufacture_name ?></a></li>
                                 <?php } } ?>
                           </ul>
                         </div>
@@ -24,7 +24,7 @@
                         <h2 class="title">Women</h2>
                           <ul class="links list-unstyled">
                                 <?php foreach($all_manufacture_info as $v_manu){if($v_manu->publication_status == 1 && $v_cate->category_id == $v_manu->category_id && $v_manu->manufacture_for == 2){ ?> 
-                                    <li><a href="#"><?php echo $v_manu->manufacture_name ?></a></li>
+                                    <li><a href="<?php echo base_url()?>manufacture-view/<?php echo $v_manu->manufacture_id ?>"><?php echo $v_manu->manufacture_name ?></a></li>
                                 <?php } } ?>
                           </ul>
                         </div>
@@ -33,7 +33,7 @@
                         <h2 class="title">Boys</h2>
                           <ul class="links list-unstyled">
                                 <?php foreach($all_manufacture_info as $v_manu){if($v_manu->publication_status == 1 && $v_cate->category_id == $v_manu->category_id && $v_manu->manufacture_for == 3){ ?> 
-                                    <li><a href="#"><?php echo $v_manu->manufacture_name ?></a></li>
+                                    <li><a href="<?php echo base_url()?>manufacture-view/<?php echo $v_manu->manufacture_id ?>"><?php echo $v_manu->manufacture_name ?></a></li>
                                 <?php } } ?>
                           </ul>
                         </div>
@@ -42,7 +42,7 @@
                         <h2 class="title">Girls</h2>
                           <ul class="links list-unstyled">
                                 <?php foreach($all_manufacture_info as $v_manu){if($v_manu->publication_status == 1 && $v_cate->category_id == $v_manu->category_id && $v_manu->manufacture_for == 4){ ?> 
-                                    <li><a href="#"><?php echo $v_manu->manufacture_name ?></a></li>
+                                    <li><a href="<?php echo base_url()?>manufacture-view/<?php echo $v_manu->manufacture_id ?>"><?php echo $v_manu->manufacture_name ?></a></li>
                                 <?php } } ?>
                           </ul>
                         </div>
@@ -51,7 +51,7 @@
                         <h2 class="title">Kids</h2>
                           <ul class="links list-unstyled">
                                 <?php foreach($all_manufacture_info as $v_manu){if($v_manu->publication_status == 1 && $v_cate->category_id == $v_manu->category_id && $v_manu->manufacture_for == 5){ ?> 
-                                    <li><a href="#"><?php echo $v_manu->manufacture_name ?></a></li>
+                                    <li><a href="<?php echo base_url()?>manufacture-view/<?php echo $v_manu->manufacture_id ?>"><?php echo $v_manu->manufacture_name ?></a></li>
                                 <?php } } ?>
                           </ul>
                         </div>
