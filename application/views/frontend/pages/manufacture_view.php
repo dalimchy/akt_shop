@@ -109,7 +109,7 @@
                                 <div class="cart clearfix animate-effect">
                                 <div class="action">
                                     <ul class="list-unstyled">
-                                    <li class="add-cart-button btn-group">
+                                    <li class="add-cart-button btn-group" onclick="addToCart(<?php echo $v_product->product_id?>)">
                                         <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
                                         <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                                     </li>
@@ -160,7 +160,7 @@
                                         <div class="cart clearfix animate-effect">
                                         <div class="action">
                                             <ul class="list-unstyled">
-                                            <li class="add-cart-button btn-group">
+                                            <li class="add-cart-button btn-group" onclick="addToCart(<?php echo $v_product->product_id?>)" >
                                                 <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
                                                 <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                                             </li>

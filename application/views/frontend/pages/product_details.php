@@ -134,8 +134,8 @@
 							            </div>
 									</div>
 
-									<div class="col-sm-7">
-										<a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART</a>
+									<div class="col-sm-7" onclick="addToCart(<?php echo $product_details->product_id?>)" >
+										<a class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART</a>
 									</div>
 
 									
@@ -337,7 +337,7 @@
                   <div class="cart clearfix animate-effect">
                     <div class="action">
                       <ul class="list-unstyled">
-                        <li class="add-cart-button btn-group">
+                        <li class="add-cart-button btn-group" onclick="addToCart(<?php echo $v_product->product_id?>)" >
                           <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
                           <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                         </li>
@@ -394,7 +394,7 @@
                   <div class="cart clearfix animate-effect">
                     <div class="action">
                       <ul class="list-unstyled">
-                        <li class="add-cart-button btn-group">
+                        <li class="add-cart-button btn-group" onclick="addToCart(<?php echo $v_product->product_id?>)" >
                           <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
                           <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                         </li>
@@ -470,7 +470,7 @@
                         <div class="cart clearfix animate-effect">
                           <div class="action">
                             <ul class="list-unstyled">
-                              <li class="add-cart-button btn-group">
+                              <li class="add-cart-button btn-group" onclick="addToCart(<?php echo $v_product->product_id?>)" >
                                 <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
                                 <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                               </li>
@@ -533,7 +533,7 @@
                               <div class="cart clearfix animate-effect">
                                 <div class="action">
                                   <ul class="list-unstyled">
-                                    <li class="add-cart-button btn-group">
+                                    <li class="add-cart-button btn-group" onclick="addToCart(<?php echo $v_product->product_id?>)">
                                       <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
                                       <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                                     </li>
