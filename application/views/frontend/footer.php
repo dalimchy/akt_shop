@@ -139,5 +139,6 @@
 <script src="<?php echo base_url()?>assets/frontend/js/bootstrap-select.min.js"></script> 
 <script src="<?php echo base_url()?>assets/frontend/js/wow.min.js"></script> 
 <script src="<?php echo base_url()?>assets/frontend/js/scripts.js"></script>
+<script src="<?php echo base_url()?>assets/frontend/js/akt_custom.js"></script>
 </body>
 </html>
