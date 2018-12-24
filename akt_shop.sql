@@ -2,10 +2,10 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 22, 2018 at 03:03 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Dec 24, 2018 at 08:39 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -54,6 +54,33 @@ INSERT INTO `akt_users` (`id`, `username`, `email`, `password`, `image`, `phone_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_brand`
+--
+
+CREATE TABLE `tbl_brand` (
+  `brand_id` int(11) NOT NULL,
+  `brand_name` varchar(100) NOT NULL,
+  `brand_logo` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_cart`
+--
+
+CREATE TABLE `tbl_cart` (
+  `cart_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `cart_qty` int(20) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_category`
 --
 
@@ -61,6 +88,8 @@ CREATE TABLE `tbl_category` (
   `category_id` int(11) NOT NULL,
   `category_name` varchar(100) NOT NULL,
   `category_image` varchar(250) NOT NULL,
+  `product_count` int(12) NOT NULL DEFAULT '0',
+  `subcat_count` int(12) NOT NULL DEFAULT '0',
   `category_description` text NOT NULL,
   `publication_status` tinyint(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -69,8 +98,32 @@ CREATE TABLE `tbl_category` (
 -- Dumping data for table `tbl_category`
 --
 
-INSERT INTO `tbl_category` (`category_id`, `category_name`, `category_image`, `category_description`, `publication_status`) VALUES
-(1, 'TOP WEAR', 'upload/p30.jpg', 'TOP WEAR TOP WEARTOP WEARTOP WEARTOP WEARTOP WEARTOP WEARTOP WEARTOP WEARTOP WEARTOP WEAR', 1);
+INSERT INTO `tbl_category` (`category_id`, `category_name`, `category_image`, `product_count`, `subcat_count`, `category_description`, `publication_status`) VALUES
+(1, 'TOP WEAR', 'upload/p30.jpg', 0, 0, 'TOP WEAR TOP WEARTOP WEARTOP WEARTOP WEARTOP WEARTOP WEARTOP WEARTOP WEARTOP WEARTOP WEAR', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_customers`
+--
+
+CREATE TABLE `tbl_customers` (
+  `customer_id` int(11) NOT NULL,
+  `customer_name` varchar(200) NOT NULL,
+  `customer_email` varchar(200) NOT NULL,
+  `customer_phone` int(20) NOT NULL,
+  `customer_region` varchar(150) DEFAULT NULL,
+  `customer_city` varchar(150) DEFAULT NULL,
+  `customer_area` varchar(150) DEFAULT NULL,
+  `customer_addr` varchar(255) DEFAULT NULL,
+  `customer_image` varchar(255) DEFAULT NULL,
+  `customer_dob` date DEFAULT NULL,
+  `customer_password` varchar(200) NOT NULL,
+  `customer_total_orders` int(11) DEFAULT NULL,
+  `customer_status` tinyint(1) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -102,12 +155,30 @@ INSERT INTO `tbl_manufacture` (`manufacture_id`, `category_id`, `manufacture_for
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_orders`
+--
+
+CREATE TABLE `tbl_orders` (
+  `order_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `order_shipping_addr` varchar(255) NOT NULL,
+  `shipping_method` varchar(32) NOT NULL,
+  `payment_method` varchar(32) NOT NULL,
+  `total_ammount` int(11) NOT NULL,
+  `order_status` varchar(32) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_product`
 --
 
 CREATE TABLE `tbl_product` (
   `product_id` int(11) NOT NULL,
   `product_name` varchar(100) NOT NULL,
+  `product_model` varchar(50) NOT NULL DEFAULT 'P001',
   `category_id` int(5) NOT NULL,
   `product_for` int(10) NOT NULL DEFAULT '0',
   `manufacture_id` int(5) NOT NULL,
@@ -132,8 +203,38 @@ CREATE TABLE `tbl_product` (
 -- Dumping data for table `tbl_product`
 --
 
-INSERT INTO `tbl_product` (`product_id`, `product_name`, `category_id`, `product_for`, `manufacture_id`, `product_short_description`, `product_long_description`, `product_price`, `product_new_price`, `product_quantity`, `product_image`, `product_img2`, `product_img3`, `product_img4`, `product_img5`, `product_tags`, `is_featured`, `publication_status`, `created_at`, `updated_at`) VALUES
-(1, 'Aesthetic Outfitters Behemoth T-shirt (T-1217016)', 1, 1, 1, 'Aesthetic Outfitters Behemoth T-shirt T-1217016\r\nProduct Type: T-shirt.\r\nGender: Male\r\nFabric: Single jersey fine.\r\nCare: Hand Wash.\r\nColor: Black.\r\nWeight: 180 gm (Approx) Weights may vary according to fabric and sizes.', 'Aesthetic Outfitters Behemoth T-shirt T-1217016\r\nProduct Type: T-shirt.\r\nGender: Male\r\nFabric: Single jersey fine.\r\nCare: Hand Wash.\r\nColor: Black.\r\nWeight: 180 gm (Approx) Weights may vary according to fabric and sizes.', 900.00, 700.00, 50, 'upload/p4.jpg', NULL, NULL, NULL, NULL, NULL, 1, 1, '2018-12-22 13:21:12', NULL);
+INSERT INTO `tbl_product` (`product_id`, `product_name`, `product_model`, `category_id`, `product_for`, `manufacture_id`, `product_short_description`, `product_long_description`, `product_price`, `product_new_price`, `product_quantity`, `product_image`, `product_img2`, `product_img3`, `product_img4`, `product_img5`, `product_tags`, `is_featured`, `publication_status`, `created_at`, `updated_at`) VALUES
+(1, 'Aesthetic Outfitters Behemoth T-shirt (T-1217016)', 'P001', 1, 1, 1, 'Aesthetic Outfitters Behemoth T-shirt T-1217016\r\nProduct Type: T-shirt.\r\nGender: Male\r\nFabric: Single jersey fine.\r\nCare: Hand Wash.\r\nColor: Black.\r\nWeight: 180 gm (Approx) Weights may vary according to fabric and sizes.', 'Aesthetic Outfitters Behemoth T-shirt T-1217016\r\nProduct Type: T-shirt.\r\nGender: Male\r\nFabric: Single jersey fine.\r\nCare: Hand Wash.\r\nColor: Black.\r\nWeight: 180 gm (Approx) Weights may vary according to fabric and sizes.', 900.00, 700.00, 50, 'upload/p4.jpg', NULL, NULL, NULL, NULL, NULL, 1, 1, '2018-12-22 13:21:12', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_review`
+--
+
+CREATE TABLE `tbl_review` (
+  `review_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `review_rating` int(11) NOT NULL,
+  `review_comment` int(255) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_wishlist`
+--
+
+CREATE TABLE `tbl_wishlist` (
+  `wishlist_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Indexes for dumped tables
@@ -146,10 +247,28 @@ ALTER TABLE `akt_users`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_brand`
+--
+ALTER TABLE `tbl_brand`
+  ADD PRIMARY KEY (`brand_id`);
+
+--
+-- Indexes for table `tbl_cart`
+--
+ALTER TABLE `tbl_cart`
+  ADD PRIMARY KEY (`cart_id`);
+
+--
 -- Indexes for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
   ADD PRIMARY KEY (`category_id`);
+
+--
+-- Indexes for table `tbl_customers`
+--
+ALTER TABLE `tbl_customers`
+  ADD PRIMARY KEY (`customer_id`);
 
 --
 -- Indexes for table `tbl_manufacture`
@@ -158,10 +277,28 @@ ALTER TABLE `tbl_manufacture`
   ADD PRIMARY KEY (`manufacture_id`);
 
 --
+-- Indexes for table `tbl_orders`
+--
+ALTER TABLE `tbl_orders`
+  ADD PRIMARY KEY (`order_id`);
+
+--
 -- Indexes for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
   ADD PRIMARY KEY (`product_id`);
+
+--
+-- Indexes for table `tbl_review`
+--
+ALTER TABLE `tbl_review`
+  ADD PRIMARY KEY (`review_id`);
+
+--
+-- Indexes for table `tbl_wishlist`
+--
+ALTER TABLE `tbl_wishlist`
+  ADD PRIMARY KEY (`wishlist_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -174,10 +311,28 @@ ALTER TABLE `akt_users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `tbl_brand`
+--
+ALTER TABLE `tbl_brand`
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_cart`
+--
+ALTER TABLE `tbl_cart`
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tbl_customers`
+--
+ALTER TABLE `tbl_customers`
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_manufacture`
@@ -186,10 +341,28 @@ ALTER TABLE `tbl_manufacture`
   MODIFY `manufacture_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `tbl_orders`
+--
+ALTER TABLE `tbl_orders`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tbl_review`
+--
+ALTER TABLE `tbl_review`
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_wishlist`
+--
+ALTER TABLE `tbl_wishlist`
+  MODIFY `wishlist_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

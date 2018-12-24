@@ -366,7 +366,6 @@ class Supper_admin extends CI_Controller {
   			redirect('manage-product');
   		}else
   		{
-
   			$product_image = $this->upload_product_img();
   			$this->admin_model->update_product($product_image);
   			unlink( $this->input->post('product_old_image', True));
