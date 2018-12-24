@@ -1,4 +1,4 @@
- 
+
                         <!-- Dynamic Table Full -->
                         <div class="card">
                             <!-- <div class="card-header">

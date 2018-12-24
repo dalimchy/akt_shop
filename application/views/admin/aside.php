@@ -1,16 +1,13 @@
-
-    <body class="app-ui layout-has-drawer layout-has-fixed-header">
+<body class="app-ui layout-has-drawer layout-has-fixed-header">
         <div class="app-layout-canvas">
             <div class="app-layout-container">
-
                 <!-- Drawer -->
                 <aside class="app-layout-drawer custom_aside">
-
                     <!-- Drawer scroll area -->
                     <div class="app-layout-drawer-scroll">
                         <!-- Drawer logo -->
                         <div id="logo" class="drawer-header">
-                            <a href="<?php echo base_url()?>"><img class="img-responsive" src="<?php echo base_url()?>assets/admin/img/logo/akt_logo.png" title="AKT Shop" alt="AKT Shop" /></a>
+                            <a href="<?php echo base_url('/dashboard')?>"><img class="img-responsive" src="<?php echo base_url()?>assets/admin/img/logo/akt_logo.png" title="AKT Shop" alt="AKT Shop" /></a>
                         </div>
 
                         <!-- Drawer navigation -->
@@ -21,13 +18,16 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="<?php echo base_url()?>"><i class="ion-laptop"></i> Frontend</a>
+                                    <a href="<?php echo base_url()?>" target="_blank"><i class="ion-laptop"></i> Frontend</a>
+                                </li>
+
+                                <li class="nav-item <?php if($title == 'Brands'){?>active<?php }?> ">
+                                    <a href="<?php echo base_url('/brands')?>"><i class="ion-laptop"></i> Brands</a>
                                 </li>
 
                                 <li class="nav-item nav-item-has-subnav <?php if($title == 'Add Category' || $title == 'Manage Categories' ){?>active open<?php }?>">
                                     <a href="javascript:void(0)"><i class="ion-ios-pricetags"></i> Category</a>
                                     <ul class="nav nav-subnav">
-
                                         <li>
                                             <a href="<?php echo base_url('/add-category')?>">Add Category</a>
                                         </li>
@@ -38,12 +38,9 @@
                                     </ul>
                                 </li>
 
-
-
-                                 <li class="nav-item nav-item-has-subnav <?php if($title == 'Add Manufacture' || $title == 'Manage Manufacture' ){?>active open<?php }?>">
+                                <li class="nav-item nav-item-has-subnav <?php if($title == 'Add Manufacture' || $title == 'Manage Manufacture' ){?>active open<?php }?>">
                                     <a href="javascript:void(0)"><i class="ion-clipboard"></i> Manufacture</a>
                                     <ul class="nav nav-subnav">
-
                                         <li>
                                             <a href="<?php echo base_url('/add-manufacture')?>">Add Manufacture</a>
                                         </li>
@@ -54,11 +51,9 @@
                                     </ul>
                                 </li>
 
-
                                 <li class="nav-item nav-item-has-subnav <?php if($title == 'Add Product' || $title == 'Manage Product' ){?>active open<?php }?>">
                                     <a href="javascript:void(0)"><i class="ion-cube"></i> Product</a>
                                     <ul class="nav nav-subnav">
-
                                         <li>
                                             <a href="<?php echo base_url('/add-product')?>">Add Product</a>
                                         </li>
@@ -68,7 +63,6 @@
                                         </li>
                                     </ul>
                                 </li>
-
 
                                 <li class="nav-item nav-item-has-subnav">
                                     <a href="javascript:void(0)"><i class="ion-archive"></i>Orders</a>
@@ -95,10 +89,6 @@
                                         </li>
                                     </ul>
                                 </li>
-
-
-
-
                             </ul>
                         </nav>
                         <!-- End drawer navigation -->
@@ -117,20 +107,19 @@
                         <div class="container-fluid">
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar-collapse" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
                                 <button class="pull-left hidden-lg hidden-md navbar-toggle" type="button" data-toggle="layout" data-action="sidebar_toggle">
-					<span class="sr-only">Toggle drawer</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
+                                    <span class="sr-only">Toggle drawer</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
                                 <span class="navbar-page-title"><?php echo $title ?></span>
                             </div>
-
                             <div class="collapse navbar-collapse" id="header-navbar-collapse">
                                 <!-- Header search form -->
                                 <form class="navbar-form navbar-left app-search-form" role="search">
@@ -138,8 +127,8 @@
                                         <div class="input-group">
                                             <input class="form-control" type="search" id="search-input" placeholder="Search..." />
                                             <span class="input-group-btn">
-								<button class="btn" type="button"><i class="ion-ios-search-strong"></i></button>
-							</span>
+                                                <button class="btn" type="button"><i class="ion-ios-search-strong"></i></button>
+                                            </span>
                                         </div>
                                     </div>
                                 </form>
@@ -200,5 +189,5 @@
                 <!-- End header -->
                 <main class="app-layout-content">
 
-    <!-- Page Content -->
-    <div class="container-fluid p-y-md">
+<!-- Page Content -->
+<div class="container-fluid p-y-md">

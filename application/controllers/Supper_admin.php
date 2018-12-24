@@ -377,7 +377,23 @@ class Supper_admin extends CI_Controller {
   		}
 	}
 
+	public function add_brand()
+	{
+		$data = array();
+		$data["title"] = "Brands";
+		$data['brand_info_list'] = $this->admin_model->get_all_brands();
+		$data["admin_main_content"] = $this->load->view('admin/pages/brand', $data, true);
+		$this->load->view('admin/admin_master', $data);
+	}
 
+	public function save_brand()
+	{
+		$this->admin_model->brand_info();
+		$data = array();
+		$data['message'] = "Save Brand Sucessfully!";
+		$this->session->set_userdata($data);
+		redirect('brands');
+	}
 
 
 

@@ -10,11 +10,14 @@
             </div>
         <?php } ?>
         <div class="card">
-            <div class="card-header">
-                <!-- <h4>Validation</h4> -->
+            <div class="card-header bg-teal bg-inverse">
+                <!-- <h4>Material</h4> -->
                 <ul class="card-actions">
                     <li>
-                        <button type="button"><i class="ion-more"></i></button>
+                        <button type="button" data-toggle="card-action" data-action="refresh_toggle" data-action-mode="demo"><i class="ion-refresh"></i></button>
+                    </li>
+                    <li>
+                        <button type="button" data-toggle="card-action" data-action="content_toggle"><i class="ion-chevron-down"></i></button>
                     </li>
                 </ul>
             </div>
@@ -184,7 +187,7 @@
 
                     <div class="form-group m-b-0">
                         <div class="col-md-8 col-md-offset-3">
-                            <button class="col-md-12 btn btn-success" type="submit">Add Product</button>
+                            <button class="col-md-12 btn btn-app-teal" type="submit">Add Product</button>
                         </div>
                     </div>
                 </form>

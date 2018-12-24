@@ -88,7 +88,8 @@ $route['edit-product/(.+)'] = 'supper_admin/edit_product/$1';
 $route['manage-product'] = 'supper_admin/manage_product';
 $route['update-product'] = 'supper_admin/update_product';
 
-
+$route['brands'] = 'supper_admin/add_brand';
+$route['save-brand'] = 'supper_admin/save_brand';
 
 
 
