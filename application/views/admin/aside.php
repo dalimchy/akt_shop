@@ -4,7 +4,7 @@
             <div class="app-layout-container">
 
                 <!-- Drawer -->
-                <aside class="app-layout-drawer">
+                <aside class="app-layout-drawer custom_aside">
 
                     <!-- Drawer scroll area -->
                     <div class="app-layout-drawer-scroll">
@@ -17,11 +17,11 @@
                         <nav class="drawer-main">
                             <ul class="nav nav-drawer">
                                 <li class="nav-item <?php if($title == 'Dashboard'){?>active<?php }?> ">
-                                    <a href="<?php echo base_url('/dashboard')?>"><i class="ion-ios-speedometer"></i> Dashboard</a>
+                                    <a href="<?php echo base_url('/dashboard')?>"><i class="ion-speedometer"></i> Dashboard</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="<?php echo base_url()?>"><i class="ion-ios-monitor"></i> Frontend</a>
+                                    <a href="<?php echo base_url()?>"><i class="ion-laptop"></i> Frontend</a>
                                 </li>
 
                                 <li class="nav-item nav-item-has-subnav <?php if($title == 'Add Category' || $title == 'Manage Categories' ){?>active open<?php }?>">
@@ -113,7 +113,7 @@
 
                 <!-- Header -->
                 <header class="app-layout-header">
-                    <nav class="navbar navbar-default">
+                    <nav class="navbar navbar-default custom_nav">
                         <div class="container-fluid">
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar-collapse" aria-expanded="false">
@@ -171,12 +171,12 @@
 
                                     <li class="dropdown dropdown-profile">
                                         <a href="javascript:void(0)" data-toggle="dropdown">
-                                            <span class="m-r-sm"><?php echo $this->session->userdata('username')?> <span class="caret"></span></span>
+                                            <span class="m-r-sm user_title"><?php echo $this->session->userdata('username')?> <span class="caret"></span></span>
                                             <img class="img-avatar img-avatar-48" src="<?php echo base_url()?>assets/admin/img/avatars/avatar3.jpg" alt="User profile pic" />
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-right">
                                             <li class="dropdown-header">
-                                                Pages
+											<strong>ADMINISTRATOR</strong>
                                             </li>
                                             <li>
                                                 <a href="base_pages_profile.html">Profile</a>
