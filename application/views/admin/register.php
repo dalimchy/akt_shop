@@ -17,9 +17,9 @@
 
                                         <p style="color: red">
                                             <?php
-                                            if(isset($success_message)){
-                                                    echo $success_message;
-                                            }
+                                            //if(isset($success_message)){
+                                                    // echo $success_message;
+                                            //}
                                             ?>
 
                                             <?php echo validation_errors(); ?>

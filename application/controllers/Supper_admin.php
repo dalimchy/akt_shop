@@ -167,48 +167,43 @@ class Supper_admin extends CI_Controller {
 	
 
 	public function add_manufacture()
-		{
-			$data = array();
-			$data['title'] = "Add Manufacture";
-			$data['publish_category_info'] = $this->admin_model->select_all_publish_category_info();
-			$data['admin_main_content'] = $this->load->view('admin/pages/add_manufacture',$data,true);
-			$this->load->view('admin/admin_master',$data );
-		}
-
-
-	private function save_manufacture_img()
 	{
-			$config['upload_path'] = './upload/';
-			$config['allowed_types'] = 'gif|jpg|png|jpeg';
-			$config['max_size'] = 1000;
-			$config['max_width'] = 1024;
-			$config['max_height'] = 768;
-
-			$this->load->library('upload', $config);
-
-			if ($this->upload->do_upload('manufacture_image')) {
-				$data = $this->upload->data();
-				$image_path = "upload/$data[file_name]";
-				return $image_path;
-			}else{
-				$error = $this->upload->display_errors();
-				print_r($error);
-			}
-		}
+		$data = array();
+		$data['title'] = "Add Manufacture";
+		$data['publish_category_info'] = $this->admin_model->select_all_publish_category_info();
+		$data['admin_main_content'] = $this->load->view('admin/pages/add_manufacture',$data,true);
+		$this->load->view('admin/admin_master',$data );
+	}
 
 	public function save_manufacture()
-		{
-
+	{
 		$manufacture_image = $this->save_manufacture_img();
-  		// $this->admin_model->update_product($product_image);
 		$this->admin_model->save_manufacture($manufacture_image);
 		$sdata = array();
 		$sdata['message'] = "Save Manufacture Information Sucessfully!";
 		$this->session->set_userdata($sdata);
 		redirect('add-manufacture');
+	}
+
+	private function save_manufacture_img()
+	{
+		$config['upload_path'] = './upload/';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg';
+		$config['max_size'] = 1000;
+		$config['max_width'] = 1024;
+		$config['max_height'] = 768;
+
+		$this->load->library('upload', $config);
+
+		if ($this->upload->do_upload('manufacture_image')) {
+			$data = $this->upload->data();
+			$image_path = "upload/$data[file_name]";
+			return $image_path;
+		}else{
+			$error = $this->upload->display_errors();
+			print_r($error);
 		}
-
-
+	}
 
 	public function manage_manufacture()
 	{

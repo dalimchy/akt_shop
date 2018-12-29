@@ -377,37 +377,37 @@ class Admin_model extends CI_Model {
 		$data['brand_name'] = $this->input->post('brandname',true);
 		
 		$logo = array();
-		$error = "";
+		// $error = "";
 
 		$config['upload_path']          = 'upload/brand/';
 		$config['allowed_types']        = 'jpg|png|jpeg';
 		$config['max_size']             = 1000;
-		$config['max_width']            = 1024;
-		$config['max_height']           = 768;
+		// $config['max_width']            = 1024;
+		// $config['max_height']           = 768;
+		$config['remove_spaces']=TRUE;
+		$config['encrypt_name']=TRUE;
 		
 		$this->load->library('upload', $config);
 
 		if ( ! $this->upload->do_upload('brandlogo')) {
-			$error =  $this->upload->display_errors();
-			// $error = array('error' => $this->upload->display_errors());
+			$error = array('error' => $this->upload->display_errors());
+			$data['brand_error'] = $error;
 		}else {
 			$logo =  $this->upload->data();
-			// $image_path = "upload/brand/$data[file_name]";
-			// return $image_path;
 			$data['brand_logo'] = $config['upload_path'].$logo['file_name'];
 		}
-
 		$this->db->insert('tbl_brand', $data);
+
 	}
 
 	public function get_all_brands()
 	{
-		$query = $this->db->get('tbl_brand'); 
-		// $this->db->select('*');
-		// $this->db->from('tbl_brand');
-		// $this->db->order_by("brand_id", "desc");
-		// $query_result 	= $this->db->get();
-		$brands_info 	= $query->result();
+		// $query = $this->db->get('tbl_brand'); 
+		$this->db->select('*');
+		$this->db->from('tbl_brand');
+		$this->db->order_by("brand_id", "desc");
+		$query_result 	= $this->db->get();
+		$brands_info 	= $query_result->result();
 		return $brands_info;
 	}
 		
