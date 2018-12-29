@@ -16,11 +16,6 @@ class Admin extends CI_Controller
 
     }
 
-
-
-
-
-    
 	public function register()
 	{
 		$data = array();
@@ -45,12 +40,6 @@ class Admin extends CI_Controller
 			$this->load->view('admin/register',$data);
 		}
 	}
-
-	
-
-
-
-
 
     public function login()
     {
