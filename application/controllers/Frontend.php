@@ -55,4 +55,14 @@ class Frontend extends CI_Controller {
         $data['frondend_main_content'] = $this->load->view('frontend/pages/category_view',$data,true);
 		$this->load->view('frontend/index', $data);
 	}
+	public function shopping_cart()
+	{
+		$data = array();
+        $data['title'] = "shopping_cart";
+        $data['all_category_info'] = $this->admin_model->all_category_info();
+		$data['all_product_info'] = $this->admin_model->all_product_info();
+		$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
+        $data['frondend_main_content'] = $this->load->view('frontend/pages/cart',$data,true);
+		$this->load->view('frontend/index', $data);
+	}
 }
