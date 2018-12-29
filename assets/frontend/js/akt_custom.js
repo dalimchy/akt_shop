@@ -141,3 +141,15 @@ function removeCart(id){
     cartProduct = JSON.parse(localStorage.getItem('myCart'));
     headcartOption();
 }
+
+function updateQty(id,value){
+
+    var findObj = findvalOfObj(myAllProducts, 'product_id', id);
+    var findObjCart = findvalOfObj(cartProduct, 'product_id', id);
+    var findindexOf = findIndexOfObj(cartProduct, 'product_id', id);
+
+    cartProduct[findindexOf].qty = value;
+    localStorage.setItem('myCart', JSON.stringify(cartProduct));
+    cartProduct = JSON.parse(localStorage.getItem('myCart'));
+    headcartOption();
+}

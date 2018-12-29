@@ -32,81 +32,8 @@
 			</tbody><!-- /tbody -->
 		</table><!-- /table -->
 	</div>
-</div><!-- /.shopping-cart-table -->				
-<div class="col-md-4 col-sm-12 estimate-ship-tax">
-	<table class="table">
-		<thead>
-			<tr>
-				<th>
-					<span class="estimate-title">Estimate shipping and tax</span>
-					<p>Enter your destination to get shipping and tax.</p>
-				</th>
-			</tr>
-		</thead><!-- /thead -->
-		<tbody>
-				<tr>
-					<td>
-						<div class="form-group">
-							<label class="info-title control-label">Country <span>*</span></label>
-							<select class="form-control unicase-form-control selectpicker">
-								<option>--Select options--</option>
-								<option>India</option>
-								<option>SriLanka</option>
-								<option>united kingdom</option>
-								<option>saudi arabia</option>
-								<option>united arab emirates</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label class="info-title control-label">State/Province <span>*</span></label>
-							<select class="form-control unicase-form-control selectpicker">
-								<option>--Select options--</option>
-								<option>TamilNadu</option>
-								<option>Kerala</option>
-								<option>Andhra Pradesh</option>
-								<option>Karnataka</option>
-								<option>Madhya Pradesh</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label class="info-title control-label">Zip/Postal Code</label>
-							<input type="text" class="form-control unicase-form-control text-input" placeholder="">
-						</div>
-						<div class="pull-right">
-							<button type="submit" class="btn-upper btn btn-primary">GET A QOUTE</button>
-						</div>
-					</td>
-				</tr>
-		</tbody>
-	</table>
-</div><!-- /.estimate-ship-tax -->
-
-<div class="col-md-4 col-sm-12 estimate-ship-tax">
-	<table class="table">
-		<thead>
-			<tr>
-				<th>
-					<span class="estimate-title">Discount Code</span>
-					<p>Enter your coupon code if you have one..</p>
-				</th>
-			</tr>
-		</thead>
-		<tbody>
-				<tr>
-					<td>
-						<div class="form-group">
-							<input type="text" class="form-control unicase-form-control text-input" placeholder="You Coupon..">
-						</div>
-						<div class="clearfix pull-right">
-							<button type="submit" class="btn-upper btn btn-primary">APPLY COUPON</button>
-						</div>
-					</td>
-				</tr>
-		</tbody><!-- /tbody -->
-	</table><!-- /table -->
-</div><!-- /.estimate-ship-tax -->
-
-<div class="col-md-4 col-sm-12 cart-shopping-total">
+</div><!-- /.shopping-cart-table -->
+<div class="col-md-12 col-sm-12 cart-shopping-total">
 	<table class="table">
 		<thead>
 			<tr>
@@ -125,7 +52,6 @@
 					<td>
 						<div class="cart-checkout-btn pull-right">
 							<button type="submit" class="btn btn-primary checkout-btn">PROCCED TO CHEKOUT</button>
-							<span class="">Checkout with multiples address!</span>
 						</div>
 					</td>
 				</tr>
@@ -232,7 +158,7 @@ function shoppingProductHtml(data,price){
     html +=		'</td>';
     html +=		'<td class="cart-product-quantity">';
     html +=			'<div class="quant-input">';
-    html +=	                '<input type="number" min="0" value="'+data.qty+'">';
+    html +=	                '<input type="number" min="1" max="10" value="'+data.qty+'" onchange="updateQty('+data.product_id+',$(this).val())">';
     html +=              '</div>';
     html +=         '</td>';
     html +=		'<td class="cart-product-sub-total"><span class="cart-sub-total-price">Tk. '+data.product_new_price+'</span></td>';
