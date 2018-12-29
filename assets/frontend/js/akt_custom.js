@@ -86,25 +86,32 @@ $(function(){
 
 function headcartOption(){
     var totalPrice = 0;
-    $.each(cartProduct, function(k,v){
-        if(v.product_new_price !== null){
-            let price = v.product_new_price * v.qty
-            totalPrice = totalPrice + price;
-            document.getElementById("totalAmountOfcart").innerText = totalPrice ;
-            document.getElementById("dropdownTotalmini").innerText = totalPrice ;
+    if(cartProduct.length > 0){
 
-            $('#miniCartItem'+v.product_id+'').remove();
-            $('#cartItemListmini').append(minicartItemhtml(v,price));
-        }
-
-
-    });
-    $('.cartItemCount').text(cartProduct.length);
+        $.each(cartProduct, function(k,v){
+            if(v.product_new_price !== null){
+                let price = v.product_new_price * v.qty
+                totalPrice = totalPrice + price;
+                document.getElementById("totalAmountOfcart").innerText = totalPrice ;
+                document.getElementById("dropdownTotalmini").innerText = totalPrice ;
+    
+                $('.miniCartItem'+v.product_id+'').remove();
+                $('#cartItemListmini').append(minicartItemhtml(v,price));
+            }
+    
+    
+        });
+        $('.cartItemCount').text(cartProduct.length);
+    }else{
+        document.getElementById("totalAmountOfcart").innerText = 0 ;
+        document.getElementById("dropdownTotalmini").innerText = 0 ;
+        $('.cartItemCount').text(cartProduct.length);
+    }
 }
 
 
 function minicartItemhtml(data,price){
-    var html  = '<div class="row" id="miniCartItem'+data.product_id+'">'
+    var html  = '<div class="row miniCartItem'+data.product_id+'">';
         html +=     '<div class="col-xs-4">';
         html +=             '<div class="image"> <a href="#"><img src="'+baseUrl+''+data.product_image+'" alt=""></a> </div>';
         html +=     '</div>';
@@ -112,8 +119,17 @@ function minicartItemhtml(data,price){
         html +=         '<h3 class="name"><a href="#">'+data.product_name+'</a></h3>';
         html +=         '<div class="price">৳'+price+'</div>';
         html +=      '</div>';
-        html +=      '<div class="col-xs-1 action"> <a href="#"><i class="fa fa-trash"></i></a> </div>';
+        html +=      '<div class="col-xs-1 action"> <a onclick="removeCart('+data.product_id+')"><i class="fa fa-trash"></i></a> </div>';
         html += '</div>';
 
         return html;
+}
+
+function removeCart(id){
+    $('.miniCartItem'+id+'').html('');
+    var findindexOf = findIndexOfObj(cartProduct, 'product_id', id);
+    cartProduct.splice(findindexOf, 1);
+    localStorage.setItem('myCart', JSON.stringify(cartProduct));
+    cartProduct = JSON.parse(localStorage.getItem('myCart'));
+    headcartOption();
 }
