@@ -93,9 +93,8 @@ function headcartOption(){
             document.getElementById("totalAmountOfcart").innerText = totalPrice ;
             document.getElementById("dropdownTotalmini").innerText = totalPrice ;
 
-            if(!$('#miniCartItem'+v.product_id+'').is(':visible')){
-                $('#cartItemListmini').append(minicartItemhtml(v,price));
-            }
+            $('#miniCartItem'+v.product_id+'').remove();
+            $('#cartItemListmini').append(minicartItemhtml(v,price));
         }
 
 
