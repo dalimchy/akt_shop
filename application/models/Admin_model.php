@@ -402,12 +402,12 @@ class Admin_model extends CI_Model {
 
 	public function get_all_brands()
 	{
-		// $query = $this->db->get('tbl_brand'); 
-		$this->db->select('*');
-		$this->db->from('tbl_brand');
-		$this->db->order_by("brand_id", "desc");
-		$query_result 	= $this->db->get();
-		$brands_info 	= $query_result->result();
+		$query = $this->db->get('tbl_brand'); 
+		// $this->db->select('*');
+		// $this->db->from('tbl_brand');
+		// $this->db->order_by("brand_id", "desc");
+		// $query_result 	= $this->db->get();
+		$brands_info 	= $query->result();
 		return $brands_info;
 	}
 		

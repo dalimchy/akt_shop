@@ -5,40 +5,25 @@
     <body class="app-ui login-background">
         <div class="app-layout-canvas">
             <div class="app-layout-container">
-
                 <!-- End header -->
-
                 <main class="app-layout-content">
-
-                    <!-- Page header -->
-
-                    <!-- End Page header -->
-
                     <!-- Page content -->
                     <div class="page-content">
                         <div class="container">
                             <div class="row">
-
                                 <!-- Sign up -->
                                 <div class="col-sm-offset-3 col-md-6">
                                     <div class="login_card card">
 
-
-
-                                            <p style="color: red">
-                                                <?php
+                                        <p style="color: red">
+                                            <?php
                                             if(isset($success_message)){
                                                     echo $success_message;
                                             }
+                                            ?>
 
-                                                ?>
-
-
-                                                <?php echo validation_errors(); ?>
-                                              <p style="color: red;font-size: 10px"> <?php echo form_error('email'); ?></p>
-                                            </p>
-
-
+                                            <?php echo validation_errors(); ?>
+                                        </p>
 
                                         <h3 class="card-header h4">Sign up</h3>
                                         <div class="card-block">
@@ -49,12 +34,8 @@
                                                         <input class="form-control" type="text" id="frontend_signup_username" placeholder="Username" value="<?php echo set_value('username'); ?>" name="username" />
                                                     </div>
                                                     <div class="col-sm-6">
-
                                                         <label class="sr-only" for="frontend_signup_email">Email</label>
-
                                                         <input class="form-control" type="email" id="frontend_signup_email" placeholder="Email" value="<?php echo set_value('email'); ?>" name="email" />
-                                                       <!--   <p style="color: red;font-size: 10px"> <?php echo form_error('email'); ?></p> -->
-
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -70,8 +51,8 @@
                                                 <div class="form-group">
                                                     <div class="col-xs-12">
                                                         <label for="frontend_signup_terms" class="css-input switch switch-sm switch-app">
-                                        <input type="checkbox" id="frontend_signup_terms" name="frontend_signup_terms" /><span></span> I agree with <a data-toggle="modal" data-target="#modal-signup-terms" href="#">terms &amp; conditions</a>
-                                    </label>
+                                                            <input type="checkbox" id="frontend_signup_terms" name="frontend_signup_terms" /><span></span> I agree with <a data-toggle="modal" data-target="#modal-signup-terms" href="#">terms &amp; conditions</a>
+                                                        </label>
                                                     </div>
                                                 </div>
                                                 <button class="btn btn-app btn-block" type="submit">Sign Up</button>
