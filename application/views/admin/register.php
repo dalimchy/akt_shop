@@ -23,7 +23,6 @@
                                             ?>
 
                                             <?php echo validation_errors(); ?>
-                                            <p style="color: red;font-size: 10px"> <?php echo form_error('email'); ?></p>
                                         </p>
 
                                         <h3 class="card-header h4">Sign up</h3>
@@ -37,7 +36,6 @@
                                                     <div class="col-sm-6">
                                                         <label class="sr-only" for="frontend_signup_email">Email</label>
                                                         <input class="form-control" type="email" id="frontend_signup_email" placeholder="Email" value="<?php echo set_value('email'); ?>" name="email" />
-                                                       <?php echo form_error('email'); ?>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">

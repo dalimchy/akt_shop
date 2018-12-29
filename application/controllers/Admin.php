@@ -25,10 +25,31 @@ class Admin extends CI_Controller
 
 	public function save_register_user()
 	{
-		$this->form_validation->set_rules('username', 'User Name', 'required|max_length[255]');
-		$this->form_validation->set_rules('email', 'Email Address', 'required|max_length[255]|is_unique[akt_users.email]');
-		$this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
-		$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|min_length[6]|matches[password]');
+        $this->form_validation->set_rules(
+            'username', 'User Name', 'trim|required|max_length[255]',
+            array(
+                'required'      => 'You have not provided %s.'
+            )
+        );
+		$this->form_validation->set_rules(
+            'email', 'Email Address', 'trim|required|max_length[255]|is_unique[akt_users.email]',
+            array(
+                'required'      => 'You have not provided %s.',
+                'is_unique'     => 'This %s already exists.'
+            )
+        );
+		$this->form_validation->set_rules(
+            'password', 'Password', 'trim|required|min_length[6]',
+            array(
+                'required'      => 'You have not provided %s.'
+            )
+        );
+		$this->form_validation->set_rules(
+            'confirm_password', 'Confirm Password', 'trim|required|min_length[6]|matches[password]',
+            array(
+                'required'      => 'You have not provided %s.'
+            )
+        );
 
 		if ($this->form_validation->run()) {
 			$this->admin_model->register_new_admin();
