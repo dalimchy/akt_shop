@@ -12,11 +12,14 @@
             </div>
         <?php } ?>
     <div class="card">
-        <div class="card-header">
-            <!-- <h4>Validation</h4> -->
+        <div class="card-header bg-teal bg-inverse">
+            <!-- <h4>Material</h4> -->
             <ul class="card-actions">
                 <li>
-                    <button type="button"><i class="ion-more"></i></button>
+                    <button type="button" data-toggle="card-action" data-action="refresh_toggle" data-action-mode="demo"><i class="ion-refresh"></i></button>
+                </li>
+                <li>
+                    <button type="button" data-toggle="card-action" data-action="content_toggle"><i class="ion-chevron-down"></i></button>
                 </li>
             </ul>
         </div>
@@ -47,7 +50,6 @@
                     </div>
                 </div>
 
-
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="">Manufacture Name <span class="text-orange">*</span></label>
                     <div class="col-md-8">
@@ -61,25 +63,21 @@
                     </div>
                 </div>
 
-
-                
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="">Product Short Description  <span class="text-orange">*</span></label>
                     <div class="col-md-8">
-                        <textarea class="form-control" id=""  rows="8" placeholder="Enter category description..." name="product_short_description" required="1"><?php  echo $product_info->product_short_description; ?></textarea>
+                        <textarea class="form-control" id=""  rows="4" placeholder="Enter category description..." name="product_short_description" required="1"><?php  echo $product_info->product_short_description; ?></textarea>
                     </div>
                 </div>
-
 
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="">Product Long Description  <span class="text-orange">*</span></label>
                     <div class="col-md-8">
-                        <textarea class="form-control" id=""  rows="8" placeholder="Enter category description..." name="product_long_description" required="1"><?php  echo $product_info->product_long_description; ?></textarea>
+                        <textarea class="form-control" id=""  rows="7" placeholder="Enter category description..." name="product_long_description" required="1"><?php  echo $product_info->product_long_description; ?></textarea>
                     </div>
                 </div>
 
-
-                    <div class="form-group">
+                <div class="form-group">
                     <label class="col-md-3 control-label" for="">Product Price <span class="text-orange">*</span></label>
                     <div class="col-md-8">
                         <input class="form-control" type="number" id=""  placeholder="Enter product price " value="<?php echo $product_info->product_price?>" name="product_price" min="1" required />
@@ -93,14 +91,12 @@
                     </div>
                 </div>
 
-
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="">Product Quantity <span class="text-orange">*</span></label>
                     <div class="col-md-8">
                         <input class="form-control" type="number" id=""  placeholder="Enter product Quantity " value="<?php echo $product_info->product_quantity; ?>" name="product_quantity" min="1" required />
                     </div>
                 </div>
-
 
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="">Product Image </label>
@@ -111,7 +107,6 @@
                         <img src="<?php echo base_url().$product_info->product_image; ?>" width="100" height="100" alt="">
                     </div>
                 </div>
-
 
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="">Publication Status <span class="text-orange">*</span></label>
@@ -125,23 +120,23 @@
                     </div>
                 </div>
 
-
-                    <div class="form-group">
-                    <label class="col-md-3 control-label css-input css-checkbox css-checkbox-lg css-checkbox-primary">Is featured  </label>
-                    <div class="col-md-8">
-                        <?php  if ($product_info->is_featured == 1) { ?>
-                        <input class="form-control" type="checkbox"   name="is_featured"  checked />
-                        <?php }else{ ?>
-                        <input class="form-control" type="checkbox"   name="is_featured"   />
-                        <?php }?>
+                <div class="form-group">
+                    <div class="col-md-offset-3 col-xs-6">
+                        <p>
+                            <label class="css-input switch switch-info">
+                                <?php  if ($product_info->is_featured == 1) { ?>
+                                    <input type="checkbox" name="is_featured" checked=""><span></span> Is featured
+                                <?php }else{ ?>
+                                    <input type="checkbox" name="is_featured"><span></span> Is featured
+                                <?php }?>
+                            </label>
+                        </p>
                     </div>
                 </div>
 
-
-
                 <div class="form-group m-b-0">
-                    <div class="col-md-8 col-md-offset-4">
-                        <button class="btn btn-app" type="submit">Submit</button>
+                    <div class="col-md-8 col-md-offset-3">
+                        <button class="col-md-12 btn btn-app-teal" type="submit">Update Product</button>
                     </div>
                 </div>
             </form>

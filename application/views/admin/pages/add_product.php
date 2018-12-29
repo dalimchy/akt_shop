@@ -22,8 +22,6 @@
                 </ul>
             </div>
             <div class="card-block">
-                <!-- jQuery Validation (.js-validation-bootstrap class is initialized in js/pages/base_forms_validation.js) -->
-                <!-- For more examples please check https://github.com/jzaefferer/jquery-validation -->
                 <form class="js-validation-bootstrap form-horizontal" action="<?php echo base_url();?>save-product" enctype="multipart/form-data"  method="post">
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="">Product Name <span class="text-orange">*</span></label>
@@ -33,10 +31,22 @@
                     </div>
 
                     <div class="form-group">
+                        <label class="col-md-3 control-label" for="">Brand Name <span class="text-orange">*</span></label>
+                        <div class="col-md-8">
+                            <select class="form-control" id="" name="brand_id" required="1">
+                                <option disabled selected>Please select</option>
+                                <?php foreach ($publish_brand_info as  $v_brand) { ?>
+                                <option value="<?php echo $v_brand->brand_id?>"><?php echo $v_brand->brand_name?> </option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label class="col-md-3 control-label" for="">Category Name <span class="text-orange">*</span></label>
                         <div class="col-md-8">
                             <select class="form-control" id="" name="category_id" required="1">
-                                <option value="">Please select</option>
+                                <option disabled selected>Please select</option>
                                 <?php foreach ($publish_category_info as  $v_category) { ?>
                                 <option value="<?php echo $v_category->category_id?>"><?php echo $v_category->category_name?> </option>
                                 <?php } ?>
@@ -46,10 +56,10 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="">Manufacture Name <span class="text-orange">*</span></label>
+                        <label class="col-md-3 control-label" for="">Subcategory Name<span class="text-orange">*</span></label>
                         <div class="col-md-8">
                             <select class="form-control" id="" name="manufacture_id" required="1">
-                                <option value="">Please select</option>
+                                <option disabled selected>Please select</option>
                                 <?php foreach ($publish_manufacture_info as  $v_manufacture) { ?>
                                 <option value="<?php echo $v_manufacture->manufacture_id?>"><?php echo $v_manufacture->manufacture_name?> </option>
                                 <?php } ?>
@@ -57,11 +67,19 @@
                             </select>
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="">Product Model <span class="text-orange">*</span></label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" id=""  placeholder="Enter product model" name="product_model" required />
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="">Product For <span class="text-orange">*</span></label>
                         <div class="col-md-8">
                             <select class="form-control" id="" name="product_for" required="1">
-                                <option>Please select</option>
+                                <option disabled selected>Please select</option>
                                 <option value="1">Man</option>
                                 <option value="2">Woman</option>
                                 <option value="3">Boys</option>
@@ -116,7 +134,7 @@
                                         Feature Image
                                         <i class="fa fa-cloud-upload"></i>
                                         </label>
-                                        <input style="display:none" class="form-control" type="file" id="featureImg" name="product_image" required="1">
+                                        <input style="display:none" class="form-control" type="file" id="featureImg" name="product_image" required="1" onchange="document.getElementById('add_pro1').src = window.URL.createObjectURL(this.files[0])">
                                     </div>
                                 </div>
                             </div>
@@ -128,14 +146,14 @@
                                         Image 2
                                         <i class="fa fa-cloud-upload"></i>
                                         </label>
-                                        <input style="display:none" class="form-control" type="file" id="Image2" name="product_image2" required="1">
+                                        <input style="display:none" class="form-control" type="file" id="Image2" name="product_image2" onchange="document.getElementById('add_pro2').src = window.URL.createObjectURL(this.files[0])">
                                     </div>
                                     <div class="col-md-6">
                                         <label class="col-md-12 btn btn-info" for="Image3">
                                         Image 3
                                         <i class="fa fa-cloud-upload"></i>
                                         </label>
-                                        <input style="display:none" class="form-control" type="file" id="Image3" name="product_image3" required="1">
+                                        <input style="display:none" class="form-control" type="file" id="Image3" name="product_image3" onchange="document.getElementById('add_pro3').src = window.URL.createObjectURL(this.files[0])">
                                     </div>
                                 </div>
                                 </div>
@@ -148,14 +166,14 @@
                                         Image 4
                                         <i class="fa fa-cloud-upload"></i>
                                         </label>
-                                        <input style="display:none" class="form-control" type="file" id="Image4" name="product_image4" required="1">
+                                        <input style="display:none" class="form-control" type="file" id="Image4" name="product_image4" onchange="document.getElementById('add_pro4').src = window.URL.createObjectURL(this.files[0])">
                                     </div>
                                     <div class="col-md-6">
                                         <label class="col-md-12 btn btn-info" for="Image5">
                                         Image 5
                                         <i class="fa fa-cloud-upload"></i>
                                         </label>
-                                        <input style="display:none" class="form-control" type="file" id="Image5" name="product_image5" required="1">
+                                        <input style="display:none" class="form-control" type="file" id="Image5" name="product_image5" onchange="document.getElementById('add_pro5').src = window.URL.createObjectURL(this.files[0])">
                                     </div>
                                 </div>
                                 </div>
@@ -167,7 +185,7 @@
                         <label class="col-md-3 control-label" for="">Publication Status <span class="text-orange">*</span></label>
                         <div class="col-md-8">
                             <select class="form-control" id="" name="publication_status" required="1">
-                                <option value="">Please select</option>
+                                <option disabled selected>Please select</option>
                                 <option value="1">Published </option>
                                 <option value="0">Unpublished </option>
                                 
@@ -179,7 +197,7 @@
                         <div class="col-md-offset-3 col-xs-6">
                             <p>
                                 <label class="css-input switch switch-info">
-                                    <input type="checkbox" checked="" name="is_featured"><span></span> Is featured
+                                    <input type="checkbox" name="is_featured"><span></span> Is featured
                                 </label>
                             </p>
                         </div>
@@ -198,5 +216,37 @@
         <!-- Bootstrap Forms Validation -->
     </div>
     <!-- .col-lg-6 -->
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header bg-teal bg-inverse">
+                <h4>Product Gallery</h4>
+                <ul class="card-actions">
+                    <li>
+                        <button type="button" data-toggle="card-action" data-action="refresh_toggle" data-action-mode="demo"><i class="ion-refresh"></i></button>
+                    </li>
+                    <li>
+                        <button type="button" data-toggle="card-action" data-action="content_toggle"><i class="ion-chevron-down"></i></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-block" style="display:flow-root">
+                <div class="col-md-10 col-md-offset-1" style="min-height:100px;margin-bottom:8px;text-align:center">
+                    <img for="featureImg" id="add_pro1" src="#" alt="Feature Product" style="max-width:100%;max-height:100%" />
+                </div>
+                <div class="col-md-10 col-md-offset-1" style="min-height:100px;margin-bottom:8px;text-align:center">
+                    <img id="add_pro2" src="#" alt="Feature Product" style="max-width:100%;max-height:100%" />
+                </div>
+                <div class="col-md-10 col-md-offset-1" style="min-height:100px;margin-bottom:8px;text-align:center">
+                    <img id="add_pro3" src="#" alt="Feature Product" style="max-width:100%;max-height:100%" />
+                </div>
+                <div class="col-md-10 col-md-offset-1" style="min-height:100px;margin-bottom:8px;text-align:center">
+                    <img id="add_pro4" src="#" alt="Feature Product" style="max-width:100%;max-height:100%" />
+                </div>
+                <div class="col-md-10 col-md-offset-1" style="min-height:100px;margin-bottom:8px;text-align:center">
+                    <img id="add_pro5" src="#" alt="Feature Product" style="max-width:100%;max-height:100%" />
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>

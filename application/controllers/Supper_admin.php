@@ -285,6 +285,7 @@ class Supper_admin extends CI_Controller {
 		$data = array();
 		$data['title'] = "Add Product";
 		$data['publish_category_info'] = $this->admin_model->select_all_publish_category_info();
+		$data['publish_brand_info'] = $this->admin_model->get_all_brands();
 		$data['publish_manufacture_info'] = $this->admin_model->select_all_publish_manufacture_info();
 		$data['admin_main_content'] = $this->load->view('admin/pages/add_product',$data,true);
 		$this->load->view('admin/admin_master',$data );
