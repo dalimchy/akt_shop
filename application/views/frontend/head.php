@@ -97,29 +97,20 @@
           <div class="dropdown dropdown-cart"> <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
             <div class="items-cart-inner">
               <div class="basket"> <i class="glyphicon glyphicon-shopping-cart"></i> </div>
-              <div class="basket-item-count"><span class="count">2</span></div>
-              <div class="total-price-basket"> <span class="lbl">cart -</span> <span class="total-price"> <span class="sign">$</span><span class="value">600.00</span> </span> </div>
+              <div class="basket-item-count"><span class="count cartItemCount">0</span></div>
+              <div class="total-price-basket"> <span class="lbl">cart -</span> <span class="total-price"> <span class="sign">৳ </span><span class="value " id="totalAmountOfcart">00</span> </span> </div>
             </div>
             </a>
             <ul class="dropdown-menu">
               <li>
-                <div class="cart-item product-summary">
-                  <div class="row">
-                    <div class="col-xs-4">
-                      <div class="image"> <a href="detail.html"><img src="<?php echo base_url()?>assets/frontend/images/cart.jpg" alt=""></a> </div>
-                    </div>
-                    <div class="col-xs-7">
-                      <h3 class="name"><a href="index.php?page-detail">Simple Product</a></h3>
-                      <div class="price">$600.00</div>
-                    </div>
-                    <div class="col-xs-1 action"> <a href="#"><i class="fa fa-trash"></i></a> </div>
-                  </div>
+                <div class="cart-item product-summary" id="cartItemListmini">
+                  
                 </div>
                 <!-- /.cart-item -->
                 <div class="clearfix"></div>
                 <hr>
                 <div class="clearfix cart-total">
-                  <div class="pull-right"> <span class="text">Sub Total :</span><span class='price'>$600.00</span> </div>
+                  <div class="pull-right"> <span class="text">Sub Total :</span><span class='price'>৳ <span class="totalAmountOfcart" id="dropdownTotalmini">00</span></span> </div>
                   <div class="clearfix"></div>
                   <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
                 <!-- /.cart-total--> 
@@ -239,5 +230,8 @@
   <!-- ============================================== NAVBAR : END ============================================== --> 
   
 </header>
-
+<script>
+  var myAllProducts = <?php echo json_encode($all_product_info); ?>;
+  var baseUrl = '<?php echo base_url()?>';
+</script>
 <!-- ============================================== HEADER : END ============================================== -->

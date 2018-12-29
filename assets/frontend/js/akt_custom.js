@@ -34,35 +34,87 @@ function removeA(arr) {
 
 function findIndexOfObj(array, key, value) {
     for (var i = 0; i < array.length; i++) {
-        if (array[i][key] === value) {
+        if (array[i][key] == value) {
             return array.indexOf(array[i]);
         }
     }
     return false;
 }
-
-
-var cart_product = [];
-
-if (getCookie('cookie_cart_product').length !== 0){
-    cart_product = $.parseJSON(getCookie('cookie_cart_product'));
+function findvalOfObj(array, key, value) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i][key] == value) {
+            return array[i];
+        }
+    }
+    return false;
 }
 
+if((localStorage.getItem('myCart')) == null || ""){
+    var cartProduct = [];
+}else{
+    var cartProduct = JSON.parse(localStorage.getItem('myCart'));
+}
 function addToCart(proId){ 
-    var data = {
-        product_id: proId,
-        qty: 1 
-    }
-
-
-    var findObj = findIndexOfObj(cart_product, 'product_id', proId);
+    var findObj = findvalOfObj(myAllProducts, 'product_id', proId);
+    var findObjCart = findvalOfObj(cartProduct, 'product_id', proId);
+    var findindexOf = findIndexOfObj(cartProduct, 'product_id', proId);
 
     if (findObj !== false){
-        var oldqty = cart_product[findObj].qty;
-        cart_product[findObj].qty = oldqty + 1;
-        setCookie('cookie_cart_product', JSON.stringify(cart_product), 1);
+        if(findObjCart !== false){
+            cartProduct[findindexOf].qty = cartProduct[findindexOf].qty + 1;
+            localStorage.setItem('myCart', JSON.stringify(cartProduct));
+            cartProduct = JSON.parse(localStorage.getItem('myCart'));
+            headcartOption();
+        }else{
+            findObj["qty"] = 1;
+            cartProduct.push(findObj);
+            localStorage.setItem('myCart', JSON.stringify(cartProduct));
+            cartProduct = JSON.parse(localStorage.getItem('myCart'));
+            headcartOption();
+        }
+        console.log(77, JSON.parse(localStorage.getItem('myCart')));
     }else{
-        cart_product.push(data);
-        setCookie('cookie_cart_product', JSON.stringify(cart_product), 1 );
+        console.log(findObj);
     }
+}
+
+
+$(function(){
+    headcartOption();
+    
+});
+
+function headcartOption(){
+    var totalPrice = 0;
+    $.each(cartProduct, function(k,v){
+        if(v.product_new_price !== null){
+            let price = v.product_new_price * v.qty
+            totalPrice = totalPrice + price;
+            document.getElementById("totalAmountOfcart").innerText = totalPrice ;
+            document.getElementById("dropdownTotalmini").innerText = totalPrice ;
+
+            if(!$('#miniCartItem'+v.product_id+'').is(':visible')){
+                $('#cartItemListmini').append(minicartItemhtml(v,price));
+            }
+        }
+
+
+    });
+    $('.cartItemCount').text(cartProduct.length);
+}
+
+
+function minicartItemhtml(data,price){
+    var html  = '<div class="row" id="miniCartItem'+data.product_id+'">'
+        html +=     '<div class="col-xs-4">';
+        html +=             '<div class="image"> <a href="#"><img src="'+baseUrl+''+data.product_image+'" alt=""></a> </div>';
+        html +=     '</div>';
+        html +=     '<div class="col-xs-7">';
+        html +=         '<h3 class="name"><a href="#">'+data.product_name+'</a></h3>';
+        html +=         '<div class="price">৳'+price+'</div>';
+        html +=      '</div>';
+        html +=      '<div class="col-xs-1 action"> <a href="#"><i class="fa fa-trash"></i></a> </div>';
+        html += '</div>';
+
+        return html;
 }
