@@ -379,17 +379,15 @@ class Admin_model extends CI_Model {
 		
 		$data['brand_name'] = $this->input->post('brandname',true);
 		
-		$logo = array();
+		// $logo = array();
 		// $error = "";
 
 		$config['upload_path']          = 'upload/brand/';
 		$config['allowed_types']        = 'jpg|png|jpeg';
 		$config['max_size']             = 1000;
-		$config['file_name'] = $_FILES['file']['name']; 
+		$config['file_name'] = time().'_'.$_FILES['brandlogo']['name']; 
 		// $config['max_width']            = 1024;
 		// $config['max_height']           = 768;
-		// $config['remove_spaces']=TRUE;
-		// $config['encrypt_name']=TRUE;
 		
 		$this->load->library('upload', $config);
 
