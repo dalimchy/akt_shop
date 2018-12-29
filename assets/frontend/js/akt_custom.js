@@ -97,6 +97,12 @@ function headcartOption(){
     
                 $('.miniCartItem'+v.product_id+'').remove();
                 $('#cartItemListmini').append(minicartItemhtml(v,price));
+                if( pageTitle == 'shopping_cart'){
+
+                    $('#cookieProducts').append(shoppingProductHtml(v,price));
+                    $('#grandTotal').text('Tk. '+totalPrice);
+                    $('#subTotal').text('Tk. '+totalPrice);
+                }
             }
     
     
@@ -106,6 +112,8 @@ function headcartOption(){
         document.getElementById("totalAmountOfcart").innerText = 0 ;
         document.getElementById("dropdownTotalmini").innerText = 0 ;
         $('.cartItemCount').text(cartProduct.length);
+        $('#grandTotal').text('Tk. 0');
+        $('#subTotal').text('Tk. 0');
     }
 }
 
@@ -117,7 +125,7 @@ function minicartItemhtml(data,price){
         html +=     '</div>';
         html +=     '<div class="col-xs-7">';
         html +=         '<h3 class="name"><a href="#">'+data.product_name+'</a></h3>';
-        html +=         '<div class="price">৳'+price+'</div>';
+        html +=         '<div class="price">Tk. '+price+'</div>';
         html +=      '</div>';
         html +=      '<div class="col-xs-1 action"> <a onclick="removeCart('+data.product_id+')"><i class="fa fa-trash"></i></a> </div>';
         html += '</div>';
