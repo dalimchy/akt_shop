@@ -24,84 +24,85 @@
             </ul>
         </div>
         <div class="card-block">
-            <!-- jQuery Validation (.js-validation-bootstrap class is initialized in js/pages/base_forms_validation.js) -->
-            <!-- For more examples please check https://github.com/jzaefferer/jquery-validation -->
             <form class="js-validation-bootstrap form-horizontal" action="<?php echo base_url();?>update-product" enctype="multipart/form-data"  method="post" name="edit_product">
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="">Product Name <span class="text-orange">*</span></label>
                     <div class="col-md-8">
-                        <input class="form-control" type="text" id=""  placeholder="Enter category name" name="product_name" value="<?php echo $product_info->product_name; ?>" required />
+                        <input class="form-control" type="text"  placeholder="Enter category name" name="product_name" value="<?php echo $product_info->product_name; ?>" required />
                         <input type="hidden"  value="<?php echo $product_info->product_id; ?>"  name="product_id" >
-
                     </div>
                 </div>
-
 
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="">Category Name <span class="text-orange">*</span></label>
                     <div class="col-md-8">
-                        <select class="form-control" id="" name="category_id" required="1">
+                        <select class="form-control" name="category_id" required="1">
                             <option value="">Please select</option>
                             <?php foreach ($publish_category_info as  $v_category) { ?>
                             <option value="<?php echo $v_category->category_id?>"><?php echo $v_category->category_name?> </option>
                             <?php } ?>
-                            
                         </select>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-3 control-label" for="">Manufacture Name <span class="text-orange">*</span></label>
+                    <label class="col-md-3 control-label" for="">Subcategory Name <span class="text-orange">*</span></label>
                     <div class="col-md-8">
-                        <select class="form-control" id="" name="manufacture_id" required="1">
+                        <select class="form-control" name="manufacture_id" required="1">
                             <option value="">Please select</option>
                             <?php foreach ($publish_manufacture_info as  $v_manufacture) { ?>
                             <option value="<?php echo $v_manufacture->manufacture_id?>"><?php echo $v_manufacture->manufacture_name?> </option>
                             <?php } ?>
-                            
                         </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="">Product Model <span class="text-orange">*</span></label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" value="<?php echo $product_info->product_model; ?>" name="product_model" required />
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="">Product Short Description  <span class="text-orange">*</span></label>
                     <div class="col-md-8">
-                        <textarea class="form-control" id=""  rows="4" placeholder="Enter category description..." name="product_short_description" required="1"><?php  echo $product_info->product_short_description; ?></textarea>
+                        <textarea class="form-control"  rows="4" placeholder="Enter category description..." name="product_short_description" required="1"><?php  echo $product_info->product_short_description; ?></textarea>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="">Product Long Description  <span class="text-orange">*</span></label>
                     <div class="col-md-8">
-                        <textarea class="form-control" id=""  rows="7" placeholder="Enter category description..." name="product_long_description" required="1"><?php  echo $product_info->product_long_description; ?></textarea>
+                        <textarea class="form-control"  rows="7" placeholder="Enter category description..." name="product_long_description" required="1"><?php  echo $product_info->product_long_description; ?></textarea>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="">Product Price <span class="text-orange">*</span></label>
                     <div class="col-md-8">
-                        <input class="form-control" type="number" id=""  placeholder="Enter product price " value="<?php echo $product_info->product_price?>" name="product_price" min="1" required />
+                        <input class="form-control" type="number"  placeholder="Enter product price " value="<?php echo $product_info->product_price?>" name="product_price" min="1" required />
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="">Product New Price <span class="text-orange">*</span></label>
                     <div class="col-md-8">
-                        <input class="form-control" type="number" id=""  placeholder="Enter product New price " value="<?php echo $product_info->product_new_price?>" name="product_new_price" min="1" required />
+                        <input class="form-control" type="number"  placeholder="Enter product New price " value="<?php echo $product_info->product_new_price?>" name="product_new_price" min="1" required />
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="">Product Quantity <span class="text-orange">*</span></label>
                     <div class="col-md-8">
-                        <input class="form-control" type="number" id=""  placeholder="Enter product Quantity " value="<?php echo $product_info->product_quantity; ?>" name="product_quantity" min="1" required />
+                        <input class="form-control" type="number"  placeholder="Enter product Quantity " value="<?php echo $product_info->product_quantity; ?>" name="product_quantity" min="1" required />
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="">Product Image </label>
                     <div class="col-md-8">
-                        <input class="form-control" type="file" id="" name="product_image" >
+                        <input class="form-control" type="file" name="product_image" >
                         <input  name="product_old_image"  value="<?php echo $product_info->product_image; ?>" type="hidden">
 
                         <img src="<?php echo base_url().$product_info->product_image; ?>" width="100" height="100" alt="">
@@ -111,7 +112,7 @@
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="">Publication Status <span class="text-orange">*</span></label>
                     <div class="col-md-8">
-                        <select class="form-control" id="" name="publication_status" required="1">
+                        <select class="form-control" name="publication_status" required="1">
                             <option value="">Please select</option>
                             <option value="1">Published </option>
                             <option value="0">Unpublished </option>

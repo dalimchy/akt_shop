@@ -344,6 +344,7 @@ class Admin_model extends CI_Model {
 		$product_id 						= $this->input->post('product_id', True);
 		$data['category_id'] 				= $this->input->post('category_id', True);
 		$data['manufacture_id']				= $this->input->post('manufacture_id', True);
+		$data['product_model']				= $this->input->post('product_model', True);
 		$data['product_short_description'] 	= $this->input->post('product_short_description', True);
 		$data['product_long_description'] 	= $this->input->post('product_long_description', True);
 		$data['product_price'] 				= $this->input->post('product_price', True);
@@ -384,10 +385,11 @@ class Admin_model extends CI_Model {
 		$config['upload_path']          = 'upload/brand/';
 		$config['allowed_types']        = 'jpg|png|jpeg';
 		$config['max_size']             = 1000;
+		$config['file_name'] = $_FILES['file']['name']; 
 		// $config['max_width']            = 1024;
 		// $config['max_height']           = 768;
-		$config['remove_spaces']=TRUE;
-		$config['encrypt_name']=TRUE;
+		// $config['remove_spaces']=TRUE;
+		// $config['encrypt_name']=TRUE;
 		
 		$this->load->library('upload', $config);
 

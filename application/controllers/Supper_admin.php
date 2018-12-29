@@ -76,7 +76,6 @@ class Supper_admin extends CI_Controller {
 	{
 
 		$category_image = $this->save_category_img();
-  		// $this->admin_model->update_product($product_image);
 		$this->admin_model->save_category($category_image);
 		$sdata = array();
 		$sdata['message'] = "Save Category Information Sucessfully!";
@@ -360,8 +359,7 @@ class Supper_admin extends CI_Controller {
   			$this->session->set_userdata($sdata);
   			$product_id = $this->input->post('product_id', True);
   			redirect('manage-product');
-  		}else
-  		{
+  		}else {
   			$product_image = $this->upload_product_img();
   			$this->admin_model->update_product($product_image);
   			unlink( $this->input->post('product_old_image', True));

@@ -1,13 +1,7 @@
  
                         <!-- Dynamic Table Full -->
 
-
-                        <div class="card">
-                            <!-- <div class="card-header">
-                                <h4>Dynamic Table - Full</h4>
-                            </div> -->
-
-                              <?php
+                        <?php
                             $message = $this->session->userdata('message');
                             if ($message) { ?>
                                 
@@ -16,6 +10,10 @@
                                     <p><strong>Well done! </strong><?php echo $message; $this->session->unset_userdata('message'); ?></p>
                                 </div>
                            <?php } ?>
+                        <div class="card">
+                            <!-- <div class="card-header">
+                                <h4>Dynamic Table - Full</h4>
+                            </div> -->
                             <div class="card-block">
                                 <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/pages/base_tables_datatables.js -->
                                 <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
@@ -62,8 +60,8 @@
                                                 <div class="btn-group">
                                                    
 
-                                                    <a href="<?php echo base_url()?>edit-product/<?php echo $v_product->product_id; ?>" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Edit Client"><i class="ion-edit"></i></a>
-                                                    <a href="<?php echo base_url()?>delete-product/<?php echo $v_product->product_id; ?>" onclick="return confirm('Are you sure to delete this!');" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remove Client"><i class="ion-close"></i></a>
+                                                    <a href="<?php echo base_url()?>edit-product/<?php echo $v_product->product_id; ?>" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Edit Product"><i class="ion-edit"></i></a>
+                                                    <a href="<?php echo base_url()?>delete-product/<?php echo $v_product->product_id; ?>" onclick="return confirm('Are you sure to delete this!');" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Delete Product"><i class="ion-android-delete"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
