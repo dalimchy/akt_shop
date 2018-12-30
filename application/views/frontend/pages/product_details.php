@@ -26,24 +26,83 @@
     <div class="product-item-holder size-big single-product-gallery small-gallery">
 
         <div id="owl-single-product">
-            <div class="single-product-gallery-item" id="slide9">
+            <div class="single-product-gallery-item" id="aktProductSlide1">
                 <a data-lightbox="image-1" data-title="Gallery" href="">
                     <img class="img-responsive" alt="" src="<?php echo base_url()?><?php echo $product_details->product_image ?>" data-echo="<?php echo base_url()?><?php echo $product_details->product_image ?>" />
                 </a>
-            </div><!-- /.single-product-gallery-item -->
+            </div>
+						<?php if($product_details->product_img2 !== null){ ?> 
+							<div class="single-product-gallery-item" id="aktProductSlide2">
+									<a data-lightbox="image-1" data-title="Gallery" href="">
+											<img class="img-responsive" alt="" src="<?php echo base_url()?><?php echo $product_details->product_img2 ?>" data-echo="<?php echo base_url()?><?php echo $product_details->product_img2 ?>" />
+									</a>
+							</div>
+						<?php }?>
+						<?php if($product_details->product_img3 !== null){ ?> 
+							<div class="single-product-gallery-item" id="aktProductSlide3">
+									<a data-lightbox="image-1" data-title="Gallery" href="">
+											<img class="img-responsive" alt="" src="<?php echo base_url()?><?php echo $product_details->product_img3 ?>" data-echo="<?php echo base_url()?><?php echo $product_details->product_img3 ?>" />
+									</a>
+							</div>
+						<?php }?>
+						<?php if($product_details->product_img4 !== null){ ?> 
+							<div class="single-product-gallery-item" id="aktProductSlide4">
+									<a data-lightbox="image-1" data-title="Gallery" href="">
+											<img class="img-responsive" alt="" src="<?php echo base_url()?><?php echo $product_details->product_img4 ?>" data-echo="<?php echo base_url()?><?php echo $product_details->product_img4 ?>" />
+									</a>
+							</div>
+						<?php }?>
+						<?php if($product_details->product_img5 !== null){ ?> 
+							<div class="single-product-gallery-item" id="aktProductSlide5">
+									<a data-lightbox="image-1" data-title="Gallery" href="">
+											<img class="img-responsive" alt="" src="<?php echo base_url()?><?php echo $product_details->product_img5 ?>" data-echo="<?php echo base_url()?><?php echo $product_details->product_img5 ?>" />
+									</a>
+							</div>
+						<?php }?>
+						<!-- /.single-product-gallery-item -->
 
-        </div><!-- /.single-product-slider -->
+        </div>
+				<!-- /.single-product-slider -->
 
 
         <div class="single-product-gallery-thumbs gallery-thumbs">
 
             <div id="owl-single-product-thumbnails">
                 <div class="item">
-                    <a class="horizontal-thumb active" data-target="#owl-single-product" data-slide="1" href="#slide1">
+                    <a class="horizontal-thumb active" data-target="#owl-single-product" data-slide="1" href="#aktProductSlide1">
                         <img class="img-responsive" width="85" alt="" src="<?php echo base_url()?><?php echo $product_details->product_image ?>" data-echo="<?php echo base_url()?><?php echo $product_details->product_image ?>" />
                     </a>
                 </div>
-            </div><!-- /#owl-single-product-thumbnails -->
+								<?php if($product_details->product_img2 !== null){ ?> 
+									<div class="item">
+											<a class="horizontal-thumb " data-target="#owl-single-product" data-slide="1" href="#aktProductSlide2">
+													<img class="img-responsive" width="85" alt="" src="<?php echo base_url()?><?php echo $product_details->product_img2 ?>" data-echo="<?php echo base_url()?><?php echo $product_details->product_img2 ?>" />
+											</a>
+									</div>
+								<?php }?>
+								<?php if($product_details->product_img3 !== null){ ?> 
+									<div class="item">
+											<a class="horizontal-thumb " data-target="#owl-single-product" data-slide="1" href="#aktProductSlide3">
+													<img class="img-responsive" width="85" alt="" src="<?php echo base_url()?><?php echo $product_details->product_img3 ?>" data-echo="<?php echo base_url()?><?php echo $product_details->product_img3 ?>" />
+											</a>
+									</div>
+								<?php }?>
+								<?php if($product_details->product_img4 !== null){ ?> 
+									<div class="item">
+											<a class="horizontal-thumb " data-target="#owl-single-product" data-slide="1" href="#aktProductSlide4">
+													<img class="img-responsive" width="85" alt="" src="<?php echo base_url()?><?php echo $product_details->product_img4 ?>" data-echo="<?php echo base_url()?><?php echo $product_details->product_img4 ?>" />
+											</a>
+									</div>
+								<?php }?>
+								<?php if($product_details->product_img5 !== null){ ?> 
+									<div class="item">
+											<a class="horizontal-thumb " data-target="#owl-single-product" data-slide="1" href="#aktProductSlide5">
+													<img class="img-responsive" width="85" alt="" src="<?php echo base_url()?><?php echo $product_details->product_img5 ?>" data-echo="<?php echo base_url()?><?php echo $product_details->product_img5 ?>" />
+											</a>
+									</div>
+								<?php }?>
+            </div>
+						<!-- /#owl-single-product-thumbnails -->
 
             
 

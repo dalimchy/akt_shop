@@ -44,7 +44,7 @@
             <li><a href="#"><i class="icon fa fa-heart"></i>Wishlist</a></li>
             <li><a href="<?php echo base_url()?>shopping-cart"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
             <li><a href="#"><i class="icon fa fa-check"></i>Checkout</a></li>
-            <li><a href="#"><i class="icon fa fa-lock"></i>Login</a></li>
+            <li><a href="<?php echo base_url()?>sign-in"><i class="icon fa fa-lock"></i>Login</a></li>
           </ul>
         </div>
         <!-- /.cnt-account -->
