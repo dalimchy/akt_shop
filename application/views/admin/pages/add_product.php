@@ -45,7 +45,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="">Category Name <span class="text-orange">*</span></label>
                         <div class="col-md-8">
-                            <select class="form-control" id="" name="category_id" required="1">
+                            <select class="form-control" onchange="productCategory()" id="product_cat" name="category_id" required="1">
                                 <option disabled selected>Please select</option>
                                 <?php foreach ($publish_category_info as  $v_category) { ?>
                                 <option value="<?php echo $v_category->category_id?>"><?php echo $v_category->category_name?> </option>
@@ -58,24 +58,24 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="">Subcategory Name<span class="text-orange">*</span></label>
                         <div class="col-md-8">
-                            <select class="form-control" id="" name="manufacture_id" required="1">
+                            <select class="form-control" id="product_subcat" name="manufacture_id" required="1">
                                 <option disabled selected>Please select</option>
-                                <?php foreach ($publish_manufacture_info as  $v_manufacture) { ?>
-                                <option value="<?php echo $v_manufacture->manufacture_id?>"><?php echo $v_manufacture->manufacture_name?> </option>
-                                <?php } ?>
+                                <?php //foreach ($publish_manufacture_info as  $v_manufacture) { ?>
+                                <!-- <option value="<?php // echo $v_manufacture->manufacture_id?>"><?php // echo $v_manufacture->manufacture_name?> </option> -->
+                                <?php // } ?>
                                 
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="">Product Model <span class="text-orange">*</span></label>
+                        <label class="col-md-3 control-label" for="">Product Model</label>
                         <div class="col-md-8">
-                            <input class="form-control" type="text" id=""  placeholder="Enter product model" name="product_model" required />
+                            <input class="form-control" type="text" id=""  placeholder="Enter product model" name="product_model"/>
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label class="col-md-3 control-label" for="">Product For <span class="text-orange">*</span></label>
                         <div class="col-md-8">
                             <select class="form-control" id="" name="product_for" required="1">
@@ -87,19 +87,19 @@
                                 <option value="5">Kids</option>
                             </select>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="">Product Short Description  <span class="text-orange">*</span></label>
+                        <label class="col-md-3 control-label" for="">Product Short Description</label>
                         <div class="col-md-8">
-                            <textarea class="form-control" id=""  rows="4" placeholder="Enter category description..." name="product_short_description" required="1"></textarea>
+                            <textarea class="form-control" id=""  rows="4" placeholder="Enter category description..." name="product_short_description"></textarea>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="">Product Long Description  <span class="text-orange">*</span></label>
+                        <label class="col-md-3 control-label" for="">Product Long Description</label>
                         <div class="col-md-8">
-                            <textarea class="form-control" id=""  rows="7" placeholder="Enter category description..." name="product_long_description" required="1"></textarea>
+                            <textarea class="form-control" id=""  rows="7" placeholder="Enter category description..." name="product_long_description"></textarea>
                         </div>
                     </div>
 
@@ -111,9 +111,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="">Product New Price <span class="text-orange">*</span></label>
+                        <label class="col-md-3 control-label" for="">Discount Price</label>
                         <div class="col-md-8">
-                            <input class="form-control" type="number" id=""  placeholder="Enter product New price " name="product_new_price" min="1" required />
+                            <input class="form-control" type="number" id=""  placeholder="Enter Discount price " name="product_new_price" min="1"/>
                         </div>
                     </div>
 
@@ -248,5 +248,4 @@
             </div>
         </div>
     </div>
-
 </div>

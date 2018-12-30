@@ -86,7 +86,24 @@
                 App.initHelpers('slick');
             });
         </script>
-
+        <script>
+            function productCategory() {
+                var category_id = $('#product_cat').val();
+                console.log(category_id);
+                if(category_id != ''){
+                    $.ajax({
+                        url: "<?php echo base_url();?>supper_admin/getSubCateBy_category",
+                        method: "POST",
+                        data: {category_id:category_id},
+                        success: function (data) {
+                            $('#product_subcat').html(data);
+                        }
+                    });
+                }else{
+                    $('#product_subcat').html('<option disabled selected>Please select</option>');
+                }
+            }
+        </script>
 
 
     </body>

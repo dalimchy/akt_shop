@@ -153,3 +153,5 @@ function updateQty(id,value){
     cartProduct = JSON.parse(localStorage.getItem('myCart'));
     headcartOption();
 }
+
+
