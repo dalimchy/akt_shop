@@ -206,6 +206,24 @@ class Admin_model extends CI_Model {
 		$this->db->delete('tbl_manufacture');
 	}
 
+
+	// /Dependent select option
+	
+	public function getSubCateBy_category($category_id)
+	{
+		$this->db->where('category_id', $category_id);
+		$this->db->order_by('manufacture_name ', 'ASC');
+		$query = $this->db->get('tbl_manufacture');
+		$subCate_query =  $query->result();
+		$output = '<option disabled selected>Please select</option>';
+
+		foreach($subCate_query as $row)
+		{
+			$output .= '<option value="'.$row->manufacture_id.'">'.$row->manufacture_name.'</option>';
+		}
+		return $output;
+	}
+
 	public function save_product_info()
 	{
 		$data=array();

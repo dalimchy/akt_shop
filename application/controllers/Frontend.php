@@ -78,26 +78,20 @@ class Frontend extends CI_Controller {
 	public function sign_up_customer()
 	{
 		$this->form_validation->set_rules(
-            'username', 'User Name', 'trim|required|max_length[255]',
+            'customer_name', 'Name', 'trim|required|max_length[255]',
             array(
                 'required'      => 'You have not provided %s.'
             )
         );
 		$this->form_validation->set_rules(
-            'email', 'Email Address', 'trim|required|max_length[255]|is_unique[akt_users.email]',
+            'customer_email', 'Email Address', 'trim|required|max_length[255]|is_unique[tbl_customers.customer_email]',
             array(
                 'required'      => 'You have not provided %s.',
                 'is_unique'     => 'This %s already exists.'
             )
         );
 		$this->form_validation->set_rules(
-            'password', 'Password', 'trim|required|min_length[6]',
-            array(
-                'required'      => 'You have not provided %s.'
-            )
-        );
-		$this->form_validation->set_rules(
-            'confirm_password', 'Confirm Password', 'trim|required|min_length[6]|matches[password]',
+            'customer_password', 'Password', 'trim|required|min_length[6]',
             array(
                 'required'      => 'You have not provided %s.'
             )

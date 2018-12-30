@@ -271,6 +271,13 @@ class Supper_admin extends CI_Controller {
 		redirect('manage-manufacture');
 	}
 
+	public function getSubCateBy_category()
+	{
+		if($this->input->post('category_id'))
+		{
+			echo $this->admin_model->getSubCateBy_category($this->input->post('category_id'));
+		}
+	}
 
 				/***********************************/
 				/*  *****  		Product  *****     */

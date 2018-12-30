@@ -41,17 +41,15 @@
                         </div>
                     </div>
 
-
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="">Manufacture Name <span class="text-orange">*</span></label>
+                        <label class="col-md-3 control-label" for="">Subcategory Name <span class="text-orange">*</span></label>
                         <div class="col-md-8">
                             <input class="form-control" type="text" id=""  placeholder="Enter category name" name="manufacture_name" required />
                         </div>
                     </div>
 
-
-                        <div class="form-group">
-                        <label class="col-md-3 control-label" for="">Manufacture Image </label>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="">Subcategory Image </label>
                         <div class="col-md-8">
                             <input class="form-control" type="file" id="" name="manufacture_image" required="1">
                         </div>
@@ -60,13 +58,13 @@
 
                     
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="">Manufacture Description <span class="text-orange">*</span></label>
+                        <label class="col-md-3 control-label" for="">Subcategory Description</label>
                         <div class="col-md-8">
-                            <textarea class="form-control" id=""  rows="8" placeholder="Enter category description..." name="manufacture_description" required="1"></textarea>
+                            <textarea class="form-control" id=""  rows="6" placeholder="Enter category description..." name="manufacture_description"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="">Manufacture For <span class="text-orange">*</span></label>
+                        <label class="col-md-3 control-label" for="">Subcategory For <span class="text-orange">*</span></label>
                         <div class="col-md-8">
                             <select class="form-control" id="" name="manufacture_for" required="1">
                                 <option>Please select</option>
@@ -89,7 +87,6 @@
                             </select>
                         </div>
                     </div>
-                    
                     
                     <div class="form-group m-b-0">
                         <div class="col-md-8 col-md-offset-3">
