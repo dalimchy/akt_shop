@@ -210,7 +210,7 @@ class Admin_model extends CI_Model {
 	{
 		$data=array();
 		$data['product_name']				= $this->input->post('product_name',true);
-		$data['product_brand']				= $this->input->post('brand_id',true);
+		$data['brand_id']				= $this->input->post('brand_id',true);
 		$data['category_id']				= $this->input->post('category_id',true);
 		$data['manufacture_id']				= $this->input->post('manufacture_id',true);
 		$data['product_model']				= $this->input->post('product_model',true);
@@ -411,6 +411,18 @@ class Admin_model extends CI_Model {
 		$query_result 	= $this->db->get();
 		$brands_info 	= $query_result->result();
 		return $brands_info;
+	}
+
+	public function delete_brand($brand_id)
+	{
+		$this->db->where('brand_id', $brand_id);
+		$this->db->delete('tbl_brand');
+	}
+
+	public function delete_productBy_brand($brand_id)
+	{
+		$this->db->where('brand_id', $brand_id);
+		$this->db->delete('tbl_product');
 	}
 		
 

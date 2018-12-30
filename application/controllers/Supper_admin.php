@@ -125,8 +125,8 @@ class Supper_admin extends CI_Controller {
 	public function update_category()
 	{
 
-		if ($_FILES['category_image']['name'] == '' || $_FILES['category_image']['size'] == '0') {
-
+		if ($_FILES['category_image']['name'] == '' || $_FILES['category_image']['size'] == '0')
+		{
   			$category_image = $this->input->post('category_old_image', True);
   			$this->admin_model->update_category_info($category_image);
   			$sdata = array();
@@ -136,7 +136,6 @@ class Supper_admin extends CI_Controller {
   			redirect('manage-categories');
   		}else
   		{
-
   			$category_image = $this->save_category_img();
   			$this->admin_model->update_category_info($category_image);
   			unlink( $this->input->post('category_old_image', True));
@@ -371,6 +370,10 @@ class Supper_admin extends CI_Controller {
   		}
 	}
 
+					/***********************************/
+					/*  *****      Brand     *****     */
+					/***********************************/
+
 	public function add_brand()
 	{
 		$data = array();
@@ -389,7 +392,12 @@ class Supper_admin extends CI_Controller {
 		redirect('brands');
 	}
 
-
+	public function delete_brand($brand_id)
+	{
+		$this->admin_model->delete_brand($brand_id);
+		$this->admin_model->delete_productBy_brand($brand_id);
+		redirect('brands');
+	}
 
 
 }

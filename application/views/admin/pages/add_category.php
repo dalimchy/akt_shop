@@ -64,7 +64,7 @@
                     
                     <div class="form-group m-b-0">
                         <div class="col-md-8 col-md-offset-3">
-                            <button class="btn btn-app-teal form-control" type="submit">Submit</button>
+                            <button class="btn btn-app-teal form-control" type="submit">Add Category</button>
                         </div>
                     </div>
                 </form>

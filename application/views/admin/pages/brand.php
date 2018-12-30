@@ -78,8 +78,8 @@
                             <img style="height: 70px;width: 70px" src="<?php echo base_url().$brand_value->brand_logo; ?>" alt="" ></td>
                             <td class="text-center">
                                 <div class="btn-group">
-                                    <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="" data-original-title="Edit client"><i class="ion-edit"></i></button>
-                                    <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="" data-original-title="Remove client"><i class="ion-close"></i></button>
+                                    <a href="<?php  echo base_url()?>edit-brand/<?php echo $brand_value->brand_id; ?>" class="btn btn-xs btn-app-teal" type="button" data-toggle="tooltip" title="" data-original-title="Edit Brand"><i class="ion-edit"></i></a>
+                                    <a href="<?php  echo base_url()?>delete-brand/<?php echo $brand_value->brand_id; ?>" class="btn btn-xs btn-app-red" type="button" data-toggle="tooltip" title="" data-original-title="Remove Brand"><i class="ion-android-delete"></i></a>
                                 </div>
                             </td>
                         </tr>

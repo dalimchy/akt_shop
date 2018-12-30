@@ -39,14 +39,14 @@
                                 </li>
 
                                 <li class="nav-item nav-item-has-subnav <?php if($title == 'Add Manufacture' || $title == 'Manage Manufacture' ){?>active open<?php }?>">
-                                    <a href="javascript:void(0)"><i class="ion-clipboard"></i> Manufacture</a>
+                                    <a href="javascript:void(0)"><i class="ion-clipboard"></i> Subcategory</a>
                                     <ul class="nav nav-subnav">
                                         <li>
-                                            <a href="<?php echo base_url('/add-manufacture')?>">Add Manufacture</a>
+                                            <a href="<?php echo base_url('/add-manufacture')?>">Add Subcategory</a>
                                         </li>
 
                                         <li>
-                                            <a href="<?php echo base_url('/manage-manufacture')?>">Manage Manufacture</a>
+                                            <a href="<?php echo base_url('/manage-manufacture')?>">Manage Subcategory</a>
                                         </li>
                                     </ul>
                                 </li>
