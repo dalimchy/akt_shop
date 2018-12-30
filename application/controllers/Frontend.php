@@ -98,7 +98,7 @@ class Frontend extends CI_Controller {
         );
 
 		if ($this->form_validation->run()) {
-			$this->admin_model->register_new_admin();
+			$this->admin_model->register_new_customer();
 			redirect('/dashboard');
 		}else{
 

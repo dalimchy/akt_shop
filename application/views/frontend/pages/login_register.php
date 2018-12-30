@@ -41,17 +41,17 @@
 	  	</div>
         <div class="form-group">
 		    <label class="info-title" for="customer_name">Name <span>*</span></label>
-		    <input type="email" class="form-control unicase-form-control text-input" name="customer_name" id="customer_name" >
+		    <input type="text" class="form-control unicase-form-control text-input" name="customer_name" id="customer_name" >
 		</div>
         <div class="form-group">
 		    <label class="info-title" for="customer_phone">Phone Number <span>*</span></label>
-		    <input type="email" class="form-control unicase-form-control text-input" name="customer_phone" id="customer_phone" >
+		    <input type="number" class="form-control unicase-form-control text-input" name="customer_phone" id="customer_phone" >
 		</div>
         <div class="form-group">
 		    <label class="info-title" for="customer_password">Password <span>*</span></label>
-		    <input type="email" class="form-control unicase-form-control text-input" name="customer_password" id="customer_password" >
+		    <input type="password" class="form-control unicase-form-control text-input" name="customer_password" id="customer_password" >
 		</div>
-	  	<div type="submit" class="btn-upper btn btn-primary checkout-page-button">Sign Up</div>
+	  	<button type="submit" class="btn-upper btn btn-primary checkout-page-button">Sign Up</button>
 	</form>
 	
 	

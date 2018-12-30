@@ -442,6 +442,16 @@ class Admin_model extends CI_Model {
 		$this->db->where('brand_id', $brand_id);
 		$this->db->delete('tbl_product');
 	}
-		
+	
+	public function register_new_customer()
+	{
+		$data['customer_name'] 		= $this->input->post('customer_name', True);
+		$data['customer_email'] 			= $this->input->post('customer_email', True);
+		$data['customer_password'] 		= md5($this->input->post('customer_password', True));	
+		$data['customer_image'] 			= 'user.jpg';
+		$data['customer_phone'] 	= $this->input->post('customer_phone', True);
+
+		$this->db->insert('tbl_customers', $data);
+	}
 
 }
