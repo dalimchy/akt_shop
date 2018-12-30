@@ -75,4 +75,42 @@ class Frontend extends CI_Controller {
         $data['frondend_main_content'] = $this->load->view('frontend/pages/login_register',$data,true);
 		$this->load->view('frontend/index', $data);
 	}
+	public function sign_up_customer()
+	{
+		$this->form_validation->set_rules(
+            'username', 'User Name', 'trim|required|max_length[255]',
+            array(
+                'required'      => 'You have not provided %s.'
+            )
+        );
+		$this->form_validation->set_rules(
+            'email', 'Email Address', 'trim|required|max_length[255]|is_unique[akt_users.email]',
+            array(
+                'required'      => 'You have not provided %s.',
+                'is_unique'     => 'This %s already exists.'
+            )
+        );
+		$this->form_validation->set_rules(
+            'password', 'Password', 'trim|required|min_length[6]',
+            array(
+                'required'      => 'You have not provided %s.'
+            )
+        );
+		$this->form_validation->set_rules(
+            'confirm_password', 'Confirm Password', 'trim|required|min_length[6]|matches[password]',
+            array(
+                'required'      => 'You have not provided %s.'
+            )
+        );
+
+		if ($this->form_validation->run()) {
+			$this->admin_model->register_new_admin();
+			redirect('/dashboard');
+		}else{
+
+			$data = array();
+			$data['title'] = " Akt-shop Register";
+			$this->load->view('admin/register',$data);
+		}
+	}
 }

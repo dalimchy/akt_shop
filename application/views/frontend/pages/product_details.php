@@ -152,8 +152,8 @@
 
 									<div class="col-sm-6">
 										<div class="price-box">
-											<span class="price"> ৳ <?php echo $product_details->product_new_price?></span>
-											<span class="price-strike">৳ <?php echo $product_details->product_price?></span>
+											<span class="price"> Tk. <?php echo $product_details->product_new_price?></span>
+											<span class="price-strike">Tk. <?php echo $product_details->product_price?></span>
 										</div>
 									</div>
 
@@ -388,7 +388,7 @@
                     <h3 class="name"><a href="detail.html"><?php echo $v_product->product_name ?></a></h3>
                     <div class="rating rateit-small"></div>
                     <div class="description"></div>
-                    <div class="product-price"> <span class="price"> ৳ <?php echo $v_product->product_new_price ?></span> <span class="price-before-discount">৳ <?php echo $v_product->product_price ?></span> </div>
+                    <div class="product-price"> <span class="price"> Tk. <?php echo $v_product->product_new_price ?></span> <span class="price-before-discount">Tk. <?php echo $v_product->product_price ?></span> </div>
                     <!-- /.product-price --> 
                     
                   </div>
@@ -445,7 +445,7 @@
                     <h3 class="name"><a href="detail.html"><?php echo $v_product->product_name ?></a></h3>
                     <div class="rating rateit-small"></div>
                     <div class="description"></div>
-                    <div class="product-price"> <span class="price"> ৳ <?php echo $v_product->product_new_price ?></span> <span class="price-before-discount">৳ <?php echo $v_product->product_price ?></span> </div>
+                    <div class="product-price"> <span class="price"> Tk. <?php echo $v_product->product_new_price ?></span> <span class="price-before-discount">Tk. <?php echo $v_product->product_price ?></span> </div>
                     <!-- /.product-price --> 
                     
                   </div>
@@ -521,7 +521,7 @@
                           <h3 class="name"><a href="detail.html"><?php echo $v_product->product_name ?></a></h3>
                           <div class="rating rateit-small"></div>
                           <div class="description"></div>
-                          <div class="product-price"> <span class="price"> ৳ <?php echo $v_product->product_new_price ?></span> <span class="price-before-discount">৳ <?php echo $v_product->product_price ?></span> </div>
+                          <div class="product-price"> <span class="price"> Tk. <?php echo $v_product->product_new_price ?></span> <span class="price-before-discount">Tk. <?php echo $v_product->product_price ?></span> </div>
                           <!-- /.product-price --> 
                           
                         </div>
@@ -584,7 +584,7 @@
                                 <h3 class="name"><a href="detail.html"><?php echo $v_product->product_name ?></a></h3>
                                 <div class="rating rateit-small"></div>
                                 <div class="description"></div>
-                                <div class="product-price"> <span class="price"> ৳ <?php echo $v_product->product_new_price ?></span> <span class="price-before-discount">৳ <?php echo $v_product->product_price ?></span> </div>
+                                <div class="product-price"> <span class="price"> Tk. <?php echo $v_product->product_new_price ?></span> <span class="price-before-discount">Tk. <?php echo $v_product->product_price ?></span> </div>
                                 <!-- /.product-price --> 
                                 
                               </div>

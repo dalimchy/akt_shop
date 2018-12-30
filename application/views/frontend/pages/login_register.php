@@ -4,7 +4,7 @@
 			<div class="row">
 				<!-- Sign-in -->			
 <div class="col-md-6 col-sm-6 sign-in">
-	<h4 class="">Sign in</h4>
+	<h4 class="">Sign In</h4>
 	<p class="">Hello, Welcome to your account.</p>
 	<!-- <div class="social-sign-in outer-top-xs">
 		<a href="#" class="facebook-sign-in"><i class="fa fa-facebook"></i> Sign In with Facebook</a>
@@ -12,12 +12,12 @@
 	</div> -->
 	<form class="register-form outer-top-xs" role="form">
 		<div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
-		    <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" >
+		    <label class="info-title" for="frontend_user_email">Email Address <span>*</span></label>
+		    <input type="email" class="form-control unicase-form-control text-input" id="frontend_user_email" required>
 		</div>
 	  	<div class="form-group">
-		    <label class="info-title" for="exampleInputPassword1">Password <span>*</span></label>
-		    <input type="password" class="form-control unicase-form-control text-input" id="exampleInputPassword1" >
+		    <label class="info-title" for="frontend_user_password">Password <span>*</span></label>
+		    <input type="password"  class="form-control unicase-form-control text-input" id="frontend_user_password" required>
 		</div>
 		<div class="radio outer-xs">
 		  	<label>
@@ -32,30 +32,26 @@
 
 <!-- create a new account -->
 <div class="col-md-6 col-sm-6 create-new-account">
-	<h4 class="checkout-subtitle">Create a new account</h4>
+	<h4 class="checkout-subtitle">Sign Up</h4>
 	<p class="text title-tag-line">Create your new account.</p>
-	<form class="register-form outer-top-xs" role="form">
+	<form class="register-form outer-top-xs" role="form" action="<?php echo base_url()?>frontend/sign_up_customer" method="post">
 		<div class="form-group">
-	    	<label class="info-title" for="exampleInputEmail2">Email Address <span>*</span></label>
-	    	<input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail2" >
+	    	<label class="info-title" for="customer_email">Email Address <span>*</span></label>
+	    	<input type="email" class="form-control unicase-form-control text-input" name="customer_email" id="customer_email" >
 	  	</div>
         <div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">Name <span>*</span></label>
-		    <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" >
+		    <label class="info-title" for="customer_name">Name <span>*</span></label>
+		    <input type="email" class="form-control unicase-form-control text-input" name="customer_name" id="customer_name" >
 		</div>
         <div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">Phone Number <span>*</span></label>
-		    <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" >
+		    <label class="info-title" for="customer_phone">Phone Number <span>*</span></label>
+		    <input type="email" class="form-control unicase-form-control text-input" name="customer_phone" id="customer_phone" >
 		</div>
         <div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">Password <span>*</span></label>
-		    <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" >
+		    <label class="info-title" for="customer_password">Password <span>*</span></label>
+		    <input type="email" class="form-control unicase-form-control text-input" name="customer_password" id="customer_password" >
 		</div>
-         <div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">Confirm Password <span>*</span></label>
-		    <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" >
-		</div>
-	  	<button type="submit" class="btn-upper btn btn-primary checkout-page-button">Sign Up</button>
+	  	<div type="submit" class="btn-upper btn btn-primary checkout-page-button">Sign Up</div>
 	</form>
 	
 	

@@ -98,7 +98,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 450.99 </span> </div>
                             <!-- /.product-price --> 
                             
                           </div>
@@ -126,7 +126,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
                             <!-- /.product-price --> 
                             
                           </div>
@@ -154,7 +154,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
                             <!-- /.product-price --> 
                             
                           </div>
@@ -186,7 +186,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
                             <!-- /.product-price --> 
                             
                           </div>
@@ -214,7 +214,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
                             <!-- /.product-price --> 
                             
                           </div>
@@ -242,7 +242,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
                             <!-- /.product-price --> 
                             
                           </div>
@@ -274,7 +274,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
                             <!-- /.product-price --> 
                             
                           </div>
@@ -302,7 +302,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
                             <!-- /.product-price --> 
                           </div>
                         </div>
@@ -329,7 +329,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
                             <!-- /.product-price --> 
                             
                           </div>
@@ -384,7 +384,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
                             <!-- /.product-price --> 
                             
                           </div>
@@ -412,7 +412,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
                             <!-- /.product-price --> 
                             
                           </div>
@@ -440,7 +440,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
                             <!-- /.product-price --> 
                             
                           </div>
@@ -472,7 +472,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
                             <!-- /.product-price --> 
                             
                           </div>
@@ -500,7 +500,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
                             <!-- /.product-price --> 
                             
                           </div>
@@ -528,7 +528,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
                             <!-- /.product-price --> 
                           </div>
                         </div>
@@ -561,7 +561,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
                             <!-- /.product-price --> 
                             
                           </div>
@@ -591,7 +591,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
                             <!-- /.product-price --> 
                             
                           </div>
@@ -619,7 +619,7 @@
                           <div class="product-info">
                             <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
                             <!-- /.product-price --> 
                             
                           </div>
