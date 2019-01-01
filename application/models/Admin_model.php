@@ -417,7 +417,6 @@ class Admin_model extends CI_Model {
 			);
 
 			$this->load->library('upload', $config);
-			$file_path = $config['upload_path'].$logo['file_name'];
 
 			if ( ! $this->upload->do_upload('brandlogo')) {
 				$error = array('error' => $this->upload->display_errors());
