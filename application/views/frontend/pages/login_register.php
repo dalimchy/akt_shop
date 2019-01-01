@@ -6,18 +6,29 @@
 <div class="col-md-6 col-sm-6 sign-in">
 	<h4 class="">Sign In</h4>
 	<p class="">Hello, Welcome to your account.</p>
+	<p style="color: red;text-align: center;">
+        <?php
+            $message = $this->session->userdata('message');
+            if ($message) 
+            {
+                echo $message;
+                $this->session->unset_userdata('message');
+            }
+        ?>
+
+    </p>
 	<!-- <div class="social-sign-in outer-top-xs">
 		<a href="#" class="facebook-sign-in"><i class="fa fa-facebook"></i> Sign In with Facebook</a>
 		<a href="#" class="twitter-sign-in"><i class="fa fa-twitter"></i> Sign In with Twitter</a>
 	</div> -->
-	<form class="register-form outer-top-xs" role="form">
+	<form class="register-form outer-top-xs" role="form" action="<?php echo base_url()?>frontend/sign_in_customer" method="post">
 		<div class="form-group">
 		    <label class="info-title" for="frontend_user_email">Email Address <span>*</span></label>
-		    <input type="email" class="form-control unicase-form-control text-input" id="frontend_user_email" required>
+		    <input type="email" class="form-control unicase-form-control text-input" id="frontend_user_email"  name="frontend_user_email" required>
 		</div>
 	  	<div class="form-group">
 		    <label class="info-title" for="frontend_user_password">Password <span>*</span></label>
-		    <input type="password"  class="form-control unicase-form-control text-input" id="frontend_user_password" required>
+		    <input type="password"  class="form-control unicase-form-control text-input" id="frontend_user_password" name="frontend_user_password" required>
 		</div>
 		<div class="radio outer-xs">
 		  	<label>

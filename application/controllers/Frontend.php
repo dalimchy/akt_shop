@@ -129,4 +129,30 @@ class Frontend extends CI_Controller {
 		session_destroy();
 		redirect('/sign-in');
 	}
+
+	public function sign_in_customer()
+	{
+		$sdata = array();
+
+		$email = $this->input->post('frontend_user_email', true);
+	    $password = $this->input->post('frontend_user_password', true);
+	    
+	    $result = $this->admin_model->check_customar_info($email, $password);
+
+	    if($result == null){
+	    	$sdata['message'] = "Your Password Invalid";
+	    	$this->session->set_userdata($sdata);
+	    	redirect('/sign-in');
+	    }else{
+	    	$sdata['customer_id'] = $result->customer_id;
+	        $sdata['customer_name'] = $result->customer_name;
+	        $sdata['customer_email'] = $result->customer_email;
+	        $sdata['customer_phone'] = $result->customer_phone;
+	        $sdata['customer_image'] = $result->customer_image;
+	        $this->session->set_userdata($sdata);
+
+	        redirect('/');
+	    }
+
+	}
 }
