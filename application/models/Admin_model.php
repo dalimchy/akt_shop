@@ -409,13 +409,12 @@ class Admin_model extends CI_Model {
 
 		// $logo = array();
 		// $error = "";
-
-		$config['upload_path']          = 'upload/brand/';
-		$config['allowed_types']        = 'jpg|png|jpeg';
-		$config['max_size']             = 1000;
-		$config['file_name'] = time().'_'.$_FILES['brandlogo']['name']; 
-		// $config['max_width']            = 1024;
-		// $config['max_height']           = 768;
+		$config = array(
+			'upload_path' 	=> 'upload/brand/',
+			'allowed_types' => 'jpg|png|jpeg',
+			'max_size' 		=> 1000,
+			'file_name' 	=> time().'_'.$_FILES['brandlogo']['name'],
+		);
 
 		$this->load->library('upload', $config);
 		$file_path = $config['upload_path'].$logo['file_name'];
@@ -433,7 +432,6 @@ class Admin_model extends CI_Model {
 
 	public function get_all_brands()
 	{
-		// $query = $this->db->get('tbl_brand'); 
 		$this->db->select('*');
 		$this->db->from('tbl_brand');
 		$this->db->order_by("brand_id", "desc");
