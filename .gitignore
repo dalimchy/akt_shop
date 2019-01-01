@@ -1,4 +1,7 @@
-upload/
+upload/brand/
+upload/category/
+upload/products/
+upload/subcategory/
 .DS_Store
 
 application/cache/*
