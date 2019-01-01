@@ -407,25 +407,27 @@ class Admin_model extends CI_Model {
 
 		$data['brand_name'] = $this->input->post('brandname',true);
 
-		// $logo = array();
-		// $error = "";
-		$config = array(
-			'upload_path' 	=> 'upload/brand/',
-			'allowed_types' => 'jpg|png|jpeg',
-			'max_size' 		=> 1000,
-			'file_name' 	=> time().'_'.$_FILES['brandlogo']['name'],
-		);
+		if ($_FILES['brandlogo']['name'] != '') {
+			# code...
+			$config = array(
+				'upload_path' 	=> 'upload/brand/',
+				'allowed_types' => 'jpg|png|jpeg',
+				'max_size' 		=> 1000,
+				'file_name' 	=> time().'_'.$_FILES['brandlogo']['name'],
+			);
 
-		$this->load->library('upload', $config);
-		$file_path = $config['upload_path'].$logo['file_name'];
+			$this->load->library('upload', $config);
+			$file_path = $config['upload_path'].$logo['file_name'];
 
-		if ( ! $this->upload->do_upload('brandlogo')) {
-			$error = array('error' => $this->upload->display_errors());
-			$data['brand_error'] = $error;
-		}else {
-			$logo =  $this->upload->data();
-			$data['brand_logo'] = $config['upload_path'].$logo['file_name'];
+			if ( ! $this->upload->do_upload('brandlogo')) {
+				$error = array('error' => $this->upload->display_errors());
+				$data['brand_error'] = $error;
+			}else {
+				$logo =  $this->upload->data();
+				$data['brand_logo'] = $config['upload_path'].$logo['file_name'];
+			}
 		}
+
 		$this->db->insert('tbl_brand', $data);
 
 	}
@@ -462,12 +464,16 @@ class Admin_model extends CI_Model {
 		$this->db->where('brand_id', $brand_id);
 		$this->db->delete('tbl_product');
 	}
-	
+
+	  /*****                *****/
+	  /*****	 CUSTOMERS	 *****/
+	  /*****                *****/
+
 	public function register_new_customer()
 	{
 		$data['customer_name'] 		= $this->input->post('customer_name', True);
 		$data['customer_email'] 			= $this->input->post('customer_email', True);
-		$data['customer_password'] 		= md5($this->input->post('customer_password', True));	
+		$data['customer_password'] 		= md5($this->input->post('customer_password', True));
 		$data['customer_image'] 			= 'user.jpg';
 		$data['customer_phone'] 	= $this->input->post('customer_phone', True);
 
