@@ -44,7 +44,12 @@
             <li><a href="#"><i class="icon fa fa-heart"></i>Wishlist</a></li>
             <li><a href="<?php echo base_url()?>shopping-cart"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
             <li><a href="#"><i class="icon fa fa-check"></i>Checkout</a></li>
-            <li><a href="<?php echo base_url()?>sign-in"><i class="icon fa fa-lock"></i>Login</a></li>
+            <?php $akt_customar_id = $this->session->userdata('customer_id'); if ($akt_customar_id == NULL ) { ?>
+                <li><a href="<?php echo base_url()?>sign-in"><i class="icon fa fa-lock"></i>Login</a></li>  
+            <?php }else{ ?> 
+                <li><a href="<?php echo base_url()?>sign-out"><i class="icon fa fa-lock"></i>Logout</a></li>
+            <?php } ?>
+            
           </ul>
         </div>
         <!-- /.cnt-account -->

@@ -97,14 +97,36 @@ class Frontend extends CI_Controller {
             )
         );
 
+		
 		if ($this->form_validation->run()) {
 			$this->admin_model->register_new_customer();
-			redirect('/dashboard');
-		}else{
 
+			$sdata = array();
+			$email = $this->input->post('customer_email', true);
+	        $password = $this->input->post('customer_password', true);
+
+	        $result = $this->admin_model->check_customar_info($email, $password);
+
+			$sdata['customer_id'] = $result->customer_id;
+            $sdata['customer_name'] = $result->customer_name;
+            $sdata['customer_email'] = $result->customer_email;
+            $sdata['customer_phone'] = $result->customer_phone;
+            $sdata['customer_image'] = $result->customer_image;
+            $this->session->set_userdata($sdata);
+            redirect('/');
+        }else{
 			$data = array();
-			$data['title'] = " Akt-shop Register";
-			$this->load->view('admin/register',$data);
+	        $data['title'] = "frontend_users";
+	        $data['all_category_info'] = $this->admin_model->all_category_info();
+			$data['all_product_info'] = $this->admin_model->all_product_info();
+			$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
+	        $data['frondend_main_content'] = $this->load->view('frontend/pages/login_register',$data,true);
+			$this->load->view('frontend/index', $data);
 		}
+	}
+	public function frontend_users_singout()
+	{
+		session_destroy();
+		redirect('/sign-in');
 	}
 }

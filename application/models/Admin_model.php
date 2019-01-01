@@ -14,6 +14,18 @@ class Admin_model extends CI_Model {
 		$result = $query_result->row();
 		return $result;
 	}
+	
+	public function check_customar_info($email,$password)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_customers');
+		$this->db->where('customer_email',$email);
+		$this->db->where('customer_password',md5($password));
+		$query_result = $this->db->get();
+		$result = $query_result->row();
+		return $result;
+	}
+
 
 
 	public function register_new_admin()

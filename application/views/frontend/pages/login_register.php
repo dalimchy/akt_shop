@@ -34,6 +34,7 @@
 <div class="col-md-6 col-sm-6 create-new-account">
 	<h4 class="checkout-subtitle">Sign Up</h4>
 	<p class="text title-tag-line">Create your new account.</p>
+	<div class="text title-tag-line"><?php echo validation_errors(); ?></div>
 	<form class="register-form outer-top-xs" role="form" action="<?php echo base_url()?>frontend/sign_up_customer" method="post">
 		<div class="form-group">
 	    	<label class="info-title" for="customer_email">Email Address <span>*</span></label>

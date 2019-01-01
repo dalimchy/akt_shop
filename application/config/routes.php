@@ -107,5 +107,6 @@ $route['manufacture-view/(.+)'] = 'frontend/manufacture_view/$1';
 $route['category-view/(.+)'] = 'frontend/category_view/$1';
 $route['shopping-cart'] = 'frontend/shopping_cart';
 $route['sign-in'] = 'frontend/frontend_users';
+$route['sign-out'] = 'frontend/frontend_users_singout';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
