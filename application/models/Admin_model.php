@@ -404,9 +404,9 @@ class Admin_model extends CI_Model {
 	public function brand_info()
 	{
 		$data = array();
-		
+
 		$data['brand_name'] = $this->input->post('brandname',true);
-		
+
 		// $logo = array();
 		// $error = "";
 
@@ -416,8 +416,9 @@ class Admin_model extends CI_Model {
 		$config['file_name'] = time().'_'.$_FILES['brandlogo']['name']; 
 		// $config['max_width']            = 1024;
 		// $config['max_height']           = 768;
-		
+
 		$this->load->library('upload', $config);
+		$file_path = $config['upload_path'].$logo['file_name'];
 
 		if ( ! $this->upload->do_upload('brandlogo')) {
 			$error = array('error' => $this->upload->display_errors());
@@ -443,8 +444,19 @@ class Admin_model extends CI_Model {
 
 	public function delete_brand($brand_id)
 	{
+		$this->db->select('brand_logo');
+		$this->db->from('tbl_brand');
+		$this->db->where('brand_id',$brand_id);
+		$query_result = $this->db->get();
+		$data = $query_result->row();
+
 		$this->db->where('brand_id', $brand_id);
-		$this->db->delete('tbl_brand');
+		$delete_result = $this->db->delete('tbl_brand');
+		if($delete_result){
+			return $data;
+		}else{
+			return false;
+		}
 	}
 
 	public function delete_productBy_brand($brand_id)

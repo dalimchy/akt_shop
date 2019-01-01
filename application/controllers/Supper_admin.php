@@ -401,8 +401,12 @@ class Supper_admin extends CI_Controller {
 
 	public function delete_brand($brand_id)
 	{
+		$result = $this->admin_model->delete_brand($brand_id);
+		$path = $result->brand_logo;
+		unlink($path);
 		$this->admin_model->delete_brand($brand_id);
 		$this->admin_model->delete_productBy_brand($brand_id);
+
 		redirect('brands');
 	}
 
