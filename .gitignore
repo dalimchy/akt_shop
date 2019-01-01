@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 
+=======
+upload/brand/
+upload/category/
+upload/products/
+upload/subcategory/
+>>>>>>> 5a1584a5b682efbbd3d1fa4b36a0e89a9797743a
 .DS_Store
 
 application/cache/*
