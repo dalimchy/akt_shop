@@ -5,7 +5,7 @@
         <?php
             $message = $this->session->userdata('message');
             if ($message) { ?>
-                
+
                 <div class='alert alert-success alert-dismissable'>
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <p><strong>Well done! </strong><?php echo $message; $this->session->unset_userdata('message'); ?></p>
@@ -25,7 +25,6 @@
                 <!-- For more examples please check https://github.com/jzaefferer/jquery-validation -->
                 <form class="js-validation-bootstrap form-horizontal" action="<?php echo base_url();?>update-category" method="post" enctype="multipart/form-data" name="edit_category">
 
-
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="">Category Name <span class="text-orange">*</span></label>
                         <div class="col-md-8">
@@ -34,7 +33,7 @@
                         </div>
                     </div>
 
-                        <div class="form-group">
+                    <div class="form-group">
                         <label class="col-md-3 control-label" for="">Category Image </label>
                         <div class="col-md-8">
                             <input class="form-control" type="file" id="" name="category_image" >
@@ -45,8 +44,6 @@
                         </div>
                     </div>
 
-
-                    
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="">Category Description <span class="text-orange">*</span></label>
                         <div class="col-md-8">
@@ -60,12 +57,10 @@
                                 <option value="">Please select</option>
                                 <option value="1">Published </option>
                                 <option value="0">Unpublished </option>
-                                
                             </select>
                         </div>
                     </div>
-                    
-                    
+
                     <div class="form-group m-b-0">
                         <div class="col-md-8 col-md-offset-4">
                             <button class="btn btn-app" type="submit">Submit</button>

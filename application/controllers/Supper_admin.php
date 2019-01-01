@@ -7,6 +7,7 @@ class Supper_admin extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->helper('text');
 		$akt_user_id = $this->session->userdata('id');
 		if ($akt_user_id == NULL ) {
 			redirect('login');
