@@ -53,7 +53,7 @@ class Supper_admin extends CI_Controller {
 
 
 	private function save_category_img(){
-		$config['upload_path'] = './upload/';
+		$config['upload_path'] = 'upload/category/';
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 		$config['max_size'] = 1000;
 		$config['max_width'] = 1024;
@@ -63,7 +63,7 @@ class Supper_admin extends CI_Controller {
 
 		if ($this->upload->do_upload('category_image')) {
 			$data = $this->upload->data();
-			$image_path = "upload/$data[file_name]";
+			$image_path = $config['upload_path'].$data[file_name];
 			return $image_path;
 		}else{
 			$error = $this->upload->display_errors();
@@ -185,7 +185,7 @@ class Supper_admin extends CI_Controller {
 
 	private function save_manufacture_img()
 	{
-		$config['upload_path'] = './upload/';
+		$config['upload_path'] = 'upload/subcategory/';
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 		$config['max_size'] = 1000;
 		$config['max_width'] = 1024;
@@ -195,7 +195,7 @@ class Supper_admin extends CI_Controller {
 
 		if ($this->upload->do_upload('manufacture_image')) {
 			$data = $this->upload->data();
-			$image_path = "upload/$data[file_name]";
+			$image_path = $config['upload_path'].$data[file_name];
 			return $image_path;
 		}else{
 			$error = $this->upload->display_errors();

@@ -252,8 +252,6 @@ class Admin_model extends CI_Model {
 		$data['product_quantity']			= $this->input->post('product_quantity',true);
 		// $data['product_image']			= $this->input->post('product_image',true);
 
-
-
 			$img1 = array();
 			$img2 = array();
 			$img3 = array();
@@ -261,7 +259,7 @@ class Admin_model extends CI_Model {
 			$img5 = array();
 			$error = "";
 
-			$config['upload_path']          = 'upload/';
+			$config['upload_path']          = 'upload/products/';
 			$config['allowed_types']        = 'gif|jpg|png|jpeg';
 			$config['max_size']             = 1000;
 			$config['max_width']            = 1024;
