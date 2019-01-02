@@ -2,17 +2,23 @@
     <div class="col-lg-12">
             <?php
                 $message = $this->session->userdata('message');
-                $brand_error = $this->session->userdata('brand_error');
+                $brand_error = $this->session->userdata('error');
                 if ($message) {?>
 
                 <div class='alert alert-success alert-dismissable'>
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <p><strong>Well done! </strong><?php echo $message;
-                $this->session->unset_userdata('message'); ?></p>
+                    $this->session->unset_userdata('message'); ?></p>
                 </div>
-            <?php }else{
-                echo $brand_error;
-            }?>
+            <?php  }else if($brand_error){ ?>
+                <div class="alert alert-warning alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <p><strong>Warning!</strong> <?php echo $brand_error;
+                    $this->session->unset_userdata('error'); ?> </p>
+                </div>
+            <?php } ?>
+            <?php if ($title == "Brands") { ?>
+           
         <div class="card">
             <div class="card-header bg-teal bg-inverse">
                 <h4>Add Brand</h4>
@@ -27,7 +33,6 @@
             </div>
             <div class="card-block">
                 <form class="form-horizontal m-t-xs" action="<?php echo base_url();?>save-brand" enctype="multipart/form-data" method="post">
-                    
                     <div class="form-group">
                         <div class="col-xs-4">
                             <label for="">Brand name</label>
@@ -46,14 +51,51 @@
             </div>
             <!-- .card-block -->
         </div>
+        <?php }elseif ($title) { ?>
+        <div class="card">
+            <div class="card-header bg-teal bg-inverse">
+                <h4>Edit Brand</h4>
+                <ul class="card-actions">
+                    <li>
+                        <button type="button" data-toggle="card-action" data-action="refresh_toggle" data-action-mode="demo"><i class="ion-refresh"></i></button>
+                    </li>
+                    <li>
+                        <button type="button" data-toggle="card-action" data-action="content_toggle"><i class="ion-chevron-down"></i></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-block">
+                <form class="form-horizontal m-t-xs" action="<?php echo base_url();?>update-brand" enctype="multipart/form-data" method="post">
+                    <?php foreach ($brand_info_list as $key => $e_value) { ?>
+                    
+                    <div class="form-group">
+                        <div class="col-xs-4">
+                            <label for="">Brand name</label>
+                            <input class="form-control" type="text" name="brandname" value="<?php echo $e_value->brand_name; ?>" required>
+                        </div>
+                        <div class="col-xs-4">
+                            <label for="">Brand logo</label>
+                            <input class="form-control" type="file" name="brandlogo" value="<?php echo $e_value->brand_logo; ?>">
+                        </div>
+                        <div class="col-xs-2">
+                                <!-- <label for="" class="m-b-3"> </label> -->
+                                <!-- <button class="btn btn-app-teal form-control" type="submit">Update Brand</button> -->
+                        <img style="max-width: 100%;height:100px;" src="<?php echo base_url();echo $e_value->brand_logo;?>" alt="">
+                        </div>
+                        <div class="col-xs-2">
+                                <label for="" class="m-b-3"> </label>
+                                <button class="btn btn-app-teal form-control" type="submit">Update Brand</button>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </form>
+            </div>
+            <!-- .card-block -->
+        </div>
+        <?php } ?>
         <!-- .card -->
         <div class="card">
-            <!-- <div class="card-header">
-                <h4>Hover Table</h4>
-                <div class="card-actions">
-                    <code>.table-hover</code>
-                </div>
-            </div> -->
+
             <div class="card-block">
                 <table class="table table-hover">
                     <thead>
@@ -78,8 +120,8 @@
                             <img style="height: 70px;width: 70px" src="<?php echo base_url().$brand_value->brand_logo; ?>" alt="" ></td>
                             <td class="text-center">
                                 <div class="btn-group">
-                                    <a href="<?php  echo base_url()?>edit-brand/<?php echo $brand_value->brand_id; ?>" class="btn btn-xs btn-app-teal" type="button" data-toggle="tooltip" title="" data-original-title="Edit Brand"><i class="ion-edit"></i></a>
-                                    <a href="<?php  echo base_url()?>delete-brand/<?php echo $brand_value->brand_id; ?>" class="btn btn-xs btn-app-red" type="button" data-toggle="tooltip" title="" data-original-title="Remove Brand"><i class="ion-android-delete"></i></a>
+                                    <a href="<?php  echo base_url('supper_admin/edit_brand/'.$brand_value->brand_id);?>" class="btn btn-xs btn-app-teal" type="button" data-toggle="tooltip" title="" data-original-title="Edit Brand"><i class="ion-edit"></i></a>
+                                    <a href="<?php  echo base_url('supper_admin/delete_brand/'.$brand_value->brand_id);?>" class="btn btn-xs btn-app-red" type="button" data-toggle="tooltip" title="" data-original-title="Remove Brand"><i class="ion-android-delete"></i></a>
                                 </div>
                             </td>
                         </tr>

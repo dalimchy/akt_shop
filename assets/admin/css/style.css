@@ -89,3 +89,14 @@ li.dropdown-header {
     color: #fff;
     background-color: #5ccdde;
 }
+
+.add_img_gallery .per_img_div{
+	min-height:100px;
+	max-height:198px;
+	margin-bottom:8px;
+	text-align:center
+}
+.per_img_div img{
+	max-width:100%;
+	max-height:100%
+}

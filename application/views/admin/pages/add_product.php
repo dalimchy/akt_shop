@@ -228,21 +228,21 @@
                     </li>
                 </ul>
             </div>
-            <div class="card-block" style="display:flow-root">
-                <div class="col-md-10 col-md-offset-1" style="min-height:100px;max-height:198px;margin-bottom:8px;text-align:center">
-                    <img for="featureImg" id="add_pro1" src="<?php echo base_url();?>/upload/images.png" alt="Feature Product" style="max-width:100%;max-height:100%" />
+            <div class="card-block add_img_gallery" style="display:flow-root">
+                <div class="col-md-10 col-md-offset-1 per_img_div">
+                    <img id="add_pro1" src="<?php echo base_url();?>/upload/images.png" alt="Feature Product"/>
                 </div>
-                <div class="col-md-10 col-md-offset-1" style="min-height:100px;max-height:198px;margin-bottom:8px;text-align:center">
-                    <img id="add_pro2" src="<?php echo base_url();?>/upload/images.png" alt="Feature Product" style="max-width:100%;max-height:100%" />
+                <div class="col-md-10 col-md-offset-1 per_img_div">
+                    <img id="add_pro2" src="<?php echo base_url();?>/upload/images.png" alt="Feature Product"/>
                 </div>
-                <div class="col-md-10 col-md-offset-1" style="min-height:100px;max-height:198px;margin-bottom:8px;text-align:center">
-                    <img id="add_pro3" src="<?php echo base_url();?>/upload/images.png" alt="Feature Product" style="max-width:100%;max-height:100%" />
+                <div class="col-md-10 col-md-offset-1 per_img_div">
+                    <img id="add_pro3" src="<?php echo base_url();?>/upload/images.png" alt="Feature Product"/>
                 </div>
-                <div class="col-md-10 col-md-offset-1" style="min-height:100px;max-height:198px;margin-bottom:8px;text-align:center">
-                    <img id="add_pro4" src="<?php echo base_url();?>/upload/images.png" alt="Feature Product" style="max-width:100%;max-height:100%" />
+                <div class="col-md-10 col-md-offset-1 per_img_div">
+                    <img id="add_pro4" src="<?php echo base_url();?>/upload/images.png" alt="Feature Product"/>
                 </div>
-                <div class="col-md-10 col-md-offset-1" style="min-height:100px;max-height:198px;margin-bottom:8px;text-align:center">
-                    <img id="add_pro5" src="<?php echo base_url();?>/upload/images.png" alt="Feature Product" style="max-width:100%;max-height:100%" />
+                <div class="col-md-10 col-md-offset-1 per_img_div">
+                    <img id="add_pro5" src="<?php echo base_url();?>/upload/images.png" alt="Feature Product"/>
                 </div>
             </div>
         </div>

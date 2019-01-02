@@ -405,7 +405,6 @@ class Admin_model extends CI_Model {
 		$data = array();
 
 		$data['brand_name'] = $this->input->post('brandname',true);
-
 		if ($_FILES['brandlogo']['name'] != '') {
 			# code...
 			$config = array(
@@ -418,8 +417,8 @@ class Admin_model extends CI_Model {
 			$this->load->library('upload', $config);
 
 			if ( ! $this->upload->do_upload('brandlogo')) {
-				$error = array('error' => $this->upload->display_errors());
-				$data['brand_error'] = $error;
+				$myerror = array('error' =>  $this->upload->display_errors());
+				$this->session->set_userdata($myerror);
 			}else {
 				$logo =  $this->upload->data();
 				$data['brand_logo'] = $config['upload_path'].$logo['file_name'];
@@ -439,7 +438,7 @@ class Admin_model extends CI_Model {
 		$brands_info 	= $query_result->result();
 		return $brands_info;
 	}
-
+	
 	public function delete_brand($brand_id)
 	{
 		$this->db->select('brand_logo');

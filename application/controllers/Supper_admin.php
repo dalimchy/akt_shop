@@ -389,10 +389,16 @@ class Supper_admin extends CI_Controller {
 	{
 		$this->admin_model->brand_info();
 		$data = array();
-		$data['message'] = "Save Brand Sucessfully!";
+		$myerror = $this->session->userdata('error');
+		if($myerror){
+			$data['error'] = $myerror;
+		}else{
+			$data['message'] = "save data sucessfully";
+		}
 		$this->session->set_userdata($data);
 		redirect('brands');
 	}
+
 
 	public function delete_brand($brand_id)
 	{
@@ -403,6 +409,15 @@ class Supper_admin extends CI_Controller {
 		$this->admin_model->delete_productBy_brand($brand_id);
 
 		redirect('brands');
+	}
+
+	public function edit_brand($brand_id)
+	{
+		$data = array();
+		$data['title'] = "Edit Brand";
+		$data['brand_info_list'] = $this->admin_model->get_all_brands();
+		$data["admin_main_content"] = $this->load->view('admin/pages/brand', $data, true);
+		$this->load->view('admin/admin_master', $data);
 	}
 
 
