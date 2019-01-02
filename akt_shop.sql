@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 29, 2018 at 06:51 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.0
+-- Host: 127.0.0.1
+-- Generation Time: Jan 02, 2019 at 05:27 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -70,10 +70,8 @@ CREATE TABLE `tbl_brand` (
 --
 
 INSERT INTO `tbl_brand` (`brand_id`, `brand_name`, `brand_logo`, `created_at`) VALUES
-(43, 'Uniliver Bangladesh', 'upload/brand/1546104335.jpg', '2018-12-29 17:25:35'),
-(44, 'check', 'upload/brand/.jpg', '2018-12-29 17:26:14'),
-(45, 'asdfhg', 'upload/brand/1.jpg', '2018-12-29 17:27:16'),
-(46, 'ew', 'upload/brand/2.jpg', '2018-12-29 17:27:57');
+(29, 'dgf', 'upload/brand/1546403087_p8.jpg', '2019-01-02 04:24:47'),
+(30, '123', 'upload/brand/1546403163_p16.jpg', '2019-01-02 04:26:03');
 
 -- --------------------------------------------------------
 
@@ -110,7 +108,8 @@ CREATE TABLE `tbl_category` (
 --
 
 INSERT INTO `tbl_category` (`category_id`, `category_name`, `category_image`, `product_count`, `subcat_count`, `category_description`, `publication_status`) VALUES
-(1, 'TOP WEAR', 'upload/p30.jpg', 0, 0, 'TOP WEAR TOP WEARTOP WEARTOP WEARTOP WEARTOP WEARTOP WEARTOP WEARTOP WEARTOP WEARTOP WEAR', 1);
+(1, 'mid category', 'upload/category/p14.jpg', 0, 0, 'kl;kl;', 1),
+(2, 'asd', 'upload/category/p8.jpg', 0, 0, 'sdasdad asd a dasa a d addasd ads dadsdasdads dasda sd dfd gfg fdg dfg df gf', 1);
 
 -- --------------------------------------------------------
 
@@ -152,17 +151,6 @@ CREATE TABLE `tbl_manufacture` (
   `publication_status` tinyint(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `tbl_manufacture`
---
-
-INSERT INTO `tbl_manufacture` (`manufacture_id`, `category_id`, `manufacture_for`, `manufacture_name`, `manufacture_image`, `manufacture_description`, `publication_status`) VALUES
-(1, 1, 1, 'Men - T-Shirte', 'upload/p24.jpg', 'T-Shirts  T-Shirts  T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts T-Shirts ', 1),
-(2, 1, 2, 'Women - Casual Shirts', 'upload/p25.jpg', 'Women - Casual ShirtsWomen - Casual ShirtsWomen - Casual ShirtsWomen - Casual ShirtsWomen - Casual ShirtsWomen - Casual ShirtsWomen - Casual ShirtsWomen - Casual ShirtsWomen - Casual ShirtsWomen - Casual ShirtsWomen - Casual ShirtsWomen - Casual ShirtsWomen - Casual ShirtsWomen - Casual ShirtsWomen - Casual ShirtsWomen - Casual ShirtsWomen - Casual ShirtsWomen - Casual Shirts', 1),
-(3, 1, 4, 'Girls - T-Shirts', 'upload/p13.jpg', 'Girls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-ShirtsGirls - T-Shirts', 1),
-(4, 1, 3, 'Boys T-shirt ', 'upload/p8.jpg', 'Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt Boys T-shirt ', 1),
-(5, 1, 5, 'kids- T-Shirts', 'upload/p1.jpg', 'kids- T-Shirtskids- T-Shirtskids- T-Shirtskids- T-Shirtskids- T-Shirtskids- T-Shirtskids- T-Shirtskids- T-Shirts', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -189,10 +177,10 @@ CREATE TABLE `tbl_orders` (
 CREATE TABLE `tbl_product` (
   `product_id` int(11) NOT NULL,
   `product_name` varchar(100) NOT NULL,
-  `product_brand` int(11) NOT NULL,
+  `brand_id` int(11) NOT NULL,
   `product_model` varchar(50) NOT NULL DEFAULT 'P001',
   `category_id` int(5) NOT NULL,
-  `product_for` int(10) NOT NULL DEFAULT '0',
+  `product_for` int(10) DEFAULT NULL,
   `manufacture_id` int(5) NOT NULL,
   `product_short_description` text NOT NULL,
   `product_long_description` text NOT NULL,
@@ -210,13 +198,6 @@ CREATE TABLE `tbl_product` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `tbl_product`
---
-
-INSERT INTO `tbl_product` (`product_id`, `product_name`, `product_brand`, `product_model`, `category_id`, `product_for`, `manufacture_id`, `product_short_description`, `product_long_description`, `product_price`, `product_new_price`, `product_quantity`, `product_image`, `product_img2`, `product_img3`, `product_img4`, `product_img5`, `product_tags`, `is_featured`, `publication_status`, `created_at`, `updated_at`) VALUES
-(1, 'Aesthetic Outfitters Behemoth T-shirt (T-1217016)', 0, 'P0022', 1, 1, 3, 'Aesthetic Outfitters Behemoth T-shirt T-1217016\r\nProduct Type: T-shirt.\r\nGender: Male\r\nFabric: Single jersey fine.\r\nCare: Hand Wash.\r\nColor: Black.\r\nWeight: 180 gm (Approx) Weights may vary according to fabric and sizes.', 'Aesthetic Outfitters Behemoth T-shirt T-1217016\r\nProduct Type: T-shirt.\r\nGender: Male\r\nFabric: Single jersey fine.\r\nCare: Hand Wash.\r\nColor: Black.\r\nWeight: 180 gm (Approx) Weights may vary according to fabric and sizes.', 900.00, 700.00, 50, '', NULL, NULL, NULL, NULL, NULL, 1, 1, '2018-12-22 13:21:12', NULL);
 
 -- --------------------------------------------------------
 
@@ -326,7 +307,7 @@ ALTER TABLE `akt_users`
 -- AUTO_INCREMENT for table `tbl_brand`
 --
 ALTER TABLE `tbl_brand`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `tbl_cart`
@@ -338,7 +319,7 @@ ALTER TABLE `tbl_cart`
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_customers`
@@ -350,7 +331,7 @@ ALTER TABLE `tbl_customers`
 -- AUTO_INCREMENT for table `tbl_manufacture`
 --
 ALTER TABLE `tbl_manufacture`
-  MODIFY `manufacture_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `manufacture_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_orders`
@@ -362,7 +343,7 @@ ALTER TABLE `tbl_orders`
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_review`
