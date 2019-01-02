@@ -7,7 +7,7 @@ class Supper_admin extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->helper('text');
+		$this->load->helper(array('form', 'url', 'text'));
 		$akt_user_id = $this->session->userdata('id');
 		if ($akt_user_id == NULL ) {
 			redirect('login');
@@ -82,12 +82,7 @@ class Supper_admin extends CI_Controller {
 		$sdata['message'] = "Save Category Information Sucessfully!";
 		$this->session->set_userdata($sdata);
 		redirect('add-category');
-
-		
 	}
-
-
-
 
 
 	public function manage_categories()
@@ -98,7 +93,6 @@ class Supper_admin extends CI_Controller {
 		$data['admin_main_content'] = $this->load->view('admin/pages/manage_categories',$data,true);
 		$this->load->view('admin/admin_master',$data );
 	}
-
 
 
 	public function unpublish_category($category_id)
