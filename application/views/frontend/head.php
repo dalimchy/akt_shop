@@ -46,7 +46,7 @@
             <?php $akt_customar_id = $this->session->userdata('customer_id'); if ($akt_customar_id == NULL ) { ?>
                 <li><a href="<?php echo base_url()?>sign-in"><i class="icon fa fa-lock"></i>Login</a></li>  
             <?php }else{ ?> 
-                <li><a href="#"><i class="icon fa fa-user"></i><?php echo $this->session->userdata('customer_name')?></a></li>
+                <li id="userStatus" data-id="<?php echo $akt_customar_id ?>" data-name="<?php echo $this->session->userdata('customer_name')?>"><a href="#"><i class="icon fa fa-user"></i><?php echo $this->session->userdata('customer_name')?></a></li>
                 <li><a href="<?php echo base_url()?>wish-list"><i class="icon fa fa-heart"></i>My Wishlist</a></li>
                 <li><a href="<?php echo base_url()?>sign-out"><i class="icon fa fa-unlock"></i>Logout</a></li>
             <?php } ?>

@@ -153,3 +153,28 @@ function updateQty(id,value){
     cartProduct = JSON.parse(localStorage.getItem('myCart'));
     headcartOption();
 }
+
+function addToWishlist(id){
+    var user_id = $('#userStatus').attr('data-id');
+    if(user_id !== undefined){
+        var data = {
+            userId : user_id,
+            productId : id
+        }
+
+         $.ajax({
+           url: baseUrl+ '/frontend/createWishlist',
+           type: 'POST',
+           data: data,
+           error: function() {
+              console.log('failed')
+           },
+           success: function(data) {
+                console.log('success') ;
+           }
+        });
+
+    }else{
+        console.log('false');
+    }
+}

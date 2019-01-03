@@ -177,4 +177,9 @@ class Frontend extends CI_Controller {
 			
 		}
 	}
+
+	public function createWishlist(){
+		$this->admin_model->create_wishlist($this->input->post('userId'),$this->input->post('productId'));
+		return 'success';
+	}
 }

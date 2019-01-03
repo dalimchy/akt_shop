@@ -476,5 +476,10 @@ class Admin_model extends CI_Model {
 
 		$this->db->insert('tbl_customers', $data);
 	}
-
+	
+	public function create_wishlist($custid,$proid){
+		$data['customer_id'] = $custid;
+		$data['product_id'] = $proid;
+		$this->db->insert('tbl_wishlist', $data);
+	}
 }
