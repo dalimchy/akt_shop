@@ -482,4 +482,12 @@ class Admin_model extends CI_Model {
 		$data['product_id'] = $proid;
 		$this->db->insert('tbl_wishlist', $data);
 	}
+	public function getWishList($custid){
+		$this->db->select('*');
+		$this->db->from('tbl_wishlist');
+		$this->db->where('customer_id',$custid);
+		$query_result 	= $this->db->get();
+		$wishlist 	= $query_result->result();
+		return $wishlist;
+	}
 }

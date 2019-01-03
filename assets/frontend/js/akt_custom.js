@@ -49,6 +49,11 @@ function findvalOfObj(array, key, value) {
     return false;
 }
 
+
+
+var user_id = $('#userStatus').attr('data-id');
+var user_wish_list = [];
+
 if((localStorage.getItem('myCart')) == null || ""){
     var cartProduct = [];
 }else{
@@ -81,6 +86,25 @@ function addToCart(proId){
 
 $(function(){
     headcartOption();
+    if(user_id !== undefined){
+        var data ={
+            userId :user_id
+        }
+        $.ajax({
+            url: baseUrl+ '/frontend/getCustomerWishList',
+            type: 'POST',
+            data: data,
+            error: function() {
+               console.log('failed')
+            },
+            success: function(data) {
+                let res = JSON.parse(data);
+                 $.each(res,function(k,v){
+                    user_wish_list.push(parseInt(v.product_id));
+                 });
+            }
+         });
+    }
     
 });
 
@@ -155,26 +179,29 @@ function updateQty(id,value){
 }
 
 function addToWishlist(id){
-    var user_id = $('#userStatus').attr('data-id');
     if(user_id !== undefined){
         var data = {
             userId : user_id,
             productId : id
         }
 
-         $.ajax({
-           url: baseUrl+ '/frontend/createWishlist',
-           type: 'POST',
-           data: data,
-           error: function() {
-              console.log('failed')
-           },
-           success: function(data) {
-                console.log('success') ;
-           }
-        });
+        if(user_wish_list.indexOf(id) == -1){
+            $.ajax({
+                url: baseUrl+ '/frontend/createWishlist',
+                type: 'POST',
+                data: data,
+                error: function() {
+                   console.log('failed')
+                },
+                success: function(data) {
+                    user_wish_list.push(id);
+                }
+             });
+        }else{
+            alert('This product already exists in wishlist');
+        }
 
     }else{
-        console.log('false');
+        alert('If you want this product add your wishlist ? Then you have to login.');
     }
 }

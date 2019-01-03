@@ -182,4 +182,9 @@ class Frontend extends CI_Controller {
 		$this->admin_model->create_wishlist($this->input->post('userId'),$this->input->post('productId'));
 		return 'success';
 	}
+	public function getCustomerWishList(){
+		$data =  $this->admin_model->getWishList($this->input->post('userId'));
+		echo json_encode($data);
+		return $data;
+	}
 }
