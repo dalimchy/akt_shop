@@ -64,6 +64,10 @@
                                     </ul>
                                 </li>
 
+                                <li class="nav-item <?php if($title == 'Customers'){?>active<?php }?> ">
+                                    <a href="<?php echo base_url('/customers')?>"><i class="ion-laptop"></i>Customers</a>
+                                </li>
+
                                 <li class="nav-item nav-item-has-subnav">
                                     <a href="javascript:void(0)"><i class="ion-archive"></i>Orders</a>
                                     <ul class="nav nav-subnav">

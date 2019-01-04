@@ -32,7 +32,7 @@
                 </ul>
             </div>
             <div class="card-block">
-                <form class="form-horizontal m-t-xs" action="<?php echo base_url();?>save-brand" enctype="multipart/form-data" method="post">
+                <form class="form-horizontal m-t-xs" action="<?php echo base_url('supper_admin/save_brand');?>" enctype="multipart/form-data" method="post">
                     <div class="form-group">
                         <div class="col-xs-4">
                             <label for="">Brand name</label>
@@ -51,7 +51,7 @@
             </div>
             <!-- .card-block -->
         </div>
-        <?php }elseif ($title) { ?>
+        <?php }elseif ($title == 'Edit Brand') { ?>
         <div class="card">
             <div class="card-header bg-teal bg-inverse">
                 <h4>Edit Brand</h4>
@@ -65,17 +65,19 @@
                 </ul>
             </div>
             <div class="card-block">
-                <form class="form-horizontal m-t-xs" action="<?php echo base_url();?>update-brand" enctype="multipart/form-data" method="post">
+                <form class="form-horizontal m-t-xs" action="<?php echo base_url('supper_admin/update_brand');?> enctype="multipart/form-data" method="post">
                     <?php foreach ($brand_info_list as $key => $e_value) { ?>
                     
                     <div class="form-group">
                         <div class="col-xs-4">
                             <label for="">Brand name</label>
                             <input class="form-control" type="text" name="brandname" value="<?php echo $e_value->brand_name; ?>" required>
+                            <input type="hidden" value="<?php echo $e_value->brand_id;?>"  name="brand_id" >
                         </div>
                         <div class="col-xs-4">
                             <label for="">Brand logo</label>
-                            <input class="form-control" type="file" name="brandlogo" value="<?php echo $e_value->brand_logo; ?>">
+                            <input class="form-control" type="file" name="new_brandlogo" value="">
+                            <input class="form-control" type="hidden" name="old_brandlogo" value="<?php echo $e_value->brand_logo; ?>">
                         </div>
                         <div class="col-xs-2">
                                 <!-- <label for="" class="m-b-3"> </label> -->

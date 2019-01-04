@@ -123,6 +123,14 @@ class Admin_model extends CI_Model {
 
 	}
 
+	public function get_customers()
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_customers');
+		$query_result	= $this->db->get();
+		$result 		= $query_result->result();
+		return $result;
+	} 
 
 				/***********************************/
 				/*  *****  Manufacturer  *****     */
@@ -403,7 +411,6 @@ class Admin_model extends CI_Model {
 	public function brand_info()
 	{
 		$data = array();
-
 		$data['brand_name'] = $this->input->post('brandname',true);
 		if ($_FILES['brandlogo']['name'] != '') {
 			# code...
@@ -437,6 +444,11 @@ class Admin_model extends CI_Model {
 		$query_result 	= $this->db->get();
 		$brands_info 	= $query_result->result();
 		return $brands_info;
+	}
+
+	public function update_brand($old_brandlogo)
+	{
+
 	}
 	
 	public function delete_brand($brand_id)

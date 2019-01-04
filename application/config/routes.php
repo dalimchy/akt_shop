@@ -89,10 +89,12 @@ $route['manage-product'] = 'supper_admin/manage_product';
 $route['update-product'] = 'supper_admin/update_product';
 
 $route['brands'] = 'supper_admin/add_brand';
-$route['save-brand'] = 'supper_admin/save_brand';
+// $route['save-brand'] = 'supper_admin/save_brand';
 // $route['edit-brand/(.+)'] = 'supper_admin/edit_brand/$1';
 // $route['update-brand/(.+)'] = 'supper_admin/update_brand/$1';
 // $route['delete-brand/(.+)'] = 'supper_admin/delete_brand/$1';
+
+$route['customers'] = 'supper_admin/show_customers';
 
 
 

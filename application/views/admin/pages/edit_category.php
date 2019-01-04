@@ -24,8 +24,6 @@
                 </ul>
             </div>
             <div class="card-block">
-                <!-- jQuery Validation (.js-validation-bootstrap class is initialized in js/pages/base_forms_validation.js) -->
-                <!-- For more examples please check https://github.com/jzaefferer/jquery-validation -->
                 <form class="js-validation-bootstrap form-horizontal" action="<?php echo base_url();?>update-category" method="post" enctype="multipart/form-data" name="edit_category">
 
                     <div class="form-group">
@@ -39,7 +37,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="">Category Image </label>
                         <div class="col-md-8">
-                            <input class="form-control" type="file" id="" name="category_image" >
+                            <input class="form-control" type="file" id="" name="category_image">
 
                                 <input  name="category_old_image"  value="<?php echo $category_info->category_image; ?>" type="hidden">
 
@@ -50,7 +48,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="">Category Description <span class="text-orange">*</span></label>
                         <div class="col-md-8">
-                            <textarea class="form-control" id=""  rows="8" placeholder="Enter category description..." name="category_description"  required="1"><?php echo $category_info->category_name; ?></textarea>
+                            <textarea class="form-control" id=""  rows="8" placeholder="Enter category description..." name="category_description"  required="1"><?php echo $category_info->category_description; ?></textarea>
                         </div>
                     </div>
                     <div class="form-group">

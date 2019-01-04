@@ -119,24 +119,24 @@ class Supper_admin extends CI_Controller {
 
 	public function update_category()
 	{
-
 		if ($_FILES['category_image']['name'] == '' || $_FILES['category_image']['size'] == '0')
 		{
   			$category_image = $this->input->post('category_old_image', True);
   			$this->admin_model->update_category_info($category_image);
-  			$sdata = array();
-  			$sdata['message'] = "Update category Information Sucessfully";
-  			$this->session->set_userdata($sdata);
+  			$data = array();
+  			$data['message'] = "Update category Information Sucessfully";
+  			$this->session->set_userdata($data);
   			$category_id = $this->input->post('category_id', True);
   			redirect('manage-categories');
-  		}else
+		}
+		  else
   		{
   			$category_image = $this->save_category_img();
   			$this->admin_model->update_category_info($category_image);
   			unlink( $this->input->post('category_old_image', True));
-  			$sdata = array();
-  			$sdata['message'] = "Update category Information Sucessfully";
-  			$this->session->set_userdata($sdata);
+  			$data = array();
+  			$data['message'] = "Update category Information Sucessfully";
+  			$this->session->set_userdata($data);
   			$category_id = $this->input->post('category_id', True);
   			redirect('manage-categories');
   		}
@@ -417,6 +417,28 @@ class Supper_admin extends CI_Controller {
 		$data['title'] = "Edit Brand";
 		$data['brand_info_list'] = $this->admin_model->get_all_brands();
 		$data["admin_main_content"] = $this->load->view('admin/pages/brand', $data, true);
+		$this->load->view('admin/admin_master', $data);
+	}
+
+	public function update_brand()
+	{
+		if ($_FILES['new_brandlogo']['name'] == '' || $_FILES['new_brandlogo']['size'] == '0')
+		{
+			$old_brandlogo = $this->input->post('old_brandlogo', True);
+			$brand_id = $this->input->post('brand_id', True);
+			$this->admin_model->update_brand($old_brandlogo);
+			$data['message'] = "Update brand Successfully!";
+			$this->session->set_userdata($data);
+			redirect('manage-categories');
+		}
+	}
+
+	public function show_customers()
+	{
+		$data = array();
+		$data['title'] = "Customers";
+		$data['customer_list'] = $this->admin_model->get_customers();
+		$data["admin_main_content"] = $this->load->view('admin/pages/customers', $data, true);
 		$this->load->view('admin/admin_master', $data);
 	}
 
