@@ -65,24 +65,22 @@
                 </ul>
             </div>
             <div class="card-block">
-                <form class="form-horizontal m-t-xs" action="<?php echo base_url('supper_admin/update_brand');?> enctype="multipart/form-data" method="post">
-                    <?php foreach ($brand_info_list as $key => $e_value) { ?>
+                <form class="form-horizontal m-t-xs" action="<?php echo base_url('supper_admin/update_brand');?>" enctype="multipart/form-data" method="post">
+                    <?php foreach ($brand_by_id as $value) { ?>
                     
                     <div class="form-group">
                         <div class="col-xs-4">
                             <label for="">Brand name</label>
-                            <input class="form-control" type="text" name="brandname" value="<?php echo $e_value->brand_name; ?>" required>
-                            <input type="hidden" value="<?php echo $e_value->brand_id;?>"  name="brand_id" >
+                            <input class="form-control" type="text" name="brandname" value="<?php echo $value->brand_name; ?>" required>
+                            <input type="hidden" value="<?php echo $value->brand_id;?>"  name="brand_id" >
                         </div>
                         <div class="col-xs-4">
                             <label for="">Brand logo</label>
                             <input class="form-control" type="file" name="new_brandlogo" value="">
-                            <input class="form-control" type="hidden" name="old_brandlogo" value="<?php echo $e_value->brand_logo; ?>">
+                            <input class="form-control" type="hidden" name="old_brandlogo" value="<?php echo $value->brand_logo; ?>">
                         </div>
                         <div class="col-xs-2">
-                                <!-- <label for="" class="m-b-3"> </label> -->
-                                <!-- <button class="btn btn-app-teal form-control" type="submit">Update Brand</button> -->
-                        <img style="max-width: 100%;height:100px;" src="<?php echo base_url();echo $e_value->brand_logo;?>" alt="">
+                        <img style="max-width: 100%;height:100px;" src="<?php echo base_url();echo $value->brand_logo;?>" alt="">
                         </div>
                         <div class="col-xs-2">
                                 <label for="" class="m-b-3"> </label>

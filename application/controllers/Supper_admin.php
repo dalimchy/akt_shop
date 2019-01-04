@@ -118,26 +118,25 @@ class Supper_admin extends CI_Controller {
 	}
 
 	public function update_category()
-	{
+	{	
+		$category_id = $this->input->post('category_id', True);
 		if ($_FILES['category_image']['name'] == '' || $_FILES['category_image']['size'] == '0')
 		{
   			$category_image = $this->input->post('category_old_image', True);
-  			$this->admin_model->update_category_info($category_image);
+  			$this->admin_model->update_category_info($category_image,$category_id);
   			$data = array();
   			$data['message'] = "Update category Information Sucessfully";
   			$this->session->set_userdata($data);
-  			$category_id = $this->input->post('category_id', True);
   			redirect('manage-categories');
 		}
 		  else
   		{
   			$category_image = $this->save_category_img();
-  			$this->admin_model->update_category_info($category_image);
+  			$this->admin_model->update_category_info($category_image,$category_id);
   			unlink( $this->input->post('category_old_image', True));
   			$data = array();
   			$data['message'] = "Update category Information Sucessfully";
   			$this->session->set_userdata($data);
-  			$category_id = $this->input->post('category_id', True);
   			redirect('manage-categories');
   		}
 
@@ -387,7 +386,7 @@ class Supper_admin extends CI_Controller {
 
 	public function save_brand()
 	{
-		$this->admin_model->brand_info();
+		$this->admin_model->save_brand();
 		$data = array();
 		$myerror = $this->session->userdata('error');
 		if($myerror){
@@ -415,6 +414,7 @@ class Supper_admin extends CI_Controller {
 	{
 		$data = array();
 		$data['title'] = "Edit Brand";
+		$data['brand_by_id'] = $this->admin_model->get_brandBy_id($brand_id);
 		$data['brand_info_list'] = $this->admin_model->get_all_brands();
 		$data["admin_main_content"] = $this->load->view('admin/pages/brand', $data, true);
 		$this->load->view('admin/admin_master', $data);
@@ -422,14 +422,44 @@ class Supper_admin extends CI_Controller {
 
 	public function update_brand()
 	{
+		$id = $this->input->post('brand_id', True);
 		if ($_FILES['new_brandlogo']['name'] == '' || $_FILES['new_brandlogo']['size'] == '0')
 		{
-			$old_brandlogo = $this->input->post('old_brandlogo', True);
-			$brand_id = $this->input->post('brand_id', True);
-			$this->admin_model->update_brand($old_brandlogo);
-			$data['message'] = "Update brand Successfully!";
-			$this->session->set_userdata($data);
-			redirect('manage-categories');
+			$data= array(
+				'brand_id' => $this->input->post('brand_id', True),
+				'brand_logo' => $this->input->post('old_brandlogo', True),
+				'brand_name' => $this->input->post('brandname',true)
+			);
+			$res = $this->admin_model->update_brand($data, $id);
+			if($res){
+				$data['message'] = "Update brand Successfully!";
+				$this->session->set_userdata($data);
+			}
+			redirect('brands');
+		}else{
+			$config = array(
+				'upload_path' 	=> 'upload/brand/',
+				'allowed_types' => 'jpg|png|jpeg',
+				'max_size' 		=> 1000,
+				'file_name' 	=> time().'_'.$_FILES['new_brandlogo']['name'],
+			);
+
+			$this->load->library('upload', $config);
+
+			if ( ! $this->upload->do_upload('new_brandlogo')) {
+				$myerror = array('error' =>  $this->upload->display_errors());
+				$this->session->set_userdata($myerror);
+				print_r($myerror);
+			}else {
+				$logo =  $this->upload->data();
+				$data = array(
+					'brand_id' => $this->input->post('brand_id', True),
+					'brand_name' => $this->input->post('brandname',true),
+					'brand_logo' => $config['upload_path'].$logo['file_name']
+				);
+				$this->admin_model->update_brand($data, $id);
+				redirect('brands');
+			}
 		}
 	}
 

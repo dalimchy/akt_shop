@@ -100,12 +100,11 @@ class Admin_model extends CI_Model {
 		return $result;
 	}
 
-	public function update_category_info($category_image)
+	public function update_category_info($category_image, $category_id)
 	{
 
 		$data= array();
 		$data['category_name']			= $this->input->post('category_name',true);
-		$category_id 					= $this->input->post('category_id', True);
 		$data['category_description']	= $this->input->post('category_description',true);
 		$data['publication_status'] 	= $this->input->post('publication_status', True);
 		$data['category_image'] 		= $category_image;
@@ -408,7 +407,7 @@ class Admin_model extends CI_Model {
 		return $result;
 	}
 
-	public function brand_info()
+	public function save_brand()
 	{
 		$data = array();
 		$data['brand_name'] = $this->input->post('brandname',true);
@@ -445,10 +444,19 @@ class Admin_model extends CI_Model {
 		$brands_info 	= $query_result->result();
 		return $brands_info;
 	}
-
-	public function update_brand($old_brandlogo)
+	public function get_brandBy_id($brand_id)
 	{
+		$this->db->select('*');
+		$this->db->from('tbl_brand');
+		$this->db->where('brand_id',$brand_id);
+		$query_result 	= $this->db->get()->result();
+		return $query_result;
+	}
 
+	public function update_brand($data, $id)
+	{
+		$this->db->where('brand_id',$id);
+		$this->db->update('tbl_brand',$data);
 	}
 	
 	public function delete_brand($brand_id)
