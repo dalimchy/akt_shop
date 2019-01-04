@@ -17,6 +17,7 @@ class Frontend extends CI_Controller {
         $data['all_category_info'] = $this->admin_model->all_category_info();
         $data['all_product_info'] = $this->admin_model->all_product_info();
         $data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
+        $data['all_brand'] = $this->admin_model->all_brand_info();
         $data['frondend_main_content'] = $this->load->view('frontend/pages/home',$data,true);
 		$this->load->view('frontend/index', $data);
 	}
@@ -29,6 +30,7 @@ class Frontend extends CI_Controller {
 		$data['all_product_info'] = $this->admin_model->all_product_info();
 		$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
 		$data['product_details'] = $this->admin_model->product_details($product_id);
+		$data['all_brand'] = $this->admin_model->all_brand_info();
         $data['frondend_main_content'] = $this->load->view('frontend/pages/product_details',$data,true);
 		$this->load->view('frontend/index', $data);
 	}
@@ -41,6 +43,7 @@ class Frontend extends CI_Controller {
         $data['all_category_info'] = $this->admin_model->all_category_info();
 		$data['all_product_info'] = $this->admin_model->all_product_info();
 		$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
+		$data['all_brand'] = $this->admin_model->all_brand_info();
         $data['frondend_main_content'] = $this->load->view('frontend/pages/manufacture_view',$data,true);
 		$this->load->view('frontend/index', $data);
 	}
@@ -52,6 +55,7 @@ class Frontend extends CI_Controller {
         $data['all_category_info'] = $this->admin_model->all_category_info();
 		$data['all_product_info'] = $this->admin_model->all_product_info();
 		$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
+		$data['all_brand'] = $this->admin_model->all_brand_info();
         $data['frondend_main_content'] = $this->load->view('frontend/pages/category_view',$data,true);
 		$this->load->view('frontend/index', $data);
 	}
@@ -62,6 +66,7 @@ class Frontend extends CI_Controller {
         $data['all_category_info'] = $this->admin_model->all_category_info();
 		$data['all_product_info'] = $this->admin_model->all_product_info();
 		$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
+		$data['all_brand'] = $this->admin_model->all_brand_info();
         $data['frondend_main_content'] = $this->load->view('frontend/pages/cart',$data,true);
 		$this->load->view('frontend/index', $data);
 	}
@@ -73,6 +78,7 @@ class Frontend extends CI_Controller {
 	        $data['all_category_info'] = $this->admin_model->all_category_info();
 			$data['all_product_info'] = $this->admin_model->all_product_info();
 			$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
+			$data['all_brand'] = $this->admin_model->all_brand_info();
 	        $data['frondend_main_content'] = $this->load->view('frontend/pages/login_register',$data,true);
 			$this->load->view('frontend/index', $data);
 			
@@ -125,6 +131,7 @@ class Frontend extends CI_Controller {
 	        $data['all_category_info'] = $this->admin_model->all_category_info();
 			$data['all_product_info'] = $this->admin_model->all_product_info();
 			$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
+			$data['all_brand'] = $this->admin_model->all_brand_info();
 	        $data['frondend_main_content'] = $this->load->view('frontend/pages/login_register',$data,true);
 			$this->load->view('frontend/index', $data);
 		}
@@ -168,10 +175,11 @@ class Frontend extends CI_Controller {
 			redirect('/sign-in');
 		}else{
 			$data = array();
-	        $data['title'] = "frontend_users";
+	        $data['title'] = "customer_wishlist";
 	        $data['all_category_info'] = $this->admin_model->all_category_info();
 			$data['all_product_info'] = $this->admin_model->all_product_info();
 			$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
+			$data['all_brand'] = $this->admin_model->all_brand_info();
 	        $data['frondend_main_content'] = $this->load->view('frontend/pages/wish_list',$data,true);
 			$this->load->view('frontend/index', $data);
 			
@@ -185,6 +193,12 @@ class Frontend extends CI_Controller {
 	public function getCustomerWishList(){
 		$data =  $this->admin_model->getWishList($this->input->post('userId'));
 		echo json_encode($data);
+		return $data;
+	}
+	public function removeCustomerWishlist(){
+		$data =  $this->admin_model->removeWishlist($this->input->post('productId'),$this->input->post('customerId'));
+		$data = 'success';
+		echo $data;
 		return $data;
 	}
 }

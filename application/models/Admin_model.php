@@ -502,4 +502,19 @@ class Admin_model extends CI_Model {
 		$wishlist 	= $query_result->result();
 		return $wishlist;
 	}
+	public function removeWishlist($proid,$custid){
+		$this->db->where('customer_id',$custid);
+		$this->db->where('product_id',$proid);
+		$this->db->delete('tbl_wishlist');
+		return 'success';
+	}
+
+	public function all_brand_info()
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_brand');
+		$query_result 	= $this->db->get();
+		$brand 	= $query_result->result();
+		return $brand;
+	}
 }
