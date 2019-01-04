@@ -64,7 +64,7 @@ class Supper_admin extends CI_Controller {
 
 		if ($this->upload->do_upload('category_image')) {
 			$data = $this->upload->data();
-			$image_path = $config['upload_path'].$data[file_name];
+			$image_path = $config['upload_path'].$data['file_name'];
 			return $image_path;
 		}else{
 			$error = $this->upload->display_errors();
@@ -189,7 +189,7 @@ class Supper_admin extends CI_Controller {
 
 		if ($this->upload->do_upload('manufacture_image')) {
 			$data = $this->upload->data();
-			$image_path = $config['upload_path'].$data[file_name];
+			$image_path = $config['upload_path'].$data['file_name'];
 			return $image_path;
 		}else{
 			$error = $this->upload->display_errors();
@@ -451,6 +451,7 @@ class Supper_admin extends CI_Controller {
 				$this->session->set_userdata($myerror);
 				print_r($myerror);
 			}else {
+				unlink( $this->input->post('old_brandlogo', True));
 				$logo =  $this->upload->data();
 				$data = array(
 					'brand_id' => $this->input->post('brand_id', True),
