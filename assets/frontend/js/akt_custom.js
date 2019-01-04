@@ -85,26 +85,12 @@ function addToCart(proId){
 
 
 $(function(){
-    headcartOption();
-    if(user_id !== undefined){
-        var data ={
-            userId :user_id
-        }
-        $.ajax({
-            url: baseUrl+ '/frontend/getCustomerWishList',
-            type: 'POST',
-            data: data,
-            error: function() {
-               console.log('failed')
-            },
-            success: function(data) {
-                let res = JSON.parse(data);
-                 $.each(res,function(k,v){
-                    user_wish_list.push(parseInt(v.product_id));
-                 });
-            }
-         });
+    if(pageTitle == 'customer_wishlist'){
+        $('#wishListDesign').html("");
     }
+
+    headcartOption();
+    getWishlistforUser();
     
 });
 
@@ -204,4 +190,83 @@ function addToWishlist(id){
     }else{
         alert('If you want this product add your wishlist ? Then you have to login.');
     }
+}
+
+function getWishlistforUser(){
+    if(user_id !== undefined){
+        var data ={
+            userId :user_id
+        }
+        $.ajax({
+            url: baseUrl+ '/frontend/getCustomerWishList',
+            type: 'POST',
+            data: data,
+            error: function() {
+               console.log('failed')
+            },
+            success: function(data) {
+                let res = JSON.parse(data);
+                 $.each(res,function(k,v){
+                    user_wish_list.push(parseInt(v.product_id));
+                    if(pageTitle == 'customer_wishlist'){
+                        $.each(myAllProducts, function(ka,va){
+                            if(va.product_id == v.product_id){
+                                $('#wishListDesign').append(drawWishlistdesign(va));
+                            }
+                        });
+                    }
+                 });
+            }
+         });
+    }
+}
+
+function drawWishlistdesign(va){
+    var design = '<tr id="wishViewId'+va.product_id+'">';
+        design +=   '<td class="col-md-2"><img src="'+baseUrl+''+va.product_image+'" alt="imga"></td>';
+        design +=   '<td class="col-md-7">';
+        design +=      '<div class="product-name"><a href="#">'+va.product_name+'</a></div>';
+        design +=      '<div class="rating">';
+        design +=          '<i class="fa fa-star rate"></i>';
+        design +=          '<i class="fa fa-star rate"></i>';
+        design +=          '<i class="fa fa-star rate"></i>';
+        design +=          '<i class="fa fa-star rate"></i>';
+        design +=          '<i class="fa fa-star non-rate"></i>';
+        design +=          '<span class="review">( 06 Reviews )</span>';
+        design +=      '</div>';
+        design +=      '<div class="price">Tk.'+va.product_new_price+'<span>Tk. '+va.product_price+'</span>';
+        design +=      '</div>';
+        design +=   '</td>';
+        design +=   '<td class="col-md-2">';
+        design +=      '<a onclick="addToCart('+va.product_id+')" class="btn-upper btn btn-primary">Add to cart</a>';
+        design +=   '</td>';
+        design +=   '<td class="col-md-1 close-btn">';
+        design +=      '<a onclick="removeToWishlist('+va.product_id+','+user_id+')" class=""><i class="fa fa-times"></i></a>';
+        design +=   '</td>';
+        design +='</tr>';
+
+        return design;
+}
+
+
+function removeToWishlist(proid, customerid){
+    var data = {
+        productId : proid,
+        customerId : customerid
+    }
+
+    $.ajax({
+        url: baseUrl+ '/frontend/removeCustomerWishlist',
+        type: 'POST',
+        data: data,
+        error: function() {
+           console.log('failed')
+        },
+        success: function(res) {
+            if(res == "success"){
+                $('#wishViewId'+data.productId).remove();
+                removeA(user_wish_list, parseInt(data.productId));
+            }
+        }
+     });
 }
