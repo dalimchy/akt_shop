@@ -108,11 +108,10 @@ class Admin_model extends CI_Model {
 		$data['category_description']	= $this->input->post('category_description',true);
 		$data['publication_status'] 	= $this->input->post('publication_status', True);
 		$data['category_image'] 		= $category_image;
-	
 
 		$this->db->where('category_id',$category_id);
 		$this->db->update('tbl_category',$data);
-	
+
 	}
 
 	public function delete_category($category_id)
@@ -170,10 +169,6 @@ class Admin_model extends CI_Model {
 		return $result;
 	}
 
-
-
-
-
 	public function unpublish_manufacture($manufacture_id)
 	{
 		$this->db->set('publication_status',0);
@@ -201,7 +196,6 @@ class Admin_model extends CI_Model {
 
 	public function update_manufacture_info($manufacture_image)
 	{
-		
 		$data = array();
 		$manufacture_id						= $this->input->post('manufacture_id',true);
 		$data['category_id']				= $this->input->post('category_id',true);
@@ -225,9 +219,8 @@ class Admin_model extends CI_Model {
 		$this->db->delete('tbl_manufacture');
 	}
 
-
 	// /Dependent select option
-	
+
 	public function getSubCateBy_category($category_id)
 	{
 		$this->db->where('category_id', $category_id);
@@ -245,31 +238,27 @@ class Admin_model extends CI_Model {
 
 	public function save_product_info()
 	{
-		$data=array();
-		$data['product_name']				= $this->input->post('product_name',true);
-		$data['brand_id']				= $this->input->post('brand_id',true);
-		$data['category_id']				= $this->input->post('category_id',true);
-		$data['manufacture_id']				= $this->input->post('manufacture_id',true);
-		$data['product_model']				= $this->input->post('product_model',true);
-		$data['product_for']				= $this->input->post('product_for',true);
-		$data['product_short_description']	= $this->input->post('product_short_description',true);
-		$data['product_long_description']	= $this->input->post('product_long_description',true);
-		$data['product_price']				= $this->input->post('product_price',true);
-		$data['product_new_price']			= $this->input->post('product_new_price',true);
-		$data['product_quantity']			= $this->input->post('product_quantity',true);
+		$data=array(
+			'brand_id' 					=> $this->input->post('brand_id',true),
+			'product_name' 				=> $this->input->post('product_name',true),
+			'category_id' 				=> $this->input->post('category_id',true),
+			'manufacture_id' 			=> $this->input->post('manufacture_id',true),
+			'product_model'				=> $this->input->post('product_model',true),
+			'product_for' 				=> $this->input->post('product_for',true),
+			'product_short_description' => $this->input->post('product_short_description',true),
+			'product_long_description'  => $this->input->post('product_long_description',true),
+			'product_price' 			=> $this->input->post('product_price',true),
+			'product_new_price' 		=> $this->input->post('product_new_price',true),
+			'product_quantity' 			=> $this->input->post('product_quantity',true),
+		);
 
-			$img1 = array();
-			$img2 = array();
-			$img3 = array();
-			$img4 = array();
-			$img5 = array();
-			$error = "";
-
-			$config['upload_path']          = 'upload/products/'; 
-			$config['allowed_types']        = 'gif|jpg|png|jpeg';
-			$config['max_size']             = 1000;
-			$config['max_width']            = 1024;
-			$config['max_height']           = 768;
+			$config = array(
+				'upload_path'	=> 'upload/products/',
+				'allowed_types' => 'gif|jpg|png|jpeg',
+				'max_size'		=> 1000,
+				'max_width' 	=> 1024,
+				'max_height' 	=> 768,
+			);
 
 			$this->load->library('upload', $config);
 
@@ -304,9 +293,9 @@ class Admin_model extends CI_Model {
 					$data['product_img5'] = $config['upload_path'].$img5['file_name'];
 			}
 
-		$is_featured			= $this->input->post('is_featured',true);
+		$is_featured = $this->input->post('is_featured',true);
 
-		if ($is_featured== "on") 
+		if ($is_featured== "on")
 		{
 			$data['is_featured'] = 1;
 		}
@@ -314,7 +303,7 @@ class Admin_model extends CI_Model {
 		{
 			$data['is_featured'] = 0;
 		}
-		$data['publication_status']			= $this->input->post('publication_status',true);
+		$data['publication_status']	= $this->input->post('publication_status',true);
 		$this->db->insert('tbl_product',$data);
 	}
 
