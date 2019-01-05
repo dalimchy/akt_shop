@@ -350,25 +350,70 @@ class Supper_admin extends CI_Controller {
 
 	public function update_product()
 	{
+		$product_id = $this->input->post('product_id', True);
+
 		if ($_FILES['product_image']['name'] == '' || $_FILES['product_image']['size'] == '0') {
 
   			$product_image = $this->input->post('product_old_image', True);
-  			$this->admin_model->update_product($product_image);
+  			$this->admin_model->update_product($product_image, $product_id);
   			$sdata = array();
   			$sdata['message'] = "Update product Information Sucessfully";
   			$this->session->set_userdata($sdata);
-  			$product_id = $this->input->post('product_id', True);
   			redirect('manage-product');
   		}else {
   			$product_image = $this->upload_product_img();
-  			$this->admin_model->update_product($product_image);
+  			$this->admin_model->update_product($product_image, $product_id);
   			unlink( $this->input->post('product_old_image', True));
   			$sdata = array();
   			$sdata['message'] = "Update product Information Sucessfully";
   			$this->session->set_userdata($sdata);
-  			$product_id = $this->input->post('product_id', True);
   			redirect('manage-product');
   		}
+	}
+
+	public function upload_product_img()
+	{
+		$config = array(
+			'upload_path' 	=> 'upload/products/',
+			'allowed_types' => 'jpg|png|jpeg',
+			'max_size' 		=> 1000,
+			'max_width' 	=> 1024,
+			'max_height' 	=> 768
+		);
+
+		$this->load->library('upload', $config);
+
+		if ( ! $this->upload->do_upload('product_image')) {
+			$error =  $this->upload->display_errors();
+		}else {
+			$img1 =  $this->upload->data();
+			$image_path = $config['upload_path'].$img1['file_name'];
+			return $image_path;
+		}
+		// if ( ! $this->upload->do_upload('product_image2')) {
+		// 		$error =  $this->upload->display_errors();
+		// }else {
+		// 		$img2 =  $this->upload->data();
+		// 		$data['product_img2'] = $config['upload_path'].$img2['file_name'];
+		// }
+		// if ( ! $this->upload->do_upload('product_image3')) {
+		// 		$error =  $this->upload->display_errors();
+		// }else {
+		// 		$img3 =  $this->upload->data();
+		// 		$data['product_img3'] = $config['upload_path'].$img3['file_name'];
+		// }
+		// if ( ! $this->upload->do_upload('product_image4')) {
+		// 		$error =  $this->upload->display_errors();
+		// }else {
+		// 		$img4 =  $this->upload->data();
+		// 		$data['product_img4'] = $config['upload_path'].$img4['file_name'];
+		// }
+		// if ( ! $this->upload->do_upload('product_image5')) {
+		// 		$error =  $this->upload->display_errors();
+		// }else {
+		// 		$img5 =  $this->upload->data();
+		// 		$data['product_img5'] = $config['upload_path'].$img5['file_name'];
+		// }
 	}
 
 					/***********************************/

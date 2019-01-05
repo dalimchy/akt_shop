@@ -332,7 +332,6 @@ class Admin_model extends CI_Model {
 		$this->db->update('tbl_product');
 	}
 
-
 	public function delete_product($product_id)
 	{
 		$this->db->where('product_id',$product_id);
@@ -359,12 +358,10 @@ class Admin_model extends CI_Model {
 		return $result;
 	}
 
-
-	public function update_product($product_image)
+	public function update_product($product_image, $product_id)
 	{
 		$data = array();
 		$data['product_name']		 		= $this->input->post('product_name', True);
-		$product_id 						= $this->input->post('product_id', True);
 		$data['category_id'] 				= $this->input->post('category_id', True);
 		$data['manufacture_id']				= $this->input->post('manufacture_id', True);
 		$data['product_model']				= $this->input->post('product_model', True);
