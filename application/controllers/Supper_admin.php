@@ -23,10 +23,6 @@ class Supper_admin extends CI_Controller {
 		$this->load->view('admin/admin_master',$data );
 	}
 
-
-
-
-
 	public function logout()
 	{
 		$this->session->unset_userdata('id');
@@ -36,8 +32,6 @@ class Supper_admin extends CI_Controller {
 		$this->session->set_userdata($sdata);
 		redirect('/login');
 	}
-
-
 
 				/***********************************/
 				/*     *****  Category  *****      */
@@ -51,27 +45,6 @@ class Supper_admin extends CI_Controller {
 		$data['admin_main_content'] = $this->load->view('admin/pages/add_category','',true);
 		$this->load->view('admin/admin_master',$data );
 	}
-
-
-	private function save_category_img(){
-		$config['upload_path'] = 'upload/category/';
-		$config['allowed_types'] = 'gif|jpg|png|jpeg';
-		$config['max_size'] = 1000;
-		$config['max_width'] = 1024;
-		$config['max_height'] = 768;
-
-		$this->load->library('upload', $config);
-
-		if ($this->upload->do_upload('category_image')) {
-			$data = $this->upload->data();
-			$image_path = $config['upload_path'].$data['file_name'];
-			return $image_path;
-		}else{
-			$error = $this->upload->display_errors();
-			print_r($error);
-		}
-	}
-
 
 	public function save_category()
 	{
@@ -107,7 +80,6 @@ class Supper_admin extends CI_Controller {
 		redirect('manage-categories');
 	}
 
-
 	public function edit_category($category_id)
 	{
 		$data = array();
@@ -142,6 +114,25 @@ class Supper_admin extends CI_Controller {
 
 	}
 
+	private function save_category_img()
+	{
+		$config['upload_path'] = 'upload/category/';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg';
+		$config['max_size'] = 1000;
+		$config['max_width'] = 1024;
+		$config['max_height'] = 768;
+
+		$this->load->library('upload', $config);
+
+		if ($this->upload->do_upload('category_image')) {
+			$data = $this->upload->data();
+			$image_path = $config['upload_path'].$data['file_name'];
+			return $image_path;
+		}else{
+			$error = $this->upload->display_errors();
+			print_r($error);
+		}
+	}
 
 	public function delete_category($category_id)
 	{
@@ -218,8 +209,6 @@ class Supper_admin extends CI_Controller {
 		redirect('manage-manufacture');
 	}
 
-
-
 	public function edit_manufacture($manufacture_id)
 	{
 		$data = array();
@@ -293,11 +282,11 @@ class Supper_admin extends CI_Controller {
 
 	public function save_product()
 	{
-	$this->admin_model->save_product_info();
-	$sdata = array();
-	$sdata['message'] = "Save Product Information Sucessfully!";
-	$this->session->set_userdata($sdata);
-	redirect('add-product');
+		$this->admin_model->save_product_info();
+		$sdata = array();
+		$sdata['message'] = "Save Product Information Sucessfully!";
+		$this->session->set_userdata($sdata);
+		redirect('add-product');
 	}
 
 	public function manage_product()
@@ -320,7 +309,6 @@ class Supper_admin extends CI_Controller {
 
 	public function publish_product($product_id)
 	{
-
 		$this->admin_model->publish_product($product_id);
 		$sdata = array();
 		$sdata['message'] = "Save publish Product Sucessfully!";
