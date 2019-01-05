@@ -79,7 +79,7 @@
           <div class="search-area">
             <form action="<?php echo base_url()?>search" method="POST">
               <div class="control-group">
-                <ul class="categories-filter animate-dropdown">
+                <!-- <ul class="categories-filter animate-dropdown">
                   <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="category.html">Categories <b class="caret"></b></a>
                     <ul class="dropdown-menu" role="menu" >
                     <?php 
@@ -88,8 +88,12 @@
                       <?php } }?>
                     </ul>
                   </li>
-                </ul>
-                <input class="search-field" name="search_value" placeholder="Search here..." />
+                </ul> -->
+                <?php if($title == 'search page'){?> 
+                  <input class="search-field" name="search_value" value="<?php echo $search_value ?>" placeholder="Search here..." />
+                <?php }else { ?> 
+                  <input class="search-field" name="search_value" placeholder="Search here..." />
+                <?php }?>
                  <button class="search-button" type="submit"></button> </div>
             </form>
           </div>

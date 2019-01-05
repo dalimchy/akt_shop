@@ -210,6 +210,7 @@ class Frontend extends CI_Controller {
 		$data['all_product_info'] = $this->admin_model->all_product_info();
 		$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
 		$data['search_result'] = $this->admin_model->getsearchResult($this->input->post('search_value'));
+		$data['search_value'] = $this->input->post('search_value');
 		$data['all_brand'] = $this->admin_model->all_brand_info();
         $data['frondend_main_content'] = $this->load->view('frontend/pages/search',$data,true);
 		$this->load->view('frontend/index', $data);
