@@ -511,4 +511,16 @@ class Admin_model extends CI_Model {
 		$brand 	= $query_result->result();
 		return $brand;
 	}
+	public function getsearchResult($searchVal)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_product');
+		$this->db->like('product_name', $searchVal);
+		$this->db->or_like('product_id', $searchVal);
+		$this->db->or_like('product_model', $searchVal);
+		$this->db->or_like('product_model', $searchVal);
+		$query_result 	= $this->db->get();
+		$brand 	= $query_result->result();
+		return $brand;
+	}
 }

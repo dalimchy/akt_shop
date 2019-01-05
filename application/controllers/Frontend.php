@@ -201,4 +201,18 @@ class Frontend extends CI_Controller {
 		echo $data;
 		return $data;
 	}
+
+	public function customer_search()
+	{
+		$data = array();
+        $data['title'] = "search page";
+        $data['all_category_info'] = $this->admin_model->all_category_info();
+		$data['all_product_info'] = $this->admin_model->all_product_info();
+		$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
+		$data['search_result'] = $this->admin_model->getsearchResult($this->input->post('search_value'));
+		$data['all_brand'] = $this->admin_model->all_brand_info();
+        $data['frondend_main_content'] = $this->load->view('frontend/pages/search',$data,true);
+		$this->load->view('frontend/index', $data);
+	}
+
 }
