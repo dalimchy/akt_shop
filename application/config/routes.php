@@ -113,5 +113,6 @@ $route['sign-in'] = 'frontend/frontend_users';
 $route['sign-out'] = 'frontend/frontend_users_singout';
 $route['wish-list'] = 'frontend/user_wishList';
 $route['search'] = 'frontend/customer_search';
+$route['contact'] = 'frontend/contact';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

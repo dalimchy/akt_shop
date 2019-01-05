@@ -154,7 +154,7 @@
           <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
             <div class="nav-outer">
               <ul class="nav navbar-nav">
-                <li class="active dropdown yamm-fw"><a href="<?php echo base_url()?>"> <i class="glyphicon glyphicon-home"></i>  Home</a> </li>
+                <li class="<?php if($title == "index"){ echo 'active'; }?> dropdown yamm-fw"><a href="<?php echo base_url()?>"> <i class="glyphicon glyphicon-home"></i>  Home</a> </li>
                 <?php 
                   foreach($all_category_info as $v_cate){if($v_cate->publication_status == 1){ ?>
                     <li class="dropdown yamm-fw"> <a href="#" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown"><?php echo $v_cate->category_name; ?></a> 
@@ -220,6 +220,7 @@
                     </li>
                     
                 <?php } } ?>
+                <li class="<?php if($title == 'Contact'){echo 'active '; } ?>dropdown yamm-fw"><a href="<?php echo base_url()?>contact">Contact Us</a> </li>
               </ul>
               <!-- /.navbar-nav -->
               <div class="clearfix"></div>

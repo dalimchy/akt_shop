@@ -216,4 +216,15 @@ class Frontend extends CI_Controller {
 		$this->load->view('frontend/index', $data);
 	}
 
+	public function contact(){
+		$data = array();
+        $data['title'] = "Contact";
+        $data['all_category_info'] = $this->admin_model->all_category_info();
+		$data['all_product_info'] = $this->admin_model->all_product_info();
+		$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
+		$data['all_brand'] = $this->admin_model->all_brand_info();
+        $data['frondend_main_content'] = $this->load->view('frontend/pages/contact',$data,true);
+		$this->load->view('frontend/index', $data);
+	}
+
 }
