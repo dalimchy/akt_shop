@@ -103,6 +103,7 @@
                             <th class="text-center" style="width: 50px;">#</th>
                             <th>Brand Name</th>
                             <th class="hidden-xs w-15">Brand Logo</th>
+                            <th class="hidden-xs w-15" style="width: 100px;">Total Product</th>
                             <th class="text-center" style="width: 100px;">Actions</th>
                         </tr>
                     </thead>
@@ -117,7 +118,9 @@
                             <td class="text-center"> <?php echo $i ?> </td>
                             <td><?php echo $brand_value->brand_name; ?></td>
                             <td class="hidden-xs">
-                            <img style="height: 70px;width: 70px" src="<?php echo base_url().$brand_value->brand_logo; ?>" alt="" ></td>
+								<img style="height: 70px;width: 70px" src="<?php echo base_url().$brand_value->brand_logo; ?>" alt="" >
+							</td>
+							<td>0</td>
                             <td class="text-center">
                                 <div class="btn-group">
                                     <a href="<?php  echo base_url('supper_admin/edit_brand/'.$brand_value->brand_id);?>" class="btn btn-xs btn-app-teal" type="button" data-toggle="tooltip" title="" data-original-title="Edit Brand"><i class="ion-edit"></i></a>

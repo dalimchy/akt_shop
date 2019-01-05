@@ -12,7 +12,8 @@
                     <th>Manufacture Name</th>
                     <th>Image </th>
                     <th class="hidden-xs">Manufacture Description</th>
-                    <th class="hidden-xs w-20">Status</th>
+                    <th class="hidden-xs" style="width: 100px;">Total Product</th>
+                    <th class="hidden-xs" style="width: 100px;">Status</th>
                     <th class="text-center" style="width: 10%;">Actions</th>
                 </tr>
             </thead>
@@ -28,7 +29,8 @@
                     <td class="font-500"><?php echo $v_manufacture->manufacture_name; ?></td>
                     <td class="font-500"><img style="height: 70px;width: 70px" src="<?php echo base_url().$v_manufacture->manufacture_image; ?>" alt="" ></td>
                     <td class="hidden-xs"><?php echo $v_manufacture->manufacture_description; ?></td>
-                    <td class="hidden-xs">
+					<td>0</td>
+					<td class="hidden-xs">
                         <?php if($v_manufacture->publication_status==1){?>
                         <a class="" href="<?php echo base_url()?>unpublish-manufacture/<?php echo $v_manufacture->manufacture_id; ?>">
                             <span class="label label-success">Active</span>
