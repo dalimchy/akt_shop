@@ -95,8 +95,8 @@ class Admin_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('tbl_category');
 		$this->db->where('publication_status',1);
-		$query_result	= $this->db->get();
-		$result 		= $query_result->result();
+		$result	= $this->db->get()->result();
+		// $result 		= $query_result;
 		return $result;
 	}
 
@@ -153,9 +153,8 @@ class Admin_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('tbl_manufacture');
 		$this->db->order_by("manufacture_id", "desc");
-		$query_result 		= $this->db->get();
-		$manufacture_info 	= $query_result->result();
-		return $manufacture_info;
+		$query_result 		= $this->db->get()->result();
+		return $query_result;
 	}
 
 
@@ -426,9 +425,9 @@ class Admin_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('tbl_brand');
 		$this->db->order_by("brand_id", "desc");
-		$query_result 	= $this->db->get();
-		$brands_info 	= $query_result->result();
-		return $brands_info;
+		$query_result 	= $this->db->get()->result();
+		// $brands_info 	= $query_result;
+		return $query_result;
 	}
 	public function get_brandBy_id($brand_id)
 	{

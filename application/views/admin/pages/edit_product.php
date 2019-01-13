@@ -116,7 +116,6 @@
                             <option value="">Please select</option>
                             <option value="1">Published </option>
                             <option value="0">Unpublished </option>
-                            
                         </select>
                     </div>
                 </div>

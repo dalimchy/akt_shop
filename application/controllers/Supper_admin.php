@@ -162,9 +162,9 @@ class Supper_admin extends CI_Controller {
 	{
 		$manufacture_image = $this->save_manufacture_img();
 		$this->admin_model->save_manufacture($manufacture_image);
-		$sdata = array();
-		$sdata['message'] = "Save Manufacture Information Sucessfully!";
-		$this->session->set_userdata($sdata);
+		$data = array();
+		$data['message'] = "Save Manufacture Information Sucessfully!";
+		$this->session->set_userdata($data);
 		redirect('add-manufacture');
 	}
 
