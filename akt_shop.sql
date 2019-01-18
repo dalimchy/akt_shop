@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 18, 2019 at 03:21 PM
+-- Generation Time: Jan 18, 2019 at 04:57 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -75,7 +75,11 @@ INSERT INTO `main_menu` (`id`, `item_name`, `fa_class`, `status`, `has_link`) VA
 (2, 'check 2', 'check2', 0, 'www.check2.com'),
 (3, 'check', 'check2', 1, 'www.check2.com'),
 (4, 'check', 'check2', 0, 'www.check2.com'),
-(5, 'check 2', 'check2', 0, 'sadada');
+(5, 'check 2', 'check2', 0, 'sadada'),
+(6, 'check 2', 'check', 1, 'www.check2.com'),
+(7, 'check', 'check2', 1, 'sadada'),
+(8, 'check', 'fa fa-camera', 0, 'www.check2.com'),
+(9, 'check', 'fa fa-desktop', 1, 'sadada');
 
 -- --------------------------------------------------------
 
@@ -127,6 +131,7 @@ CREATE TABLE `tbl_category` (
   `category_id` int(11) NOT NULL,
   `category_name` varchar(100) NOT NULL,
   `category_image` varchar(250) NOT NULL,
+  `menu_id` int(11) NOT NULL,
   `product_count` int(12) NOT NULL DEFAULT '0',
   `subcat_count` int(12) NOT NULL DEFAULT '0',
   `category_description` text NOT NULL,
@@ -137,9 +142,10 @@ CREATE TABLE `tbl_category` (
 -- Dumping data for table `tbl_category`
 --
 
-INSERT INTO `tbl_category` (`category_id`, `category_name`, `category_image`, `product_count`, `subcat_count`, `category_description`, `publication_status`) VALUES
-(8, 'Clothing', 'upload/category/p8.jpg', 0, 0, 'test', 1),
-(9, 'Men\'s Fashion', 'upload/category/p7.jpg', 0, 0, 'sdffs', 1);
+INSERT INTO `tbl_category` (`category_id`, `category_name`, `category_image`, `menu_id`, `product_count`, `subcat_count`, `category_description`, `publication_status`) VALUES
+(8, 'Clothing', 'upload/category/p8.jpg', 0, 0, 0, 'test', 1),
+(9, 'Men\'s Fashion', 'upload/category/p7.jpg', 0, 0, 0, 'sdffs', 1),
+(10, 'Men\'s Fashion', 'upload/category/p3.jpg', 2, 0, 0, 'saadad', 1);
 
 -- --------------------------------------------------------
 
@@ -358,7 +364,7 @@ ALTER TABLE `akt_users`
 -- AUTO_INCREMENT for table `main_menu`
 --
 ALTER TABLE `main_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_brand`
@@ -376,7 +382,7 @@ ALTER TABLE `tbl_cart`
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_customers`
