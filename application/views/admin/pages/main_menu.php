@@ -202,6 +202,11 @@
                         <td class="p-l-lg">ion-medkit</td>
                         <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('ion-medkit')"><i class="fa fa-plus-circle"></i> Add</div></td>
                     </tr>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="fa fa-mobile fa-2x"></i></th>
+                        <td class="p-l-lg">fa fa-mobile</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('fa fa-mobile')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
                 </tbody>
             </table>
             </div>

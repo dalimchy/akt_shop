@@ -10,42 +10,17 @@
                   <ul class="dropdown-menu mega-menu">
                     <li class="yamm-content">
                       <div class="row">
-                        <div class="col-sm-12 col-md-2">
-                          <h2 class="title">Men</h2>
+                      <?php foreach($all_category_info as $v_cate){if($v_cate->menu_id == $vmenu->id && $v_cate->publication_status == 1){ ?> 
+                        <div class="col-sm-12 col-md-3">
+                          <h2 class="title" style="margin:2px 0px"><a href="<?php echo base_url()?>category-view/<?php echo $v_cate->category_id ?>" style="padding:0px;"><?php echo $v_cate->category_name;?></a></h2>
                           <ul class="links list-unstyled">
-                                    <li><a href="">sdfg</a></li>
+                          <?php foreach($all_manufacture_info as $v_scate){if($v_scate->category_id == $v_cate->category_id && $v_scate->publication_status == 1){ ?>
+                              <li><a href="<?php echo base_url()?>manufacture-view/<?php echo $v_scate->manufacture_id ?>"><?php  echo $v_scate->manufacture_name; ?></a></li>
+                          <?php }}?>
                           </ul>
                         </div>
+                        <?php }}?>
                         <!-- /.col -->
-                        <div class="col-sm-12 col-md-2">
-                        <h2 class="title">Women</h2>
-                          <ul class="links list-unstyled">
-                                    <li><a href="">sdfg</a></li>
-                          </ul>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-12 col-md-2">
-                        <h2 class="title">Boys</h2>
-                          <ul class="links list-unstyled">
-                                    <li><a href="">sdfg</a></li>
-                          </ul>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-12 col-md-2">
-                        <h2 class="title">Girls</h2>
-                          <ul class="links list-unstyled">
-                                    <li><a href="">sgd</a></li>
-                          </ul>
-                        </div>
-                        <!-- /.col --> 
-                        <div class="col-sm-12 col-md-2">
-                        <h2 class="title">Kids</h2>
-                          <ul class="links list-unstyled">
-                                    <li><a href="">sdgf</a></li>
-                          </ul>
-                        </div>
-                        <!-- /.col --> 
-                        <div class="col-sm-12 col-md-2"> <img class="img-responsive" src="<?php echo base_url()?>assets/frontend/images/banners/top-menu-banner.jpg" alt=""> </div>
                       </div>
                       <!-- /.row --> 
                     </li>
