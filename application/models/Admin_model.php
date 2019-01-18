@@ -140,7 +140,7 @@ class Admin_model extends CI_Model {
 		$data=array();
 		$data['category_id']				= $this->input->post('category_id',true);
 		$data['manufacture_name']			= $this->input->post('manufacture_name',true);
-		$data['manufacture_for']			= $this->input->post('manufacture_for',true);
+		// $data['manufacture_for']			= $this->input->post('manufacture_for',true);
 		$data['manufacture_image']			= $manufacture_image;
 		$data['manufacture_description']	= $this->input->post('manufacture_description',true);
 		$data['publication_status']			= $this->input->post('publication_status',true);
