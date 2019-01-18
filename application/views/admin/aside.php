@@ -18,11 +18,15 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="<?php echo base_url()?>" target="_blank"><i class="ion-laptop"></i> Frontend</a>
+                                    <a href="<?php echo base_url()?>" target="_blank"><i class="fa fa-eye"></i> Frontend</a>
                                 </li>
 
                                 <li class="nav-item <?php if($title == 'Brands'){?>active<?php }?> ">
-                                    <a href="<?php echo base_url('/brands')?>"><i class="ion-laptop"></i> Brands</a>
+                                    <a href="<?php echo base_url('/brands')?>"><i class="ion-android-color-palette"></i> Brands</a>
+                                </li>
+
+                                <li class="nav-item <?php if($title == 'Main Menu'){?>active<?php }?> ">
+                                    <a href="<?php echo base_url('/main-menu')?>"><i class="ion-android-menu"></i>Main Menu</a>
                                 </li>
 
                                 <li class="nav-item nav-item-has-subnav <?php if($title == 'Add Category' || $title == 'Manage Categories' ){?>active open<?php }?>">
@@ -65,7 +69,7 @@
                                 </li>
 
                                 <li class="nav-item <?php if($title == 'Customers'){?>active<?php }?> ">
-                                    <a href="<?php echo base_url('/customers')?>"><i class="ion-laptop"></i>Customers</a>
+                                    <a href="<?php echo base_url('/customers')?>"><i class="ion-ios-people"></i>Customers</a>
                                 </li>
 
                                 <li class="nav-item nav-item-has-subnav">

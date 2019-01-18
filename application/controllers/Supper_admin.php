@@ -506,6 +506,12 @@ class Supper_admin extends CI_Controller {
 		$data["admin_main_content"] = $this->load->view('admin/pages/customers', $data, true);
 		$this->load->view('admin/admin_master', $data);
 	}
-
+	public function main_menu()
+	{
+		$data = array();
+		$data['title'] = "Main Menu";
+		$data["admin_main_content"] = $this->load->view('admin/pages/main_menu', $data, true);
+		$this->load->view('admin/admin_master', $data);
+	}
 
 }

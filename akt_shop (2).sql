@@ -2,10 +2,10 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 02, 2019 at 05:27 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Host: localhost
+-- Generation Time: Jan 18, 2019 at 01:26 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -55,6 +55,20 @@ INSERT INTO `akt_users` (`id`, `username`, `email`, `password`, `image`, `phone_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `main_menu`
+--
+
+CREATE TABLE `main_menu` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `status` int(3) NOT NULL DEFAULT '2',
+  `has_link` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_brand`
 --
 
@@ -70,8 +84,13 @@ CREATE TABLE `tbl_brand` (
 --
 
 INSERT INTO `tbl_brand` (`brand_id`, `brand_name`, `brand_logo`, `created_at`) VALUES
-(29, 'dgf', 'upload/brand/1546403087_p8.jpg', '2019-01-02 04:24:47'),
-(30, '123', 'upload/brand/1546403163_p16.jpg', '2019-01-02 04:26:03');
+(38, 'Gucci', 'upload/brand/1547797746_Gucci-logo.jpg', '2019-01-18 07:49:06'),
+(39, 'Levi\'s', 'upload/brand/1547797799_2000px-Levis_logo_svg.png', '2019-01-18 07:49:59'),
+(40, 'D&G', 'upload/brand/1547797848_254_480n.jpg', '2019-01-18 07:50:48'),
+(41, 'H&M', 'upload/brand/1547797880_HM-Share-Image.jpg', '2019-01-18 07:51:20'),
+(42, 'american eagle', 'upload/brand/1547797939_xHZIQLF.png', '2019-01-18 07:52:19'),
+(44, 'Lotto', 'upload/brand/1547798073_a7d5c2cbe8bdb83262f3babf9388d42c.jpeg', '2019-01-18 07:54:33'),
+(45, 'Armani', 'upload/brand/1547798114_emporio-armani-logo-vector-1040x737.png', '2019-01-18 07:55:14');
 
 -- --------------------------------------------------------
 
@@ -108,8 +127,7 @@ CREATE TABLE `tbl_category` (
 --
 
 INSERT INTO `tbl_category` (`category_id`, `category_name`, `category_image`, `product_count`, `subcat_count`, `category_description`, `publication_status`) VALUES
-(1, 'mid category', 'upload/category/p14.jpg', 0, 0, 'kl;kl;', 1),
-(2, 'asd', 'upload/category/p8.jpg', 0, 0, 'sdasdad asd a dasa a d addasd ads dadsdasdads dasda sd dfd gfg fdg dfg df gf', 1);
+(8, 'Clothing', 'upload/category/p8.jpg', 0, 0, 'test', 1);
 
 -- --------------------------------------------------------
 
@@ -134,6 +152,14 @@ CREATE TABLE `tbl_customers` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_customers`
+--
+
+INSERT INTO `tbl_customers` (`customer_id`, `customer_name`, `customer_email`, `customer_phone`, `customer_region`, `customer_city`, `customer_area`, `customer_addr`, `customer_image`, `customer_dob`, `customer_password`, `customer_total_orders`, `customer_status`, `created_at`, `updated_at`) VALUES
+(1, 'dalimchy', 'admin@gmail.com', 1827885295, NULL, NULL, NULL, NULL, 'user.jpg', NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, NULL, '2019-01-03 17:09:49', NULL),
+(2, 'dalimchy', 'admin2@gmail.com', 1, NULL, NULL, NULL, NULL, 'user.jpg', NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, NULL, '2019-01-04 07:15:20', NULL);
 
 -- --------------------------------------------------------
 
@@ -230,6 +256,13 @@ CREATE TABLE `tbl_wishlist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Dumping data for table `tbl_wishlist`
+--
+
+INSERT INTO `tbl_wishlist` (`wishlist_id`, `customer_id`, `product_id`, `created_at`) VALUES
+(15, 1, 1, '2019-01-04 07:13:05');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -237,6 +270,12 @@ CREATE TABLE `tbl_wishlist` (
 -- Indexes for table `akt_users`
 --
 ALTER TABLE `akt_users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `main_menu`
+--
+ALTER TABLE `main_menu`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -304,10 +343,16 @@ ALTER TABLE `akt_users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `main_menu`
+--
+ALTER TABLE `main_menu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `tbl_brand`
 --
 ALTER TABLE `tbl_brand`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `tbl_cart`
@@ -319,13 +364,13 @@ ALTER TABLE `tbl_cart`
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_customers`
 --
 ALTER TABLE `tbl_customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_manufacture`
@@ -355,7 +400,7 @@ ALTER TABLE `tbl_review`
 -- AUTO_INCREMENT for table `tbl_wishlist`
 --
 ALTER TABLE `tbl_wishlist`
-  MODIFY `wishlist_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `wishlist_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

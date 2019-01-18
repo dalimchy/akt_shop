@@ -95,6 +95,7 @@ $route['brands'] = 'supper_admin/add_brand';
 // $route['delete-brand/(.+)'] = 'supper_admin/delete_brand/$1';
 
 $route['customers'] = 'supper_admin/show_customers';
+$route['main-menu'] = 'supper_admin/main_menu';
 
 
 
