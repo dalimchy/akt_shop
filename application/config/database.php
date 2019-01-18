@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'akt_shop',
+	'hostname' => 'db4free.net',
+	'username' => 'dalimchy',
+	'password' => '12345678',
+	'database' => 'aktshop1',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
