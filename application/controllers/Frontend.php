@@ -13,7 +13,8 @@ class Frontend extends CI_Controller {
 	public function index()
 	{
 		$data = array();
-        $data['title'] = "index";
+		$data['title'] = "index";
+		$data['total_menu'] = $this->admin_model->getAllMenus();
         $data['all_category_info'] = $this->admin_model->all_category_info();
         $data['all_product_info'] = $this->admin_model->all_product_info();
         $data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
@@ -25,7 +26,8 @@ class Frontend extends CI_Controller {
 	public function product_details($product_id)
 	{
 		$data = array();
-        $data['title'] = "product view";
+		$data['title'] = "product view";
+		$data['total_menu'] = $this->admin_model->getAllMenus();
         $data['all_category_info'] = $this->admin_model->all_category_info();
 		$data['all_product_info'] = $this->admin_model->all_product_info();
 		$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
@@ -38,7 +40,8 @@ class Frontend extends CI_Controller {
 	public function manufacture_view($manufacture_id)
 	{
 		$data = array();
-        $data['title'] = "manufacture_view";
+		$data['title'] = "manufacture_view";
+		$data['total_menu'] = $this->admin_model->getAllMenus();
         $data['manufacture_view_id'] = $manufacture_id;
         $data['all_category_info'] = $this->admin_model->all_category_info();
 		$data['all_product_info'] = $this->admin_model->all_product_info();
@@ -50,7 +53,8 @@ class Frontend extends CI_Controller {
 	public function category_view($category_id)
 	{
 		$data = array();
-        $data['title'] = "category_view";
+		$data['title'] = "category_view";
+		$data['total_menu'] = $this->admin_model->getAllMenus();
         $data['category_view_id'] = $category_id;
         $data['all_category_info'] = $this->admin_model->all_category_info();
 		$data['all_product_info'] = $this->admin_model->all_product_info();
@@ -62,7 +66,8 @@ class Frontend extends CI_Controller {
 	public function shopping_cart()
 	{
 		$data = array();
-        $data['title'] = "shopping_cart";
+		$data['title'] = "shopping_cart";
+		$data['total_menu'] = $this->admin_model->getAllMenus();
         $data['all_category_info'] = $this->admin_model->all_category_info();
 		$data['all_product_info'] = $this->admin_model->all_product_info();
 		$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
@@ -74,7 +79,8 @@ class Frontend extends CI_Controller {
 	{
 		if($this->session->userdata('customer_id') == null){
 			$data = array();
-	        $data['title'] = "frontend_users";
+			$data['title'] = "frontend_users";
+			$data['total_menu'] = $this->admin_model->getAllMenus();
 	        $data['all_category_info'] = $this->admin_model->all_category_info();
 			$data['all_product_info'] = $this->admin_model->all_product_info();
 			$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
@@ -127,7 +133,8 @@ class Frontend extends CI_Controller {
             redirect('/');
         }else{
 			$data = array();
-	        $data['title'] = "frontend_users";
+			$data['title'] = "frontend_users";
+			$data['total_menu'] = $this->admin_model->getAllMenus();
 	        $data['all_category_info'] = $this->admin_model->all_category_info();
 			$data['all_product_info'] = $this->admin_model->all_product_info();
 			$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
@@ -175,7 +182,8 @@ class Frontend extends CI_Controller {
 			redirect('/sign-in');
 		}else{
 			$data = array();
-	        $data['title'] = "customer_wishlist";
+			$data['title'] = "customer_wishlist";
+			$data['total_menu'] = $this->admin_model->getAllMenus();
 	        $data['all_category_info'] = $this->admin_model->all_category_info();
 			$data['all_product_info'] = $this->admin_model->all_product_info();
 			$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
@@ -205,7 +213,8 @@ class Frontend extends CI_Controller {
 	public function customer_search()
 	{
 		$data = array();
-        $data['title'] = "search page";
+		$data['title'] = "search page";
+		$data['total_menu'] = $this->admin_model->getAllMenus();
         $data['all_category_info'] = $this->admin_model->all_category_info();
 		$data['all_product_info'] = $this->admin_model->all_product_info();
 		$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
@@ -218,7 +227,8 @@ class Frontend extends CI_Controller {
 
 	public function contact(){
 		$data = array();
-        $data['title'] = "Contact";
+		$data['title'] = "Contact";
+		$data['total_menu'] = $this->admin_model->getAllMenus();
         $data['all_category_info'] = $this->admin_model->all_category_info();
 		$data['all_product_info'] = $this->admin_model->all_product_info();
 		$data['all_manufacture_info'] = $this->admin_model->all_manufacture_info();
