@@ -48,6 +48,7 @@ class Admin_model extends CI_Model {
 		$data=array();
 		$data['category_name']			= $this->input->post('category_name',true);
 		$data['category_image']			= $category_image;
+		$data['menu_id']				= $this->input->post('menu_id',true);	
 		$data['category_description']	= $this->input->post('category_description',true);	
 		$data['publication_status']		= $this->input->post('publication_status',true);
 		$this->db->insert('tbl_category',$data);
@@ -96,7 +97,6 @@ class Admin_model extends CI_Model {
 		$this->db->from('tbl_category');
 		$this->db->where('publication_status',1);
 		$result	= $this->db->get()->result();
-		// $result 		= $query_result;
 		return $result;
 	}
 

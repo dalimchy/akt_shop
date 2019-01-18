@@ -43,7 +43,8 @@ class Supper_admin extends CI_Controller {
 	{
 		$data = array();
 		$data['title'] = "Add Category";
-		$data['admin_main_content'] = $this->load->view('admin/pages/add_category','',true);
+		$data['get_menu'] = $this->admin_model->getAllMenus();
+		$data['admin_main_content'] = $this->load->view('admin/pages/add_category',$data ,true);
 		$this->load->view('admin/admin_master',$data );
 	}
 
@@ -524,7 +525,6 @@ class Supper_admin extends CI_Controller {
 			'has_link' => $this->input->post('haslink',true)
 		);
 		$this->admin_model->addMenu_Item($data);
-		$data['message'] = 'Data Inserted Successfully';
 		//Loading View
 		$this->session->set_flashdata('msg', 'Data Inserted Successfully');
 		redirect('main-menu');

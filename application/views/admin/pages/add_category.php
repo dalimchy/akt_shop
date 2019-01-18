@@ -24,10 +24,7 @@
                 </ul>
             </div>
             <div class="card-block">
-                <!-- jQuery Validation (.js-validation-bootstrap class is initialized in js/pages/base_forms_validation.js) -->
-                <!-- For more examples please check https://github.com/jzaefferer/jquery-validation -->
                 <form class="js-validation-bootstrap form-horizontal" action="<?php echo base_url();?>save-category" enctype="multipart/form-data" method="post">
-
 
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="">Category Name <span class="text-orange">*</span></label>
@@ -36,7 +33,19 @@
                         </div>
                     </div>
 
-                        <div class="form-group">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="">Select Menu <span class="text-orange">*</span></label>
+                        <div class="col-md-8">
+                        <select id="" class="form-control" name="menu_id" required>
+                            <option value="">Please select</option>
+                            <?php foreach ($get_menu as $value) { ?>
+                            <option value="<?php echo $value->id?>"><?php echo $value->item_name?> </option>
+                            <?php } ?>
+                        </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label class="col-md-3 control-label" for="">Category Image </label>
                         <div class="col-md-8">
                             <input class="form-control" type="file" id="" name="category_image" required="1">

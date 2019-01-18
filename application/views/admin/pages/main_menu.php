@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-xs-3">
                             <label for="">Has Link</label>
-                            <input class="form-control" type="text" name="haslink">
+                            <input class="form-control" type="text" name="haslink" placeholder="www.example.com">
                         </div>
                         <div class="col-xs-2">
                             <label for="" class="m-b-3"> </label>
