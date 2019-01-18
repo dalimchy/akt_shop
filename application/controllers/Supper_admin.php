@@ -19,7 +19,8 @@ class Supper_admin extends CI_Controller {
 	{
 		$data = array();
 		$data['title'] = "Dashboard";
-		$data['admin_main_content'] = $this->load->view('admin/pages/dashboard','',true);
+		$data['count'] = $this->admin_model->countRecords();
+		$data['admin_main_content'] = $this->load->view('admin/pages/dashboard',$data,true);
 		$this->load->view('admin/admin_master',$data );
 	}
 

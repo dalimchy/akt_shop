@@ -522,4 +522,28 @@ class Admin_model extends CI_Model {
 		$brand 	= $query_result->result();
 		return $brand;
 	}
+	// count all records 
+	public function countRecords() {
+		$this->db->select('count(*) as count');
+		$this->db->from('tbl_product');
+		$query1 = $this->db->get();
+		$data['all_product_count'] = $query1->result();
+
+		$this->db->select('count(*) as count');
+		$this->db->from('tbl_category');
+		$query2 = $this->db->get();
+		$data['all_category_count'] = $query2->result();
+
+		$this->db->select('count(*) as count');
+		$this->db->from('tbl_manufacture');
+		$query3 = $this->db->get();
+		$data['all_subcategory_count'] = $query3->result();
+
+		$this->db->select('count(*) as count');
+		$this->db->from('tbl_orders');
+		$query4 = $this->db->get();
+		$data['all_orders_count'] = $query4->result();
+
+		return $data;
+	}
 }

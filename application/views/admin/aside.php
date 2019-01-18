@@ -144,7 +144,7 @@
                                         <a href="javascript:void(0)" data-toggle="modal" data-target="#apps-modal"><i class="ion-grid"></i></a>
                                     </li>
 
-                                    <li class="dropdown">
+                                    <!-- <li class="dropdown">
                                         <a href="javascript:void(0)" data-toggle="dropdown"><i class="ion-ios-bell"></i> <span class="badge">3</span></a>
                                         <ul class="dropdown-menu dropdown-menu-right">
                                             <li class="dropdown-header">Profile</li>
@@ -160,7 +160,7 @@
                                                 <a tabindex="-1" href="javascript:void(0)">Edit Profile..</a>
                                             </li>
                                         </ul>
-                                    </li>
+                                    </li> -->
 
                                     <li class="dropdown dropdown-profile">
                                         <a href="javascript:void(0)" data-toggle="dropdown">
@@ -171,12 +171,12 @@
                                             <li class="dropdown-header">
 											<strong>ADMINISTRATOR</strong>
                                             </li>
-                                            <li>
+                                            <!-- <li>
                                                 <a href="base_pages_profile.html">Profile</a>
-                                            </li>
-                                            <li>
+                                            </li> -->
+                                            <!-- <li>
                                                 <a href="base_pages_profile.html"><span class="badge badge-success pull-right">3</span> Blog</a>
-                                            </li>
+                                            </li> -->
                                             <li>
                                                 <a href="<?php echo base_url()?>logout">Logout</a>
                                             </li>
