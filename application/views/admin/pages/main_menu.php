@@ -1,8 +1,11 @@
-<!-- <?php if (isset($message)) { ?>
-<CENTER><h3 style="color:green;">Data inserted successfully</h3></CENTER><br>
-<?php } ?> -->
 <div class="row">
     <div class="col-lg-12">
+    <?php if($this->session->flashdata('msg')): ?>
+            <div class='alert alert-success alert-dismissable'>
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <p><strong>Well done! </strong><?php echo $this->session->flashdata('msg'); ?></p>
+            </div>
+        <?php endif; ?>
         <div class="card">
             <div class="card-header bg-teal bg-inverse">
                 <h4>Add Menu Item</h4>

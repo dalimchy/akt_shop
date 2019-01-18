@@ -526,6 +526,7 @@ class Supper_admin extends CI_Controller {
 		$this->admin_model->addMenu_Item($data);
 		$data['message'] = 'Data Inserted Successfully';
 		//Loading View
+		$this->session->set_flashdata('msg', 'Data Inserted Successfully');
 		redirect('main-menu');
 	}
 
