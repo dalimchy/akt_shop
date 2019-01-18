@@ -7,7 +7,7 @@
                     <div class="app-layout-drawer-scroll">
                         <!-- Drawer logo -->
                         <div id="logo" class="drawer-header">
-                            <a href="<?php echo base_url('/dashboard')?>"><img class="img-responsive" src="<?php echo base_url()?>assets/admin/img/logo/akt_logo.png" title="AKT Shop" alt="AKT Shop" /></a>
+                            <a href="<?php echo base_url('/dashboard')?>"><img class="img-responsive" src="<?php echo base_url()?>assets/frontend/images/akt_shop.png" title="AKT Shop" alt="AKT Shop" /></a>
                         </div>
 
                         <!-- Drawer navigation -->

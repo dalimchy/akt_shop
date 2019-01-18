@@ -68,7 +68,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-3 logo-holder"> 
           <!-- ============================================================= LOGO ============================================================= -->
-          <div class="logo"> <a href="home.html"> <img src="<?php echo base_url()?>assets/frontend/images/logo.png" alt="logo"> </a> </div>
+          <div class="logo"> <a href="<?php echo base_url()?>"> <img src="<?php echo base_url()?>assets/frontend/images/akt_shop.png" alt="logo" style="width: 100%;height: 85px;margin-top: -20px;"> </a> </div>
           <!-- /.logo --> 
           <!-- ============================================================= LOGO : END ============================================================= --> </div>
         <!-- /.logo-holder -->
