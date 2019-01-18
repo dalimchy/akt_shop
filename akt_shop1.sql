@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 18, 2019 at 01:26 PM
+-- Generation Time: Jan 18, 2019 at 03:21 PM
 -- Server version: 10.1.37-MariaDB
--- PHP Version: 7.2.12
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -60,11 +60,22 @@ INSERT INTO `akt_users` (`id`, `username`, `email`, `password`, `image`, `phone_
 
 CREATE TABLE `main_menu` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `img` varchar(255) NOT NULL,
-  `status` int(3) NOT NULL DEFAULT '2',
+  `item_name` varchar(255) NOT NULL,
+  `fa_class` varchar(255) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '0',
   `has_link` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `main_menu`
+--
+
+INSERT INTO `main_menu` (`id`, `item_name`, `fa_class`, `status`, `has_link`) VALUES
+(1, 'check', 'check2', 1, 'check.com'),
+(2, 'check 2', 'check2', 0, 'www.check2.com'),
+(3, 'check', 'check2', 1, 'www.check2.com'),
+(4, 'check', 'check2', 0, 'www.check2.com'),
+(5, 'check 2', 'check2', 0, 'sadada');
 
 -- --------------------------------------------------------
 
@@ -127,7 +138,8 @@ CREATE TABLE `tbl_category` (
 --
 
 INSERT INTO `tbl_category` (`category_id`, `category_name`, `category_image`, `product_count`, `subcat_count`, `category_description`, `publication_status`) VALUES
-(8, 'Clothing', 'upload/category/p8.jpg', 0, 0, 'test', 1);
+(8, 'Clothing', 'upload/category/p8.jpg', 0, 0, 'test', 1),
+(9, 'Men\'s Fashion', 'upload/category/p7.jpg', 0, 0, 'sdffs', 1);
 
 -- --------------------------------------------------------
 
@@ -346,7 +358,7 @@ ALTER TABLE `akt_users`
 -- AUTO_INCREMENT for table `main_menu`
 --
 ALTER TABLE `main_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_brand`
@@ -364,7 +376,7 @@ ALTER TABLE `tbl_cart`
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_customers`

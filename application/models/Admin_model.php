@@ -546,4 +546,17 @@ class Admin_model extends CI_Model {
 
 		return $data;
 	}
+
+	public function addMenu_Item($data)
+	{
+		$this->db->insert('main_menu', $data);
+	}
+
+	public function getAllMenus()
+	{
+		$this->db->select('*');
+		$this->db->from('main_menu');
+		$query = $this->db->get()->result();
+		return $query;
+	}
 }

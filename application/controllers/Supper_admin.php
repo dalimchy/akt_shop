@@ -510,8 +510,23 @@ class Supper_admin extends CI_Controller {
 	{
 		$data = array();
 		$data['title'] = "Main Menu";
+		$data['total_menu'] = $this->admin_model->getAllMenus();
 		$data["admin_main_content"] = $this->load->view('admin/pages/main_menu', $data, true);
 		$this->load->view('admin/admin_master', $data);
+	}
+
+	public function addMenu_Item()
+	{
+		$data = array(
+			'item_name' => $this->input->post('itemname',true),
+			'fa_class' => $this->input->post('fa_class',true),
+			'status' => $this->input->post('item_status',true),
+			'has_link' => $this->input->post('haslink',true)
+		);
+		$this->admin_model->addMenu_Item($data);
+		$data['message'] = 'Data Inserted Successfully';
+		//Loading View
+		redirect('main-menu');
 	}
 
 }
