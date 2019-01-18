@@ -24,10 +24,9 @@
                         </div>
                         <div class="col-xs-2">
                             <label for="">Menu Icon</label>
-                            <select name="fa_class" id="" class="form-control">
-                                <option value="check">check </option>
-                                <option value="check2">check2</option>
-                            </select>
+                            <button class="btn btn-app btn-block" data-toggle="modal" data-target="#modal-fa" type="button">Add Icon</button>
+                            <div id="viewIcon" style="margin-top:8px" class="text-center"></div>
+                            <input type="text" id="valueForMenuItem" name="fa_class" hidden>
                         </div>
                         <div class="col-xs-2">
                             <label for="">Publication</label>
@@ -73,7 +72,7 @@
                         <tr>
                             <td class="text-center"> <?php echo $i ?> </td>
                             <td><?php echo $value->item_name; ?></td>
-							<td><i class="<?php echo $value->fa_class; ?>"></i><?php echo $value->fa_class; ?></td>
+							<td class="text-center"><i class="<?php echo $value->fa_class; ?> fa-2x"></i></td>
 							<td><?php echo $value->has_link; ?></td>
 							<td><?php echo $value->status; ?></td>
                             <td class="text-center">
@@ -91,3 +90,126 @@
         </div>
     </div>
 </div>
+
+
+
+<div class="modal fade in" id="modal-fa" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
+    <div class="modal-dialog modal-dialog-popin">
+        <div class="modal-content">
+            <div class="card-header bg-teal bg-inverse">
+                <h4>Select Icon</h4>
+                <ul class="card-actions">
+                    <li>
+                        <button data-dismiss="modal" type="button"><i class="ion-close"></i></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-block">
+            <table class="table table-bordered table-striped table-vcenter">
+                <thead>
+                    <tr>
+                        <th class="text-center w-5">Icon</th>
+                        <th class="p-l-lg">icon name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="fa fa-camera fa-2x"></i></th>
+                        <td class="p-l-lg">fa fa-camera</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('fa fa-camera')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="fa fa-desktop fa-2x"></i></th>
+                        <td class="p-l-lg">fa fa-desktop</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('fa fa-desktop')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="fa fa-laptop fa-2x"></i></th>
+                        <td class="p-l-lg">fa fa-laptop</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('fa fa-laptop')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="fa fa-tablet fa-2x"></i></th>
+                        <td class="p-l-lg">fa fa-tablet</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('fa fa-tablet')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="fa fa-gamepad fa-2x"></i></th>
+                        <td class="p-l-lg">fa fa-gamepad</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('fa fa-gamepad')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="fa fa-male fa-2x"></i></th>
+                        <td class="p-l-lg">fa fa-male</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('fa fa-male')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="fa fa-female fa-2x"></i></th>
+                        <td class="p-l-lg">fa fa-female</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('fa fa-female')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="fa fa-child fa-2x"></i></th>
+                        <td class="p-l-lg">fa fa-child</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('fa fa-child')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="fa fa-car fa-2x"></i></th>
+                        <td class="p-l-lg">fa fa-car</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('fa fa-car')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="fa fa-futbol-o fa-2x"></i></th>
+                        <td class="p-l-lg">fa fa-futbol-o</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('fa fa-futbol-o')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="fa fa-motorcycle fa-2x"></i></th>
+                        <td class="p-l-lg">fa fa-motorcycle</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('fa fa-motorcycle')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="fa fa-television fa-2x"></i></th>
+                        <td class="p-l-lg">fa fa-television</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('fa fa-television')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="fa fa-shopping-bag fa-2x"></i></th>
+                        <td class="p-l-lg">fa fa-shopping-bag</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('fa fa-shopping-bag')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="ion-tshirt fa-2x"></i></th>
+                        <td class="p-l-lg">ion-tshirt</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('ion-tshirt')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="fa fa-cube fa-2x"></i></th>
+                        <td class="p-l-lg">fa fa-cube</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('fa fa-cube')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="ion-umbrella fa-2x"></i></th>
+                        <td class="p-l-lg">ion-umbrella</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('ion-umbrella')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row"><i class="ion-medkit fa-2x"></i></th>
+                        <td class="p-l-lg">ion-medkit</td>
+                        <td><div class="btn btn-app-cyan btn-block" data-dismiss="modal" onclick="addIconMenu('ion-medkit')"><i class="fa fa-plus-circle"></i> Add</div></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function addIconMenu(data){
+        var design = '<i class="'+data+' fa-2x"></i>';
+        $('#viewIcon').html('');
+        $('#viewIcon').append(design);
+        $('#valueForMenuItem').val(data);
+    }
+</script>
