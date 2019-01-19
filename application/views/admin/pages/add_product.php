@@ -194,6 +194,27 @@
 
                     <div class="form-group">
                         <div class="col-md-offset-3 col-xs-6">
+                            <div class="radio">
+                                <label for="radio1">
+                                    <input type="radio" id="radio1" name="pro_label" value="Hot"> Hot
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label for="radio2">
+                                    <input type="radio" id="radio2" name="pro_label" value="New"> New
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label for="radio3">
+                                    <input type="radio" id="radio3" name="pro_label" value="Sale"> Sale
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <div class="col-md-offset-3 col-xs-6">
                             <p>
                                 <label class="css-input switch switch-info">
                                     <input type="checkbox" name="is_featured"><span></span> Is featured

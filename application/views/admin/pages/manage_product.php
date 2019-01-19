@@ -45,21 +45,10 @@
                     </td>
 
                     <td class="hidden-xs">
-                        <div class="radio">
-                            <label for="example-radio1">
-                                <input type="radio" id="example-radio1" name="example-radios" value="option1"> Hot
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label for="example-radio2">
-                                <input type="radio" id="example-radio2" name="example-radios" value="option2"> New
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label for="example-radio3">
-                                <input type="radio" id="example-radio3" name="example-radios" value="option3"> Sale
-                            </label>
-                        </div>
+                        
+                        <a href="<?php echo base_url()?>unpublish-product/<?php echo $v_product->product_id; ?>"> <span class="label label-success">Hot</span></a>
+                        <a href="<?php echo base_url()?>unpublish-product/<?php echo $v_product->product_id; ?>"> <span class="label label-success">New</span></a>
+                        <a href="<?php echo base_url()?>unpublish-product/<?php echo $v_product->product_id; ?>"> <span class="label label-success">Sale</span></a>
                     </td>
                     
                     <td class="hidden-xs">

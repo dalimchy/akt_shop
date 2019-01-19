@@ -243,6 +243,7 @@ class Admin_model extends CI_Model {
 			'category_id' 				=> $this->input->post('category_id',true),
 			'manufacture_id' 			=> $this->input->post('manufacture_id',true),
 			'product_model'				=> $this->input->post('product_model',true),
+			'pro_label'					=> $this->input->post('pro_label',true),
 			'product_for' 				=> $this->input->post('product_for',true),
 			'product_short_description' => $this->input->post('product_short_description',true),
 			'product_long_description'  => $this->input->post('product_long_description',true),

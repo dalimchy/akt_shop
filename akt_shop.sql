@@ -2,10 +2,10 @@
 -- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Jan 19, 2019 at 10:17 AM
--- Server version: 8.0.13
--- PHP Version: 7.2.10-0ubuntu0.18.04.1
+-- Host: localhost
+-- Generation Time: Jan 19, 2019 at 06:20 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `aktshop1`
+-- Database: `akt_shop`
 --
 
 -- --------------------------------------------------------
@@ -96,14 +96,16 @@ CREATE TABLE `tbl_brand` (
 -- Dumping data for table `tbl_brand`
 --
 
-INSERT INTO `tbl_brand` (`brand_id`, `brand_name`, `brand_logo`) VALUES
-(38, 'Gucci', 'upload/brand/1547797746_Gucci-logo.jpg'),
-(39, 'Levi\'s', 'upload/brand/1547797799_2000px-Levis_logo_svg.png'),
-(40, 'D&G', 'upload/brand/1547797848_254_480n.jpg'),
-(41, 'H&M', 'upload/brand/1547797880_HM-Share-Image.jpg'),
-(42, 'american eagle', 'upload/brand/1547797939_xHZIQLF.png'),
-(44, 'Lotto', 'upload/brand/1547798073_a7d5c2cbe8bdb83262f3babf9388d42c.jpeg'),
-(45, 'Armani', 'upload/brand/1547798114_emporio-armani-logo-vector-1040x737.png');
+INSERT INTO `tbl_brand` (`brand_id`, `brand_name`, `brand_logo`, `created_at`) VALUES
+(38, 'Gucci', 'upload/brand/1547797746_Gucci-logo.jpg', '2019-01-19 16:56:29'),
+(39, 'Levi\'s', 'upload/brand/1547797799_2000px-Levis_logo_svg.png', '2019-01-19 16:56:29'),
+(40, 'D&G', 'upload/brand/1547797848_254_480n.jpg', '2019-01-19 16:56:29'),
+(41, 'H&M', 'upload/brand/1547797880_HM-Share-Image.jpg', '2019-01-19 16:56:29'),
+(42, 'american eagle', 'upload/brand/1547797939_xHZIQLF.png', '2019-01-19 16:56:29'),
+(44, 'Lotto', 'upload/brand/1547798073_a7d5c2cbe8bdb83262f3babf9388d42c.jpeg', '2019-01-19 16:56:29'),
+(45, 'Armani', 'upload/brand/1547798114_emporio-armani-logo-vector-1040x737.png', '2019-01-19 16:56:29'),
+(46, '420_Brand', 'upload/brand/1547918118_45227946_1916214918463290_8577545737359851520_n.jpg', '2019-01-19 17:15:18'),
+(47, '420_Brand', '', '2019-01-19 17:19:46');
 
 -- --------------------------------------------------------
 
@@ -234,6 +236,7 @@ CREATE TABLE `tbl_product` (
   `product_name` varchar(100) NOT NULL,
   `brand_id` int(11) NOT NULL,
   `product_model` varchar(50) NOT NULL DEFAULT 'P001',
+  `pro_label` varchar(50) DEFAULT NULL,
   `category_id` int(5) NOT NULL,
   `product_for` int(10) DEFAULT NULL,
   `manufacture_id` int(5) NOT NULL,
@@ -258,9 +261,10 @@ CREATE TABLE `tbl_product` (
 -- Dumping data for table `tbl_product`
 --
 
-INSERT INTO `tbl_product` (`product_id`, `product_name`, `brand_id`, `product_model`, `category_id`, `product_for`, `manufacture_id`, `product_short_description`, `product_long_description`, `product_price`, `product_new_price`, `product_quantity`, `product_image`, `product_img2`, `product_img3`, `product_img4`, `product_img5`, `product_tags`, `is_featured`, `publication_status`, `updated_at`) VALUES
-(1, 'Apple iPhone 6 32GB', 38, 'M205', 11, NULL, 1, 'Apple iPhone 6 32GB Mobile Phone\r\nOS: iOS 8', 'Apple iPhone 6 32GB Mobile Phone\r\nOS: iOS 8\r\nProcessor: Dual-Core 1.4 GHz Cyclone (ARM v8-based) Processor\r\nChipset: Apple A8\r\nRear Camera: 8 Megapixel Camera (3264 x 2448 pixels)\r\nFront Camera: 1.2 Megapixel \r\nDisplay: 4.7-Inch LED-backlit IPS LCD Multi-Touchscreen (750 x 1334 pixels)\r\nSensor: Fingerprint (front-mounted), accelerometer, gyro, proximity, compass, barometer\r\nBattery: Non-removable Li-Po 1810 mAh battery (6.9 Wh)\r\niPhone 6 Smartphone: OS\r\niOS is the operating system that powers every iPhone mobile. It lets you do things you simply can’t with other mobile phone operating system. That’s because it’s designed specifically for the hardware it runs on and vice versa. So your iPhone works like magic with your other Apple devices. And it works hand in hand with iCloud to keep photos, documents, and other stuff up to date on those smart devices. iOS also comes with an entire suite of beautifully designed apps. And it’s been built from the ground up with privacy and security in mind. iOS 8 using in this Apple iPhone.\r\n\r\niPhone 6 Mobile Phone: Storage; Camera; Battery\r\nIt comes with 1GB of RAM. The smartphone packs 32GB of internal storage cannot be expanded. With Apple A8 chipset and 1GB of RAM is able to provide smooth performance. As far as the phone cameras are concerned, the Apple iPhone 6 packs an 8-megapixel primary camera on the rear and a 1.2-megapixel front shooter for selfies. And the cameras are able to take brilliant photos. The primary camera also able to record 1080P videos. 1810mAh non-removable battery use in this iPhone 6. ', 29999.00, 28999.00, 500, 'upload/products/511216_apple_iphone_6_32gb_phone_-_gold_2_result.jpg', 'upload/products/download.jpeg', NULL, NULL, NULL, NULL, 0, 1, NULL),
-(2, 'Apple iPhone 6S Plus 32 GB', 38, 'M206', 11, NULL, 1, 'Apple iPhone 6 32GB Mobile Phone\r\nOS: iOS 8\r\nProcessor: Dual-Core 1.4 GHz Cyclone (ARM v8-based) Processor\r\nChipset: Apple A8\r\nRear Camera: 8 Megapixel Camera (3264 x 2448 pixels)\r\nFront Camera: 1.2 Megapixel \r\nDisplay: 4.7-Inch LED-backlit IPS LCD Multi-Touchscreen (750 x 1334 pixels)\r\nSensor: Fingerprint (front-mounted), accelerometer, gyro, proximity, compass, barometer\r\nBattery: Non-removable Li-Po 1810 mAh battery (6.9 Wh)', 'Apple iPhone 6 32GB Mobile Phone\r\nOS: iOS 8\r\nProcessor: Dual-Core 1.4 GHz Cyclone (ARM v8-based) Processor\r\nChipset: Apple A8\r\nRear Camera: 8 Megapixel Camera (3264 x 2448 pixels)\r\nFront Camera: 1.2 Megapixel \r\nDisplay: 4.7-Inch LED-backlit IPS LCD Multi-Touchscreen (750 x 1334 pixels)\r\nSensor: Fingerprint (front-mounted), accelerometer, gyro, proximity, compass, barometer\r\nBattery: Non-removable Li-Po 1810 mAh battery (6.9 Wh)\r\niPhone 6 Smartphone: OS\r\niOS is the operating system that powers every iPhone mobile. It lets you do things you simply can’t with other mobile phone operating system. That’s because it’s designed specifically for the hardware it runs on and vice versa. So your iPhone works like magic with your other Apple devices. And it works hand in hand with iCloud to keep photos, documents, and other stuff up to date on those smart devices. iOS also comes with an entire suite of beautifully designed apps. And it’s been built from the ground up with privacy and security in mind. iOS 8 using in this Apple iPhone.\r\n\r\niPhone 6 Mobile Phone: Storage; Camera; Battery\r\nIt comes with 1GB of RAM. The smartphone packs 32GB of internal storage cannot be expanded. With Apple A8 chipset and 1GB of RAM is able to provide smooth performance. As far as the phone cameras are concerned, the Apple iPhone 6 packs an 8-megapixel primary camera on the rear and a 1.2-megapixel front shooter for selfies. And the cameras are able to take brilliant photos. The primary camera also able to record 1080P videos. 1810mAh non-removable battery use in this iPhone 6. ', 29999.00, 0.00, 10, 'upload/products/iphone-6s.jpg', 'upload/products/iPhone_6_Back.jpg', NULL, NULL, NULL, NULL, 1, 1, NULL);
+INSERT INTO `tbl_product` (`product_id`, `product_name`, `brand_id`, `product_model`, `pro_label`, `category_id`, `product_for`, `manufacture_id`, `product_short_description`, `product_long_description`, `product_price`, `product_new_price`, `product_quantity`, `product_image`, `product_img2`, `product_img3`, `product_img4`, `product_img5`, `product_tags`, `is_featured`, `publication_status`, `created_at`, `updated_at`) VALUES
+(1, 'Apple iPhone 6 32GB', 38, 'M205', NULL, 11, NULL, 1, 'Apple iPhone 6 32GB Mobile Phone\r\nOS: iOS 8', 'Apple iPhone 6 32GB Mobile Phone\r\nOS: iOS 8\r\nProcessor: Dual-Core 1.4 GHz Cyclone (ARM v8-based) Processor\r\nChipset: Apple A8\r\nRear Camera: 8 Megapixel Camera (3264 x 2448 pixels)\r\nFront Camera: 1.2 Megapixel \r\nDisplay: 4.7-Inch LED-backlit IPS LCD Multi-Touchscreen (750 x 1334 pixels)\r\nSensor: Fingerprint (front-mounted), accelerometer, gyro, proximity, compass, barometer\r\nBattery: Non-removable Li-Po 1810 mAh battery (6.9 Wh)\r\niPhone 6 Smartphone: OS\r\niOS is the operating system that powers every iPhone mobile. It lets you do things you simply can’t with other mobile phone operating system. That’s because it’s designed specifically for the hardware it runs on and vice versa. So your iPhone works like magic with your other Apple devices. And it works hand in hand with iCloud to keep photos, documents, and other stuff up to date on those smart devices. iOS also comes with an entire suite of beautifully designed apps. And it’s been built from the ground up with privacy and security in mind. iOS 8 using in this Apple iPhone.\r\n\r\niPhone 6 Mobile Phone: Storage; Camera; Battery\r\nIt comes with 1GB of RAM. The smartphone packs 32GB of internal storage cannot be expanded. With Apple A8 chipset and 1GB of RAM is able to provide smooth performance. As far as the phone cameras are concerned, the Apple iPhone 6 packs an 8-megapixel primary camera on the rear and a 1.2-megapixel front shooter for selfies. And the cameras are able to take brilliant photos. The primary camera also able to record 1080P videos. 1810mAh non-removable battery use in this iPhone 6. ', 29999.00, 28999.00, 500, 'upload/products/511216_apple_iphone_6_32gb_phone_-_gold_2_result.jpg', 'upload/products/download.jpeg', NULL, NULL, NULL, NULL, 0, 1, '2019-01-19 16:56:31', NULL),
+(2, 'Apple iPhone 6S Plus 32 GB', 38, 'M206', NULL, 11, NULL, 1, 'Apple iPhone 6 32GB Mobile Phone\r\nOS: iOS 8\r\nProcessor: Dual-Core 1.4 GHz Cyclone (ARM v8-based) Processor\r\nChipset: Apple A8\r\nRear Camera: 8 Megapixel Camera (3264 x 2448 pixels)\r\nFront Camera: 1.2 Megapixel \r\nDisplay: 4.7-Inch LED-backlit IPS LCD Multi-Touchscreen (750 x 1334 pixels)\r\nSensor: Fingerprint (front-mounted), accelerometer, gyro, proximity, compass, barometer\r\nBattery: Non-removable Li-Po 1810 mAh battery (6.9 Wh)', 'Apple iPhone 6 32GB Mobile Phone\r\nOS: iOS 8\r\nProcessor: Dual-Core 1.4 GHz Cyclone (ARM v8-based) Processor\r\nChipset: Apple A8\r\nRear Camera: 8 Megapixel Camera (3264 x 2448 pixels)\r\nFront Camera: 1.2 Megapixel \r\nDisplay: 4.7-Inch LED-backlit IPS LCD Multi-Touchscreen (750 x 1334 pixels)\r\nSensor: Fingerprint (front-mounted), accelerometer, gyro, proximity, compass, barometer\r\nBattery: Non-removable Li-Po 1810 mAh battery (6.9 Wh)\r\niPhone 6 Smartphone: OS\r\niOS is the operating system that powers every iPhone mobile. It lets you do things you simply can’t with other mobile phone operating system. That’s because it’s designed specifically for the hardware it runs on and vice versa. So your iPhone works like magic with your other Apple devices. And it works hand in hand with iCloud to keep photos, documents, and other stuff up to date on those smart devices. iOS also comes with an entire suite of beautifully designed apps. And it’s been built from the ground up with privacy and security in mind. iOS 8 using in this Apple iPhone.\r\n\r\niPhone 6 Mobile Phone: Storage; Camera; Battery\r\nIt comes with 1GB of RAM. The smartphone packs 32GB of internal storage cannot be expanded. With Apple A8 chipset and 1GB of RAM is able to provide smooth performance. As far as the phone cameras are concerned, the Apple iPhone 6 packs an 8-megapixel primary camera on the rear and a 1.2-megapixel front shooter for selfies. And the cameras are able to take brilliant photos. The primary camera also able to record 1080P videos. 1810mAh non-removable battery use in this iPhone 6. ', 29999.00, 0.00, 10, 'upload/products/iphone-6s.jpg', 'upload/products/iPhone_6_Back.jpg', NULL, NULL, NULL, NULL, 1, 1, '2019-01-19 16:56:31', NULL),
+(4, 'check', 45, 'X550LA', 'Hot', 14, NULL, 4, 'check', 'check', 45000.00, 0.00, 2, '', NULL, NULL, NULL, NULL, NULL, 1, 1, '2019-01-19 17:14:18', NULL);
 
 -- --------------------------------------------------------
 
@@ -382,7 +386,7 @@ ALTER TABLE `main_menu`
 -- AUTO_INCREMENT for table `tbl_brand`
 --
 ALTER TABLE `tbl_brand`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `tbl_cart`
@@ -418,7 +422,7 @@ ALTER TABLE `tbl_orders`
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_review`
