@@ -24,6 +24,7 @@
                     <th class="hidden-xs" style="width: 100px">Product Price</th>
                     <th class="hidden-xs" style="width: 100px">Product Quantity</th>
                     <th class="hidden-xs" style="width: 150px">Product Image</th>
+                    <th class="hidden-xs" style="width: 100px">Label</th>
                     <th class="hidden-xs" style="width: 100px">Status</th>
                     <th class="text-center" style="width: 10%;">Actions</th>
                 </tr>
@@ -43,6 +44,24 @@
                     <td class="center"><img style="height: 70px;width: 70px" src="<?php echo base_url().$v_product->product_image; ?>" alt="" >
                     </td>
 
+                    <td class="hidden-xs">
+                        <div class="radio">
+                            <label for="example-radio1">
+                                <input type="radio" id="example-radio1" name="example-radios" value="option1"> Hot
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="example-radio2">
+                                <input type="radio" id="example-radio2" name="example-radios" value="option2"> New
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="example-radio3">
+                                <input type="radio" id="example-radio3" name="example-radios" value="option3"> Sale
+                            </label>
+                        </div>
+                    </td>
+                    
                     <td class="hidden-xs">
                         <?php
                         if ($v_product->publication_status==1) {  ?>
