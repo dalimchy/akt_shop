@@ -93,7 +93,11 @@
                                 <div class="image"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><img  src="<?php echo base_url()?><?php echo $v_product->product_image?>" alt=""></a> </div>
                                 <!-- /.image -->
                                 
-                                <div class="tag sale"><span>sale</span></div>
+                                <?php if($v_product->product_quantity < 1){?>
+                                  <div class="tag sale"><span>Sold</span></div>
+                                <?php }else if($v_product->pro_label == !null){?>
+                                  <div class="tag hot"><span><?php echo $v_product->pro_label; ?></span></div>
+                                <?php } ?>
                                 </div>
                                 <!-- /.product-image -->
                                 
@@ -178,7 +182,11 @@
                                     <!-- /.col --> 
                                 </div>
                                 <!-- /.product-list-row -->
-                                <div class="tag new"><span>new</span></div>
+                                <?php if($v_product->product_quantity < 1){?>
+                                  <div class="tag sale"><span>Sold</span></div>
+                                <?php }else if($v_product->pro_label == !null){?>
+                                  <div class="tag hot"><span><?php echo $v_product->pro_label; ?></span></div>
+                                <?php } ?>
                                 </div>
                                 <!-- /.product-list --> 
                             </div>

@@ -47,265 +47,106 @@
             <div class="owl-carousel sidebar-carousel special-offer custom-carousel owl-theme outer-top-xs">
               <div class="item">
                 <div class="products special-product">
-                  <div class="product">
-                    <div class="product-micro">
-                      <div class="row product-micro-row">
-                        <div class="col col-xs-5">
-                          <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p30.jpg" alt=""> </a> </div>
-                            <!-- /.image --> 
-                            
-                          </div>
-                          <!-- /.product-image --> 
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-xs-7">
-                          <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                            <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 450.99 </span> </div>
-                            <!-- /.product-price --> 
-                            
-                          </div>
-                        </div>
-                        <!-- /.col --> 
-                      </div>
-                      <!-- /.product-micro-row --> 
-                    </div>
-                    <!-- /.product-micro --> 
+                  <?php $i = 1; foreach($all_product_info as $v_product){if($v_product->publication_status == 1 && $v_product->product_new_price > 0 && $i <= 3 ){++$i; ?> 
                     
-                  </div>
-                  <div class="product">
-                    <div class="product-micro">
-                      <div class="row product-micro-row">
-                        <div class="col col-xs-5">
-                          <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p29.jpg" alt=""> </a> </div>
-                            <!-- /.image --> 
-                            
+                    <div class="product">
+                      <div class="product-micro">
+                        <div class="row product-micro-row">
+                          <div class="col col-xs-5">
+                            <div class="product-image">
+                              <div class="image"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"> <img src="<?php echo base_url()?><?php echo $v_product->product_image ?>"  alt=""> </a> </div>
+                              <!-- /.image --> 
+                              
+                            </div>
+                            <!-- /.product-image --> 
                           </div>
-                          <!-- /.product-image --> 
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-xs-7">
-                          <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                            <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
-                            <!-- /.product-price --> 
-                            
+                          <!-- /.col -->
+                          <div class="col col-xs-7">
+                            <div class="product-info">
+                              <h3 class="name"><a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><?php echo $v_product->product_name ?></a></h3>
+                              <div class="rating rateit-small"></div>
+                              <div class="product-price"> <span class="price"> Tk. <?php if($v_product->product_new_price > 0){ echo $v_product->product_new_price;}else{ echo $v_product->product_price;} ?></span></div>
+                              <!-- /.product-price --> 
+                              
+                            </div>
                           </div>
+                          <!-- /.col --> 
                         </div>
-                        <!-- /.col --> 
+                        <!-- /.product-micro-row --> 
                       </div>
-                      <!-- /.product-micro-row --> 
+                      <!-- /.product-micro --> 
+                      
                     </div>
-                    <!-- /.product-micro --> 
-                    
-                  </div>
-                  <div class="product">
-                    <div class="product-micro">
-                      <div class="row product-micro-row">
-                        <div class="col col-xs-5">
-                          <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p28.jpg" alt=""> </a> </div>
-                            <!-- /.image --> 
-                            
-                          </div>
-                          <!-- /.product-image --> 
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-xs-7">
-                          <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                            <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
-                            <!-- /.product-price --> 
-                            
-                          </div>
-                        </div>
-                        <!-- /.col --> 
-                      </div>
-                      <!-- /.product-micro-row --> 
-                    </div>
-                    <!-- /.product-micro --> 
-                    
-                  </div>
+  
+                  <?php }}?>
                 </div>
               </div>
               <div class="item">
                 <div class="products special-product">
-                  <div class="product">
-                    <div class="product-micro">
-                      <div class="row product-micro-row">
-                        <div class="col col-xs-5">
-                          <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p27.jpg" alt=""> </a> </div>
-                            <!-- /.image --> 
-                            
+                  <?php $i = 1; foreach($all_product_info as $v_product){ if($v_product->publication_status == 1 && $v_product->product_new_price > 0 && $i <= 6 && $i > 4){++$i; ?>
+                    <div class="product">
+                      <div class="product-micro">
+                        <div class="row product-micro-row">
+                          <div class="col col-xs-5">
+                            <div class="product-image">
+                              <div class="image"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"> <img src="<?php echo base_url()?><?php echo $v_product->product_image ?>"  alt=""> </a> </div>
+                              <!-- /.image --> 
+                              
+                            </div>
+                            <!-- /.product-image --> 
                           </div>
-                          <!-- /.product-image --> 
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-xs-7">
-                          <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                            <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
-                            <!-- /.product-price --> 
-                            
+                          <!-- /.col -->
+                          <div class="col col-xs-7">
+                            <div class="product-info">
+                              <h3 class="name"><a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><?php echo $v_product->product_name ?></a></h3>
+                              <div class="rating rateit-small"></div>
+                              <div class="product-price"> <span class="price"> Tk. <?php if($v_product->product_new_price > 0){ echo $v_product->product_new_price;}else{ echo $v_product->product_price;} ?></span></div>
+                              <!-- /.product-price --> 
+                              
+                            </div>
                           </div>
+                          <!-- /.col --> 
                         </div>
-                        <!-- /.col --> 
+                        <!-- /.product-micro-row --> 
                       </div>
-                      <!-- /.product-micro-row --> 
+                      <!-- /.product-micro --> 
+                      
                     </div>
-                    <!-- /.product-micro --> 
-                    
-                  </div>
-                  <div class="product">
-                    <div class="product-micro">
-                      <div class="row product-micro-row">
-                        <div class="col col-xs-5">
-                          <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p26.jpg" alt=""> </a> </div>
-                            <!-- /.image --> 
-                            
-                          </div>
-                          <!-- /.product-image --> 
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-xs-7">
-                          <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                            <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
-                            <!-- /.product-price --> 
-                            
-                          </div>
-                        </div>
-                        <!-- /.col --> 
-                      </div>
-                      <!-- /.product-micro-row --> 
-                    </div>
-                    <!-- /.product-micro --> 
-                    
-                  </div>
-                  <div class="product">
-                    <div class="product-micro">
-                      <div class="row product-micro-row">
-                        <div class="col col-xs-5">
-                          <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p25.jpg" alt=""> </a> </div>
-                            <!-- /.image --> 
-                            
-                          </div>
-                          <!-- /.product-image --> 
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-xs-7">
-                          <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                            <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
-                            <!-- /.product-price --> 
-                            
-                          </div>
-                        </div>
-                        <!-- /.col --> 
-                      </div>
-                      <!-- /.product-micro-row --> 
-                    </div>
-                    <!-- /.product-micro --> 
-                    
-                  </div>
+                  <?php }}?>
                 </div>
               </div>
               <div class="item">
                 <div class="products special-product">
-                  <div class="product">
-                    <div class="product-micro">
-                      <div class="row product-micro-row">
-                        <div class="col col-xs-5">
-                          <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p24.jpg"  alt=""> </a> </div>
-                            <!-- /.image --> 
-                            
+                  <?php $i = 1; foreach($all_product_info as $v_product){ if($v_product->publication_status == 1 && $v_product->product_new_price > 0 && $i <= 9 && $i > 7){ ++$i; ?>
+                    <div class="product">
+                      <div class="product-micro">
+                        <div class="row product-micro-row">
+                          <div class="col col-xs-5">
+                            <div class="product-image">
+                              <div class="image"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"> <img src="<?php echo base_url()?><?php echo $v_product->product_image ?>"  alt=""> </a> </div>
+                              <!-- /.image --> 
+                              
+                            </div>
+                            <!-- /.product-image --> 
                           </div>
-                          <!-- /.product-image --> 
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-xs-7">
-                          <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                            <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
-                            <!-- /.product-price --> 
-                            
+                          <!-- /.col -->
+                          <div class="col col-xs-7">
+                            <div class="product-info">
+                              <h3 class="name"><a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><?php echo $v_product->product_name ?></a></h3>
+                              <div class="rating rateit-small"></div>
+                              <div class="product-price"> <span class="price"> Tk. <?php if($v_product->product_new_price > 0){ echo $v_product->product_new_price;}else{ echo $v_product->product_price;} ?></span></div>
+                              <!-- /.product-price --> 
+                              
+                            </div>
                           </div>
+                          <!-- /.col --> 
                         </div>
-                        <!-- /.col --> 
+                        <!-- /.product-micro-row --> 
                       </div>
-                      <!-- /.product-micro-row --> 
+                      <!-- /.product-micro --> 
+                      
                     </div>
-                    <!-- /.product-micro --> 
-                    
-                  </div>
-                  <div class="product">
-                    <div class="product-micro">
-                      <div class="row product-micro-row">
-                        <div class="col col-xs-5">
-                          <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p23.jpg" alt=""> </a> </div>
-                            <!-- /.image --> 
-                            
-                          </div>
-                          <!-- /.product-image --> 
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-xs-7">
-                          <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                            <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
-                            <!-- /.product-price --> 
-                          </div>
-                        </div>
-                        <!-- /.col --> 
-                      </div>
-                      <!-- /.product-micro-row --> 
-                    </div>
-                    <!-- /.product-micro --> 
-                    
-                  </div>
-                  <div class="product">
-                    <div class="product-micro">
-                      <div class="row product-micro-row">
-                        <div class="col col-xs-5">
-                          <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p22.jpg" alt=""> </a> </div>
-                            <!-- /.image --> 
-                            
-                          </div>
-                          <!-- /.product-image --> 
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-xs-7">
-                          <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                            <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
-                            <!-- /.product-price --> 
-                            
-                          </div>
-                        </div>
-                        <!-- /.col --> 
-                      </div>
-                      <!-- /.product-micro-row --> 
-                    </div>
-                    <!-- /.product-micro --> 
-                    
-                  </div>
+                  <?php }}?>
                 </div>
               </div>
             </div>
@@ -328,17 +169,19 @@
         <!-- ============================================== SPECIAL DEALS ============================================== -->
         
         <div class="sidebar-widget outer-bottom-small wow fadeInUp">
-          <h3 class="section-title">Special Deals</h3>
+          <h3 class="section-title">Hot Deals</h3>
           <div class="sidebar-widget-body outer-top-xs">
             <div class="owl-carousel sidebar-carousel special-offer custom-carousel owl-theme outer-top-xs">
               <div class="item">
                 <div class="products special-product">
+                <?php $i = 0; foreach($all_product_info as $v_product){ if($v_product->publication_status == 1 && $v_product->pro_label == 'Hot' && $i < 3 ){++$i; ?> 
+                    
                   <div class="product">
                     <div class="product-micro">
                       <div class="row product-micro-row">
                         <div class="col col-xs-5">
                           <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p28.jpg"  alt=""> </a> </div>
+                            <div class="image"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"> <img src="<?php echo base_url()?><?php echo $v_product->product_image ?>"  alt=""> </a> </div>
                             <!-- /.image --> 
                             
                           </div>
@@ -347,9 +190,9 @@
                         <!-- /.col -->
                         <div class="col col-xs-7">
                           <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
+                            <h3 class="name"><a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><?php echo $v_product->product_name ?></a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. <?php if($v_product->product_new_price > 0){ echo $v_product->product_new_price;}else{ echo $v_product->product_price;} ?></span></div>
                             <!-- /.product-price --> 
                             
                           </div>
@@ -361,72 +204,22 @@
                     <!-- /.product-micro --> 
                     
                   </div>
-                  <div class="product">
-                    <div class="product-micro">
-                      <div class="row product-micro-row">
-                        <div class="col col-xs-5">
-                          <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p15.jpg"  alt=""> </a> </div>
-                            <!-- /.image --> 
-                            
-                          </div>
-                          <!-- /.product-image --> 
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-xs-7">
-                          <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                            <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
-                            <!-- /.product-price --> 
-                            
-                          </div>
-                        </div>
-                        <!-- /.col --> 
-                      </div>
-                      <!-- /.product-micro-row --> 
-                    </div>
-                    <!-- /.product-micro --> 
-                    
-                  </div>
-                  <div class="product">
-                    <div class="product-micro">
-                      <div class="row product-micro-row">
-                        <div class="col col-xs-5">
-                          <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p26.jpg"  alt="image"> </a> </div>
-                            <!-- /.image --> 
-                            
-                          </div>
-                          <!-- /.product-image --> 
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-xs-7">
-                          <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                            <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
-                            <!-- /.product-price --> 
-                            
-                          </div>
-                        </div>
-                        <!-- /.col --> 
-                      </div>
-                      <!-- /.product-micro-row --> 
-                    </div>
-                    <!-- /.product-micro --> 
-                    
-                  </div>
+
+                <?php }}?>
+
                 </div>
               </div>
               <div class="item">
                 <div class="products special-product">
+
+                <?php $i = 0; foreach($all_product_info as $v_product){  if($v_product->publication_status == 1 && $v_product->pro_label == 'Hot' && $i <= 6 && $i > 3){  ++$i; ?> 
+                    
                   <div class="product">
                     <div class="product-micro">
                       <div class="row product-micro-row">
                         <div class="col col-xs-5">
                           <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p18.jpg" alt=""> </a> </div>
+                            <div class="image"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"> <img src="<?php echo base_url()?><?php echo $v_product->product_image ?>"  alt=""> </a> </div>
                             <!-- /.image --> 
                             
                           </div>
@@ -435,9 +228,9 @@
                         <!-- /.col -->
                         <div class="col col-xs-7">
                           <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
+                            <h3 class="name"><a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><?php echo $v_product->product_name ?></a></h3>
                             <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
+                            <div class="product-price"> <span class="price"> Tk. <?php if($v_product->product_new_price > 0){ echo $v_product->product_new_price;}else{ echo $v_product->product_price;} ?></span></div>
                             <!-- /.product-price --> 
                             
                           </div>
@@ -449,153 +242,44 @@
                     <!-- /.product-micro --> 
                     
                   </div>
-                  <div class="product">
-                    <div class="product-micro">
-                      <div class="row product-micro-row">
-                        <div class="col col-xs-5">
-                          <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p17.jpg" alt=""> </a> </div>
-                            <!-- /.image --> 
-                            
-                          </div>
-                          <!-- /.product-image --> 
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-xs-7">
-                          <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                            <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
-                            <!-- /.product-price --> 
-                            
-                          </div>
-                        </div>
-                        <!-- /.col --> 
-                      </div>
-                      <!-- /.product-micro-row --> 
-                    </div>
-                    <!-- /.product-micro --> 
-                    
-                  </div>
-                  <div class="product">
-                    <div class="product-micro">
-                      <div class="row product-micro-row">
-                        <div class="col col-xs-5">
-                          <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p16.jpg" alt=""> </a> </div>
-                            <!-- /.image --> 
-                            
-                          </div>
-                          <!-- /.product-image --> 
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-xs-7">
-                          <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                            <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
-                            <!-- /.product-price --> 
-                          </div>
-                        </div>
-                        <!-- /.col --> 
-                      </div>
-                      <!-- /.product-micro-row --> 
-                    </div>
-                    <!-- /.product-micro --> 
-                    
-                  </div>
+  
+                  <?php }}?>
                 </div>
               </div>
               <div class="item">
                 <div class="products special-product">
-                  <div class="product">
-                    <div class="product-micro">
-                      <div class="row product-micro-row">
-                        <div class="col col-xs-5">
-                          <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p15.jpg" alt="images">
-                              <div class="zoom-overlay"></div>
-                              </a> </div>
-                            <!-- /.image --> 
-                            
-                          </div>
-                          <!-- /.product-image --> 
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-xs-7">
-                          <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                            <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
-                            <!-- /.product-price --> 
-                            
-                          </div>
-                        </div>
-                        <!-- /.col --> 
-                      </div>
-                      <!-- /.product-micro-row --> 
-                    </div>
-                    <!-- /.product-micro --> 
+                <?php $i = 0; foreach($all_product_info as $v_product){ if($v_product->publication_status == 1 && $v_product->pro_label == 'Hot' && $i <= 9 && $i > 6){  ++$i; ?> 
                     
-                  </div>
-                  <div class="product">
-                    <div class="product-micro">
-                      <div class="row product-micro-row">
-                        <div class="col col-xs-5">
-                          <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p14.jpg"  alt="">
-                              <div class="zoom-overlay"></div>
-                              </a> </div>
-                            <!-- /.image --> 
-                            
+                    <div class="product">
+                      <div class="product-micro">
+                        <div class="row product-micro-row">
+                          <div class="col col-xs-5">
+                            <div class="product-image">
+                              <div class="image"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"> <img src="<?php echo base_url()?><?php echo $v_product->product_image ?>"  alt=""> </a> </div>
+                              <!-- /.image --> 
+                              
+                            </div>
+                            <!-- /.product-image --> 
                           </div>
-                          <!-- /.product-image --> 
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-xs-7">
-                          <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                            <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
-                            <!-- /.product-price --> 
-                            
+                          <!-- /.col -->
+                          <div class="col col-xs-7">
+                            <div class="product-info">
+                              <h3 class="name"><a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><?php echo $v_product->product_name ?></a></h3>
+                              <div class="rating rateit-small"></div>
+                              <div class="product-price"> <span class="price"> Tk. <?php if($v_product->product_new_price > 0){ echo $v_product->product_new_price;}else{ echo $v_product->product_price;} ?></span></div>
+                              <!-- /.product-price --> 
+                              
+                            </div>
                           </div>
+                          <!-- /.col --> 
                         </div>
-                        <!-- /.col --> 
+                        <!-- /.product-micro-row --> 
                       </div>
-                      <!-- /.product-micro-row --> 
+                      <!-- /.product-micro --> 
+                      
                     </div>
-                    <!-- /.product-micro --> 
-                    
-                  </div>
-                  <div class="product">
-                    <div class="product-micro">
-                      <div class="row product-micro-row">
-                        <div class="col col-xs-5">
-                          <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="<?php echo base_url()?>assets/frontend/images/products/p13.jpg" alt="image"> </a> </div>
-                            <!-- /.image --> 
-                            
-                          </div>
-                          <!-- /.product-image --> 
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-xs-7">
-                          <div class="product-info">
-                            <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                            <div class="rating rateit-small"></div>
-                            <div class="product-price"> <span class="price"> Tk. 400 </span> </div>
-                            <!-- /.product-price --> 
-                            
-                          </div>
-                        </div>
-                        <!-- /.col --> 
-                      </div>
-                      <!-- /.product-micro-row --> 
-                    </div>
-                    <!-- /.product-micro --> 
-                    
-                  </div>
+  
+                  <?php }}?>
                 </div>
               </div>
             </div>
@@ -626,24 +310,9 @@
         <div class="sidebar-widget  wow fadeInUp outer-top-vs ">
           <div id="advertisement" class="advertisement">
             <div class="item">
-              <div class="avatar"><img src="<?php echo base_url()?>assets/frontend/images/testimonials/member1.png" alt="Image"></div>
+              <div class="avatar"><img style="border-radius:100%;" src="<?php echo base_url()?>assets/frontend/images/akt_babu.jpg" alt="Image"></div>
               <div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-              <div class="clients_author">John Doe <span>Abc Company</span> </div>
-              <!-- /.container-fluid --> 
-            </div>
-            <!-- /.item -->
-            
-            <div class="item">
-              <div class="avatar"><img src="<?php echo base_url()?>assets/frontend/images/testimonials/member3.png" alt="Image"></div>
-              <div class="testimonials"><em>"</em>Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-              <div class="clients_author">Stephen Doe <span>Xperia Designs</span> </div>
-            </div>
-            <!-- /.item -->
-            
-            <div class="item">
-              <div class="avatar"><img src="<?php echo base_url()?>assets/frontend/images/testimonials/member2.png" alt="Image"></div>
-              <div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-              <div class="clients_author">Saraha Smith <span>Datsun &amp; Co</span> </div>
+              <div class="clients_author">AKT BABU<span>AKT-Shop</span> </div>
               <!-- /.container-fluid --> 
             </div>
             <!-- /.item --> 
