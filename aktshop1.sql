@@ -2,10 +2,10 @@
 -- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jan 18, 2019 at 04:57 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.0
+-- Host: 127.0.0.1:3306
+-- Generation Time: Jan 19, 2019 at 10:17 AM
+-- Server version: 8.0.13
+-- PHP Version: 7.2.10-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `akt_shop`
+-- Database: `aktshop1`
 --
 
 -- --------------------------------------------------------
@@ -71,15 +71,13 @@ CREATE TABLE `main_menu` (
 --
 
 INSERT INTO `main_menu` (`id`, `item_name`, `fa_class`, `status`, `has_link`) VALUES
-(1, 'check', 'check2', 1, 'check.com'),
-(2, 'check 2', 'check2', 0, 'www.check2.com'),
-(3, 'check', 'check2', 1, 'www.check2.com'),
-(4, 'check', 'check2', 0, 'www.check2.com'),
-(5, 'check 2', 'check2', 0, 'sadada'),
-(6, 'check 2', 'check', 1, 'www.check2.com'),
-(7, 'check', 'check2', 1, 'sadada'),
-(8, 'check', 'fa fa-camera', 0, 'www.check2.com'),
-(9, 'check', 'fa fa-desktop', 1, 'sadada');
+(10, 'Mobiles', 'fa fa-mobile', 1, ''),
+(11, 'Computers', 'fa fa-desktop', 1, ''),
+(12, 'Electronics', 'fa fa-tablet', 1, ''),
+(13, 'Men', 'fa fa-male', 1, ''),
+(14, 'Women', 'fa fa-female', 1, ''),
+(15, 'Kids', 'fa fa-child', 1, ''),
+(16, 'Sports', 'fa fa-futbol-o', 1, '');
 
 -- --------------------------------------------------------
 
@@ -98,14 +96,14 @@ CREATE TABLE `tbl_brand` (
 -- Dumping data for table `tbl_brand`
 --
 
-INSERT INTO `tbl_brand` (`brand_id`, `brand_name`, `brand_logo`, `created_at`) VALUES
-(38, 'Gucci', 'upload/brand/1547797746_Gucci-logo.jpg', '2019-01-18 07:49:06'),
-(39, 'Levi\'s', 'upload/brand/1547797799_2000px-Levis_logo_svg.png', '2019-01-18 07:49:59'),
-(40, 'D&G', 'upload/brand/1547797848_254_480n.jpg', '2019-01-18 07:50:48'),
-(41, 'H&M', 'upload/brand/1547797880_HM-Share-Image.jpg', '2019-01-18 07:51:20'),
-(42, 'american eagle', 'upload/brand/1547797939_xHZIQLF.png', '2019-01-18 07:52:19'),
-(44, 'Lotto', 'upload/brand/1547798073_a7d5c2cbe8bdb83262f3babf9388d42c.jpeg', '2019-01-18 07:54:33'),
-(45, 'Armani', 'upload/brand/1547798114_emporio-armani-logo-vector-1040x737.png', '2019-01-18 07:55:14');
+INSERT INTO `tbl_brand` (`brand_id`, `brand_name`, `brand_logo`) VALUES
+(38, 'Gucci', 'upload/brand/1547797746_Gucci-logo.jpg'),
+(39, 'Levi\'s', 'upload/brand/1547797799_2000px-Levis_logo_svg.png'),
+(40, 'D&G', 'upload/brand/1547797848_254_480n.jpg'),
+(41, 'H&M', 'upload/brand/1547797880_HM-Share-Image.jpg'),
+(42, 'american eagle', 'upload/brand/1547797939_xHZIQLF.png'),
+(44, 'Lotto', 'upload/brand/1547798073_a7d5c2cbe8bdb83262f3babf9388d42c.jpeg'),
+(45, 'Armani', 'upload/brand/1547798114_emporio-armani-logo-vector-1040x737.png');
 
 -- --------------------------------------------------------
 
@@ -143,9 +141,18 @@ CREATE TABLE `tbl_category` (
 --
 
 INSERT INTO `tbl_category` (`category_id`, `category_name`, `category_image`, `menu_id`, `product_count`, `subcat_count`, `category_description`, `publication_status`) VALUES
-(8, 'Clothing', 'upload/category/p8.jpg', 0, 0, 0, 'test', 1),
-(9, 'Men\'s Fashion', 'upload/category/p7.jpg', 0, 0, 0, 'sdffs', 1),
-(10, 'Men\'s Fashion', 'upload/category/p3.jpg', 2, 0, 0, 'saadad', 1);
+(11, 'Smartphones', 'upload/category/p81.jpg', 10, 0, 0, 'test', 1),
+(12, 'Feature Phones', 'upload/category/p182.jpg', 10, 0, 0, 'test', 1),
+(13, 'Mobile Accessories', 'upload/category/p811.jpg', 10, 0, 0, 'test', 1),
+(14, 'Laptops', 'upload/category/p812.jpg', 11, 0, 0, 'ssds', 1),
+(15, 'Desktop', 'upload/category/p2411.jpg', 11, 0, 0, 'test', 1),
+(16, 'Computer Accessories', 'upload/category/p8121.jpg', 11, 0, 0, 'test', 1),
+(17, 'Televisions', 'upload/category/p1811.jpg', 12, 0, 0, 'dsd', 1),
+(18, 'Men\'s Clothing', 'upload/category/p2412.jpg', 13, 0, 0, 'test', 1),
+(19, 'Traditional Wear', 'upload/category/p8122.jpg', 13, 0, 0, 'test', 1),
+(20, 'Women\'s Clothing', 'upload/category/p8123.jpg', 14, 0, 0, 'test', 1),
+(21, 'Baby & Kids Clothing', 'upload/category/b3e48d56fce0d45caab996badce96acf_jpg_340x340q901.jpg', 15, 0, 0, 'test', 1),
+(22, 'Exercise & Fitness', 'upload/category/p81231.jpg', 16, 0, 0, 'test', 1);
 
 -- --------------------------------------------------------
 
@@ -171,14 +178,6 @@ CREATE TABLE `tbl_customers` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `tbl_customers`
---
-
-INSERT INTO `tbl_customers` (`customer_id`, `customer_name`, `customer_email`, `customer_phone`, `customer_region`, `customer_city`, `customer_area`, `customer_addr`, `customer_image`, `customer_dob`, `customer_password`, `customer_total_orders`, `customer_status`, `created_at`, `updated_at`) VALUES
-(1, 'dalimchy', 'admin@gmail.com', 1827885295, NULL, NULL, NULL, NULL, 'user.jpg', NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, NULL, '2019-01-03 17:09:49', NULL),
-(2, 'dalimchy', 'admin2@gmail.com', 1, NULL, NULL, NULL, NULL, 'user.jpg', NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, NULL, '2019-01-04 07:15:20', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -194,6 +193,18 @@ CREATE TABLE `tbl_manufacture` (
   `manufacture_description` text NOT NULL,
   `publication_status` tinyint(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_manufacture`
+--
+
+INSERT INTO `tbl_manufacture` (`manufacture_id`, `category_id`, `manufacture_for`, `manufacture_name`, `manufacture_image`, `manufacture_description`, `publication_status`) VALUES
+(1, 11, 1, 'iPhone', 'upload/subcategory/p2412.jpg', 'test', 1),
+(2, 11, 1, 'Samsung', 'upload/subcategory/p24121.jpg', 'test', 1),
+(3, 12, 2, 'Samsung', 'upload/subcategory/p812.jpg', 'test', 1),
+(4, 14, 2, 'ASUS', 'upload/subcategory/p182.jpg', 'test', 1),
+(5, 18, 1, 'T-Shirts', 'upload/subcategory/p24122.jpg', 'test', 1),
+(6, 18, 2, 'Sweater', 'upload/subcategory/p1811.jpg', 'asd', 1);
 
 -- --------------------------------------------------------
 
@@ -243,6 +254,14 @@ CREATE TABLE `tbl_product` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `tbl_product`
+--
+
+INSERT INTO `tbl_product` (`product_id`, `product_name`, `brand_id`, `product_model`, `category_id`, `product_for`, `manufacture_id`, `product_short_description`, `product_long_description`, `product_price`, `product_new_price`, `product_quantity`, `product_image`, `product_img2`, `product_img3`, `product_img4`, `product_img5`, `product_tags`, `is_featured`, `publication_status`, `updated_at`) VALUES
+(1, 'Apple iPhone 6 32GB', 38, 'M205', 11, NULL, 1, 'Apple iPhone 6 32GB Mobile Phone\r\nOS: iOS 8', 'Apple iPhone 6 32GB Mobile Phone\r\nOS: iOS 8\r\nProcessor: Dual-Core 1.4 GHz Cyclone (ARM v8-based) Processor\r\nChipset: Apple A8\r\nRear Camera: 8 Megapixel Camera (3264 x 2448 pixels)\r\nFront Camera: 1.2 Megapixel \r\nDisplay: 4.7-Inch LED-backlit IPS LCD Multi-Touchscreen (750 x 1334 pixels)\r\nSensor: Fingerprint (front-mounted), accelerometer, gyro, proximity, compass, barometer\r\nBattery: Non-removable Li-Po 1810 mAh battery (6.9 Wh)\r\niPhone 6 Smartphone: OS\r\niOS is the operating system that powers every iPhone mobile. It lets you do things you simply can’t with other mobile phone operating system. That’s because it’s designed specifically for the hardware it runs on and vice versa. So your iPhone works like magic with your other Apple devices. And it works hand in hand with iCloud to keep photos, documents, and other stuff up to date on those smart devices. iOS also comes with an entire suite of beautifully designed apps. And it’s been built from the ground up with privacy and security in mind. iOS 8 using in this Apple iPhone.\r\n\r\niPhone 6 Mobile Phone: Storage; Camera; Battery\r\nIt comes with 1GB of RAM. The smartphone packs 32GB of internal storage cannot be expanded. With Apple A8 chipset and 1GB of RAM is able to provide smooth performance. As far as the phone cameras are concerned, the Apple iPhone 6 packs an 8-megapixel primary camera on the rear and a 1.2-megapixel front shooter for selfies. And the cameras are able to take brilliant photos. The primary camera also able to record 1080P videos. 1810mAh non-removable battery use in this iPhone 6. ', 29999.00, 28999.00, 500, 'upload/products/511216_apple_iphone_6_32gb_phone_-_gold_2_result.jpg', 'upload/products/download.jpeg', NULL, NULL, NULL, NULL, 0, 1, NULL),
+(2, 'Apple iPhone 6S Plus 32 GB', 38, 'M206', 11, NULL, 1, 'Apple iPhone 6 32GB Mobile Phone\r\nOS: iOS 8\r\nProcessor: Dual-Core 1.4 GHz Cyclone (ARM v8-based) Processor\r\nChipset: Apple A8\r\nRear Camera: 8 Megapixel Camera (3264 x 2448 pixels)\r\nFront Camera: 1.2 Megapixel \r\nDisplay: 4.7-Inch LED-backlit IPS LCD Multi-Touchscreen (750 x 1334 pixels)\r\nSensor: Fingerprint (front-mounted), accelerometer, gyro, proximity, compass, barometer\r\nBattery: Non-removable Li-Po 1810 mAh battery (6.9 Wh)', 'Apple iPhone 6 32GB Mobile Phone\r\nOS: iOS 8\r\nProcessor: Dual-Core 1.4 GHz Cyclone (ARM v8-based) Processor\r\nChipset: Apple A8\r\nRear Camera: 8 Megapixel Camera (3264 x 2448 pixels)\r\nFront Camera: 1.2 Megapixel \r\nDisplay: 4.7-Inch LED-backlit IPS LCD Multi-Touchscreen (750 x 1334 pixels)\r\nSensor: Fingerprint (front-mounted), accelerometer, gyro, proximity, compass, barometer\r\nBattery: Non-removable Li-Po 1810 mAh battery (6.9 Wh)\r\niPhone 6 Smartphone: OS\r\niOS is the operating system that powers every iPhone mobile. It lets you do things you simply can’t with other mobile phone operating system. That’s because it’s designed specifically for the hardware it runs on and vice versa. So your iPhone works like magic with your other Apple devices. And it works hand in hand with iCloud to keep photos, documents, and other stuff up to date on those smart devices. iOS also comes with an entire suite of beautifully designed apps. And it’s been built from the ground up with privacy and security in mind. iOS 8 using in this Apple iPhone.\r\n\r\niPhone 6 Mobile Phone: Storage; Camera; Battery\r\nIt comes with 1GB of RAM. The smartphone packs 32GB of internal storage cannot be expanded. With Apple A8 chipset and 1GB of RAM is able to provide smooth performance. As far as the phone cameras are concerned, the Apple iPhone 6 packs an 8-megapixel primary camera on the rear and a 1.2-megapixel front shooter for selfies. And the cameras are able to take brilliant photos. The primary camera also able to record 1080P videos. 1810mAh non-removable battery use in this iPhone 6. ', 29999.00, 0.00, 10, 'upload/products/iphone-6s.jpg', 'upload/products/iPhone_6_Back.jpg', NULL, NULL, NULL, NULL, 1, 1, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -272,13 +291,6 @@ CREATE TABLE `tbl_wishlist` (
   `product_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `tbl_wishlist`
---
-
-INSERT INTO `tbl_wishlist` (`wishlist_id`, `customer_id`, `product_id`, `created_at`) VALUES
-(15, 1, 1, '2019-01-04 07:13:05');
 
 --
 -- Indexes for dumped tables
@@ -364,7 +376,7 @@ ALTER TABLE `akt_users`
 -- AUTO_INCREMENT for table `main_menu`
 --
 ALTER TABLE `main_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tbl_brand`
@@ -382,7 +394,7 @@ ALTER TABLE `tbl_cart`
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `tbl_customers`
@@ -394,7 +406,7 @@ ALTER TABLE `tbl_customers`
 -- AUTO_INCREMENT for table `tbl_manufacture`
 --
 ALTER TABLE `tbl_manufacture`
-  MODIFY `manufacture_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `manufacture_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_orders`
@@ -406,7 +418,7 @@ ALTER TABLE `tbl_orders`
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_review`
