@@ -8,7 +8,7 @@
 <meta name="author" content="">
 <meta name="keywords" content="MediaCenter, Template, eCommerce">
 <meta name="robots" content="all">
-<title>Flipmart premium HTML5 & CSS3 Template</title>
+<title>AKT-Shop</title>
  <link rel="icon" href="<?php echo base_url()?>assets/admin/img/favicons/akt_icon.ico" />
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="<?php echo base_url()?>assets/frontend/css/bootstrap.min.css">

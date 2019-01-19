@@ -136,7 +136,7 @@
                           <h3 class="name"><a href="detail.html"><?php echo $v_product->product_name ?></a></h3>
                           <div class="rating rateit-small"></div>
                           <div class="description"></div>
-                          <div class="product-price"> <span class="price"> Tk. <?php echo $v_product->product_new_price ?></span> <span class="price-before-discount">Tk. <?php echo $v_product->product_price ?></span> </div>
+                          <div class="product-price"> <span class="price"> Tk. <?php if($v_product->product_new_price > 0){ echo $v_product->product_new_price;}else{ echo $v_product->product_price;} ?></span> <?php if($v_product->product_new_price > 0){ ?><span class="price-before-discount">Tk. <?php echo $v_product->product_price;?> </span> <?php } ?> </div>
                           <!-- /.product-price --> 
                           
                         </div>
@@ -199,7 +199,7 @@
                                 <h3 class="name"><a href="detail.html"><?php echo $v_product->product_name ?></a></h3>
                                 <div class="rating rateit-small"></div>
                                 <div class="description"></div>
-                                <div class="product-price"> <span class="price"> Tk. <?php echo $v_product->product_new_price ?></span> <span class="price-before-discount">Tk. <?php echo $v_product->product_price ?></span> </div>
+                                <div class="product-price"> <span class="price"> Tk. <?php if($v_product->product_new_price > 0){ echo $v_product->product_new_price;}else{ echo $v_product->product_price;} ?></span> <?php if($v_product->product_new_price > 0){ ?><span class="price-before-discount">Tk. <?php echo $v_product->product_price;?> </span> <?php } ?> </div>
                                 <!-- /.product-price --> 
                                 
                               </div>
@@ -289,7 +289,7 @@
                     <h3 class="name"><a href="detail.html"><?php echo $v_product->product_name ?></a></h3>
                     <div class="rating rateit-small"></div>
                     <div class="description"></div>
-                    <div class="product-price"> <span class="price"> Tk. <?php echo $v_product->product_new_price ?></span> <span class="price-before-discount">Tk. <?php echo $v_product->product_price ?></span> </div>
+                    <div class="product-price"> <span class="price"> Tk. <?php if($v_product->product_new_price > 0){ echo $v_product->product_new_price;}else{ echo $v_product->product_price;} ?></span> <?php if($v_product->product_new_price > 0){ ?><span class="price-before-discount">Tk. <?php echo $v_product->product_price;?> </span> <?php } ?> </div>
                     <!-- /.product-price --> 
                     
                   </div>
@@ -362,8 +362,7 @@
                   <div class="product-image">
                     <div class="image"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><img  src="<?php echo base_url()?><?php echo $v_product->product_image ?>" alt="" style="height:189px"></a> </div>
                     <!-- /.image -->
-                    <?php 
-                      if($v_product->product_quantity < 1){?>
+                    <?php if($v_product->product_quantity < 1){?>
                         <div class="tag sale"><span>Sale</span></div>
                       <?php }else{?>
                         <div class="tag hot"><span>Hot</span></div>
@@ -376,7 +375,7 @@
                     <h3 class="name"><a href="detail.html"><?php echo $v_product->product_name ?></a></h3>
                     <div class="rating rateit-small"></div>
                     <div class="description"></div>
-                    <div class="product-price"> <span class="price"> Tk. <?php echo $v_product->product_new_price ?></span> <span class="price-before-discount">Tk. <?php echo $v_product->product_price ?></span> </div>
+                    <div class="product-price"> <span class="price"> Tk. <?php if($v_product->product_new_price > 0){ echo $v_product->product_new_price;}else{ echo $v_product->product_price;} ?></span> <?php if($v_product->product_new_price > 0){ ?><span class="price-before-discount">Tk. <?php echo $v_product->product_price;?> </span> <?php } ?> </div>
                     <!-- /.product-price --> 
                     
                   </div>
