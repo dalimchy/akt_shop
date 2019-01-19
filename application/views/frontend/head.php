@@ -4,9 +4,11 @@
 <!-- Meta -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="description" content="">
+<meta name="description" content="Online Shopping in Bangladesh for Mobiles & Electronics - akt-shopbd.com
+Trusted online shop in Bangladesh for mobiles, computers, fashion, electronics & appliances. Quality Product. Happy Online Shopping.">
 <meta name="author" content="">
-<meta name="keywords" content="MediaCenter, Template, eCommerce">
+<meta property="og:site_name" content="Akt-Shop">
+<meta name="keywords" content="Bangladeshi eCommerce">
 <meta name="robots" content="all">
 <title>AKT-Shop</title>
  <link rel="icon" href="<?php echo base_url()?>assets/admin/img/favicons/akt_icon.ico" />
