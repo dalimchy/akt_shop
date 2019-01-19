@@ -106,8 +106,14 @@ function shoppingProductHtml(data,price){
     html +=			'<div class="quant-input">';
     html +=	                '<input type="number" min="1" max="10" value="'+data.qty+'" onchange="updateQty('+data.product_id+',$(this).val())">';
     html +=              '</div>';
-    html +=         '</td>';
-    html +=		'<td class="cart-product-sub-total"><span class="cart-sub-total-price">Tk. '+data.product_new_price+'</span></td>';
+	html +=         '</td>';
+	if(data.product_new_price > 0){
+
+		html +=		'<td class="cart-product-sub-total"><span class="cart-sub-total-price">Tk. '+data.product_new_price+'</span></td>';
+	}else{
+		html +=		'<td class="cart-product-sub-total"><span class="cart-sub-total-price">Tk. '+data.product_price+'</span></td>';
+
+	}
     html +=		'<td class="cart-product-grand-total"><span class="cart-grand-total-price">Tk. '+price+'</span></td>';
     html +=	'</tr>';
 

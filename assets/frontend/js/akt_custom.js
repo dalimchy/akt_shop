@@ -100,7 +100,12 @@ function headcartOption(){
 
         $.each(cartProduct, function(k,v){
             if(v.product_new_price !== null){
-                let price = v.product_new_price * v.qty
+                if(v.product_new_price > 0){
+
+                    var price = v.product_new_price * v.qty;
+                }else{
+                    var price = v.product_price * v.qty;
+                }
                 totalPrice = totalPrice + price;
                 document.getElementById("totalAmountOfcart").innerText = totalPrice ;
                 document.getElementById("dropdownTotalmini").innerText = totalPrice ;
@@ -234,7 +239,13 @@ function drawWishlistdesign(va){
         design +=          '<i class="fa fa-star non-rate"></i>';
         design +=          '<span class="review">( 06 Reviews )</span>';
         design +=      '</div>';
-        design +=      '<div class="price">Tk.'+va.product_new_price+'<span>Tk. '+va.product_price+'</span>';
+        if(va.product_new_price > 0){
+
+            design +=      '<div class="price">Tk.'+va.product_new_price+'<span>Tk. '+va.product_price+'</span>';
+        }else{
+            design +=      '<div class="price">Tk.'+va.product_price+'';
+
+        }
         design +=      '</div>';
         design +=   '</td>';
         design +=   '<td class="col-md-2">';
