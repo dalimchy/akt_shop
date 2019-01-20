@@ -45,10 +45,23 @@
                     </td>
 
                     <td class="hidden-xs">
-                        
-                        <a href="<?php echo base_url()?>unpublish-product/<?php echo $v_product->product_id; ?>"> <span class="label label-success">Hot</span></a>
-                        <a href="<?php echo base_url()?>unpublish-product/<?php echo $v_product->product_id; ?>"> <span class="label label-success">New</span></a>
-                        <a href="<?php echo base_url()?>unpublish-product/<?php echo $v_product->product_id; ?>"> <span class="label label-success">Sale</span></a>
+                        <?php if ($v_product->pro_label == 'New') { ?>
+							<a href="<?php echo base_url('supper_admin/unpublish_new/'.$v_product->product_id);?>"> <span class="label label-success">New</span></a>
+						<?php } else { ?>
+							<a href="<?php echo base_url('supper_admin/publish_new/'.$v_product->product_id)?>"> <span class="label label-danger">New</span></a>
+						<?php } ?>
+
+                        <?php if ($v_product->pro_label == 'Hot') { ?>
+							<a href="<?php echo base_url('supper_admin/unpublish_hot/'.$v_product->product_id);?>"> <span class="label label-success">Hot</span></a>
+						<?php } else { ?>
+							<a href="<?php echo base_url('supper_admin/publish_hot/'.$v_product->product_id)?>"> <span class="label label-danger">Hot</span></a>
+						<?php } ?>
+
+                        <?php if ($v_product->pro_label == 'Sale') { ?>
+							<a href="<?php echo base_url('supper_admin/unpublish_sale/'.$v_product->product_id);?>"> <span class="label label-success">Sale</span></a>
+						<?php } else { ?>
+							<a href="<?php echo base_url('supper_admin/publish_sale/'.$v_product->product_id)?>"> <span class="label label-danger">Sale</span></a>
+						<?php } ?>
                     </td>
                     
                     <td class="hidden-xs">

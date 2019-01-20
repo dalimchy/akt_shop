@@ -318,6 +318,48 @@ class Admin_model extends CI_Model {
 		return $product_info;
 	}
 
+	public function unpublish_new($product_id)
+	{
+		$this->db->set('pro_label',NULL);
+		$this->db->where('product_id',$product_id);
+		$this->db->update('tbl_product');
+	}
+
+	public function publish_new($product_id)
+	{
+		$this->db->set('pro_label','New');
+		$this->db->where('product_id',$product_id);
+		$this->db->update('tbl_product');
+	}
+
+	public function unpublish_hot($product_id)
+	{
+		$this->db->set('pro_label',NULL);
+		$this->db->where('product_id',$product_id);
+		$this->db->update('tbl_product');
+	}
+
+	public function publish_hot($product_id)
+	{
+		$this->db->set('pro_label','Hot');
+		$this->db->where('product_id',$product_id);
+		$this->db->update('tbl_product');
+	}
+
+	public function unpublish_sale($product_id)
+	{
+		$this->db->set('pro_label',NULL);
+		$this->db->where('product_id',$product_id);
+		$this->db->update('tbl_product');
+	}
+
+	public function publish_sale($product_id)
+	{
+		$this->db->set('pro_label','Sale');
+		$this->db->where('product_id',$product_id);
+		$this->db->update('tbl_product');
+	}
+
 	public function unpublish_product($product_id)
 	{
 		$this->db->set('publication_status',0);

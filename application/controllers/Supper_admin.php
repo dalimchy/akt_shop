@@ -300,6 +300,42 @@ class Supper_admin extends CI_Controller {
 		$this->load->view('admin/admin_master',$data );
 	}
 
+	public function unpublish_new($product_id)
+	{
+		$this->admin_model->unpublish_new($product_id);
+		redirect('manage-product');
+	}
+
+	public function publish_new($product_id)
+	{
+		$this->admin_model->publish_new($product_id);
+		redirect('manage-product');
+	}
+
+	public function unpublish_hot($product_id)
+	{
+		$this->admin_model->unpublish_hot($product_id);
+		redirect('manage-product');
+	}
+
+	public function publish_sale($product_id)
+	{
+		$this->admin_model->publish_sale($product_id);
+		redirect('manage-product');
+	}
+
+	public function unpublish_sale($product_id)
+	{
+		$this->admin_model->unpublish_sale($product_id);
+		redirect('manage-product');
+	}
+
+	public function publish_hot($product_id)
+	{
+		$this->admin_model->publish_hot($product_id);
+		redirect('manage-product');
+	}
+
 	public function unpublish_product($product_id)
 	{
 		$this->admin_model->unpublish_product($product_id);
