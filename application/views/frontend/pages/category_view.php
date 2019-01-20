@@ -88,7 +88,7 @@
                     <?php $i = 0 ; foreach($all_product_info as $v_product){if($v_product->category_id == $category_view_id && $v_product->publication_status == 1 && $i < 12){$i++ ?> 
                         <div class="col-sm-6 col-md-4 wow fadeInUp">
                             <div class="products">
-                            <div class="product">
+                            <div class="product" style="border:1px solid #d8d8d8; border-radius: 4px; padding:8px;">
                                 <div class="product-image">
                                 <div class="image"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><img  src="<?php echo base_url()?><?php echo $v_product->product_image?>" alt=""></a> </div>
                                 <!-- /.image -->
