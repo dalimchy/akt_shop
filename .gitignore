@@ -1,4 +1,4 @@
-upload/
+#upload/
 .DS_Store
 
 application/cache/*
