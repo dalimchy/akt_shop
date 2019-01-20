@@ -47,7 +47,7 @@
             <div class="owl-carousel sidebar-carousel special-offer custom-carousel owl-theme outer-top-xs">
               <div class="item">
                 <div class="products special-product">
-                  <?php $i = 1; foreach($all_product_info as $v_product){if($v_product->publication_status == 1 && $v_product->product_new_price > 0 && $i <= 3 ){++$i; ?> 
+                  <?php $i = 0; foreach($all_product_info as $v_product){if($v_product->publication_status == 1 && $v_product->product_new_price > 0 && $i < 3 ){++$i; ?> 
                     
                     <div class="product">
                       <div class="product-micro">
@@ -83,7 +83,7 @@
               </div>
               <div class="item">
                 <div class="products special-product">
-                  <?php $i = 1; foreach($all_product_info as $v_product){ if($v_product->publication_status == 1 && $v_product->product_new_price > 0 && $i <= 6 && $i > 4){++$i; ?>
+                  <?php $i2 = 0; $i = 0; foreach($all_product_info as $v_product){ if($v_product->publication_status == 1 && $v_product->product_new_price > 0 &&  $i < 6){++$i; $i2++; if($i2 > 3){ ?>
                     <div class="product">
                       <div class="product-micro">
                         <div class="row product-micro-row">
@@ -112,12 +112,12 @@
                       <!-- /.product-micro --> 
                       
                     </div>
-                  <?php }}?>
+                  <?php } } }?>
                 </div>
               </div>
               <div class="item">
                 <div class="products special-product">
-                  <?php $i = 1; foreach($all_product_info as $v_product){ if($v_product->publication_status == 1 && $v_product->product_new_price > 0 && $i <= 9 && $i > 7){ ++$i; ?>
+                  <?php $i = 0; $i2 = 0; foreach($all_product_info as $v_product){ if($v_product->publication_status == 1 && $v_product->product_new_price > 0 && $i < 9){ ++$i; $i2++; if($i2 > 6){ ?>
                     <div class="product">
                       <div class="product-micro">
                         <div class="row product-micro-row">
@@ -146,7 +146,7 @@
                       <!-- /.product-micro --> 
                       
                     </div>
-                  <?php }}?>
+                  <?php }}}?>
                 </div>
               </div>
             </div>
@@ -212,7 +212,7 @@
               <div class="item">
                 <div class="products special-product">
 
-                <?php $i = 0; foreach($all_product_info as $v_product){  if($v_product->publication_status == 1 && $v_product->pro_label == 'Hot' && $i <= 6 && $i > 3){  ++$i; ?> 
+                <?php $i2 = 0; $i = 0; foreach($all_product_info as $v_product){  if($v_product->publication_status == 1 && $v_product->pro_label == 'Hot' && $i < 6){  ++$i;$i2++; if($i2 > 3){ ?> 
                     
                   <div class="product">
                     <div class="product-micro">
@@ -243,12 +243,12 @@
                     
                   </div>
   
-                  <?php }}?>
+                  <?php }}}?>
                 </div>
               </div>
               <div class="item">
                 <div class="products special-product">
-                <?php $i = 0; foreach($all_product_info as $v_product){ if($v_product->publication_status == 1 && $v_product->pro_label == 'Hot' && $i <= 9 && $i > 6){  ++$i; ?> 
+                <?php $i2 = 0; $i = 0; foreach($all_product_info as $v_product){ if($v_product->publication_status == 1 && $v_product->pro_label == 'Hot' && $i < 9){  ++$i; ++$i2; if($i2 > 6){ ?> 
                     
                     <div class="product">
                       <div class="product-micro">
@@ -279,7 +279,7 @@
                       
                     </div>
   
-                  <?php }}?>
+                  <?php }}}?>
                 </div>
               </div>
             </div>
