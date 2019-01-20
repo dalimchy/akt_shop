@@ -77,7 +77,14 @@
                             <td><?php echo $value->item_name; ?></td>
 							<td class="text-center"><i class="<?php echo $value->fa_class; ?> fa-2x"></i></td>
 							<td><?php echo $value->has_link; ?></td>
-							<td><?php echo $value->status; ?></td>
+							<td>
+								<?php if ($value->status == 1) { ?>
+									<a style="text-decoration:none" href="<?php echo base_url('supper_admin/inactive_menu/'.$value->id)?>"> <span class="label label-success">Active</span></a>
+								<?php } else if ($value->status == 0){ ?>
+									<a style="text-decoration:none" href="<?php echo base_url('supper_admin/active_menu/'.$value->id)?>"> <span class="label label-danger">Inactive</span></a>
+								<?php } ?>
+
+							</td>
                             <td class="text-center">
                                 <div class="btn-group">
                                     <a href="<?php  echo base_url('supper_admin/edit_menu/'.$value->id);?>" class="btn btn-xs btn-app-teal" type="button" data-toggle="tooltip" title="" data-original-title="Edit Menu"><i class="ion-edit"></i></a>

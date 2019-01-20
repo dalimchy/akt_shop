@@ -566,4 +566,22 @@ class Supper_admin extends CI_Controller {
 		redirect('main-menu');
 	}
 
+	public function delete_menu($id)
+	{
+		$this->admin_model->delete_menu($id);
+		redirect('main-menu');
+	}
+
+	public function inactive_menu($id)
+	{
+		$this->admin_model->inactive_menu($id);
+		redirect('main-menu');
+	}
+
+	public function active_menu($id)
+	{
+		$this->admin_model->active_menu($id);
+		redirect('main-menu');
+	}
+
 }

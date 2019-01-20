@@ -602,4 +602,29 @@ class Admin_model extends CI_Model {
 		$query = $this->db->get()->result();
 		return $query;
 	}
+
+	public function delete_menu($id)
+	{
+		$this->db->where('id', $id);
+		$delete_result = $this->db->delete('main_menu');
+		if($delete_result){
+			return $data;
+		}else{
+			return false;
+		}
+	}
+
+	public function inactive_menu($id)
+	{
+		$this->db->set('status', 0);
+		$this->db->where('id',$id);
+		$this->db->update('main_menu');
+	}
+
+	public function active_menu($id)
+	{
+		$this->db->set('status', 1);
+		$this->db->where('id',$id);
+		$this->db->update('main_menu');
+	}
 }
