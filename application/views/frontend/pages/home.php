@@ -95,7 +95,7 @@
         <!-- /.info-boxes --> 
         <!-- ============================================== INFO BOXES : END ============================================== --> 
           <!-- ============================================== FEATURED PRODUCTS ============================================== -->
-          <section class="section featured-product wow fadeInUp">
+          <section class="section featured-product wow fadeInUp" style="margin-top:30px">
             <h3 class="section-title">Featured products</h3>
             <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
             <?php foreach($all_product_info as $v_product){ if($v_product->is_featured == 1 && $v_product->publication_status == 1 ){?>
