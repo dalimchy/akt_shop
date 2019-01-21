@@ -120,9 +120,9 @@ class Supper_admin extends CI_Controller {
 	{
 		$config['upload_path'] = 'upload/category/';
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
-		$config['max_size'] = 1000;
-		$config['max_width'] = 1024;
-		$config['max_height'] = 768;
+		$config['max_size'] = 1024;
+		// $config['max_width'] = 1024;
+		// $config['max_height'] = 768;
 
 		$this->load->library('upload', $config);
 
@@ -174,9 +174,9 @@ class Supper_admin extends CI_Controller {
 	{
 		$config['upload_path'] = 'upload/subcategory/';
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
-		$config['max_size'] = 1000;
-		$config['max_width'] = 1024;
-		$config['max_height'] = 768;
+		$config['max_size'] = 1024;
+		// $config['max_width'] = 1024;
+		// $config['max_height'] = 768;
 
 		$this->load->library('upload', $config);
 
@@ -402,9 +402,9 @@ class Supper_admin extends CI_Controller {
 		$config = array(
 			'upload_path' 	=> 'upload/products/',
 			'allowed_types' => 'jpg|png|jpeg',
-			'max_size' 		=> 1000,
-			'max_width' 	=> 1024,
-			'max_height' 	=> 768
+			'max_size' 		=> 1024,
+			// 'max_width' 	=> 1024,
+			// 'max_height' 	=> 768
 		);
 
 		$this->load->library('upload', $config);
@@ -511,7 +511,7 @@ class Supper_admin extends CI_Controller {
 			$config = array(
 				'upload_path' 	=> 'upload/brand/',
 				'allowed_types' => 'jpg|png|jpeg',
-				'max_size' 		=> 1000,
+				'max_size' 		=> 1024,
 				'file_name' 	=> time().'_'.$_FILES['new_brandlogo']['name'],
 			);
 

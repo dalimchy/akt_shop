@@ -255,9 +255,9 @@ class Admin_model extends CI_Model {
 			$config = array(
 				'upload_path'	=> 'upload/products/',
 				'allowed_types' => 'gif|jpg|png|jpeg',
-				'max_size'		=> 1000,
-				'max_width' 	=> 1024,
-				'max_height' 	=> 768,
+				'max_size'		=> 1024,
+				// 'max_width' 	=> 1024,
+				// 'max_height' 	=> 768,
 			);
 
 			$this->load->library('upload', $config);
@@ -444,7 +444,7 @@ class Admin_model extends CI_Model {
 			$config = array(
 				'upload_path' 	=> 'upload/brand/',
 				'allowed_types' => 'jpg|png|jpeg',
-				'max_size' 		=> 1000,
+				'max_size' 		=> 1024,
 				'file_name' 	=> time().'_'.$_FILES['brandlogo']['name'],
 			);
 
