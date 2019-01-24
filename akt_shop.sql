@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 20, 2019 at 06:50 PM
+-- Generation Time: Jan 24, 2019 at 06:38 AM
 -- Server version: 10.1.37-MariaDB
--- PHP Version: 7.2.12
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -293,15 +293,15 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`product_id`, `product_name`, `brand_id`, `product_model`, `pro_label`, `category_id`, `product_for`, `manufacture_id`, `product_short_description`, `product_long_description`, `product_price`, `product_new_price`, `product_quantity`, `product_image`, `product_img2`, `product_img3`, `product_img4`, `product_img5`, `product_tags`, `is_featured`, `publication_status`, `created_at`, `updated_at`) VALUES
-(5, 'Apple iPhone 6 32GB', 48, '1', NULL, 11, NULL, 7, 'Apple iPhone 6 32GB Mobile Phone\r\nOS: iOS 8\r\nProcessor: Dual-Core 1.4 GHz Cyclone (ARM v8-based) Processor\r\nChipset: Apple A8\r\nRear Camera: 8 Megapixel Camera (3264 x 2448 pixels)\r\nFront Camera: 1.2 Megapixel \r\nDisplay: 4.7-Inch LED-backlit IPS LCD Multi-Touchscreen (750 x 1334 pixels)\r\nSensor: Fingerprint (front-mounted), accelerometer, gyro, proximity, compass, barometer\r\nBattery: Non-removable Li-Po 1810 mAh battery (6.9 Wh)', 'Apple iPhone 6 32GB Mobile Phone\r\nOS: iOS 8\r\nProcessor: Dual-Core 1.4 GHz Cyclone (ARM v8-based) Processor\r\nChipset: Apple A8\r\nRear Camera: 8 Megapixel Camera (3264 x 2448 pixels)\r\nFront Camera: 1.2 Megapixel \r\nDisplay: 4.7-Inch LED-backlit IPS LCD Multi-Touchscreen (750 x 1334 pixels)\r\nSensor: Fingerprint (front-mounted), accelerometer, gyro, proximity, compass, barometer\r\nBattery: Non-removable Li-Po 1810 mAh battery (6.9 Wh)', 29999.00, 0.00, 50, '', 'upload/products/iphone-iphone6-colors.jpg', NULL, NULL, NULL, NULL, 0, 1, '2019-01-20 17:14:22', NULL),
-(6, 'Samsung Galaxy J7 Duo', 49, '2', NULL, 11, NULL, 8, 'test', 'Samsung Galaxy J7 Duo Mobile - Ram: 4GB I ROM: 32GB\r\nOperating System: Android Oreo 8.0\r\nProcessor: Octa-core 1.6 GHz\r\nDisplay Size: 5.5” HD Super AMOLED\r\nRear Camera: 13MP (F1.9)/ 5MP (1.9)\r\nFront Camera: 8MP (F1.9)\r\nMemory: 4 GB Ram + 32 GB ROM\r\nExpandalbe Memory: microSD up to 256 GB\r\nBattery: 3,000 mAh (Li-ion-Removable)\r\nSamsung Galaxy J7 Duo smartphone comes with the Dual Camera, So turn up the fun with the dual camera.', 24990.00, 0.00, 20, '', NULL, NULL, NULL, NULL, NULL, 1, 1, '2019-01-20 17:16:23', NULL),
+(5, 'Apple iPhone 6 32GB', 48, '1', NULL, 11, NULL, 7, 'Apple iPhone 6 32GB Mobile Phone\r\nOS: iOS 8\r\nProcessor: Dual-Core 1.4 GHz Cyclone (ARM v8-based) Processor\r\nChipset: Apple A8\r\nRear Camera: 8 Megapixel Camera (3264 x 2448 pixels)\r\nFront Camera: 1.2 Megapixel \r\nDisplay: 4.7-Inch LED-backlit IPS LCD Multi-Touchscreen (750 x 1334 pixels)\r\nSensor: Fingerprint (front-mounted), accelerometer, gyro, proximity, compass, barometer\r\nBattery: Non-removable Li-Po 1810 mAh battery (6.9 Wh)', 'Apple iPhone 6 32GB Mobile Phone\r\nOS: iOS 8\r\nProcessor: Dual-Core 1.4 GHz Cyclone (ARM v8-based) Processor\r\nChipset: Apple A8\r\nRear Camera: 8 Megapixel Camera (3264 x 2448 pixels)\r\nFront Camera: 1.2 Megapixel \r\nDisplay: 4.7-Inch LED-backlit IPS LCD Multi-Touchscreen (750 x 1334 pixels)\r\nSensor: Fingerprint (front-mounted), accelerometer, gyro, proximity, compass, barometer\r\nBattery: Non-removable Li-Po 1810 mAh battery (6.9 Wh)', 29999.00, 28999.00, 50, 'upload/products/GUEST_c9ee8b9f-1be0-42a1-a60a-d29771e07375.jpeg', 'upload/products/iphone-iphone6-colors.jpg', NULL, NULL, NULL, NULL, 0, 1, '2019-01-20 17:14:22', NULL),
+(6, 'Samsung Galaxy J7 Duo', 49, '2', NULL, 11, NULL, 8, 'test', 'Samsung Galaxy J7 Duo Mobile - Ram: 4GB I ROM: 32GB\r\nOperating System: Android Oreo 8.0\r\nProcessor: Octa-core 1.6 GHz\r\nDisplay Size: 5.5” HD Super AMOLED\r\nRear Camera: 13MP (F1.9)/ 5MP (1.9)\r\nFront Camera: 8MP (F1.9)\r\nMemory: 4 GB Ram + 32 GB ROM\r\nExpandalbe Memory: microSD up to 256 GB\r\nBattery: 3,000 mAh (Li-ion-Removable)\r\nSamsung Galaxy J7 Duo smartphone comes with the Dual Camera, So turn up the fun with the dual camera.', 24990.00, 23990.00, 20, 'upload/products/samsung-galaxy-j7-duo_1531307945.jpeg', NULL, NULL, NULL, NULL, NULL, 1, 1, '2019-01-20 17:16:23', NULL),
 (7, 'Xiaomi Mi A1 4GB/32GB', 50, '3', 'New', 11, NULL, 13, 'test', 'Xiaomi Mi A1 Mobile Phone 4GB/32GB\r\nOperating System: Android 7.1.2 (Nougat), planned upgrade to Android 8.0 (Oreo)\r\nSIM: Hybrid Dual SIM (Nano-SIM, dual stand-by)\r\nProcessor: Octa-core 2.0 GHz Cortex-A53\r\nChipset: Qualcomm MSM8953 Snapdragon 625\r\nGPU: Adreno 506\r\nDisplay Size: 5.5 inch (diagonal) LTPS FHD display\r\nResolution: 1080 x 1920 pixels (~403 ppi pixel density)\r\nRear Camera: Dual 12 MP (26mm, f/2.2; 50mm, f/2.6), phase detection autofocus, 2x optical zoom, dual-LED (dual tone) flash\r\nFront Camera: 5 MP, 1080p\r\nVideo: 4K / 1080p / 720p video, 30 fps; 720p slow-mo video, 120 fps\r\nSensors: Fingerprint (rear-mounted), accelerometer, gyro, proximity, compass\r\nGPS Navigation: GPS; AGPS; GLONASS; BEIDOU\r\nConnectivity & Wireless: 3-choose-2; Nano SIM/MicroSD; Supports 802.11a/b/g/n/ac protocols; Supports 2.4/5G WiFi / WIFI Direct / WiFi Display; Supports Bluetooth 4.2/HID\r\n4G: Supports VoLTE/4G/3G/2G on compatible networks\r\nBattery: Non-removable Li-Ion 3080 mAh battery', 21990.00, 0.00, 20, 'upload/products/8d4f4a93-a6e3-4b32-b154-0956aea2ffbb.jpg', 'upload/products/71tJdEpRFUL__SX425_.jpg', NULL, NULL, NULL, NULL, 0, 1, '2019-01-20 17:18:27', NULL),
-(8, 'Nokia 6 2017', 51, 'M205', 'New', 11, NULL, 10, 'test', 'test', 15500.00, 0.00, 4, '', NULL, NULL, NULL, NULL, NULL, 1, 1, '2019-01-20 17:20:14', NULL),
-(9, 'Samsung Guru Music 2', 49, 'd', 'Hot', 12, NULL, 11, 'test', 'demo test', 5000.00, 3000.00, 50, '', NULL, NULL, NULL, NULL, NULL, 1, 1, '2019-01-20 17:22:06', NULL),
-(10, 'Asus E203MAH PQC N5000 11.6” 4GB/500GB Laptop', 54, 'd', 'New', 14, NULL, 17, 'test', 'test', 28840.00, 0.00, 50, '', NULL, NULL, NULL, NULL, NULL, 0, 1, '2019-01-20 17:23:41', NULL),
-(11, 'Apple MacBook Air 2018 Core i5 13.3\" 8GB/128GB SSD with Retina Display (MREE2LL/A)', 48, 'a', 'Hot', 14, NULL, 18, 'test', 'test', 113300.00, 103300.00, 10, '', NULL, NULL, NULL, NULL, NULL, 1, 1, '2019-01-20 17:26:28', NULL),
+(8, 'Nokia 6 2017', 51, 'M205', 'New', 11, NULL, 10, 'test', 'test', 15500.00, 14500.00, 4, 'upload/products/Nokia-6-white1.jpg', NULL, NULL, NULL, NULL, NULL, 1, 1, '2019-01-20 17:20:14', NULL),
+(9, 'Samsung Guru Music 2', 49, 'd', 'Hot', 12, NULL, 11, 'test', 'demo test', 5000.00, 3000.00, 50, 'upload/products/Guru-music-2-black.png', NULL, NULL, NULL, NULL, NULL, 1, 1, '2019-01-20 17:22:06', NULL),
+(10, 'Asus E203MAH PQC N5000 11.6” 4GB/500GB Laptop', 54, 'd', 'New', 14, NULL, 17, 'test', 'test', 28840.00, 25840.00, 50, 'upload/products/e203mah-11.jpg', NULL, NULL, NULL, NULL, NULL, 0, 1, '2019-01-20 17:23:41', NULL),
+(11, 'Apple MacBook Air 2018 Core i5 13.3', 48, 'a', 'Hot', 14, NULL, 18, 'test', 'test', 113300.00, 103300.00, 10, 'upload/products/mba-pfopen-gold-ww-en_tif-screen1.jpg', NULL, NULL, NULL, NULL, NULL, 1, 1, '2019-01-20 17:26:28', NULL),
 (12, 'Adidas Chelsea EU Training Mens Jersey', 44, 'df', 'New', 18, NULL, 27, 'test', 'test', 5000.00, 3000.00, 50, 'upload/products/chelsea-1.jpg', NULL, NULL, NULL, NULL, NULL, 0, 1, '2019-01-20 17:27:35', NULL),
-(13, 'Official Star Wars Mens T Shirt (Stormtroo Power)', 44, 'M206', 'New', 18, NULL, 27, 'test', 'test', 3000.00, 1500.00, 10, '', NULL, NULL, NULL, NULL, NULL, 0, 1, '2019-01-20 17:29:01', NULL);
+(13, 'Official Star Wars Mens T Shirt (Stormtroo Power)', 44, 'M206', 'New', 18, NULL, 27, 'test', 'test', 3000.00, 1500.00, 10, 'upload/products/p1008387_1448291669_ts204399stw_11.jpg', NULL, NULL, NULL, NULL, NULL, 0, 1, '2019-01-20 17:29:01', NULL);
 
 -- --------------------------------------------------------
 
@@ -417,7 +417,7 @@ ALTER TABLE `akt_users`
 -- AUTO_INCREMENT for table `main_menu`
 --
 ALTER TABLE `main_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tbl_brand`
@@ -441,7 +441,7 @@ ALTER TABLE `tbl_category`
 -- AUTO_INCREMENT for table `tbl_customers`
 --
 ALTER TABLE `tbl_customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_manufacture`
@@ -471,7 +471,7 @@ ALTER TABLE `tbl_review`
 -- AUTO_INCREMENT for table `tbl_wishlist`
 --
 ALTER TABLE `tbl_wishlist`
-  MODIFY `wishlist_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `wishlist_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
