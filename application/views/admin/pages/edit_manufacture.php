@@ -82,12 +82,11 @@
                             </div>
                         </div>
                         
-                        
                         <div class="form-group m-b-0">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button class="btn btn-app" type="submit">Submit</button>
-                            </div>
-                        </div>
+							<div class="col-md-8 col-md-offset-3">
+								<button class="col-md-12 btn btn-app-teal" type="submit">Update Subcategory</button>
+							</div>
+						</div>
                     </form>
                 </div>
                 <!-- .card-block -->
