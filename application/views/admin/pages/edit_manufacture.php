@@ -23,6 +23,7 @@
                         </li>
                     </ul>
                 </div>
+
                 <div class="card-block">
                     <!-- jQuery Validation (.js-validation-bootstrap class is initialized in js/pages/base_forms_validation.js) -->
                     <!-- For more examples please check https://github.com/jzaefferer/jquery-validation -->
@@ -41,7 +42,6 @@
                             </div>
                         </div>
 
-
                         <div class="form-group">
                             <label class="col-md-3 control-label" for="">Manufacture Name <span class="text-orange">*</span></label>
                             <div class="col-md-8">
@@ -49,7 +49,6 @@
                                 <input class="form-control" type="hidden" id=""  name="manufacture_id" value="<?php echo $select_manufacture_by_id->manufacture_id; ?>" required />
                             </div>
                         </div>
-
 
                         <div class="form-group">
                             <label class="col-md-3 control-label" for="">Manufacture Image </label>
@@ -62,8 +61,6 @@
                             </div>
                         </div>
 
-
-                        
                         <div class="form-group">
                             <label class="col-md-3 control-label" for="">Manufacture Description <span class="text-orange">*</span></label>
                             <div class="col-md-8">

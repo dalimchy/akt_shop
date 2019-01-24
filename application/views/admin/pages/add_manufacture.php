@@ -26,7 +26,7 @@
             <div class="card-block">
                 <form class="js-validation-bootstrap form-horizontal" action="<?php echo base_url();?>save-manufacture" enctype="multipart/form-data" method="post">
 
-                        <div class="form-group">
+					<div class="form-group">
                         <label class="col-md-3 control-label" for="">Category Name <span class="text-orange">*</span></label>
                         <div class="col-md-8">
                             <select class="form-control" id="" name="category_id" required="1">
@@ -53,8 +53,6 @@
                         </div>
                     </div>
 
-
-                    
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="">Subcategory Description</label>
                         <div class="col-md-8">
@@ -99,7 +97,5 @@
         <!-- Bootstrap Forms Validation -->
     </div>
     <!-- .col-lg-6 -->
-
-
 
 </div>
