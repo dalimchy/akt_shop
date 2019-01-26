@@ -7058,3 +7058,6 @@ header {
   padding: 1px 4px !important;
   line-height: 22px !important;
 }
+.cate_pagination_container{
+  float: right;
+}
