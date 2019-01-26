@@ -15,7 +15,7 @@
                   <li><a data-toggle="tab" href="#list-container"><i class="icon fa fa-th-list"></i>List</a></li>
                 </ul>
               </div>
-              <!-- /.filter-tabs --> 
+              <!-- /.filter-tabs -->
             </div>
             <!-- /.col -->
             <div class="col col-sm-12 col-md-6">
@@ -32,9 +32,9 @@
                       </ul>
                     </div>
                   </div>
-                  <!-- /.fld --> 
+                  <!-- /.fld -->
                 </div>
-                <!-- /.lbl-cnt --> 
+                <!-- /.lbl-cnt -->
               </div>
               <!-- /.col -->
               <div class="col col-sm-3 col-md-6 no-padding">
@@ -56,11 +56,11 @@
                       </ul>
                     </div>
                   </div>
-                  <!-- /.fld --> 
+                  <!-- /.fld -->
                 </div>
-                <!-- /.lbl-cnt --> 
+                <!-- /.lbl-cnt -->
               </div>
-              <!-- /.col --> 
+              <!-- /.col -->
             </div>
             <!-- /.col -->
             <div class="col col-sm-6 col-md-4 text-right">
@@ -73,76 +73,74 @@
                   <li><a href="#">4</a></li>
                   <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
                 </ul>
-                <!-- /.list-inline --> 
+                <!-- /.list-inline -->
               </div>
               <!-- /.pagination-container --> </div>
-            <!-- /.col --> 
+            <!-- /.col -->
           </div>
-          <!-- /.row --> 
+          <!-- /.row -->
         </div>
         <div class="search-result-container ">
           <div id="myTabContent" class="tab-content category-list">
             <div class="tab-pane active " id="grid-container">
               <div class="category-product">
                 <div class="row">
-                    <?php $i = 0 ; foreach($all_product_info as $v_product){if($v_product->category_id == $category_view_id && $v_product->publication_status == 1 && $i < 12){$i++ ?> 
-                        <div class="col-sm-6 col-md-4 wow fadeInUp">
+                    <?php $i = 0 ;
+                      foreach($all_product_info as $v_product){
+                        if($v_product->category_id == $category_view_id && $v_product->publication_status == 1){$i++ ?>
+                        <div class="each_grid_cate_pro col-sm-6 col-md-4 wow fadeInUp" <?php  if($i > 10){ ?> style="display:none" <?php } ?> >
                             <div class="products">
-                            <div class="product" style="border:1px solid #d8d8d8; border-radius: 4px; padding:8px;">
-                                <div class="product-image">
-                                <div class="image"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><img  src="<?php echo base_url()?><?php echo $v_product->product_image?>" alt=""></a> </div>
-                                <!-- /.image -->
-                                
-                                <?php if($v_product->product_quantity < 1){?>
-                                  <div class="tag sale"><span>Sold</span></div>
-                                <?php }else if($v_product->pro_label == !null){?>
-                                  <div class="tag hot"><span><?php echo $v_product->pro_label; ?></span></div>
-                                <?php } ?>
-                                </div>
-                                <!-- /.product-image -->
-                                
-                                <div class="product-info text-left">
-                                <h3 class="name"><a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><?php echo $v_product->product_name?></a></h3>
-                                <div class="rating rateit-small"></div>
-                                <div class="description"></div>
-                                <div class="product-price"> <span class="price"> Tk. <?php if($v_product->product_new_price > 0){ echo $v_product->product_new_price;}else{ echo $v_product->product_price;} ?></span> <?php if($v_product->product_new_price > 0){ ?><span class="price-before-discount">Tk. <?php echo $v_product->product_price;?> </span> <?php } ?> </div>
-                                <!-- /.product-price --> 
-                                
-                                </div>
-                                <!-- /.product-info -->
-                                <div class="cart clearfix animate-effect">
-                                <div class="action">
-                                    <ul class="list-unstyled">
-                                    <li class="add-cart-button btn-group">
-                                        <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-                                        <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
-                                    </li>
-                                    <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                                    <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal"></i> </a> </li>
-                                    </ul>
-                                </div>
-                                <!-- /.action --> 
-                                </div>
-                                <!-- /.cart --> 
+                              <div class="product" style="border:1px solid #d8d8d8; border-radius: 4px; padding:8px;">
+                                  <div class="product-image">
+                                    <div class="image"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><img  src="<?php echo base_url()?><?php echo $v_product->product_image?>" alt=""></a> </div>
+
+                                    <?php if($v_product->product_quantity < 1){?>
+                                      <div class="tag sale"><span>Sold</span></div>
+                                    <?php }else if($v_product->pro_label == !null){?>
+                                      <div class="tag hot"><span><?php echo $v_product->pro_label; ?></span></div>
+                                    <?php } ?>
+                                  </div>
+                                  <div class="product-info text-left">
+                                    <h3 class="name"><a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><?php echo $v_product->product_name?></a></h3>
+                                    <div class="rating rateit-small"></div>
+                                    <div class="description"></div>
+                                    <div class="product-price"> <span class="price"> Tk. <?php if($v_product->product_new_price > 0){ echo $v_product->product_new_price;}else{ echo $v_product->product_price;} ?></span> <?php if($v_product->product_new_price > 0){ ?><span class="price-before-discount">Tk. <?php echo $v_product->product_price;?> </span> <?php } ?> </div>
+                                    <!-- /.product-price -->
+                                  </div>
+                                  <!-- /.product-info -->
+                                  <div class="cart clearfix animate-effect">
+                                    <div class="action">
+                                        <ul class="list-unstyled">
+                                          <li class="add-cart-button btn-group">
+                                            <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
+                                            <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                                          </li>
+                                          <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
+                                          <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal"></i> </a> </li>
+                                        </ul>
+                                    </div>
+                                    <!-- /.action -->
+                                  </div>
+                                  <!-- /.cart -->
+                              </div>
+                              <!-- /.product -->
+
                             </div>
-                            <!-- /.product --> 
-                            
-                            </div>
-                            <!-- /.products --> 
+                            <!-- /.products -->
                         </div>
                         <!-- /.item -->
                     <?php }}?>
                 </div>
-                <!-- /.row --> 
+                <!-- /.row -->
               </div>
-              <!-- /.category-product --> 
-              
+              <!-- /.category-product -->
+
             </div>
             <!-- /.tab-pane -->
-            
+
             <div class="tab-pane "  id="list-container">
               <div class="category-product">
-                    <?php $i = 0 ; foreach($all_product_info as $v_product){if($v_product->category_id == $category_view_id && $v_product->publication_status == 1 && $i < 12){$i++ ?> 
+                    <?php $i = 0 ; foreach($all_product_info as $v_product){if($v_product->category_id == $category_view_id && $v_product->publication_status == 1 && $i < 12){$i++ ?>
                         <div class="category-product-inner wow fadeInUp">
                             <div class="products">
                                 <div class="product-list product">
@@ -151,7 +149,7 @@
                                     <div class="product-image">
                                         <div class="image"> <img src="<?php echo base_url()?><?php echo $v_product->product_image?>" alt=""> </div>
                                     </div>
-                                    <!-- /.product-image --> 
+                                    <!-- /.product-image -->
                                     </div>
                                     <!-- /.col -->
                                     <div class="col col-sm-8 col-lg-8">
@@ -172,14 +170,14 @@
                                             <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal"></i> </a> </li>
                                             </ul>
                                         </div>
-                                        <!-- /.action --> 
+                                        <!-- /.action -->
                                         </div>
-                                        <!-- /.cart --> 
-                                        
+                                        <!-- /.cart -->
+
                                     </div>
-                                    <!-- /.product-info --> 
+                                    <!-- /.product-info -->
                                     </div>
-                                    <!-- /.col --> 
+                                    <!-- /.col -->
                                 </div>
                                 <!-- /.product-list-row -->
                                 <?php if($v_product->product_quantity < 1){?>
@@ -188,61 +186,89 @@
                                   <div class="tag hot"><span><?php echo $v_product->pro_label; ?></span></div>
                                 <?php } ?>
                                 </div>
-                                <!-- /.product-list --> 
+                                <!-- /.product-list -->
                             </div>
-                            <!-- /.products --> 
+                            <!-- /.products -->
                             </div>
                             <!-- /.category-product-inner -->
                     <?php }}?>
               </div>
-              <!-- /.category-product --> 
+              <!-- /.category-product -->
             </div>
-            <!-- /.tab-pane #list-container --> 
+            <!-- /.tab-pane #list-container -->
           </div>
           <!-- /.tab-content -->
           <div class="clearfix filters-container">
             <div class="text-right">
               <div class="pagination-container">
-                <ul class="list-inline list-unstyled">
-                  <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                <ul class="cate_pagination list-inline list-unstyled">
+                  <!-- <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
                   <li><a href="#">1</a></li>
                   <li class="active"><a href="#">2</a></li>
                   <li><a href="#">3</a></li>
                   <li><a href="#">4</a></li>
-                  <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                  <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li> -->
                 </ul>
-                <!-- /.list-inline --> 
+                <!-- /.list-inline -->
               </div>
               <!-- /.pagination-container --> </div>
-            <!-- /.text-right --> 
-            
+            <!-- /.text-right -->
+
           </div>
-          <!-- /.filters-container --> 
-          
+          <!-- /.filters-container -->
+
         </div>
-        <!-- /.search-result-container --> 
-        
+        <!-- /.search-result-container -->
+
       </div>
-      <!-- /.col --> 
+      <!-- /.col -->
     </div>
-    <!-- /.row --> 
+    <!-- /.row -->
     <!-- ============================================== BRANDS CAROUSEL ============================================== -->
     <div id="brands-carousel" class="logo-slider wow fadeInUp">
       <div class="logo-slider-inner">
         <div id="brand-slider" class="owl-carousel brand-slider custom-carousel owl-theme">
-        <?php foreach($all_brand as $v_brand){ ?> 
+        <?php foreach($all_brand as $v_brand){ ?>
           <div class="item m-t-15"> <a href="#" class="image"> <img style="width:166px; height:110px" data-echo="<?php echo base_url()?><?php echo $v_brand->brand_logo?>" src="<?php echo base_url()?><?php echo $v_brand->brand_logo?>" alt=""> </a> </div>
         <?php } ?>
           <!--/.item-->
         </div>
-        <!-- /.owl-carousel #logo-slider --> 
+        <!-- /.owl-carousel #logo-slider -->
       </div>
-      <!-- /.logo-slider-inner --> 
-      
+      <!-- /.logo-slider-inner -->
+
     </div>
-    <!-- /.logo-slider --> 
+    <!-- /.logo-slider -->
     <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->  </div>
-  <!-- /.container --> 
-  
+  <!-- /.container -->
+
 </div>
-<!-- /.body-content --> 
+<!-- /.body-content -->
+
+<script type="text/javascript">
+  var items = $('.each_grid_cate_pro');
+  var numItems = items.length;
+  var perPage = 10;
+  console.log(numItems);
+  $(function() {
+      $('.cate_pagination').pagination({
+          items: numItems,
+          itemsOnPage: perPage,
+          // displayedPages: 5,
+          currentPage: 1,
+          edges: 2,
+          cssStyle: 'light-theme',
+          // This is the actual page changing functionality.
+          onPageClick: function(pageNumber) {
+              // We need to show and hide `tr`s appropriately.
+              var showFrom = perPage * (pageNumber - 1);
+              var showTo = showFrom + perPage;
+
+              // We'll first hide everything...
+              items.hide()
+                 // ... and then only show the appropriate rows.
+                 .slice(showFrom, showTo).show();
+          }
+      });
+  });
+</script>

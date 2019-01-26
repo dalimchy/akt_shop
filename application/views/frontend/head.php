@@ -23,6 +23,9 @@ Trusted online shop in Bangladesh for mobiles, computers, fashion, electronics &
 <link rel="stylesheet" href="<?php echo base_url()?>assets/frontend/css/animate.min.css">
 <link rel="stylesheet" href="<?php echo base_url()?>assets/frontend/css/rateit.css">
 <link rel="stylesheet" href="<?php echo base_url()?>assets/frontend/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="<?php echo base_url()?>assets/frontend/css/simplePagination.css">
+
+<script src="<?php echo base_url()?>assets/frontend/js/jquery-1.11.1.min.js"></script>
 
 <!-- Icons/Glyphs -->
 <link rel="stylesheet" href="<?php echo base_url()?>assets/frontend/css/font-awesome.css">
@@ -34,49 +37,49 @@ Trusted online shop in Bangladesh for mobiles, computers, fashion, electronics &
 </head>
 <body class="cnt-home">
 <!-- ============================================== HEADER ============================================== -->
-<header class="header-style-1"> 
-  
+<header class="header-style-1">
+
   <!-- ============================================== TOP MENU ============================================== -->
   <div class="top-bar animate-dropdown">
     <div class="container">
       <div class="header-top-inner">
         <div class="cnt-account">
           <ul class="list-unstyled">
-            
+
             <li><a href="<?php echo base_url()?>shopping-cart"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
             <li><a href="<?php echo base_url()?>shopping-cart"><i class="icon fa fa-check"></i>Checkout</a></li>
             <?php $akt_customar_id = $this->session->userdata('customer_id'); if ($akt_customar_id == NULL ) { ?>
-                <li><a href="<?php echo base_url()?>sign-in"><i class="icon fa fa-lock"></i>Login</a></li>  
-            <?php }else{ ?> 
+                <li><a href="<?php echo base_url()?>sign-in"><i class="icon fa fa-lock"></i>Login</a></li>
+            <?php }else{ ?>
                 <li id="userStatus" data-id="<?php echo $akt_customar_id ?>" data-name="<?php echo $this->session->userdata('customer_name')?>"><a href="#"><i class="icon fa fa-user"></i><?php echo $this->session->userdata('customer_name')?></a></li>
                 <li><a href="<?php echo base_url()?>wish-list"><i class="icon fa fa-heart"></i>My Wishlist</a></li>
                 <li><a href="<?php echo base_url()?>sign-out"><i class="icon fa fa-unlock"></i>Logout</a></li>
             <?php } ?>
-            
+
           </ul>
         </div>
         <!-- /.cnt-account -->
 
         <div class="clearfix"></div>
       </div>
-      <!-- /.header-top-inner --> 
+      <!-- /.header-top-inner -->
     </div>
-    <!-- /.container --> 
+    <!-- /.container -->
   </div>
-  <!-- /.header-top --> 
+  <!-- /.header-top -->
   <!-- ============================================== TOP MENU : END ============================================== -->
   <div class="main-header">
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-3 logo-holder"> 
+        <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
           <!-- ============================================================= LOGO ============================================================= -->
           <div class="logo"> <a href="<?php echo base_url()?>"> <img src="<?php echo base_url()?>assets/frontend/images/akt_shop.png" alt="logo" style="width: 100%;height: 85px;margin-top: -20px;"> </a> </div>
-          <!-- /.logo --> 
+          <!-- /.logo -->
           <!-- ============================================================= LOGO : END ============================================================= --> </div>
         <!-- /.logo-holder -->
-        
-        <div class="col-xs-12 col-sm-12 col-md-6 top-search-holder"> 
-          <!-- /.contact-row --> 
+
+        <div class="col-xs-12 col-sm-12 col-md-6 top-search-holder">
+          <!-- /.contact-row -->
           <!-- ============================================================= SEARCH AREA ============================================================= -->
           <div class="search-area">
             <form action="<?php echo base_url()?>search" method="POST">
@@ -84,28 +87,28 @@ Trusted online shop in Bangladesh for mobiles, computers, fashion, electronics &
                 <!-- <ul class="categories-filter animate-dropdown">
                   <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="category.html">Categories <b class="caret"></b></a>
                     <ul class="dropdown-menu" role="menu" >
-                    <?php 
+                    <?php
                         foreach($all_category_info as $v_cate){ if($v_cate->publication_status == 1){?>
                           <li role="presentation"><a role="menuitem" tabindex="<?php echo $v_cate->category_id; ?>" value="<?php echo $v_cate->category_id; ?>" href="#"></a><?php echo $v_cate->category_name; ?></li>
                       <?php } }?>
                     </ul>
                   </li>
                 </ul> -->
-                <?php if($title == 'search page'){?> 
+                <?php if($title == 'search page'){?>
                   <input class="search-field" name="search_value" value="<?php echo $search_value ?>" placeholder="Search here..." />
-                <?php }else { ?> 
+                <?php }else { ?>
                   <input class="search-field" name="search_value" placeholder="Search here..." />
                 <?php }?>
                  <button class="search-button" type="submit"></button> </div>
             </form>
           </div>
-          <!-- /.search-area --> 
+          <!-- /.search-area -->
           <!-- ============================================================= SEARCH AREA : END ============================================================= --> </div>
         <!-- /.top-search-holder -->
-        
-        <div class="col-xs-12 col-sm-12 col-md-3 animate-dropdown top-cart-row" style="text-align:center;"> 
+
+        <div class="col-xs-12 col-sm-12 col-md-3 animate-dropdown top-cart-row" style="text-align:center;">
           <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
-          
+
           <div class="dropdown dropdown-cart" style="float:unset;"> <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
             <div class="items-cart-inner">
               <div class="basket"> <i class="glyphicon glyphicon-shopping-cart"></i> </div>
@@ -116,7 +119,7 @@ Trusted online shop in Bangladesh for mobiles, computers, fashion, electronics &
             <ul class="dropdown-menu">
               <li>
                 <div class="cart-item product-summary" id="cartItemListmini">
-                  
+
                 </div>
                 <!-- /.cart-item -->
                 <div class="clearfix"></div>
@@ -125,31 +128,31 @@ Trusted online shop in Bangladesh for mobiles, computers, fashion, electronics &
                   <div class="pull-right"> <span class="text">Sub Total :</span><span class='price'>Tk. <span class="totalAmountOfcart" id="dropdownTotalmini">0</span></span> </div>
                   <div class="clearfix"></div>
                   <a href="<?php echo base_url()?>shopping-cart" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
-                <!-- /.cart-total--> 
-                
+                <!-- /.cart-total-->
+
               </li>
             </ul>
-            <!-- /.dropdown-menu--> 
+            <!-- /.dropdown-menu-->
           </div>
-          <!-- /.dropdown-cart --> 
-          
+          <!-- /.dropdown-cart -->
+
           <!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= --> </div>
-        <!-- /.top-cart-row --> 
+        <!-- /.top-cart-row -->
       </div>
-      <!-- /.row --> 
-      
+      <!-- /.row -->
+
     </div>
-    <!-- /.container --> 
-    
+    <!-- /.container -->
+
   </div>
-  <!-- /.main-header --> 
-  
+  <!-- /.main-header -->
+
   <!-- ============================================== NAVBAR ============================================== -->
   <div class="header-nav animate-dropdown">
     <div class="container">
       <div class="yamm navbar navbar-default" role="navigation">
         <div class="navbar-header">
-       <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> 
+       <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
         </div>
         <div class="nav-bg-class">
@@ -157,13 +160,13 @@ Trusted online shop in Bangladesh for mobiles, computers, fashion, electronics &
             <div class="nav-outer">
               <ul class="nav navbar-nav">
                 <li class="<?php if($title == "index"){ echo 'active'; }?> dropdown yamm-fw"><a href="<?php echo base_url()?>"> <i class="glyphicon glyphicon-home"></i>  Home</a> </li>
-                <?php foreach($total_menu as $vmenu){if($vmenu->status == 1){ ?> 
-                    <li class="dropdown yamm-fw"> <a href="#" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown"><?php echo $vmenu->item_name; ?></a> 
+                <?php foreach($total_menu as $vmenu){if($vmenu->status == 1){ ?>
+                    <li class="dropdown yamm-fw"> <a href="#" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown"><?php echo $vmenu->item_name; ?></a>
                         <ul class="dropdown-menu container">
                         <li>
                           <div class="yamm-content ">
                             <div class="row">
-                            <?php foreach($all_category_info as $v_cate){if($v_cate->menu_id == $vmenu->id && $v_cate->publication_status == 1){ ?> 
+                            <?php foreach($all_category_info as $v_cate){if($v_cate->menu_id == $vmenu->id && $v_cate->publication_status == 1){ ?>
                               <div class="col-xs-12 col-sm-6 col-md-3 col-menu">
                                 <h2 class="title" style="margin:2px 0px"><a href="<?php echo base_url()?>category-view/<?php echo $v_cate->category_id ?>" style="padding:0px;"><?php echo $v_cate->category_name;?></a></h2>
                                 <ul class="links">
@@ -173,7 +176,7 @@ Trusted online shop in Bangladesh for mobiles, computers, fashion, electronics &
                                 </ul>
                               </div>
                               <?php }}?>
-                              <!-- /.yamm-content --> 
+                              <!-- /.yamm-content -->
                             </div>
                           </div>
                         </li>
@@ -185,21 +188,21 @@ Trusted online shop in Bangladesh for mobiles, computers, fashion, electronics &
               <!-- /.navbar-nav -->
               <div class="clearfix"></div>
             </div>
-            <!-- /.nav-outer --> 
+            <!-- /.nav-outer -->
           </div>
-          <!-- /.navbar-collapse --> 
-          
+          <!-- /.navbar-collapse -->
+
         </div>
-        <!-- /.nav-bg-class --> 
+        <!-- /.nav-bg-class -->
       </div>
-      <!-- /.navbar-default --> 
+      <!-- /.navbar-default -->
     </div>
-    <!-- /.container-class --> 
-    
+    <!-- /.container-class -->
+
   </div>
-  <!-- /.header-nav --> 
-  <!-- ============================================== NAVBAR : END ============================================== --> 
-  
+  <!-- /.header-nav -->
+  <!-- ============================================== NAVBAR : END ============================================== -->
+
 </header>
 <script>
   var myAllProducts = <?php echo json_encode($all_product_info); ?>;

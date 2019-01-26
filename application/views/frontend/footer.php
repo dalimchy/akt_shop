@@ -8,7 +8,7 @@
             <h4 class="module-title">Contact Us</h4>
           </div>
           <!-- /.module-heading -->
-          
+
           <div class="module-body">
             <ul class="toggle-footer" style="">
               <li class="media">
@@ -30,16 +30,16 @@
               </li>
             </ul>
           </div>
-          <!-- /.module-body --> 
+          <!-- /.module-body -->
         </div>
         <!-- /.col -->
-        
+
         <div class="col-xs-12 col-sm-6 col-md-3">
           <div class="module-heading">
             <h4 class="module-title">Customer Service</h4>
           </div>
           <!-- /.module-heading -->
-          
+
           <div class="module-body">
             <ul class='list-unstyled'>
               <li class="first"><a href="#" title="Contact us">My Account</a></li>
@@ -49,16 +49,16 @@
               <li class="last"><a href="#" title="Where is my order?">Help Center</a></li>
             </ul>
           </div>
-          <!-- /.module-body --> 
+          <!-- /.module-body -->
         </div>
         <!-- /.col -->
-        
+
         <div class="col-xs-12 col-sm-6 col-md-3">
           <div class="module-heading">
             <h4 class="module-title">Corporation</h4>
           </div>
           <!-- /.module-heading -->
-          
+
           <div class="module-body">
             <ul class='list-unstyled'>
               <li class="first"><a title="Your Account" href="#">About us</a></li>
@@ -68,16 +68,16 @@
               <li class="last"><a title="Orders History" href="#">Advanced Search</a></li>
             </ul>
           </div>
-          <!-- /.module-body --> 
+          <!-- /.module-body -->
         </div>
         <!-- /.col -->
-        
+
         <div class="col-xs-12 col-sm-6 col-md-3">
           <div class="module-heading">
             <h4 class="module-title">Why Choose Us</h4>
           </div>
           <!-- /.module-heading -->
-          
+
           <div class="module-body">
             <ul class='list-unstyled'>
               <li class="first"><a href="#" title="About us">Shopping Guide</a></li>
@@ -87,7 +87,7 @@
               <li class=" last"><a href="contact-us.html" title="Suppliers">Contact Us</a></li>
             </ul>
           </div>
-          <!-- /.module-body --> 
+          <!-- /.module-body -->
         </div>
       </div>
     </div>
@@ -115,29 +115,31 @@
             <li><img src="<?php echo base_url()?>assets/frontend/images/payments/5.png" alt=""></li>
           </ul>
         </div>
-        <!-- /.payment-methods --> 
+        <!-- /.payment-methods -->
       </div>
     </div>
   </div>
 </footer>
-<!-- ============================================================= FOOTER : END============================================================= --> 
+<!-- ============================================================= FOOTER : END============================================================= -->
 
-<!-- For demo purposes – can be removed on production --> 
+<!-- For demo purposes – can be removed on production -->
 
-<!-- For demo purposes – can be removed on production : End --> 
+<!-- For demo purposes – can be removed on production : End -->
 
-<!-- JavaScripts placed at the end of the document so the pages load faster --> 
-<script src="<?php echo base_url()?>assets/frontend/js/jquery-1.11.1.min.js"></script> 
-<script src="<?php echo base_url()?>assets/frontend/js/bootstrap.min.js"></script> 
-<script src="<?php echo base_url()?>assets/frontend/js/bootstrap-hover-dropdown.min.js"></script> 
-<script src="<?php echo base_url()?>assets/frontend/js/owl.carousel.min.js"></script> 
-<script src="<?php echo base_url()?>assets/frontend/js/echo.min.js"></script> 
-<script src="<?php echo base_url()?>assets/frontend/js/jquery.easing-1.3.min.js"></script> 
-<script src="<?php echo base_url()?>assets/frontend/js/bootstrap-slider.min.js"></script> 
-<script src="<?php echo base_url()?>assets/frontend/js/jquery.rateit.min.js"></script> 
-<script type="text/javascript" src="<?php echo base_url()?>assets/frontend/js/lightbox.min.js"></script> 
-<script src="<?php echo base_url()?>assets/frontend/js/bootstrap-select.min.js"></script> 
-<script src="<?php echo base_url()?>assets/frontend/js/wow.min.js"></script> 
+<!-- JavaScripts placed at the end of the document so the pages load faster -->
+<!-- <script src="<?php echo base_url()?>assets/frontend/js/jquery-1.11.1.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<script src="<?php echo base_url()?>assets/frontend/js/jquery.simplePagination.js"></script>
+<script src="<?php echo base_url()?>assets/frontend/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url()?>assets/frontend/js/bootstrap-hover-dropdown.min.js"></script>
+<script src="<?php echo base_url()?>assets/frontend/js/owl.carousel.min.js"></script>
+<script src="<?php echo base_url()?>assets/frontend/js/echo.min.js"></script>
+<script src="<?php echo base_url()?>assets/frontend/js/jquery.easing-1.3.min.js"></script>
+<script src="<?php echo base_url()?>assets/frontend/js/bootstrap-slider.min.js"></script>
+<script src="<?php echo base_url()?>assets/frontend/js/jquery.rateit.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>assets/frontend/js/lightbox.min.js"></script>
+<script src="<?php echo base_url()?>assets/frontend/js/bootstrap-select.min.js"></script>
+<script src="<?php echo base_url()?>assets/frontend/js/wow.min.js"></script>
 <script src="<?php echo base_url()?>assets/frontend/js/scripts.js"></script>
 <script src="<?php echo base_url()?>assets/frontend/js/akt_custom.js"></script>
 </body>
