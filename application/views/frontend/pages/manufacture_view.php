@@ -63,19 +63,20 @@
               <!-- /.col --> 
             </div>
             <!-- /.col -->
-            <div class="col col-sm-6 col-md-4 text-right">
-              <div class="pagination-container">
-                <ul class="list-inline list-unstyled">
-                  <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                  <li><a href="#">1</a></li>
-                  <li class="active"><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                </ul>
+            <!-- <div class="col col-sm-6 col-md-4 text-right"> -->
+              <!-- <div class="pagination-container"> -->
+                <!-- <ul class="list-inline list-unstyled"> -->
+                  <!-- <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li> -->
+                  <!-- <li><a href="#">1</a></li> -->
+                  <!-- <li class="active"><a href="#">2</a></li> -->
+                  <!-- <li><a href="#">3</a></li> -->
+                  <!-- <li><a href="#">4</a></li> -->
+                  <!-- <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li> -->
+                <!-- </ul> -->
                 <!-- /.list-inline --> 
-              </div>
-              <!-- /.pagination-container --> </div>
+              <!-- </div> -->
+              <!-- /.pagination-container --> 
+            <!-- </div> -->
             <!-- /.col --> 
           </div>
           <!-- /.row --> 
@@ -85,12 +86,14 @@
             <div class="tab-pane active " id="grid-container">
               <div class="category-product">
                 <div class="row">
-                    <?php $i = 0 ; foreach($all_product_info as $v_product){if($v_product->manufacture_id == $manufacture_view_id && $v_product->publication_status == 1 && $i < 12){$i++ ?> 
-                        <div class="col-sm-6 col-md-4 wow fadeInUp">
+                    <?php $i = 0 ; 
+                    foreach($all_product_info as $v_product){
+                      if($v_product->manufacture_id == $manufacture_view_id && $v_product->publication_status == 1){$i++ ?> 
+                        <div class="each_grid_subcate_pro col-sm-6 col-md-4 wow fadeInUp" <?php  if($i > 10){ ?> style="display:none" <?php } ?> >
                             <div class="products">
                             <div class="product" style="border:1px solid #d8d8d8; border-radius: 4px; padding:8px;">
                                 <div class="product-image">
-                                <div class="image"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><img  src="<?php echo base_url()?><?php echo $v_product->product_image?>" alt=""></a> </div>
+                                <div class="image pro_img_size"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><img  src="<?php echo base_url()?><?php echo $v_product->product_image?>" alt=""></a> </div>
                                 <!-- /.image -->
                                 
                                 <?php if($v_product->product_quantity < 1){?>
@@ -149,7 +152,7 @@
                                 <div class="row product-list-row">
                                     <div class="col col-sm-4 col-lg-4">
                                     <div class="product-image">
-                                        <div class="image"> <img src="<?php echo base_url()?><?php echo $v_product->product_image?>" alt=""> </div>
+                                        <div class="image pro_img_size"> <img src="<?php echo base_url()?><?php echo $v_product->product_image?>" alt=""> </div>
                                     </div>
                                     <!-- /.product-image --> 
                                     </div>
@@ -202,14 +205,14 @@
           <!-- /.tab-content -->
           <div class="clearfix filters-container">
             <div class="text-right">
-              <div class="pagination-container">
-                <ul class="list-inline list-unstyled">
-                  <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                  <li><a href="#">1</a></li>
-                  <li class="active"><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+              <div class="pagination-container subcate_pagination_container">
+                <ul class="subcate_pagination list-inline list-unstyled">
+                  <!-- <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li> -->
+                  <!-- <li><a href="#">1</a></li> -->
+                  <!-- <li class="active"><a href="#">2</a></li> -->
+                  <!-- <li><a href="#">3</a></li> -->
+                  <!-- <li><a href="#">4</a></li> -->
+                  <!-- <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li> -->
                 </ul>
                 <!-- /.list-inline --> 
               </div>
@@ -246,3 +249,31 @@
   
 </div>
 <!-- /.body-content --> 
+
+<script type="text/javascript">
+  var items = $('.each_grid_subcate_pro');
+  var numItems = items.length;
+  var perPage = 10;
+  console.log(numItems);
+  $(function() {
+      $('.subcate_pagination').pagination({
+          items: numItems,
+          itemsOnPage: perPage,
+          // displayedPages: 5,
+          currentPage: 1,
+          edges: 2,
+          cssStyle: 'light-theme',
+          // This is the actual page changing functionality.
+          onPageClick: function(pageNumber) {
+              // We need to show and hide `tr`s appropriately.
+              var showFrom = perPage * (pageNumber - 1);
+              var showTo = showFrom + perPage;
+
+              // We'll first hide everything...
+              items.hide()
+                 // ... and then only show the appropriate rows.
+                 .slice(showFrom, showTo).show();
+          }
+      });
+  });
+</script>

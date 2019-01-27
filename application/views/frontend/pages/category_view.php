@@ -93,7 +93,7 @@
                             <div class="products">
                               <div class="product" style="border:1px solid #d8d8d8; border-radius: 4px; padding:8px;">
                                   <div class="product-image">
-                                    <div class="image"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><img  src="<?php echo base_url()?><?php echo $v_product->product_image?>" alt=""></a> </div>
+                                    <div class="image pro_img_size"> <a href="<?php echo base_url()?>product-view/<?php echo $v_product->product_id ?>"><img  src="<?php echo base_url()?><?php echo $v_product->product_image?>" alt=""></a> </div>
 
                                     <?php if($v_product->product_quantity < 1){?>
                                       <div class="tag sale"><span>Sold</span></div>
@@ -148,7 +148,7 @@
                                 <div class="row product-list-row">
                                     <div class="col col-sm-4 col-lg-4">
                                     <div class="product-image">
-                                        <div class="image"> <img src="<?php echo base_url()?><?php echo $v_product->product_image?>" alt=""> </div>
+                                        <div class="image pro_img_size"> <img src="<?php echo base_url()?><?php echo $v_product->product_image?>" alt=""> </div>
                                     </div>
                                     <!-- /.product-image -->
                                     </div>
