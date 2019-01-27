@@ -298,7 +298,7 @@
                 <label class="sr-only" for="exampleInputEmail1">Email address</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Subscribe to our newsletter">
               </div>
-              <button class="btn btn-primary">Subscribe</button>
+              <button class="btn btn-primary form-control">Subscribe</button>
             </form>
           </div>
           <!-- /.sidebar-widget-body --> 
