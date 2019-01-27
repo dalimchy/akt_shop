@@ -84,12 +84,12 @@ function shoppingProductHtml(data,price){
     var html = '<tr class="miniCartItem'+data.product_id+'">';
     html +=		'<td class="romove-item"><a onclick="removeCart('+data.product_id+')" title="cancel" class="icon"><i class="fa fa-trash-o"></i></a></td>';
 	html +=		'<td class="cart-image">';
-	html +=				'<a class="entry-thumbnail" href="detail.html">';
+	html +=				'<a class="entry-thumbnail" href="#">';
     html +=			    '<img src="'+baseUrl+''+data.product_image+'" alt="">';
     html +=			'</a>';
     html +=		'</td>';
     html +=		'<td class="cart-product-name-info">';
-    html +=			'<h4 class="cart-product-description"><a href="detail.html">'+data.product_name+'</a></h4>';
+    html +=			'<h4 class="cart-product-description"><a href="#">'+data.product_name+'</a></h4>';
     html +=			'<div class="row">';
     html +=				'<div class="col-sm-4">';
     html +=					'<div class="rating rateit-small"></div>';

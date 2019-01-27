@@ -384,7 +384,7 @@
                   <!-- /.product-image -->
                   
                   <div class="product-info text-left">
-                    <h3 class="name"><a href="detail.html"><?php echo $v_product->product_name ?></a></h3>
+                    <h3 class="name"><a href="#"><?php echo $v_product->product_name ?></a></h3>
                     <div class="rating rateit-small"></div>
                     <div class="description"></div>
                     <div class="product-price"> <span class="price"> Tk. <?php if($v_product->product_new_price > 0){ echo $v_product->product_new_price;}else{ echo $v_product->product_price;} ?></span> <?php if($v_product->product_new_price > 0){ ?><span class="price-before-discount">Tk. <?php echo $v_product->product_price;?> </span> <?php } ?> </div>
@@ -400,7 +400,7 @@
                           <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                         </li>
                         <li class="lnk wishlist"> <a class="add-to-cart" onclick="addToWishlist(<?php echo $v_product->product_id?>)" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                        <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                        <li class="lnk"> <a class="add-to-cart" href="#" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
                       </ul>
                     </div>
                     <!-- /.action --> 
@@ -440,7 +440,7 @@
                   <!-- /.product-image -->
                   
                   <div class="product-info text-left">
-                    <h3 class="name"><a href="detail.html"><?php echo $v_product->product_name ?></a></h3>
+                    <h3 class="name"><a href="#"><?php echo $v_product->product_name ?></a></h3>
                     <div class="rating rateit-small"></div>
                     <div class="description"></div>
                     <div class="product-price"> <span class="price"> Tk. <?php if($v_product->product_new_price > 0){ echo $v_product->product_new_price;}else{ echo $v_product->product_price;} ?></span> <?php if($v_product->product_new_price > 0){ ?><span class="price-before-discount">Tk. <?php echo $v_product->product_price;?> </span> <?php } ?> </div>
@@ -456,7 +456,7 @@
                           <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                         </li>
                         <li class="lnk wishlist"> <a class="add-to-cart" onclick="addToWishlist(<?php echo $v_product->product_id?>)" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                        <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                        <li class="lnk"> <a class="add-to-cart" href="#" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
                       </ul>
                     </div>
                     <!-- /.action --> 
@@ -515,7 +515,7 @@
                         <!-- /.product-image -->
                         
                         <div class="product-info text-left">
-                          <h3 class="name"><a href="detail.html"><?php echo $v_product->product_name ?></a></h3>
+                          <h3 class="name"><a href="#"><?php echo $v_product->product_name ?></a></h3>
                           <div class="rating rateit-small"></div>
                           <div class="description"></div>
                           <div class="product-price"> <span class="price"> Tk. <?php if($v_product->product_new_price > 0){ echo $v_product->product_new_price;}else{ echo $v_product->product_price;} ?></span> <?php if($v_product->product_new_price > 0){ ?><span class="price-before-discount">Tk. <?php echo $v_product->product_price;?> </span> <?php } ?> </div>
@@ -531,7 +531,7 @@
                                 <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                               </li>
                               <li class="lnk wishlist"> <a class="add-to-cart" onclick="addToWishlist(<?php echo $v_product->product_id?>)" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                              <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                              <li class="lnk"> <a class="add-to-cart" href="#" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
                             </ul>
                           </div>
                           <!-- /.action --> 
@@ -577,7 +577,7 @@
                               <!-- /.product-image -->
                               
                               <div class="product-info text-left">
-                                <h3 class="name"><a href="detail.html"><?php echo $v_product->product_name ?></a></h3>
+                                <h3 class="name"><a href="#"><?php echo $v_product->product_name ?></a></h3>
                                 <div class="rating rateit-small"></div>
                                 <div class="description"></div>
                                 <div class="product-price"> <span class="price"> Tk. <?php if($v_product->product_new_price > 0){ echo $v_product->product_new_price;}else{ echo $v_product->product_price;} ?></span> <?php if($v_product->product_new_price > 0){ ?><span class="price-before-discount">Tk. <?php echo $v_product->product_price;?> </span> <?php } ?> </div>
@@ -593,7 +593,7 @@
                                       <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                                     </li>
                                     <li class="lnk wishlist"> <a class="add-to-cart" onclick="addToWishlist(<?php echo $v_product->product_id?>)" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                                    <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                                    <li class="lnk"> <a class="add-to-cart" href="#" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
                                   </ul>
                                 </div>
                                 <!-- /.action --> 
