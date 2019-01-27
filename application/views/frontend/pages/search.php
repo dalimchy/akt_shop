@@ -63,19 +63,20 @@
               <!-- /.col --> 
             </div>
             <!-- /.col -->
-            <div class="col col-sm-6 col-md-4 text-right">
-              <div class="pagination-container">
-                <ul class="list-inline list-unstyled">
-                  <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                  <li><a href="#">1</a></li>
-                  <li class="active"><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                </ul>
+            <!-- <div class="col col-sm-6 col-md-4 text-right"> -->
+              <!-- <div class="pagination-container"> -->
+                <!-- <ul class="list-inline list-unstyled"> -->
+                  <!-- <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li> -->
+                  <!-- <li><a href="#">1</a></li> -->
+                  <!-- <li class="active"><a href="#">2</a></li> -->
+                  <!-- <li><a href="#">3</a></li> -->
+                  <!-- <li><a href="#">4</a></li> -->
+                  <!-- <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li> -->
+                <!-- </ul> -->
                 <!-- /.list-inline --> 
-              </div>
-              <!-- /.pagination-container --> </div>
+              <!-- </div> -->
+              <!-- /.pagination-container --> 
+            <!-- </div> -->
             <!-- /.col --> 
           </div>
           <!-- /.row --> 
@@ -85,8 +86,10 @@
             <div class="tab-pane active " id="grid-container">
               <div class="category-product">
                 <div class="row">
-                    <?php $i = 0 ; foreach($search_result as $v_product){if($v_product->publication_status == 1 && $i < 12){$i++ ?> 
-                        <div class="col-sm-6 col-md-4 wow fadeInUp">
+                    <?php $i = 0 ; 
+                    foreach($search_result as $v_product){
+                      if($v_product->publication_status == 1){$i++ ?> 
+                        <div class="each_grid_search_pro col-sm-6 col-md-4 wow fadeInUp" <?php  if($i > 20){ ?> style="display:none" <?php } ?> >
                             <div class="products">
                             <div class="product">
                                 <div class="product-image">
@@ -202,14 +205,14 @@
           <!-- /.tab-content -->
           <div class="clearfix filters-container">
             <div class="text-right">
-              <div class="pagination-container">
-                <ul class="list-inline list-unstyled">
-                  <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                  <li><a href="#">1</a></li>
-                  <li class="active"><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+              <div class="pagination-container cate_pagination_container">
+                <ul class="search_pagination list-inline list-unstyled">
+                  <!-- <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li> -->
+                  <!-- <li><a href="#">1</a></li> -->
+                  <!-- <li class="active"><a href="#">2</a></li> -->
+                  <!-- <li><a href="#">3</a></li> -->
+                  <!-- <li><a href="#">4</a></li> -->
+                  <!-- <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li> -->
                 </ul>
                 <!-- /.list-inline --> 
               </div>
@@ -246,3 +249,32 @@
   
 </div>
 <!-- /.body-content --> 
+
+
+<script type="text/javascript">
+  var items = $('.each_grid_search_pro');
+  var numItems = items.length;
+  var perPage = 20;
+  console.log(numItems);
+  $(function() {
+      $('.search_pagination').pagination({
+          items: numItems,
+          itemsOnPage: perPage,
+          // displayedPages: 5,
+          currentPage: 1,
+          edges: 2,
+          cssStyle: 'light-theme',
+          // This is the actual page changing functionality.
+          onPageClick: function(pageNumber) {
+              // We need to show and hide `tr`s appropriately.
+              var showFrom = perPage * (pageNumber - 1);
+              var showTo = showFrom + perPage;
+
+              // We'll first hide everything...
+              items.hide()
+                 // ... and then only show the appropriate rows.
+                 .slice(showFrom, showTo).show();
+          }
+      });
+  });
+</script>
