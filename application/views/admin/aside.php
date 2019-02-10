@@ -30,6 +30,19 @@
                                 </li>
 
                                 <li class="nav-item nav-item-has-subnav <?php if($title == 'Add Category' || $title == 'Manage Categories' ){?>active open<?php }?>">
+                                    <a href="javascript:void(0)"><i class="ion-ios-pricetags"></i> Slider</a>
+                                    <ul class="nav nav-subnav">
+                                        <li>
+                                            <a href="<?php echo base_url('/add-slide')?>">Add Slide</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="<?php echo base_url('/slide-gallery')?>">Slider Gallery</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item nav-item-has-subnav <?php if($title == 'Add Category' || $title == 'Manage Categories' ){?>active open<?php }?>">
                                     <a href="javascript:void(0)"><i class="ion-ios-pricetags"></i> Category</a>
                                     <ul class="nav nav-subnav">
                                         <li>

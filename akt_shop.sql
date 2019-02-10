@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 24, 2019 at 06:38 AM
+-- Generation Time: Feb 10, 2019 at 01:46 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -323,6 +323,20 @@ CREATE TABLE `tbl_review` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_slider`
+--
+
+CREATE TABLE `tbl_slider` (
+  `slide_id` int(11) NOT NULL,
+  `sort_title` varchar(100) NOT NULL,
+  `long_title` varchar(150) NOT NULL,
+  `slide_desc` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_wishlist`
 --
 
@@ -398,6 +412,12 @@ ALTER TABLE `tbl_review`
   ADD PRIMARY KEY (`review_id`);
 
 --
+-- Indexes for table `tbl_slider`
+--
+ALTER TABLE `tbl_slider`
+  ADD PRIMARY KEY (`slide_id`);
+
+--
 -- Indexes for table `tbl_wishlist`
 --
 ALTER TABLE `tbl_wishlist`
@@ -466,6 +486,12 @@ ALTER TABLE `tbl_product`
 --
 ALTER TABLE `tbl_review`
   MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_slider`
+--
+ALTER TABLE `tbl_slider`
+  MODIFY `slide_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_wishlist`
