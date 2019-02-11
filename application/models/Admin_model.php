@@ -627,4 +627,17 @@ class Admin_model extends CI_Model {
 		$this->db->where('id',$id);
 		$this->db->update('main_menu');
 	}
+
+	public function save_slide($data)
+	{
+		$this->db->insert('tbl_slider', $data);
+	}
+
+	public function slide_gallery()
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_slider');
+		$query = $this->db->get()->result();
+		return $query;
+	}
 }

@@ -584,4 +584,50 @@ class Supper_admin extends CI_Controller {
 		redirect('main-menu');
 	}
 
+	public function add_slide()
+	{
+		$data = array();
+		$data['title'] = 'Add Slider';
+		$data["admin_main_content"] = $this->load->view('admin/pages/add_slide', $data, true);
+		$this->load->view('admin/admin_master', $data);
+	}
+
+	public function save_slide()
+	{
+		$data = array();
+		$data['short_title'] = $this->input->post('short_title',true);
+		$data['long_title'] = $this->input->post('long_title',true);
+		$data['slide_desc'] = $this->input->post('slide_desc',true);
+		if ($_FILES['slide_img']['name'] != '') {
+			# code...
+			$config = array(
+				'upload_path' 	=> 'upload/slider/',
+				'allowed_types' => 'jpg|png|jpeg',
+				'max_size' 		=> 2048,
+				'file_name' 	=> time().'_'.$_FILES['slide_img']['name'],
+			);
+
+			$this->load->library('upload', $config);
+
+			if ( ! $this->upload->do_upload('slide_img')) {
+				$myerror = array('error' =>  $this->upload->display_errors());
+				$this->session->set_userdata($myerror);
+			}else {
+				$img =  $this->upload->data();
+				$data['slide_img'] = $config['upload_path'].$img['file_name'];
+			}
+		}
+		$this->admin_model->save_slide($data);
+		redirect('add-slide');
+	}
+
+	public function slide_gallery()
+	{
+		$data = array();
+		$data['title'] = 'Slide Gallery';
+		$data['each_slide_img'] = $this->admin_model->slide_gallery();
+		$data["admin_main_content"] = $this->load->view('admin/pages/slide_gallery', $data, true);
+		$this->load->view('admin/admin_master', $data);
+	}
+
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 10, 2019 at 01:46 PM
+-- Generation Time: Feb 11, 2019 at 08:35 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -328,11 +328,22 @@ CREATE TABLE `tbl_review` (
 
 CREATE TABLE `tbl_slider` (
   `slide_id` int(11) NOT NULL,
-  `sort_title` varchar(100) NOT NULL,
+  `short_title` varchar(100) NOT NULL,
   `long_title` varchar(150) NOT NULL,
+  `slide_img` varchar(255) NOT NULL,
   `slide_desc` varchar(255) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '0',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_slider`
+--
+
+INSERT INTO `tbl_slider` (`slide_id`, `short_title`, `long_title`, `slide_img`, `slide_desc`, `status`, `created_at`) VALUES
+(4, 'check2', 'check2', 'upload/slider/1549867483_david-becker-676886-unsplash.jpg', '2222', 0, '2019-02-11 06:44:43'),
+(5, 'check', 'check', 'upload/slider/1549870418_anthony-delanoix-222456-unsplash.jpg', 'rtyu', 0, '2019-02-11 07:33:38'),
+(6, 'check3', 'check3', 'upload/slider/1549870446_justin-leibow-62-unsplash.jpg', 'asdf', 0, '2019-02-11 07:34:06');
 
 -- --------------------------------------------------------
 
@@ -491,7 +502,7 @@ ALTER TABLE `tbl_review`
 -- AUTO_INCREMENT for table `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
-  MODIFY `slide_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `slide_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_wishlist`

@@ -97,7 +97,9 @@ $route['brands'] = 'supper_admin/add_brand';
 $route['customers'] = 'supper_admin/show_customers';
 $route['main-menu'] = 'supper_admin/main_menu';
 
-
+$route['add-slide'] = 'supper_admin/add_slide';
+$route['save-slide'] = 'supper_admin/save_slide';
+$route['slide-gallery'] = 'supper_admin/slide_gallery';
 
 
 
