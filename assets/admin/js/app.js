@@ -172,7 +172,7 @@ var App = function() {
 							height: $drawerHeight,
 							color: App.colors.text_muted,
 							size: '5px',
-							opacity: .5,
+							opacity: 0.5,
 							wheelStep: 15,
 							distance: '2px',
 							railVisible: false,
@@ -184,7 +184,7 @@ var App = function() {
 					// ..else resize scrolling height
 					$drawerScrollArea
 						.add( $drawerScrollArea.parent() )
-						.css( 'height', $drawerHeight )
+						.css( 'height', $drawerHeight );
 				}
 
 			} else {
@@ -709,7 +709,7 @@ var App = function() {
 		jQuery( '.js-draggable-items' ).sortable({
 			connectWith: '.draggable-column',
 			items: '.draggable-item',
-			opacity: .75,
+			opacity: 0.75,
 			handle: '.draggable-handler',
 			placeholder: 'draggable-placeholder',
 			tolerance: 'pointer',
