@@ -101,11 +101,40 @@
 
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="">Product Image </label>
-                    <div class="col-md-8">
-                        <input class="form-control" type="file" name="product_image" >
-                        <input  name="product_old_image"  value="<?php echo $product_info->product_image; ?>" type="hidden">
-
-                        <img src="<?php echo base_url().$product_info->product_image; ?>" width="100" height="100" alt="">
+                    <div class="col-md-3">
+                        <label for="img_1" style="cursor:pointer;border-radius:5px;border:2px solid #d8d8d8">
+                            <input style="display:none" id="img_1" class="form-control" type="file" name="product_image">
+                            <input  name="product_old_image"  value="<?php echo $product_info->product_image; ?>" type="hidden">
+                            <img src="<?php echo base_url().$product_info->product_image; ?>" width="100" height="100" alt="">
+                        </label>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="img_2" style="cursor:pointer;border-radius:5px;border:2px solid #d8d8d8">
+                            <input style="display:none" id="img_2" class="form-control" type="file" name="product_image">
+                            <input  name="product_old_image"  value="<?php echo $product_info->product_img2; ?>" type="hidden">
+                            <img src="<?php echo base_url().$product_info->product_img2; ?>" width="100" height="100" alt="">
+                        </label>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="img_3" style="cursor:pointer;border-radius:5px;border:2px solid #d8d8d8">
+                            <input style="display:none" id="img_3" class="form-control" type="file" name="product_image">
+                            <input  name="product_old_image"  value="<?php echo $product_info->product_img3; ?>" type="hidden">
+                            <img src="<?php echo base_url().$product_info->product_img3; ?>" width="100" height="100" alt="">
+                        </label>
+                    </div>
+                    <div class="col-md-3 col-md-offset-3">
+                        <label for="img_4" style="cursor:pointer;border-radius:5px;border:2px solid #d8d8d8">
+                            <input style="display:none" id="img_4" class="form-control" type="file" name="product_image">
+                            <input  name="product_old_image"  value="<?php echo $product_info->product_img4; ?>" type="hidden">
+                            <img src="<?php echo base_url().$product_info->product_img4; ?>" width="100" height="100" alt="">
+                        </label>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="img_5" style="cursor:pointer;border-radius:5px;border:2px solid #d8d8d8">
+                            <input style="display:none" id="img_5" class="form-control" type="file" name="product_image">
+                            <input  name="product_old_image"  value="<?php echo $product_info->product_img5; ?>" type="hidden">
+                            <img src="<?php echo base_url().$product_info->product_img5; ?>" width="100" height="100" alt="">
+                        </label>
                     </div>
                 </div>
 
