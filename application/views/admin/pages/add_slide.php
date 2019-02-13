@@ -1,16 +1,16 @@
 <div class="row">
-    <?php if ($this->session->flashdata('msg')) {?>
-        <div class='alert alert-success alert-dismissable'>
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <p><strong>Well done! </strong><?php echo $this->session->flashdata('msg'); ?></p>
-        </div>
-    <?php } elseif($this->session->flashdata('err')) { ?>
-        <div class="alert alert-warning alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <p><strong>Warning! </strong><?php echo $this->session->flashdata('err'); ?></p>
-        </div>
-    <?php } ?>
     <div class="col-lg-8">
+            <?php if ($this->session->flashdata('msg')) {?>
+                <div class='alert alert-success alert-dismissable'>
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <p><strong>Well done! </strong><?php echo $this->session->flashdata('msg'); ?></p>
+                </div>
+            <?php } elseif($this->session->flashdata('err')) { ?>
+                <div class="alert alert-warning alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <p><strong>Warning! </strong><?php echo $this->session->flashdata('err'); ?></p>
+                </div>
+            <?php } ?>
 
         <div class="card">
             <div class="card-header bg-teal bg-inverse">
