@@ -562,7 +562,7 @@ class Supper_admin extends CI_Controller {
 		);
 		$this->admin_model->addMenu_Item($data);
 		//Loading View
-		$this->session->set_flashdata('msg', 'Data Inserted Successfully');
+		$this->session->set_flashdata('msg', 'Menu Added Successfully!');
 		redirect('main-menu');
 	}
 
@@ -610,14 +610,15 @@ class Supper_admin extends CI_Controller {
 			$this->load->library('upload', $config);
 
 			if ( ! $this->upload->do_upload('slide_img')) {
-				$myerror = array('error' =>  $this->upload->display_errors());
-				$this->session->set_userdata($myerror);
+				$err = $this->upload->display_errors();
+				$this->session->set_flashdata('err', $err);
 			}else {
 				$img =  $this->upload->data();
 				$data['slide_img'] = $config['upload_path'].$img['file_name'];
+				$this->admin_model->save_slide($data);
+				$this->session->set_flashdata('msg', 'Slider image added Successfully!');
 			}
 		}
-		$this->admin_model->save_slide($data);
 		redirect('add-slide');
 	}
 
