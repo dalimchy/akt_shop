@@ -435,32 +435,9 @@ class Admin_model extends CI_Model {
 		return $result;
 	}
 
-	public function save_brand()
+	public function save_brand($data)
 	{
-		$data = array();
-		$data['brand_name'] = $this->input->post('brandname',true);
-		if ($_FILES['brandlogo']['name'] != '') {
-			# code...
-			$config = array(
-				'upload_path' 	=> 'upload/brand/',
-				'allowed_types' => 'jpg|png|jpeg',
-				'max_size' 		=> 1024,
-				'file_name' 	=> time().'_'.$_FILES['brandlogo']['name'],
-			);
-
-			$this->load->library('upload', $config);
-
-			if ( ! $this->upload->do_upload('brandlogo')) {
-				$myerror = array('error' =>  $this->upload->display_errors());
-				$this->session->set_userdata($myerror);
-			}else {
-				$logo =  $this->upload->data();
-				$data['brand_logo'] = $config['upload_path'].$logo['file_name'];
-			}
-		}
-
 		$this->db->insert('tbl_brand', $data);
-
 	}
 
 	public function get_all_brands()

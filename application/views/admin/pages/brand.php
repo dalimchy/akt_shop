@@ -1,23 +1,18 @@
 <div class="row">
     <div class="col-lg-12">
-            <?php
-                $message = $this->session->userdata('message');
-                $brand_error = $this->session->userdata('error');
-                if ($message) {?>
-
-                <div class='alert alert-success alert-dismissable'>
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <p><strong>Well done! </strong><?php echo $message;
-                    $this->session->unset_userdata('message'); ?></p>
-                </div>
-            <?php  }else if($brand_error){ ?>
-                <div class="alert alert-warning alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <p><strong>Warning!</strong> <?php echo $brand_error;
-                    $this->session->unset_userdata('error'); ?> </p>
-                </div>
-            <?php } ?>
-            <?php if ($title == "Brands") { ?>
+    <?php if ($this->session->flashdata('msg')) {?>
+        <div class='alert alert-success alert-dismissable'>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <p><strong>Well done! </strong><?php echo $this->session->flashdata('msg'); ?></p>
+        </div>
+    <?php } elseif($this->session->flashdata('err')) { ?>
+        <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <p><strong>Warning! </strong><?php echo $this->session->flashdata('err'); ?></p>
+        </div>
+    <?php } ?>
+    
+        <?php if ($title == "Brands") { ?>
            
         <div class="card">
             <div class="card-header bg-teal bg-inverse">

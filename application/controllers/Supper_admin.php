@@ -457,15 +457,29 @@ class Supper_admin extends CI_Controller {
 
 	public function save_brand()
 	{
-		$this->admin_model->save_brand();
 		$data = array();
-		$myerror = $this->session->userdata('error');
-		if($myerror){
-			$data['error'] = $myerror;
-		}else{
-			$data['message'] = "save data sucessfully";
+		$data['brand_name'] = $this->input->post('brandname',true);
+		if ($_FILES['brandlogo']['name'] != '') {
+			# code...
+			$config = array(
+				'upload_path' 	=> 'upload/brand/',
+				'allowed_types' => 'jpg|png|jpeg',
+				'max_size' 		=> 1024,
+				'file_name' 	=> time().'_'.$_FILES['brandlogo']['name'],
+			);
+
+			$this->load->library('upload', $config);
+
+			if ( ! $this->upload->do_upload('brandlogo')) {
+				$err =  $this->upload->display_errors();
+				$this->session->set_flashdata('err', $err);
+			}else {
+				$logo =  $this->upload->data();
+				$data['brand_logo'] = $config['upload_path'].$logo['file_name'];
+				$this->admin_model->save_brand($data);
+				$this->session->set_flashdata('msg','Brand added successfully!');
+			}
 		}
-		$this->session->set_userdata($data);
 		redirect('brands');
 	}
 
