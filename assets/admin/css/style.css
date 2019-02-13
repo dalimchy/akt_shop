@@ -103,3 +103,33 @@ li.dropdown-header {
 	max-width:100%;
 	max-height:100%
 }
+.slide_ga_img{
+	position: relative;
+}
+.slide_ga_img:hover .gallery_content{
+	opacity: 0.6;
+	cursor: pointer;
+	/* background-color: rgba(259, 67, 95, 0.7); */
+	background-color: #5ccdde;
+}
+.gallery_content{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 1;
+	transition: all .4s ease-in-out;
+	overflow:hidden;
+}
+.select_forslide{
+	position: absolute;
+	top: 25px;
+	right: 24px;
+	z-index: 1;
+	visibility: hidden;
+}
+.slide_ga_img:hover .select_forslide{
+	visibility: visible;
+	opacity: 1 !important;
+}
