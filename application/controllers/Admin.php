@@ -52,7 +52,15 @@ class Admin extends CI_Controller
         );
 
 		if ($this->form_validation->run()) {
-			$this->admin_model->register_new_admin();
+
+            $data['username'] 		= $this->input->post('username', True);
+            $data['email'] 			= $this->input->post('email', True);
+            $data['password'] 		= md5($this->input->post('password', True));	
+            $data['image'] 			= 'user.jpg';
+            $data['phone_number'] 	= '';
+            $data['role']			= 1;
+
+			$this->admin_model->register_new_admin($data);
 			redirect('/dashboard');
 		}else{
 

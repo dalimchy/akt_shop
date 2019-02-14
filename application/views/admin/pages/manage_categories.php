@@ -1,9 +1,13 @@
 
 <!-- Dynamic Table Full -->
+<?php if ($this->session->flashdata('msg')) {?>
+    <div class='alert alert-success alert-dismissable'>
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <p><strong>Well done! </strong><?php echo $this->session->flashdata('msg'); ?></p>
+    </div>
+<?php } ?>
 <div class="card">
-    <!-- <div class="card-header">
-        <h4>Dynamic Table - Full</h4>
-    </div> -->
+
     <div class="card-block">
         <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/pages/base_tables_datatables.js -->
         <table class="table table-bordered table-striped table-vcenter js-dataTable-full">

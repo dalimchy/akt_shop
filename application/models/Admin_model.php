@@ -28,29 +28,16 @@ class Admin_model extends CI_Model {
 
 
 
-	public function register_new_admin()
+	public function register_new_admin($data)
 	{
-		$data['username'] 		= $this->input->post('username', True);
-		$data['email'] 			= $this->input->post('email', True);
-		$data['password'] 		= md5($this->input->post('password', True));	
-		$data['image'] 			= 'user.jpg';
-		$data['phone_number'] 	= '';
-		$data['role']			= 1;
-
 		$this->db->insert('akt_users', $data);
 	}
 				/***********************************/
 				/*     *****  Category  *****      */
 				/***********************************/
 
-	public function save_category($category_image)
+	public function save_category($data)
 	{
-		$data=array();
-		$data['category_name']			= $this->input->post('category_name',true);
-		$data['category_image']			= $category_image;
-		$data['menu_id']				= $this->input->post('menu_id',true);	
-		$data['category_description']	= $this->input->post('category_description',true);	
-		$data['publication_status']		= $this->input->post('publication_status',true);
 		$this->db->insert('tbl_category',$data);
 	}
 

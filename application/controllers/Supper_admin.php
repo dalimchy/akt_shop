@@ -50,12 +50,15 @@ class Supper_admin extends CI_Controller {
 
 	public function save_category()
 	{
+		$data=array();
+		$data['category_name']			= $this->input->post('category_name',true);
+		$data['category_image']			= $this->save_category_img();
+		$data['menu_id']				= $this->input->post('menu_id',true);	
+		$data['category_description']	= $this->input->post('category_description',true);	
+		$data['publication_status']		= $this->input->post('publication_status',true);
 
-		$category_image = $this->save_category_img();
-		$this->admin_model->save_category($category_image);
-		$sdata = array();
-		$sdata['message'] = "Save Category Information Sucessfully!";
-		$this->session->set_userdata($sdata);
+		$this->admin_model->save_category($data);
+		$this->session->set_flashdata('msg', 'Category added successfully!');
 		redirect('add-category');
 	}
 
@@ -94,13 +97,18 @@ class Supper_admin extends CI_Controller {
 	public function update_category()
 	{	
 		$category_id = $this->input->post('category_id', True);
+
+		// $data= array();
+		// $data['category_name']			= $this->input->post('category_name',true);
+		// $data['category_description']	= $this->input->post('category_description',true);
+		// $data['publication_status'] 	= $this->input->post('publication_status', True);
+		// $data['category_image'] 		= $category_image;
+
 		if ($_FILES['category_image']['name'] == '' || $_FILES['category_image']['size'] == '0')
 		{
   			$category_image = $this->input->post('category_old_image', True);
   			$this->admin_model->update_category_info($category_image,$category_id);
-  			$data = array();
-  			$data['message'] = "Update category Information Sucessfully";
-  			$this->session->set_userdata($data);
+  			$this->session->set_flashdata('msg', 'Update category Information Sucessfully');
   			redirect('manage-categories');
 		}
 		  else
@@ -108,9 +116,7 @@ class Supper_admin extends CI_Controller {
   			$category_image = $this->save_category_img();
   			$this->admin_model->update_category_info($category_image,$category_id);
   			unlink( $this->input->post('category_old_image', True));
-  			$data = array();
-  			$data['message'] = "Update category Information Sucessfully";
-  			$this->session->set_userdata($data);
+  			$this->session->set_flashdata('msg', 'Update category Information Sucessfully');
   			redirect('manage-categories');
   		}
 
