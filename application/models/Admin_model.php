@@ -122,15 +122,8 @@ class Admin_model extends CI_Model {
 				/***********************************/
 
 
-	public function	save_manufacture($manufacture_image)
+	public function	save_manufacture($data)
 	{
-		$data=array();
-		$data['category_id']				= $this->input->post('category_id',true);
-		$data['manufacture_name']			= $this->input->post('manufacture_name',true);
-		// $data['manufacture_for']			= $this->input->post('manufacture_for',true);
-		$data['manufacture_image']			= $manufacture_image;
-		$data['manufacture_description']	= $this->input->post('manufacture_description',true);
-		$data['publication_status']			= $this->input->post('publication_status',true);
 		$this->db->insert('tbl_manufacture',$data);
 
 	}
@@ -222,75 +215,8 @@ class Admin_model extends CI_Model {
 		return $output;
 	}
 
-	public function save_product_info()
+	public function save_product_info($data)
 	{
-		$data=array(
-			'brand_id' 					=> $this->input->post('brand_id',true),
-			'product_name' 				=> $this->input->post('product_name',true),
-			'category_id' 				=> $this->input->post('category_id',true),
-			'manufacture_id' 			=> $this->input->post('manufacture_id',true),
-			'product_model'				=> $this->input->post('product_model',true),
-			'pro_label'					=> $this->input->post('pro_label',true),
-			'product_for' 				=> $this->input->post('product_for',true),
-			'product_short_description' => $this->input->post('product_short_description',true),
-			'product_long_description'  => $this->input->post('product_long_description',true),
-			'product_price' 			=> $this->input->post('product_price',true),
-			'product_new_price' 		=> $this->input->post('product_new_price',true),
-			'product_quantity' 			=> $this->input->post('product_quantity',true),
-		);
-
-			$config = array(
-				'upload_path'	=> 'upload/products/',
-				'allowed_types' => 'gif|jpg|png|jpeg',
-				'max_size'		=> 1024,
-				// 'max_width' 	=> 1024,
-				// 'max_height' 	=> 768,
-			);
-
-			$this->load->library('upload', $config);
-
-			if ( ! $this->upload->do_upload('product_image')) {
-					$error =  $this->upload->display_errors();
-			}else {
-					$img1 =  $this->upload->data();
-					$data['product_image'] = $config['upload_path'].$img1['file_name'];
-			}
-			if ( ! $this->upload->do_upload('product_image2')) {
-					$error =  $this->upload->display_errors();
-			}else {
-					$img2 =  $this->upload->data();
-					$data['product_img2'] = $config['upload_path'].$img2['file_name'];
-			}
-			if ( ! $this->upload->do_upload('product_image3')) {
-					$error =  $this->upload->display_errors();
-			}else {
-					$img3 =  $this->upload->data();
-					$data['product_img3'] = $config['upload_path'].$img3['file_name'];
-			}
-			if ( ! $this->upload->do_upload('product_image4')) {
-					$error =  $this->upload->display_errors();
-			}else {
-					$img4 =  $this->upload->data();
-					$data['product_img4'] = $config['upload_path'].$img4['file_name'];
-			}
-			if ( ! $this->upload->do_upload('product_image5')) {
-					$error =  $this->upload->display_errors();
-			}else {
-					$img5 =  $this->upload->data();
-					$data['product_img5'] = $config['upload_path'].$img5['file_name'];
-			}
-
-		$is_featured = $this->input->post('is_featured',true);
-
-		if ($is_featured== "on")
-		{
-			$data['is_featured'] = 1;
-		}
-		else
-		{
-			$data['is_featured'] = 0;
-		}
-		$data['publication_status']	= $this->input->post('publication_status',true);
 		$this->db->insert('tbl_product',$data);
 	}
 
@@ -433,7 +359,6 @@ class Admin_model extends CI_Model {
 		$this->db->from('tbl_brand');
 		$this->db->order_by("brand_id", "desc");
 		$query_result 	= $this->db->get()->result();
-		// $brands_info 	= $query_result;
 		return $query_result;
 	}
 	public function get_brandBy_id($brand_id)

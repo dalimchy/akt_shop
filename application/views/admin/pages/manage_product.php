@@ -1,15 +1,12 @@
 
 <!-- Dynamic Table Full -->
 
-<?php
-    $message = $this->session->userdata('message');
-    if ($message) { ?>
-
-        <div class='alert alert-success alert-dismissable'>
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <p><strong>Well done! </strong><?php echo $message; $this->session->unset_userdata('message'); ?></p>
-        </div>
-   <?php } ?>
+<?php if ($this->session->flashdata('msg')) {?>
+    <div class='alert alert-success alert-dismissable'>
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <p><strong>Well done! </strong><?php echo $this->session->flashdata('msg'); ?></p>
+    </div>
+<?php } ?>
 <div class="card">
     <!-- <div class="card-header">
         <h4>Dynamic Table - Full</h4>
