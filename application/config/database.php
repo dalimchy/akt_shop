@@ -72,16 +72,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $active_group = 'default';
 $query_builder = TRUE;
-// 'hostname' => 'db4free.net',
-// 'username' => 'dalimchy',
-// 	'password' => '12345678',
-// 	'database' => 'aktshop1',
+
+// 'hostname' => 'localhost',
+// 'username' => 'root',
+// 'password' => '',
+// 'database' => 'akt_shop',
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'akt_shop',
+	'hostname' => 'db4free.net',
+	'username' => 'dalimchy',
+	'password' => '12345678',
+	'database' => 'aktshop1',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
